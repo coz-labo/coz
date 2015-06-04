@@ -22,9 +22,12 @@
   },
   "homepage": "https://github.com/okunishinishi/planter#readme",
   "dependencies": {
-    "apeman-util": "0.0.47",
+    "async": "^1.2.0",
     "glob": "^5.0.10",
     "handlebars": "^3.0.3",
     "mkdirp": "^0.5.1"
+  },
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
   }
 }
