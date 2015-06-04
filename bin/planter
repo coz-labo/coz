@@ -1,4 +1,26 @@
-#!/bin/env/node
+#!/usr/bin/env node
 
 "use strict";
 
+var program = require('commander'),
+    pkg = require('../package'),
+    commands = require('../lib/commands')
+    ;
+
+program
+    .version(pkg['version']);
+
+program
+    .command('blossom [src]')
+    .alias('bls')
+    .description('Compile and render bud files.')
+    .option('-v, --verbose', 'Show verbose logs.')
+    .action(function (src, opitons) {
+        commands.blossom(src, opitons);
+    })
+    .on('--help', function () {
+        console.log(commands.blossom.help);
+    });
+
+program
+    .parse(process.argv);

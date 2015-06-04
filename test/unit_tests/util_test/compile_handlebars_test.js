@@ -1,14 +1,14 @@
 /**
- * Test case for compile/compile_hbs.js
+ * Test case for compile/compile_handlebars.js
  * Runs with nodeunit.
  */
 
 "use strict";
 
-var compileHbs = require('../../../lib/util/compile/compile_hbs.js');
+var compileHandlebars = require('../../../lib/util/compile/compile_handlebars.js');
 
-exports['Compile hbs file.'] = function (test) {
-    var tmpl = compileHbs('Here are {{toLowercase name}}.', {
+exports['Compile handlebars file.'] = function (test) {
+    var tmpl = compileHandlebars('Here are {{toLowercase name}}.', {
         helpers: {
             toLowercase: function (str) {
                 return str.toLowerCase();

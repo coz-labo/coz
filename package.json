@@ -23,6 +23,8 @@
   "homepage": "https://github.com/okunishinishi/planter#readme",
   "dependencies": {
     "async": "^1.2.0",
+    "cli-color": "^1.0.0",
+    "commander": "^2.8.1",
     "glob": "^5.0.10",
     "handlebars": "^3.0.3",
     "mkdirp": "^0.5.1"
