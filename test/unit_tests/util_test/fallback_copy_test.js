@@ -1,5 +1,5 @@
 /**
- * Testcase for copy/fallback_copy.js
+ * Testcase for copying/fallback_copy.js
  * Runs with nodeunit.
  */
 
