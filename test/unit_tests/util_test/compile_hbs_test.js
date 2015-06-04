@@ -5,7 +5,6 @@
 
 "use strict";
 
-
 var compileHbs = require('../../../lib/util/compile/compile_hbs.js');
 
 exports['Compile hbs file.'] = function (test) {
