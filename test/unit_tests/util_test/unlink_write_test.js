@@ -1,6 +1,6 @@
 /**
  * Test case for file/unlink_file.js
- * Runs with nodeunit
+ * Runs with nodeunit.
  */
 
 "use strict";

@@ -1,6 +1,6 @@
 /**
  * Test case for compile/compile_hbs.js
- * Runs with nodeunit
+ * Runs with nodeunit.
  */
 
 "use strict";
