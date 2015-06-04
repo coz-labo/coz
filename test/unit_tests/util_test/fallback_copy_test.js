@@ -5,7 +5,7 @@
 
 "use strict";
 
-var fallbackCopy = require('../../../lib/util/copy/fallback_copy.js');
+var fallbackCopy = require('../../../lib/util/copying/fallback_copy.js');
 
 exports['Copy an object.'] = function (test) {
     var obj1 = {foo: 'bar', quz: 'quzz'},

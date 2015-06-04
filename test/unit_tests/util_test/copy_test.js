@@ -5,7 +5,7 @@
 
 "use strict";
 
-var copy = require('../../../lib/util/copy/copy.js');
+var copy = require('../../../lib/util/copying/copy.js');
 
 exports['Copy an object.'] = function (test) {
     var obj1 = {foo: 'bar', quz: 'quzz'},
