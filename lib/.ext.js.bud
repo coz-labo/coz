@@ -1,0 +1,9 @@
+/**
+ * Bud file for ext.js
+ */
+
+"use strict";
+
+module.exports = {
+    path: 'foo.js'
+};
