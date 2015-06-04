@@ -1,0 +1,30 @@
+{
+  "name": "planter",
+  "version": "1.0.0",
+  "description": "Meta framework for template-driven-development",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "./ci/bin/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okunishinishi/planter.git"
+  },
+  "keywords": [
+    "template",
+    "framework",
+    "copy-and-paste"
+  ],
+  "author": "Taka Okunishi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/okunishinishi/planter/issues"
+  },
+  "homepage": "https://github.com/okunishinishi/planter#readme",
+  "dependencies": {
+    "apeman-util": "0.0.47",
+    "glob": "^5.0.10",
+    "handlebars": "^3.0.3",
+    "mkdirp": "^0.5.1"
+  }
+}
