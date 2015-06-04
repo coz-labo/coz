@@ -13,7 +13,7 @@ var unlinkFile = require('../../../lib/util/file/unlink_file.js'),
 var workDir = path.resolve(__dirname, '../../.work');
 
 
-exports['Write a file.'] = function (test) {
+exports['Unlink a file.'] = function (test) {
     var filename = path.resolve(workDir, 'work_file_to_unlink.txt');
     fs.writeFileSync(filename, 'foo');
     unlinkFile(filename, {
