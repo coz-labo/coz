@@ -9,6 +9,18 @@ module.exports = {
         pkg: pkg,
         links: require('./.links.json'),
         badges: require('./.badges.json'),
-        banners: require('./.banners.json')
+        banners: require('./.banners.json'),
+        get sections() {
+            var dirname = path.resolve(__dirname, 'sections');
+            return fs.readdirSync(dirname).map(function (filename) {
+                return {
+                    name: path.basename(filename, path.extname(filename)),
+                    content: fs.readFileSync(path.resolve(dirname, filename)).toString(),
+                    get title() {
+                        return this.content.split('\n').shift().trim();
+                    }
+                }
+            });
+        }
     }
 };

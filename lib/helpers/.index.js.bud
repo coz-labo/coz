@@ -1,0 +1,17 @@
+"use strict";
+
+var planter = require('../../lib'),
+    indexJsBud = planter.factory.indexJsBud;
+
+module.exports = indexJsBud({
+    dirname: __dirname,
+    docProperties: true,
+    desc: [
+        'Bud compile helpers.',
+        'These functions a exposed in template context.'
+    ].join('\n * '),
+    doc: {
+        module: 'planter/lib/helpers'
+    }
+});
+

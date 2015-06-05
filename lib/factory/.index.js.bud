@@ -1,0 +1,14 @@
+"use strict";
+
+var planter = require('../../lib'),
+    indexJsBud = planter.factory.indexJsBud;
+
+module.exports = indexJsBud({
+    dirname: __dirname,
+    docProperties: true,
+    desc: 'Bud instance factories.',
+    doc: {
+        module: 'planter/lib/factory'
+    }
+});
+

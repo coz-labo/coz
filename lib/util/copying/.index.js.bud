@@ -1,0 +1,14 @@
+"use strict";
+
+var planter = require('../../../lib'),
+    indexJsBud = planter.factory.indexJsBud;
+
+module.exports = indexJsBud({
+    dirname: __dirname,
+    docProperties: true,
+    desc: 'Utility functions for copying.',
+    doc: {
+        module: 'planter/lib/util/copying'
+    }
+});
+
