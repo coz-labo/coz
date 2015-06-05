@@ -5,7 +5,7 @@
 
 "use strict";
 
-var BudConfig = require('../../../lib/bud/bud_config.js');
+var BudConfig = require('../../../lib/printing/bud_config.js');
 
 exports['Create bud config.'] = function (test) {
     var config = new BudConfig({

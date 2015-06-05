@@ -1,4 +1,4 @@
-planter
+leaf
 =====
 <!-- Badge start -->
 
@@ -22,20 +22,20 @@ Meta framework for template-driven-development
 <!-- Links start -->
 
 [nodejs_url]: http://nodejs.org/
-[my_license_url]: http://raw.github.com/okunishinishi/planter/master/LICENSE
-[my_travis_url]: http://travis-ci.org/okunishinishi/planter
-[my_travis_badge_url]: http://img.shields.io/travis/okunishinishi/planter.svg?style=flat
-[my_codeclimate_url]: http://codeclimate.com/github/okunishinishi/planter
-[my_codeclimate_badge_url]: http://img.shields.io/codeclimate/github/okunishinishi/planter.svg?style=flat
-[my_codeclimate_coverage_badge_url]: http://img.shields.io/codeclimate/coverage/github/okunishinishi/planter.svg?style=flat
-[my_apiguide_url]: http://okunishinishi.github.io/planter/apiguide/
-[my_coverage_report_url]: http://okunishinishi.github.io/planter/coverage/lcov-report/
+[my_license_url]: http://raw.github.com/okunishinishi/leaf/master/LICENSE
+[my_travis_url]: http://travis-ci.org/okunishinishi/leaf
+[my_travis_badge_url]: http://img.shields.io/travis/okunishinishi/leaf.svg?style=flat
+[my_codeclimate_url]: http://codeclimate.com/github/okunishinishi/leaf
+[my_codeclimate_badge_url]: http://img.shields.io/codeclimate/github/okunishinishi/leaf.svg?style=flat
+[my_codeclimate_coverage_badge_url]: http://img.shields.io/codeclimate/coverage/github/okunishinishi/leaf.svg?style=flat
+[my_apiguide_url]: http://okunishinishi.github.io/leaf/apiguide/
+[my_coverage_report_url]: http://okunishinishi.github.io/leaf/coverage/lcov-report/
 [my_gittip_url]: http://www.gittip.com/okunishinishi/
 [my_gittip_budge_url]: http://img.shields.io/gittip/okunishinishi.svg?style=flat
-[my_npm_url]: http://www.npmjs.org/package/planter
-[my_npm_budge_url]: http://img.shields.io/npm/v/planter.svg?style=flat
-[my_tag_url]: http://github.com/okunishinishi/planter/releases/tag/
-[my_tag_badge_url]: http://img.shields.io/github/tag/okunishinishi/planter.svg?style=flat
-[my_gemnasium_url]: http://gemnasium.com/okunishinishi/planter
-[my_gemnasium_badge_url]: http://img.shields.io/gemnasium/okunishinishi/planter.svg?style=flat
+[my_npm_url]: http://www.npmjs.org/package/leaf
+[my_npm_budge_url]: http://img.shields.io/npm/v/leaf.svg?style=flat
+[my_tag_url]: http://github.com/okunishinishi/leaf/releases/tag/
+[my_tag_badge_url]: http://img.shields.io/github/tag/okunishinishi/leaf.svg?style=flat
+[my_gemnasium_url]: http://gemnasium.com/okunishinishi/leaf
+[my_gemnasium_badge_url]: http://img.shields.io/gemnasium/okunishinishi/leaf.svg?style=flat
 <!-- Links end-->

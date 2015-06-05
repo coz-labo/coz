@@ -1,5 +1,5 @@
 {
-  "name": "planter",
+  "name": "leaf",
   "version": "1.0.0",
   "description": "Meta framework for template-driven-development",
   "main": "lib/index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/okunishinishi/planter.git"
+    "url": "git+https://github.com/okunishinishi/leaf.git"
   },
   "keywords": [
     "template",
@@ -20,9 +20,9 @@
   "author": "Taka Okunishi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/okunishinishi/planter/issues"
+    "url": "https://github.com/okunishinishi/leaf/issues"
   },
-  "homepage": "https://github.com/okunishinishi/planter#readme",
+  "homepage": "https://github.com/okunishinishi/leaf#readme",
   "dependencies": {
     "async": "^1.2.0",
     "cli-color": "^1.0.0",

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for lib/planter.js</title>
+    <title>Code coverage report for lib/leaf.js</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../prettify.css">
     <link rel="stylesheet" href="../base.css">
@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="header high">
-    <h1>Code coverage report for <span class="entity">lib/planter.js</span></h1>
+    <h1>Code coverage report for <span class="entity">lib/leaf.js</span></h1>
     <h2>
         Statements: <span class="metric">96.67% <small>(29 / 30)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">50% <small>(3 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -21,7 +21,7 @@
         Lines: <span class="metric">96.67% <small>(29 / 30)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">lib/</a> &#187; planter.js</div>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">lib/</a> &#187; leaf.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
@@ -264,9 +264,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Planter context.
- * @memberof module:planter
- * @constructor Planter
+ * Leaf context.
+ * @memberof module:leaf
+ * @constructor Leaf
  */
 &nbsp;
 "use strict";
@@ -282,20 +282,20 @@ var ext = require('./ext'),
     Bud = bud.Bud,
     BudConfig = bud.BudConfig;
 &nbsp;
-/** @lends Planter */
-function Planter() {
+/** @lends Leaf */
+function Leaf() {
     var s = this;
     s.init.apply(s, arguments);
 }
 &nbsp;
-Planter.prototype = {
+Leaf.prototype = {
 &nbsp;
     // --------------------
     // Public properties.
     // --------------------
 &nbsp;
     /**
-     * Initialize a planter context.
+     * Initialize a leaf context.
      */
     init: function () {
         var s = this;
@@ -306,7 +306,7 @@ Planter.prototype = {
      * @param {string|string[]} filenames - Bud file name pattern.
      * @param {object} options - Optional settings.
      * @param {object} options.verbose - Log verbose.
-     * @param {PlanterCallback} callback - Callback when done.
+     * @param {LeafCallback} callback - Callback when done.
      */
     blossom: function (filenames, options, callback) {
         var s = this;
@@ -377,11 +377,11 @@ Planter.prototype = {
     }
 };
 &nbsp;
-module.exports = Planter;
+module.exports = Leaf;
 &nbsp;
 &nbsp;
 /**
- * @callback PlanterCallback
+ * @callback LeafCallback
  */</pre></td></tr>
 </table></pre>
 
