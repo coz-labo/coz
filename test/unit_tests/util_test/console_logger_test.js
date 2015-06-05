@@ -1,11 +1,11 @@
 /**
- * Test case for file/console_logger.js
+ * Test case for logging/console_logger.js
  * Runs with nodeunit.
  */
 
 "use strict";
 
-var ConsoleLogger = require('../../../lib/loggers/console_logger.js');
+var ConsoleLogger = require('../../../lib/util/logging/console_logger.js');
 
 var log = console.log, error = console.error;
 exports.setUp = function (done) {
