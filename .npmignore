@@ -10,3 +10,5 @@ build/Release
 node_modules
 .idea
 test/.work/*
+docs/coverage
+docs/readme

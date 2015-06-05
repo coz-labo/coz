@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "unittest": "nodeunit",
-    "cover": "istanbul cover nodeunit"
+    "cover": "istanbul cover nodeunit",
+    "report": "codeclimate"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "mkdirp": "^0.5.1"
   },
   "devDependencies": {
+    "codeclimate-test-reporter": "0.0.4",
     "istanbul": "^0.3.14",
     "nodeunit": "^0.9.1"
   }

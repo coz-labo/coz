@@ -13,6 +13,7 @@ var basedir = path.resolve(__dirname, '../../..');
 process.chdir(basedir);
 
 planter.blossom([
+    'docs/**/.*.bud',
     'lib/**/.*.bud'
 ], {
     verbose: true
