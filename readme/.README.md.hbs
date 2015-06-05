@@ -1,0 +1,25 @@
+{{!
+    Template for readme.
+}}{{pkg.name}}
+=====
+<!-- Badge start -->
+
+{{#each badges}}[![{{alt}}][{{img}}]][{{link}}]
+{{/each}}
+<!-- Badge end -->
+
+
+{{pkg.description}}
+
+<!-- Banner start -->
+
+{{#each banners}}<a href="{{link}}"><img style="height:40px;" src="{{img}}" height="40"></a>&nbsp;
+{{/each}}
+<!-- Banner end -->
+
+
+<!-- Links start -->
+
+{{#each links}}[{{@key}}]: {{this}}
+{{/each}}
+<!-- Links end-->

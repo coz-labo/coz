@@ -1,0 +1,14 @@
+"use strict";
+
+var pkg = require('../../package.json');
+
+module.exports = {
+    force: true,
+    mode: '444',
+    data: {
+        pkg: pkg,
+        links: require('./.links.json'),
+        badges: require('./.badges.json'),
+        banners: require('./.banners.json')
+    }
+};
