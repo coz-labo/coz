@@ -4,7 +4,29 @@
 
 "use strict";
 
+var pkg = require('../package');
+
 module.exports = {
-    force: false,
-    path: 'foo.js'
+    force: true,
+    data: {
+        doc: {
+            file: 'External modules, installed via npm.',
+            module: 'planter/lib/ext'
+        },
+        get modules() {
+            var dependencies = pkg.dependencies,
+                names = Object.keys(dependencies);
+            return names
+                .sort(function (a, b) {
+                    return a.localeCompare(b);
+                })
+                .map(function (name) {
+                    return {
+                        name: name,
+                        version: dependencies[name]
+                    }
+
+                });
+        }
+    }
 };
