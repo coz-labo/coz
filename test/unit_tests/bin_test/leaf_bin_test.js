@@ -19,8 +19,8 @@ exports['Show help.'] = function (test) {
 };
 
 
-exports['Show blossom help.'] = function (test) {
-    var spawned = childProcess.spawn(leafBin, ['blossom', '-h']);
+exports['Show render help.'] = function (test) {
+    var spawned = childProcess.spawn(leafBin, ['render', '-h']);
     //spawned.stdout.pipe(process.stdout);
     //spawned.stderr.pipe(process.stderr);
     spawned.on('exit', function () {

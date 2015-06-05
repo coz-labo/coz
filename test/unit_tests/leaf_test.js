@@ -14,10 +14,10 @@ exports['Create leaf.'] = function (test) {
     test.done();
 };
 
-exports['Do blossom.'] = function (test) {
+exports['Do render.'] = function (test) {
     var leaf = new Leaf();
-    var src = __dirname + '/../mocks/mock-bud.bud'
-    leaf.blossom([
+    var src = __dirname + '/../mocks/mock-bud.bud';
+    leaf.render([
         src
     ], {}, function (err) {
         test.ifError(err);

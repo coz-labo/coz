@@ -11,15 +11,15 @@ program
     .version(pkg['version']);
 
 program
-    .command('blossom [src]')
+    .command('render [src]')
     .alias('bls')
     .description('Compile and render bud files.')
     .option('-v, --verbose', 'Show verbose logs.')
     .action(function (src, opitons) {
-        commands.blossom(src, opitons);
+        commands.render(src, opitons);
     })
     .on('--help', function () {
-        console.log(commands.blossom.help);
+        console.log(commands.render.help);
     });
 
 program

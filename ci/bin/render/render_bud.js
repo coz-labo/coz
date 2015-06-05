@@ -12,7 +12,7 @@ var leaf = require('../../../lib');
 var basedir = path.resolve(__dirname, '../../..');
 process.chdir(basedir);
 
-leaf.blossom([
+leaf.render([
     'docs/**/.*.bud',
     'lib/**/.*.bud'
 ], {

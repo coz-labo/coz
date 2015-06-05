@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for lib/bud/bud.js</title>
+    <title>Code coverage report for lib/printing/printer.js</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../../prettify.css">
     <link rel="stylesheet" href="../../base.css">
@@ -13,15 +13,15 @@
 </head>
 <body>
 <div class="header medium">
-    <h1>Code coverage report for <span class="entity">lib/bud/bud.js</span></h1>
+    <h1>Code coverage report for <span class="entity">lib/printing/printer.js</span></h1>
     <h2>
-        Statements: <span class="metric">74.07% <small>(60 / 81)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">46.88% <small>(15 / 32)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(15 / 15)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">74.07% <small>(60 / 81)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">74.7% <small>(62 / 83)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">52.94% <small>(18 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">93.33% <small>(14 / 15)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">74.7% <small>(62 / 83)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">lib/bud/</a> &#187; bud.js</div>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">lib/printing/</a> &#187; printer.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
@@ -272,8 +272,9 @@
 245
 246
 247
-248</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+248
+249
+250</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -316,9 +317,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4</span>
 <span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4</span>
 <span class="cline-any cline-yes">4</span>
 <span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -402,19 +406,19 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -482,13 +486,13 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -522,12 +526,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Bud object.
  * Contains template and data, generate a single file.
- * @constructor Bud
- * @memberof module:leaf/lib/bud
+ * @memberof module:leaf/lib/printer
+ * @constructor Printer
  * @param {BudConfig} config - Bud configuration
  * @param {mode}
  */
-&nbsp;
 &nbsp;
 "use strict";
 &nbsp;
@@ -545,13 +548,13 @@ var ext = require('../ext'),
     HelperResolver = resolvers.HelperResolver,
     EngineResolver = resolvers.EngineResolver;
 &nbsp;
-/** @lends Bud */
-function Bud() {
+/** @lends Printer */
+function Printer() {
     var s = this;
     s.init.apply(s, arguments);
 }
-Bud.tmpls = tmpls;
-Bud.prototype = {
+Printer.tmpls = tmpls;
+Printer.prototype = {
 &nbsp;
     // --------------------
     // Public properties.
@@ -562,6 +565,9 @@ Bud.prototype = {
      */
     init: function (config) {
         var s = this;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (config.config) {
+<span class="cstat-no" title="statement not covered" >            config = config.config;</span>
+        }
         s.config = new BudConfig(config);
         s.engineResolver = new EngineResolver(engines);
         s.helperResolver = new HelperResolver(helpers);
@@ -577,7 +583,7 @@ Bud.prototype = {
     config: undefined,
     /**
      * Prepare bud.
-     * @param {budPrepareCallback} callback - Callback when done.
+     * @param {printerPrepareCallback} callback - Callback when done.
      */
     prepare: function (callback) {
         var s = this;
@@ -595,7 +601,7 @@ Bud.prototype = {
     },
     /**
      * Compile template.
-     * @param {budCompileCallback} callback - Callback when done.
+     * @param {printerCompileCallback} callback - Callback when done.
      */
     compile: function (callback) {
         var s = this;
@@ -628,7 +634,7 @@ Bud.prototype = {
     },
     /**
      * Write out to file.
-     * @param {budWriteoutCallback} callback
+     * @param {printerWriteoutCallback} callback
      */
 &nbsp;
     writeout: function (callback) {
@@ -648,18 +654,18 @@ Bud.prototype = {
             function write(content, callback) {
                 var filename = path.resolve(config.cwd || <span class="branch-1 cbranch-no" title="branch not covered" >process.cwd(),</span> config.path);
                 s._needsWrite(filename, content, config.force, function (needsWrite) {
-                    <span class="missing-if-branch" title="else path not taken" >E</span>if (needsWrite) {
-                        file.writeFile(filename, content, {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (needsWrite) {
+<span class="cstat-no" title="statement not covered" >                        file.writeFile(filename, content, {</span>
                             mkdirp: config.mkdirp,
                             mode: config.mode,
                             force: true
-                        }, function (err) {
-                            s._written = content;
-                            callback(err);
+                        }, <span class="fstat-no" title="function not covered" >function (err) {</span>
+<span class="cstat-no" title="statement not covered" >                            s._written = content;</span>
+<span class="cstat-no" title="statement not covered" >                            callback(err);</span>
                         });
                     } else {
-<span class="cstat-no" title="statement not covered" >                        s._written = null;</span>
-<span class="cstat-no" title="statement not covered" >                        callback(null);</span>
+                        s._written = null;
+                        callback(null);
                     }
                 });
             }
@@ -728,14 +734,14 @@ Bud.prototype = {
     _needsWrite: function (filename, writing, force, callback) {
         file.readFile(filename, function (err, existing) {
             var unknown = (!!err) || (!existing);
-            <span class="missing-if-branch" title="else path not taken" >E</span>if (unknown) {
-                callback(true);
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (unknown) {
+<span class="cstat-no" title="statement not covered" >                callback(true);</span>
             } else {
-<span class="cstat-no" title="statement not covered" >                var skip = !force &amp;&amp; !!existing;</span>
-<span class="cstat-no" title="statement not covered" >                if (skip) {</span>
+                var skip = !force &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!!existing;</span>
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (skip) {
 <span class="cstat-no" title="statement not covered" >                    callback(false);</span>
                 } else {
-<span class="cstat-no" title="statement not covered" >                    callback(String(existing) !== String(writing));</span>
+                    callback(String(existing) !== String(writing));
                 }
             }
         });
@@ -743,35 +749,35 @@ Bud.prototype = {
 &nbsp;
 };
 &nbsp;
-module.exports = Bud;
+module.exports = Printer;
 &nbsp;
 &nbsp;
 /**
- * Callback for bud prepare.
- * @callback budPrepareCallback
+ * Callback for printer prepare.
+ * @callback printerPrepareCallback
  * @param {error} err - Compile error.
- * @param {function} bud - Prepared bud
+ * @param {function} printer - Prepared printer
  */
 &nbsp;
 /**
- * Callback for bud compile.
- * @callback budCompileCallback
+ * Callback for printer compile.
+ * @callback printerCompileCallback
  * @param {error} err - Compile error.
- * @param {function} bud - Compiled bud
+ * @param {function} printer - Compiled printer
  */
 &nbsp;
 /**
- * Callback for bud writeout.
- * @callback budWriteoutCallback
+ * Callback for printer writeout.
+ * @callback printerWriteoutCallback
  * @param {error} err - Writeout error.
- * @param {function} bud - Compiled bud
+ * @param {function} printer - Compiled printer
  * @param {boolean} executed - Executed or not. False when file already exists and contents are identical.
  */</pre></td></tr>
 </table></pre>
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jun 05 2015 15:30:17 GMT+0900 (JST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jun 06 2015 08:49:58 GMT+0900 (JST)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>
