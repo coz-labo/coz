@@ -15,6 +15,11 @@ exports['Register data.'] = function (test) {
     });
     test.equal(resolver.resolve('foo'), 'bar');
     test.equal(resolver.resolve('baz'), 'quz');
+    test.equal(resolver.resolve(0), null);
+    test.ok(resolver.resolve(function () {
+
+    }));
+    test.ok(resolver.resolve(__filename));
     test.equal(resolver.resolve('bazHelper'), 'quz');
     test.done();
 };

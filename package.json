@@ -4,7 +4,8 @@
   "description": "Meta framework for template-driven-development",
   "main": "lib/index.js",
   "scripts": {
-    "test": "./ci/bin/test"
+    "unittest": "nodeunit",
+    "cover": "istanbul cover nodeunit"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "mkdirp": "^0.5.1"
   },
   "devDependencies": {
+    "istanbul": "^0.3.14",
     "nodeunit": "^0.9.1"
   }
 }

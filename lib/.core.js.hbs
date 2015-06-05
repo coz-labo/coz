@@ -9,7 +9,6 @@
 "use strict";
 
 module.exports = {
-    {{#each modules}}
-    get {{camelcase name}}() { return require('{{name}}'); }{{#if @last}}{{else}},
-    {{/if}}{{/each}}
+{{#each modules}}    get {{camelcase name}}() { return require('{{name}}'); }{{#if @last}}{{else}},
+{{/if}}{{/each}}
 };

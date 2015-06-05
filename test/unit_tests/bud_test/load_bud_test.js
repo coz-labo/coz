@@ -16,3 +16,19 @@ exports['Create bud config.'] = function (test) {
         test.done();
     });
 };
+
+exports['Create bud config async.'] = function (test) {
+    var filename = path.resolve(__dirname, '../../mocks/mock-async-bud.bud');
+    loadBud(filename, function (err, bud) {
+        test.ifError(err);
+        test.ok(bud);
+        test.done();
+    });
+};
+
+exports['Try to load invalid bud.'] = function (test) {
+    loadBud('__invalid_src_', function (err) {
+        test.ok(!!err);
+        test.done();
+    });
+};

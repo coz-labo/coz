@@ -1,7 +1,9 @@
 /**
- * Testcase for planter.js
+ * Test case for planter.js
  * Runs with nodeunit.
  */
+
+"use strict";
 
 var Planter = require('../../lib/planter.js')
     ;
@@ -22,3 +24,5 @@ exports['Do blossom.'] = function (test) {
         test.done();
     });
 };
+
+

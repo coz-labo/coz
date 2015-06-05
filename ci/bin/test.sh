@@ -1,12 +1,12 @@
 #!/bin/bash
 
 ###
-# Run build tasks.
-##
+# Run tests.
+###
 
 HERE=$(cd "$(dirname $0)" && pwd)
 BASE_DIR=$(cd "${HERE}/../.." && pwd)
 
 cd ${BASE_DIR}
 
-node ./ci/bin/render/render_bud.js
+bash ./ci/bin/test/test_unit_tests.sh

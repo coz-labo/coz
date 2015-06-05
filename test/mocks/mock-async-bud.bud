@@ -1,0 +1,13 @@
+var path = require('path');
+module.exports = function (callback) {
+    callback(null, {
+        force: true,
+        mode: '644',
+        path: path.resolve(__dirname, '../.work/work-rendered.json'),
+        tmpl: 'json',
+        mkdirp: true,
+        data: {
+            foo: 'bar'
+        }
+    });
+};
