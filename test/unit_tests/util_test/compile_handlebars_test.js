@@ -1,11 +1,11 @@
 /**
- * Test case for compile/compile_handlebars.js
+ * Test case for compiling/compile_handlebars.js
  * Runs with nodeunit.
  */
 
 "use strict";
 
-var compileHandlebars = require('../../../lib/util/compile/compile_handlebars.js');
+var compileHandlebars = require('../../../lib/util/compiling/compile_handlebars.js');
 
 exports['Compile handlebars file.'] = function (test) {
     var tmpl = compileHandlebars('Here are {{toLowercase name}}.', {
