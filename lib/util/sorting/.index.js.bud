@@ -1,14 +1,14 @@
 "use strict";
 
-var leaf = require('../../../lib'),
-    indexJsBud = leaf.factory.indexJsBud;
+var kyo = require('../../../lib'),
+    indexJsBud = kyo.factory.indexJsBud;
 
 module.exports = indexJsBud({
     dirname: __dirname,
     docProperties: false,
     desc: 'Array sorting functions.',
     doc: {
-        module: 'leaf/lib/util/sorting'
+        module: 'kyo/lib/util/sorting'
     }
 });
 

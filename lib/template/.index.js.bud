@@ -1,7 +1,7 @@
 "use strict";
 
-var leaf = require('../../lib'),
-    indexJsBud = leaf.factory.indexJsBud;
+var kyo = require('../../lib'),
+    indexJsBud = kyo.factory.indexJsBud;
 
 module.exports = indexJsBud({
     dirname: __dirname,
@@ -11,7 +11,7 @@ module.exports = indexJsBud({
         'They are designed to be extensible and you can register own template engine and helpers.'
     ].join('\n * '),
     doc: {
-        module: 'leaf/lib/template'
+        module: 'kyo/lib/template'
     },
     pascalPattern: '*_set'
 });

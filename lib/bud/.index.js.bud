@@ -1,7 +1,7 @@
 "use strict";
 
-var leaf = require('../../lib'),
-    indexJsBud = leaf.factory.indexJsBud;
+var kyo = require('../../lib'),
+    indexJsBud = kyo.factory.indexJsBud;
 
 module.exports = indexJsBud({
     dirname: __dirname,
@@ -10,7 +10,7 @@ module.exports = indexJsBud({
         'This module provides interfaces working with bud.'
     ].join('\n * '),
     doc: {
-        module: 'leaf/lib/bud'
+        module: 'kyo/lib/bud'
     },
     pascalPattern:'bud*'
 });

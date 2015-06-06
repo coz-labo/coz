@@ -1,14 +1,14 @@
 "use strict";
 
-var leaf = require('../../../lib'),
-    indexJsBud = leaf.factory.indexJsBud;
+var kyo = require('../../../lib'),
+    indexJsBud = kyo.factory.indexJsBud;
 
 module.exports = indexJsBud({
     dirname: __dirname,
     docProperties: false,
     desc: 'String manipulate functions.',
     doc: {
-        module: 'leaf/lib/util/string'
+        module: 'kyo/lib/util/string'
     }
 });
 

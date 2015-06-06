@@ -7,12 +7,12 @@
 "use strict";
 
 var path = require('path');
-var leaf = require('../../../lib');
+var kyo = require('../../../lib');
 
 var basedir = path.resolve(__dirname, '../../..');
 process.chdir(basedir);
 
-leaf.render([
+kyo.render([
     'docs/**/.*.bud',
     'lib/**/.*.bud'
 ], {
