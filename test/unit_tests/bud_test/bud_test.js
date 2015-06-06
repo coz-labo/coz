@@ -1,18 +1,18 @@
 /**
- * Test case for bud_config.js
+ * Test case for module:leaf/lib/bud.Bud
  * Runs with nodeunit.
  */
 
 "use strict";
 
-var BudConfig = require('../../../lib/printing/bud_config.js');
+var Bud = require('../../../lib/bud/bud.js');
 
 exports['Create bud config.'] = function (test) {
-    var config = new BudConfig({
+    var config = new Bud({
         path: 'foo/bar'
     });
     test.ok(config);
-    var config2 = new BudConfig(config);
+    var config2 = new Bud(config);
     test.ok(config2);
     test.done();
 };
