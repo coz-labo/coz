@@ -1,5 +1,5 @@
 /**
- * Test case for string/camelcase.js
+ * Test case for module:leaf/lib/string.camelcase
  * Runs with nodeunit
  */
 

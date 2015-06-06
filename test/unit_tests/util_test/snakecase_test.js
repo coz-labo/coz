@@ -1,5 +1,5 @@
 /**
- * Test case for string/snakecase.js
+ * Test case for module:leaf/lib/string.snakecase
  * Runs with nodeunit
  */
 
