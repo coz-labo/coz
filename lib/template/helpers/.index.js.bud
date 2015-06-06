@@ -11,6 +11,7 @@ module.exports = indexJsBud({
     ].join('\n * '),
     doc: {
         module: 'leaf/lib/template/helpers'
-    }
+    },
+    pascalPattern: '*'
 });
 

@@ -11,6 +11,6 @@
 "use strict";
 
 module.exports = {
-{{#each modules}}    get {{camelcase name}}() { return require('./{{snakecase name}}'); }{{#if @last}}{{else}},
+{{#each modules}}    get {{#if isPascal}}{{pascalcase name}}{{else}}{{camelcase name}}{{/if}}() { return require('./{{snakecase name}}'); }{{#if @last}}{{else}},
 {{/if}}{{/each}}
 };

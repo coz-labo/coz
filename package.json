@@ -29,6 +29,7 @@
     "commander": "^2.8.1",
     "glob": "^5.0.10",
     "handlebars": "^3.0.3",
+    "minimatch": "^2.0.8",
     "mkdirp": "^0.5.1"
   },
   "devDependencies": {
