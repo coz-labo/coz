@@ -12,6 +12,6 @@ module.exports = indexJsBud({
     doc: {
         module: 'leaf/lib/bud'
     },
-    pascalPattern:'*'
+    pascalPattern:'bud*'
 });
 
