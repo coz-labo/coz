@@ -12,8 +12,5 @@ exports['Resolve a engine.'] = function (test) {
     test.ok(resolveEngine('Handlebars'));
     test.ok(resolveEngine('handlebarsEngine'));
     test.ok(resolveEngine('HandlebarsEngine'));
-    test.throws(function () {
-        resolveEngine('__invalid name__');
-    });
     test.done();
 };
