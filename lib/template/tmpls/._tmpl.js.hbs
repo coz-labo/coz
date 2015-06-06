@@ -1,0 +1,21 @@
+/**
+ * Template for sentencecase {{name}}.
+ * @memberof module:leaf/lib/template/tmpls
+ * @function {{camelcase name}}Tmpl
+ * @param {object} data - Data to render.
+ * @returns {string} rendered string.
+ */
+
+"use strict";
+
+var Handlebars = require('handlebars');
+
+//noinspection UnterminatedStatementJS
+var precompiled = {{{precompiled}}};
+
+/** @lends {{camelcase name}}Tmpl */
+function {{camelcase name}}Tmpl(data) {
+    return precompiled(data);
+}
+
+module.exports = {{camelcase name}}Tmpl;

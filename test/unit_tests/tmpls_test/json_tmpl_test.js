@@ -5,7 +5,7 @@
 
 "use strict";
 
-var jsonTmpl = require('../../../lib/tmpls/json_tmpl.js');
+var jsonTmpl = require('../../../lib/template/tmpls/json_tmpl.js');
 
 exports['Render json.'] = function (test) {
     var rendered = jsonTmpl({foo: 'bar'});

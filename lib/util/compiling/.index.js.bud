@@ -1,0 +1,16 @@
+"use strict";
+
+var leaf = require('../../../lib'),
+    indexJsBud = leaf.factory.indexJsBud;
+
+module.exports = indexJsBud({
+    dirname: __dirname,
+    docProperties: true,
+    desc: [
+        'Utility functions for compile source code.'
+    ].join('\n * '),
+    doc: {
+        module: 'leaf/lib/util/compiling'
+    }
+});
+

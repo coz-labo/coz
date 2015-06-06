@@ -5,10 +5,10 @@
 
 "use strict";
 
-var compileHandlebars = require('../../../lib/util/compiling/compile_handlebars.js');
+var precompileHandlebars = require('../../../lib/util/compiling/precompile_handlebars.js');
 
 exports['Compile handlebars file.'] = function (test) {
-    var tmpl = compileHandlebars('Here are {{toLowercase name}}.', {
+    var tmpl = precompileHandlebars('Here are {{toLowercase name}}.', {
         helpers: {
             toLowercase: function (str) {
                 return str.toLowerCase();
@@ -16,6 +16,5 @@ exports['Compile handlebars file.'] = function (test) {
         }
     });
     test.ok(tmpl);
-    test.equal(tmpl({name: 'Red Apples'}), 'Here are red apples.');
     test.done();
 };

@@ -30,7 +30,8 @@
     "glob": "^5.0.10",
     "handlebars": "^3.0.3",
     "minimatch": "^2.0.8",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "uglify-js": "^2.4.23"
   },
   "devDependencies": {
     "codeclimate-test-reporter": "0.0.4",

@@ -5,7 +5,7 @@
 
 "use strict";
 
-var textTmpl = require('../../../lib/tmpls/text_tmpl.js');
+var textTmpl = require('../../../lib/template/tmpls/text_tmpl.js');
 
 exports['Render text.'] = function (test) {
     var rendered = textTmpl({foo: 'bar'});
