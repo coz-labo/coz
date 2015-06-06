@@ -8,7 +8,8 @@
 
 "use strict";
 
-var Handlebars = require('handlebars');
+var HandlebarsEngine = require('../engines').HandlebarsEngine,
+    Handlebars = HandlebarsEngine.createHandlebars();
 
 //noinspection UnterminatedStatementJS
 var precompiled = {{{precompiled}}};

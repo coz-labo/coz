@@ -5,7 +5,7 @@ var leaf = require('../../../lib'),
 
 module.exports = indexJsBud({
     dirname: __dirname,
-    docProperties: true,
+    docProperties: false,
     desc: 'Array sorting functions.',
     doc: {
         module: 'leaf/lib/util/sorting'
