@@ -8,7 +8,7 @@
 
 "use strict";
 
-var HandlebarsEngine = require('../engines').HandlebarsEngine,
+var HandlebarsEngine = require('../buildin_engines').HandlebarsEngine,
     Handlebars = HandlebarsEngine.createHandlebars();
 
 //noinspection UnterminatedStatementJS

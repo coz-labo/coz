@@ -1,11 +1,11 @@
 /**
- * Test case for module:leaf/lib/template/engines.HandlebarsEngine
+ * Test case for module:leaf/lib/template/buildinEngines.HandlebarsEngine
  * Runs with nodeunit.
  */
 
 "use strict";
 
-var HandlebarsEngine = require('../../../lib/template/engines/handlebars_engine.js');
+var HandlebarsEngine = require('../../../lib/template/buildin_engines/handlebars_engine.js');
 
 
 exports['Construct a engine.'] = function (test) {

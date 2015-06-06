@@ -1,11 +1,11 @@
 /**
- * Test case for module:leaf/lib/template/engines.Engine
+ * Test case for module:leaf/lib/template.Engine
  * Runs with nodeunit.
  */
 
 "use strict";
 
-var Engine = require('../../../lib/template/engines/engine.js');
+var Engine = require('../../../lib/template/engine.js');
 
 
 exports['Construct a engine.'] = function (test) {
