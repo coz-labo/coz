@@ -16,7 +16,6 @@ exports['Compile handlebars file.'] = function (test) {
         }
     });
     test.ok(tmpl);
-    var rendered = tmpl({name: 'Red Apples'});
-    test.equal(rendered, 'Here are red apples.');
+    test.equal(tmpl({name: 'Red Apples'}), 'Here are red apples.');
     test.done();
 };
