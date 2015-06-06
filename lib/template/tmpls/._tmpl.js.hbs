@@ -19,4 +19,10 @@ function {{camelcase name}}Tmpl(data) {
     return precompiled(data);
 }
 
+{{camelcase name}}Tmpl.$name = '{{camelcase name}}';
+{{camelcase name}}Tmpl.$aliases = [
+    '{{camelcase name}}',
+    '{{camelcase name}}Tmpl'
+];
+
 module.exports = {{camelcase name}}Tmpl;

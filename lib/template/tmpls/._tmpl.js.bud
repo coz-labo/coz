@@ -27,6 +27,7 @@ function _tmplBud(filename, callback) {
             var name = path.basename(filename, '.hbs').replace(/\./g, '');
             callback(null, {
                 force: true,
+                mode: '444',
                 path: string.snakecase(name) + '_tmpl.js',
                 data: {
                     precompiled: precompiled,

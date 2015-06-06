@@ -21,6 +21,9 @@ exports['Construct a engine.'] = function (test) {
 
 exports['Define a constructor.'] = function (test) {
     var Defined = Engine.define({
+        $name: 'baz',
+        compile: function () {
+        },
         foo: 'bar'
     });
     test.equal(new Defined().foo, 'bar');
