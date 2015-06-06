@@ -12,3 +12,4 @@ node_modules
 test/.work/*
 docs/coverage
 docs/readme
+docs/.templates
