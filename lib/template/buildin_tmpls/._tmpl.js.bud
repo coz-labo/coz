@@ -24,6 +24,7 @@ function _tmplBud(filename, callback) {
             new HandlebarsEngine().precompile(src, callback);
         },
         function (precompiled, callback) {
+            precompiled = precompiled.replace(/\n/g, "\n\t");
             var name = path.basename(filename, '.hbs').replace(/\./g, '');
             callback(null, {
                 force: true,
