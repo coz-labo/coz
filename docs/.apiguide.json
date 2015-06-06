@@ -1,0 +1,26 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles": true
+    },
+    "systemName": "leaf",
+    "footer": "<script>var h=document.head;h.innerHTML=h.innerHTML+'<link rel=\"shortcut icon\" href=\"../../assets/images/leaf-favicon.png\"/><style>.navbar .dropdown-menu{max-height:500px;}</style>';</script>",
+    "copyright": "okunishitaka.com Copyright © 2015",
+    "navType": "vertical",
+    "theme": "spacelab",
+    "linenums": true,
+    "collapseSymbols": false,
+    "dateFormat": "YYYY-MM-DD",
+    "inverseNav": false
+  },
+  "markdown": {
+    "parser": "gfm",
+    "hardwrap": true
+  }
+}
