@@ -1,7 +1,7 @@
 {
   "name": "coz",
   "version": "1.0.0",
-  "description": "Meta framework for template-driven-development",
+  "description": "Flexible generator.",
   "main": "lib/index.js",
   "scripts": {
     "unittest": "nodeunit",
@@ -14,9 +14,9 @@
     "url": "git+https://github.com/okunishinishi/coz.git"
   },
   "keywords": [
-    "template",
-    "framework",
-    "copy-and-paste"
+    "development",
+    "generator",
+    "sourcecode"
   ],
   "author": "Taka Okunishi",
   "license": "MIT",

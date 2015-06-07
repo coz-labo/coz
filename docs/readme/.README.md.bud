@@ -1,28 +1,86 @@
 "use strict";
 
 var path = require('path'),
+    async = require('async'),
     fs = require('fs');
-var pkg = require('../../package.json');
 
-module.exports = {
-    force: true,
-    mode: '444',
-    data: {
-        pkg: pkg,
-        links: require('./.links.json'),
-        badges: require('./.badges.json'),
-        banners: require('./.banners.json'),
-        get sections() {
-            var dirname = path.resolve(__dirname, 'sections');
-            return fs.readdirSync(dirname).map(function (filename) {
-                return {
-                    name: path.basename(filename, path.extname(filename)),
-                    content: fs.readFileSync(path.resolve(dirname, filename)).toString(),
-                    get title() {
-                        return this.content.split('\n').shift().trim();
-                    }
+var pkg = require('../../package.json'),
+    HandlebarsEngine = require('../../lib/template/buildin_engines').HandlebarsEngine;
+
+var engine = new HandlebarsEngine({});
+
+function _section(filename, callback) {
+    async.waterfall([
+        function (callback) {
+            fs.readFile(filename, callback);
+        },
+        function (content, callback) {
+            engine.compile(String(content), callback);
+        },
+        function (tmpl, callback) {
+            if (!tmpl) {
+                callback(null, null);
+                return;
+            }
+            callback(null, {
+                name: path.basename(filename, path.extname(filename)),
+                content: tmpl({
+                    pkg: pkg
+                }),
+                get lines() {
+                    return this.content.split('\n').map(function (content) {
+                        return {
+                            content: content,
+                            isTopic: content.match(/^###/),
+                            name: content.replace(/[#\?'"]/g, '')
+                        }
+                    });
+                },
+                get title() {
+                    return this.lines.shift().content.trim();
+                },
+                get topics() {
+                    return this.lines.filter(function (line) {
+                        return line.isTopic;
+                    })
                 }
             });
         }
-    }
+    ], callback);
+}
+
+
+function _sections(dirname, callback) {
+    async.waterfall([
+        function (callback) {
+            fs.readdir(dirname, callback);
+        },
+        function (filenames, callback) {
+            async.map(filenames.sort(), function (filename, callback) {
+                _section(path.resolve(dirname, filename), callback);
+            }, callback);
+        }
+    ], callback);
+}
+
+module.exports = function (callback) {
+    async.waterfall([
+        function (callback) {
+            var dirname = path.resolve(__dirname, 'sections');
+            _sections(dirname, callback);
+        },
+        function (sections) {
+            callback(null, {
+                force: true,
+                mode: '444',
+                data: {
+                    pkg: pkg,
+                    links: require('./.links.json'),
+                    badges: require('./.badges.json'),
+                    banners: require('./.banners.json'),
+                    sections: sections
+                }
+            });
+        }
+    ], callback);
 };

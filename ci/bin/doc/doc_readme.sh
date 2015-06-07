@@ -11,5 +11,3 @@ cd ${BASE_DIR}
 
 node ./bin/coz render docs/readme/.*.bud
 cp -f docs/readme/README.md README.md
-
-echo "Generate file: README.md"
