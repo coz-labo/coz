@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>leaf Modules</title>
+	<title>leaf Module: coz/lib/util/compiling</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -170,12 +170,12 @@
 					
 
 
-	<h1 class="page-title">Modules</h1>
+	<h1 class="page-title">Module: coz/lib/util/compiling</h1>
 <section>
 
 <header>
     <h2>
-    
+    coz/lib/util/compiling
     </h2>
     
 </header>
@@ -185,6 +185,8 @@
     
 
     
+        
+            <div class="description"><p>Utility functions for compile source code.</p></div>
         
 
         
@@ -230,48 +232,497 @@
     
 
     
-        <h3 class="subsection-title">Classes</h3>
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         <dl>
-            <dt><a href="coz_lib_bu.BudLogger.html">BudLogger</a></dt>
-            <dd></dd>
+            
+<dt>
+    <h4 class="name" id=".compileHandlebars"><span class="type-signature">&lt;static> </span>compileHandlebars<span class="signature">(source, options)</span><span class="type-signature"> &rarr; {function}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Compile handlebars template string.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
         
-            <dt><a href="coz_lib_bud.BudCompiler.html">BudCompiler</a></dt>
-            <dd></dd>
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>source</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Template source string.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional settings.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>helpers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Handlebars helper functions to register.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+            </td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="http://handlebarsjs.com/">http://handlebarsjs.com/</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>Handlebars template function.</p>
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">function</span>
+
+
+	</dd>
+</dl>
+
+
         
-            <dt><a href="coz_lib_bud.BudLoader.html">BudLoader</a></dt>
-            <dd></dd>
+    
+    
+        <h5>Example</h5>
         
-            <dt><a href="coz_lib_bud.BudWriter.html">BudWriter</a></dt>
-            <dd></dd>
+    <pre class="sunlight-highlight-javascript">var tmpl = compileHandlebars(&#x27;Here are {{toLowercase name}}.&#x27;, {
+         helpers: {
+             toLowercase: function(str){ return str.toLowerCase(); }
+         }
+    });
+    console.log(tmpl({name: &#x27;Red Apples&#x27;}));
+         // -&gt; Here are red apples.</pre>
+
+
+    
+</dd>
+
         
-            <dt><a href="coz_lib_template.EngineSet.html">EngineSet</a></dt>
-            <dd></dd>
+            
+<dt>
+    <h4 class="name" id=".precompileHandlebars"><span class="type-signature">&lt;static> </span>precompileHandlebars<span class="signature">(source, options)</span><span class="type-signature"> &rarr; {function}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Compile handlebars template string.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
         
-            <dt><a href="coz_lib_template.TmplSet.html">TmplSet</a></dt>
-            <dd></dd>
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>source</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Template source string.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional settings.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>helpers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Handlebars helper functions to register.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+            </td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="http://handlebarsjs.com/">http://handlebarsjs.com/</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>Handlebars template function.</p>
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">function</span>
+
+
+	</dd>
+</dl>
+
+
         
-            <dt><a href="coz_lib_template_engines.Engine.html">Engine</a></dt>
-            <dd></dd>
+    
+    
+        <h5>Example</h5>
         
-            <dt><a href="coz_lib_template_engines.HandlebarsEngine.html">HandlebarsEngine</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-coz.Kyo.html">Kyo</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-coz_lib_bud.Bud.html">Bud</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-coz_logging.ConsoleLogger.html">ConsoleLogger</a></dt>
-            <dd></dd>
+    <pre class="sunlight-highlight-javascript">var tmpl = precompileHandlebars(&#x27;Here are {{toLowercase name}}.&#x27;, {
+         helpers: {
+             toLowercase: function(str){ return str.toLowerCase(); }
+         }
+    });
+    console.log(tmpl);
+         // -&gt; Template function string.</pre>
+
+
+    
+</dd>
+
         </dl>
-    
-
-    
-
-    
-
     
 
     
