@@ -15,7 +15,7 @@ Flexible generator, which makes your project clean and maintainable.
 
 <!-- Banner start -->
 
-<a href="my_npm_url"><img style="height:40px;" src="assets/images/coz-banner.png" height="40"></a>&nbsp;
+<a href="my_npm_url"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"></a>&nbsp;
 <!-- Banner end -->
 
 Table of Contents
