@@ -9,4 +9,4 @@ BASE_DIR=$(cd "${HERE}/../../.." && pwd)
 
 cd ${BASE_DIR}
 
-git subtree push --prefix docs origin gh-pages
+git subtree push --prefix docs/ origin gh-pages

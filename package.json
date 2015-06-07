@@ -1,7 +1,7 @@
 {
   "name": "coz",
   "version": "1.0.3",
-  "description": "Flexible generator.",
+  "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib/index.js",
   "bin": {
     "coz": "bin/coz"
@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "codeclimate-test-reporter": "0.0.4",
+    "ink-docstrap": "^0.4.12",
     "istanbul": "^0.3.14",
     "jsdoc": "^3.3.0",
     "nodeunit": "^0.9.1"

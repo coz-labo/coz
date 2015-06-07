@@ -13,3 +13,5 @@ test/.work/*
 docs/coverage
 docs/readme
 ci
+
+.DS_Store
