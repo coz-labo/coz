@@ -13,5 +13,5 @@ cd ${BASE_DIR}
 npm run apiguide -- README.md ${BASE_DIR}/lib/*.js ${BASE_DIR}/lib/*/*.js ${BASE_DIR}/lib/*/*/*.js \
 --verbose \
 --destination ${BASE_DIR}/docs/apiguide \
---template ${BASE_DIR}/docs/.templates/ink-docstrap/template \
+--template ${BASE_DIR}/ci/templates/ink-docstrap/template \
 --configure ${BASE_DIR}/docs/.apiguide.json

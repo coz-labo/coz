@@ -5,9 +5,9 @@ before_install:
 install:
 - npm install
 script:
-- ./ci/bin/build.sh
-- ./ci/bin/test.sh
-- ./ci/bin/cover.sh
+- "./ci/bin/build.sh"
+- "./ci/bin/test.sh"
+- "./ci/bin/cover.sh"
 env:
   global:
-    secure: YcinTrzTFXsLEPak6HjsexHHPdJG7qdTzQSRxuOjAnUxiS44eMZM6U0APl0To8KsSJ/yA2SRkFBvSZ8UV+nPxOFjQ3k+ndLj+CwONazlxI/RmXqwM9PiyjYFRqxXFN9itDdf2E48fUtReelloZy7Q/xmibv7tPyj/2lJWABlvA7Cz+01nnIlHLsW58mamT79LxW9MnO3FIhlsK9k/+15HuHlLVTsehHSvz/RD+0rYDZmzjexDB2HXTXx8AOMWgIX/6CGRYTpWIiHEg6Roqvu/Lz1zU502KxoMZ1J37vgvwQXSwQa/KxcsFK7Iu68aNQXc1wJnIk51nbA0wFs21wpOJdKKU1OJB+yUpHxqQvC/anUJ4EaxatNU0j8GanigWzXSFKtMJn0BH4ShioqhjQfXhbA8eOWDmgrqkcjn+oIeponZx5p2wcJFm3AA5hhhbeoxbbM06DVt9S0Mo90JZapjT3uwNVvpP5yAu8XxFJkfP+UGv/8lI4sU4J6+vf+HqTEAq1/bBo2KqG3ggJflsJvHFkRV9I0Bvek/jkR0lsgqSouoKSwI9g0GzpGNrdsUsZx2w8TkLXI4MbMZcCGi4EFRVgRh5Kx2UMc5RWccJkZ9SsO8pLm9S+Vl93X0f7kTFdcOTxWjIoLf3j1+I/ENYpXlKAhxyzzJPnOCXmLdIBDVog=
+    secure: j9JmDODV/bvashU3KJU1Au1rW8ROuezKjcZS+QXYS7mK9wRs1PyOFrwIL5bDwrXs6KcDRP5Qm3nbOvuOiOKbtdB7q8p1D+yA44tbDz/40KjCnZGV3pUbVFmNQCbTFXbMAn7mo5VpVYXJ/vXM3m8yHGZ06PDdBxNvFLeVU4y/aL+3FQSiRZb0FCUujOIbgqaja1uqIX2TlzvFb/8DRKD4u+TVvxtPrOK6pHcNjlLsg7Ghv1tp0ZIEw9131yrTiT+OWOyYqnBva6Rgq+2Pp9I8mp0CN+Ch8XIkY2IcZpPdEo2wOOopchjki5L+uy9GjsTGJyoIa8LXF58GhLhA6/jqRX8sVBKoEUsmxxtBGcJp3FV1P0n2hM4XL1Dw5WwSo1OP42UXoXrNKfSfWLyu+1j5T/W96CTyI3GmJ3/LXMmXCsyRvVUbfCKUy8v3FW5lqA05+KQ5TsdKNE5W/cFc2QZYHeeOKfuXVQ4y/8tCKM5LhQCcTmaz/lEeNH1M0wrB/LQ15sPi2BpB3b+o+QfX4RKSynqahVKvRUWIRFc5hcFwjmEfCLavDrzPt/aVj2NppF247u2bsWZ8mxcWSPd6Du8f1Jb4XRE6TJPcRWi23qZdHfknVSZdc6IhKBt0EdpOCDwW6jLb3y8EnypF0hGUsB7dtFxzCWEqlLH8++afPLmK5u8=

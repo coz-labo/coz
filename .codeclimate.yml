@@ -1,5 +1,5 @@
 languages:
   JavaScript: true
 exclude_paths:
+  - "docs/*.js"
   - "test/**/*.js"
-  - "test/docs/*.js"
