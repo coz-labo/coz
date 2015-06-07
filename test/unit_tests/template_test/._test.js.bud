@@ -1,0 +1,16 @@
+/**
+ * Bud file for test.
+ */
+
+"use strict";
+
+var coz = require('../../../lib'),
+    nodeunitTestcaseJsBud = coz.factory.nodeunitTestcaseJsBud;
+
+module.exports = nodeunitTestcaseJsBud({
+    src: [
+        __dirname + '/../../../lib/template/*.js',
+        __dirname + '/../../../lib/template/buildin_tmpls/*.js'
+    ],
+    dest: __dirname
+});

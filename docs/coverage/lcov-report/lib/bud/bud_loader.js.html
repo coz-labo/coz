@@ -15,10 +15,10 @@
 <div class="header high">
     <h1>Code coverage report for <span class="entity">lib/bud/bud_loader.js</span></h1>
     <h2>
-        Statements: <span class="metric">81.25% <small>(39 / 48)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">50% <small>(6 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">85% <small>(17 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">81.25% <small>(39 / 48)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">96% <small>(48 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">58.33% <small>(7 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">95.24% <small>(20 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">96% <small>(48 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">lib/bud/</a> &#187; bud_loader.js</div>
@@ -174,7 +174,10 @@
 147
 148
 149
-150</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+150
+151
+152
+153</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -194,7 +197,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">3</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -247,31 +250,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">2</span>
@@ -394,7 +400,10 @@ BudLoader.prototype = {
                     } catch (catched) {
 <span class="cstat-no" title="statement not covered" >                        err = "[BudLoader]" + catched;</span>
                     } finally {
-                        bud.src = path.resolve(src);
+                        bud = [].concat(bud).map(function (bud) {
+                            bud.src = path.resolve(src);
+                            return bud
+                        });
                         callback(err, bud);
                     }
                 }
@@ -411,16 +420,16 @@ BudLoader.prototype = {
         var s = this;
         _concatBuds(bud, function (bud, callback) {
             switch (typeof(bud)) {
-<span class="branch-0 cbranch-no" title="branch not covered" >                case 'function':</span>
-<span class="cstat-no" title="statement not covered" >                    var load = bud;</span>
-<span class="cstat-no" title="statement not covered" >                    load(<span class="fstat-no" title="function not covered" >function (err, bud) {</span></span>
-<span class="cstat-no" title="statement not covered" >                        bud = [].concat(bud).map(<span class="fstat-no" title="function not covered" >function (bud) {</span></span>
-<span class="cstat-no" title="statement not covered" >                            copying.fallbackCopy(load, bud);</span>
-<span class="cstat-no" title="statement not covered" >                            return bud;</span>
+                case 'function':
+                    var load = bud;
+                    load(function (err, bud) {
+                        bud = [].concat(bud).map(function (bud) {
+                            copying.fallbackCopy(load, bud);
+                            return bud;
                         });
-<span class="cstat-no" title="statement not covered" >                        callback(err, bud)</span>
+                        callback(err, bud)
                     });
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+                    break;
                 default:
                     callback(null, bud);
                     break;
@@ -477,7 +486,7 @@ module.exports = BudLoader;
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 07 2015 12:19:55 GMT+0900 (JST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 07 2015 14:42:17 GMT+0900 (JST)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

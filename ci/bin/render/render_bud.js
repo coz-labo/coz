@@ -14,7 +14,8 @@ process.chdir(basedir);
 
 coz.render([
     'docs/**/.*.bud',
-    'lib/**/.*.bud'
+    'lib/**/.*.bud',
+    'test/**/.*.bud'
 ], {
     verbose: true
 }, function (e) {

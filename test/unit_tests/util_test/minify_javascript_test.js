@@ -13,3 +13,8 @@ exports['Minify javascript.'] = function (test) {
     test.ok(minified);
     test.done();
 };
+
+exports['Minify empty.'] = function (test) {
+    test.equal(minifyJavascript(null), null);
+    test.done();
+};

@@ -15,3 +15,12 @@ exports['Load a bud.'] = function (test) {
         test.done();
     });
 };
+
+exports['Evaluate a bud.'] = function (test) {
+    new BudLoader()._evaluateBud(function (callback) {
+        callback(null, {});
+    }, function (err) {
+        test.ifError(err);
+        test.done();
+    });
+};

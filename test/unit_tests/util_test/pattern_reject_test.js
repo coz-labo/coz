@@ -1,5 +1,5 @@
 /**
- * Test case for sorting/pattern_reject.js
+ * Test case for module:coz/lib/util/filtering.patternReject
  * Runs with nodeunit
  */
 

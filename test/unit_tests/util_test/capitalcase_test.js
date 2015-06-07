@@ -9,6 +9,7 @@ var capitalcase = require('../../../lib/util/string/capitalcase.js');
 
 
 exports['Convert to camel case.'] = function (test) {
+    test.equal(capitalcase(""), "");
     test.equal(capitalcase('fooBar'), 'FooBar');
     test.done();
 

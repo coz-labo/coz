@@ -36,6 +36,13 @@ exports['Register helpers.'] = function (test) {
     test.done();
 };
 
+exports['Precompile template.'] = function (test) {
+    new HandlebarsEngine().precompile('{{name}}', function (err) {
+        test.ifError(err);
+        test.done();
+    });
+};
+
 exports['Compile template.'] = function (test) {
     var engine = new HandlebarsEngine({});
     engine.compile('Here are {{lowercase name}}.', function (err, tmpl) {
@@ -45,6 +52,18 @@ exports['Compile template.'] = function (test) {
         test.done();
     });
 };
+
+
+exports['Handle async error.'] = function (test) {
+    new HandlebarsEngine()._tryAsync(function () {
+        throw new Error('foo');
+    }, function (err) {
+        test.ok(!!err);
+        test.done();
+    })
+};
+
+
 exports['Run buildin helpers.'] = function (test) {
     var helpers = HandlebarsEngine.buildinHelpers;
     test.ok(helpers);

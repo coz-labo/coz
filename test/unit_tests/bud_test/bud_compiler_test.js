@@ -15,3 +15,41 @@ exports['Compile a bud.'] = function (test) {
         test.done();
     });
 };
+
+exports['Read tmpl from source.'] = function (test) {
+    new BudCompiler()._prepareBudTmpl({
+        tmpl: __filename
+    }, function (err) {
+        test.ifError(err);
+        test.done();
+    });
+};
+
+exports['Handle tmpl error.'] = function (test) {
+    new BudCompiler()._prepareBudTmpl({}, function (err) {
+        test.ok(!!err);
+        test.done();
+    });
+};
+
+exports['Handle engine error.'] = function (test) {
+    new BudCompiler()._prepareBudEngine({}, function (err) {
+        test.ok(!!err)
+        test.done();
+    })
+};
+
+exports['Compile template string.'] = function (test) {
+    new BudCompiler()._compileBudTmpl({
+        tmpl: '{{name}}',
+        engine: {
+            compile: function (tmpl, callback) {
+                test.ok(!!tmpl);
+                callback(null);
+            }
+        }
+    }, function (err) {
+        test.ifError(err);
+        test.done();
+    });
+};

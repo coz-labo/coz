@@ -1,5 +1,5 @@
 /**
- * Test case for sorting/string_sort.js
+ * Test case for module:coz/lib/util/sorting.stringSort
  * Runs with nodeunit
  */
 
@@ -16,5 +16,12 @@ exports['Sort string.'] = function (test) {
         ['c', 'b', 'a'],
         ['a', 'c', 'b'].sort(stringSort({desc: true}))
     );
+    test.done();
+};
+
+exports['Try invalid args.'] = function (test) {
+    test.throws(function () {
+        stringSort('foo', 'bar');
+    });
     test.done();
 };

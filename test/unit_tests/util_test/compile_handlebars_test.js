@@ -8,6 +8,7 @@
 var compileHandlebars = require('../../../lib/util/compiling/compile_handlebars.js');
 
 exports['Compile handlebars file.'] = function (test) {
+    test.equal(compileHandlebars(null), null);
     var tmpl = compileHandlebars('Here are {{toLowercase name}}.', {
         helpers: {
             toLowercase: function (str) {
