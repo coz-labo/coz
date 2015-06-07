@@ -27,6 +27,8 @@ Table of Contents
     - [Requirements](#02-howto--requirements)
     - [Install](#02-howto--install)
     - [Simple example](#02-howto--simple-example)
+- [Bud](#03-bud)
+    - [Supported properties for a bud.](#03-bud--supported-properties-for-a-bud-)
 - [Links](#09-links)
     - [Documents](#09-links--documents)
     - [Reports](#09-links--reports)
@@ -113,6 +115,41 @@ Step03 **Render file**
 ```bash
 $ coz render .*.bud
 ```
+<a name="03-bud"></a>
+Bud
+---------
+
+`.bud` file contains all meta data of file to generate.
+They are actually a javascript file and could be written nodejs format.
+
+```Javascript
+
+module.exports = {
+    path: 'my_file.txt',
+    tmpl: '.my_file.txt.hbs',
+    data: require('./.my_data')
+}
+
+```
+
+
+<a name="03-bud--supported-properties-for-a-bud-"></a>
+### Supported properties for a bud.
+
+Name | Type | Description
+----- | ----- | -----
+engine | string&amp;#124;object | Template compile function or name of function |
+cwd | string | Working directory path |
+data | object | Data to template render with |
+done | boolean | Done to writeout or not |
+mkdirp | boolean | Make parent directories if needed |
+setup | object | Properties to set engine |
+force | boolean | Should overwrite file when already exists, or not |
+mode | string&amp;#124;number | File permission |
+path | string | Destination file path. If not provided, guess from bud file path |
+src | string | Bud source file path |
+tmpl | string&amp;#124;function | Template file path or registered template name or template function |
+
 <a name="09-links"></a>
 Links
 ------

@@ -25,7 +25,20 @@ function _section(filename, callback) {
             callback(null, {
                 name: path.basename(filename, path.extname(filename)),
                 content: tmpl({
-                    pkg: pkg
+                    pkg: pkg,
+                    get bud() {
+                        var bud = require('../../lib/bud/.bud.json');
+                        return {
+                            get properties() {
+                                return Object.keys(bud.properties).map(function (key) {
+                                    var data = bud.properties[key];
+                                    data.name = key;
+                                    data.type = String(data.type).replace(/\|/g, '&#124;');
+                                    return data;
+                                });
+                            }
+                        }
+                    }
                 }),
                 get lines() {
                     return this.content.split('\n').map(function (content) {
