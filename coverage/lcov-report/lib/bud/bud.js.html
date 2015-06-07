@@ -120,7 +120,41 @@
 93
 94
 95
-96</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,7 +177,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">11</span>
 <span class="cline-any cline-yes">11</span>
@@ -151,8 +184,41 @@
 <span class="cline-any cline-yes">11</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -183,9 +249,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">121</span>
-<span class="cline-any cline-yes">34</span>
+<span class="cline-any cline-yes">36</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">87</span>
+<span class="cline-any cline-yes">85</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">11</span>
@@ -216,19 +282,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Bud configuration.
- * @constructor Bud
+ * Bud constructor.
+ * A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.
  * @memberof module:coz/lib/bud
- * @param {object} config - Configuration values.
- * @param {string|function} [config.engine='handlebars'] - Template compile function or name of function.
- * @param {string|cwd} [config.cwd=process.cwd()] - Current working directory.
- * @param {object} - [config.data] - Rendering values.
- * @param {object} - [config.helpers] - Rendering helpers.
- * @param {boolean} [config.force=false] - Force to write or not.
+ * @inner
+ * @constructor Bud
+ * @param {string|object} [config.engine='handlebars'] - Template compile function or name of function.
+ * @param {string} [config.cwd=process.cwd()] - Working directory path.
+ * @param {object} config.data - Data to template render with.
+ * @param {boolean} [config.mkdirp] - Make parent directories if needed.
+ * @param {object} [config.setup] - Properties to set engine.
+ * @param {boolean} [config.force=false] - Should overwrite file when already exists, or not.
  * @param {string|number} [config.mode='644'] - File permission.
- * @param {!string} config.path - File path to render.
- * @param {string} config.src - Source file path of bud.
- * @param {string|function} [config.tmpl='json'] - Template file path or template function.
+ * @param {string} [config.path] - Destination file path. If not provided, guess from bud file path.
+ * @param {string|function} config.tmpl='json' - Template file path or registered template name or template function.
  */
 &nbsp;
 "use strict";
@@ -237,8 +304,7 @@ var core = require('../core'),
     copying = require('../util/copying'),
     assert = core.assert;
 &nbsp;
-&nbsp;
-/** @lends Bud */
+/** @lends module:coz/lib/bud~Bud */
 function Bud(config) {
     var s = this;
     copying.copy(config, s);
@@ -246,32 +312,65 @@ function Bud(config) {
     s.validate();
 }
 &nbsp;
-&nbsp;
 Bud.prototype = {
-    /** Date when rendered last time. */
-    at: undefined,
-    /** Template compile engine */
+    /**
+     * Template compile function or name of function
+     * @type {string|object}
+     */
     engine: 'handlebars',
-    /** Data to render with template */
-    data: undefined,
-    /** Done or not */
-    done: false,
-    /** Should mkdirp when render */
-    mkdirp: false,
-    /** File permission */
-    mode: '644',
-    /** File output */
-    out: undefined,
-    /** File name to write */
-    path: undefined,
-    /** Bud file name */
-    src: undefined,
-    /** Template name */
-    tmpl: 'json',
-    /** Working directory path */
+    /**
+     * Working directory path
+     * @type {string}
+     */
     cwd: process.cwd(),
     /**
+     * Data to template render with
+     * @type {object}
+     */
+    data: undefined,
+    /**
+     * Done to writeout or not
+     * @type {boolean}
+     */
+    done: undefined,
+    /**
+     * Make parent directories if needed
+     * @type {boolean}
+     */
+    mkdirp: undefined,
+    /**
+     * Properties to set engine
+     * @type {object}
+     */
+    setup: undefined,
+    /**
+     * Should overwrite file when already exists, or not
+     * @type {boolean}
+     */
+    force: false,
+    /**
+     * File permission
+     * @type {string|number}
+     */
+    mode: '644',
+    /**
+     * Destination file path. If not provided, guess from bud file path
+     * @type {string}
+     */
+    path: undefined,
+    /**
+     * Bud source file path
+     * @type {string}
+     */
+    src: undefined,
+    /**
+     * Template file path or registered template name or template function
+     * @type {string|function}
+     */
+    tmpl: 'json',
+    /**
      * Validate this configuration.
+     * @throws Will throw an error if configuration invalid.
      */
     validate: function () {
         var s = this;
@@ -283,24 +382,24 @@ Bud.prototype = {
             assert(!!~types.indexOf(typeof(value)), msg);
         }
 &nbsp;
-        _assertType(s.cwd, ['string'], 'bud.cwd should be string or function.');
-        _assertType(s.engine, ['string', 'object'], 'bud.engine should be string or object.');
+        _assertType(s.engine, ['string' ,'object'], 'bud.engine should be string|object.');
+        _assertType(s.cwd, ['string'], 'bud.cwd should be string.');
         _assertType(s.data, ['object'], 'bud.data should be object.');
-        _assertType(s.done, ['boolean'], 'bud.data should be boolean.');
-        _assertType(s.helpers, ['object'], 'bud.helpers should be object.');
-        _assertType(s.force, ['boolean', 'number'], 'bud.force should be boolean for number.');
-        _assertType(s.out, ['string'], 'bud.out should be string.');
-        _assertType(s.path, ['string'], 'bud.path should be string.');
+        _assertType(s.done, ['boolean'], 'bud.done should be boolean.');
         _assertType(s.mkdirp, ['boolean'], 'bud.mkdirp should be boolean.');
-        _assertType(s.mode, ['string', 'number'], 'bud.mode should be string or number.');
-        _assertType(s.tmpl, ['string', 'function'], 'bud.tmpl should be string or function.');
+        _assertType(s.setup, ['object'], 'bud.setup should be object.');
+        _assertType(s.force, ['boolean'], 'bud.force should be boolean.');
+        _assertType(s.mode, ['string' ,'number'], 'bud.mode should be string|number.');
+        _assertType(s.path, ['string'], 'bud.path should be string.');
+        _assertType(s.src, ['string'], 'bud.src should be string.');
+        _assertType(s.tmpl, ['string' ,'function'], 'bud.tmpl should be string|function.');
     }
 };
 &nbsp;
 /**
  * Create new buds.
  * @param {object} config - Bud config.
- * @returns {Bud} - A new bud.
+ * @returns {module:coz/lib/bud~Bud} - A new bud instance.
  */
 Bud.new = function (config) {
     if (typeof(config) === 'string') {
@@ -315,7 +414,7 @@ module.exports = Bud;</pre></td></tr>
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 07 2015 16:19:32 GMT+0900 (JST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jun 08 2015 00:41:07 GMT+0900 (JST)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>
