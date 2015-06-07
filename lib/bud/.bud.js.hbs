@@ -1,9 +1,9 @@
 /**
  * Bud constructor.
  * {{about}}
+ * @memberof module:coz/lib/bud
  * @inner
- * @constructor Bud
- * @memberof module:coz/lib/bud{{#each properties}}{{#if configurable}}
+ * @constructor Bud{{#each properties}}{{#if configurable}}
  * @param {{braces type}} {{#if optional}}[{{/if}}config.{{name}}{{#if default}}={{{default}}}{{/if}}{{#if optional}}]{{/if}} - {{description}}.{{/if}}{{/each}}
  */
 
@@ -23,11 +23,15 @@ function Bud(config) {
 
 Bud.prototype = {
 {{#each properties}}
-    /** {{description}} */
+    /**
+     * {{description}}
+     * @type {{braces type}}
+     */
     {{name}}: {{#if default}}{{{default}}}{{else}}undefined{{/if}},
 {{/each}}
     /**
      * Validate this configuration.
+     * @throws Will throw an error if configuration invalid.
      */
     validate: function () {
         var s = this;
@@ -47,7 +51,7 @@ Bud.prototype = {
 /**
  * Create new buds.
  * @param {object} config - Bud config.
- * @returns {Bud} - A new bud.
+ * @returns {module:coz/lib/bud~Bud} - A new bud instance.
  */
 Bud.new = function (config) {
     if (typeof(config) === 'string') {
