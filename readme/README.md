@@ -13,10 +13,10 @@ coz
 
 Flexible generator, which makes your project clean and maintainable.
 
-<!-- Banner start -->
 
-<a href="my_npm_url"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"></a>&nbsp;
-<!-- Banner end -->
+<a href="https://github.com/okunishinishi/coz#readme"><img style="height:128px;" src="assets/images/coz-banner.jpg" height="128"/></a>
+
+<img style="height:128px;" src="assets/images/coz-outline.jpg" height="128">
 
 Table of Contents
 -----
@@ -43,18 +43,15 @@ About coz
 <a name="01-about--whats-this"></a>
 ### What's this?
 
-File generator.
-coz, you can keep your source code maintainable and readable.
+File generator tool for autocoding.
+
+Create a *.bud* file with contains meta data of file.
+
 
 
 
 <a name="01-about--why-this"></a>
 ### Why this?
-
-+ No more meta programming
-+ Any programming language
-+ Extensible
-+ Fast
 
 
 <a name="02-howto"></a>
