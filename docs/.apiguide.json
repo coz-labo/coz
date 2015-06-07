@@ -9,8 +9,8 @@
     "default": {
       "outputSourceFiles": true
     },
-    "systemName": "leaf",
-    "footer": "<script>var h=document.head;h.innerHTML=h.innerHTML+'<link rel=\"shortcut icon\" href=\"../../assets/images/leaf-favicon.png\"/><style>.navbar .dropdown-menu{max-height:500px;}</style>';</script>",
+    "systemName": "coz",
+    "footer": "<script>var h=document.head;h.innerHTML=h.innerHTML+'<link rel=\"shortcut icon\" href=\"../../assets/images/coz-favicon.png\"/><style>.navbar .dropdown-menu{max-height:500px;}</style>';</script>",
     "copyright": "okunishitaka.com Copyright © 2015",
     "navType": "vertical",
     "theme": "spacelab",

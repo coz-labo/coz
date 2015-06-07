@@ -1,0 +1,23 @@
+/**
+ * This is a minimum example of coz bud file.
+ * As you see, just to properties are required as bud.
+ * Coz render file content from `tmpl` and `data`, and write into file.
+ * Since destination file name is not given, coz guesses it from name of file.
+ *  `.01.minimum_txt.txt.bud` -> `01.minimum_txt.txt`
+ */
+
+"use strict";
+
+var bud = {
+    tmpl: function (data) {
+        return "My name is __name__".replace('__name__', data.name);
+    },
+    data: {
+        'name': 'John'
+    }
+};
+
+module.exports = bud;
+
+
+

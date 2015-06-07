@@ -27,6 +27,13 @@ Table of Contents
     - [Requirements](#02-howto--requirements)
     - [Install](#02-howto--install)
     - [Simple example](#02-howto--simple-example)
+- [Links](#09-links)
+    - [Documents](#09-links--documents)
+    - [Reports](#09-links--reports)
+- [License](#10-license)
+- [About this project](#11-project)
+    - [Author](#11-project--author)
+    - [Donation](#11-project--donation)
 
 
 <a name="01-about"></a>
@@ -102,6 +109,44 @@ Step03 **Render file**
 ```bash
 $ coz render .*.bud
 ```
+<a name="09-links"></a>
+Links
+------
+
+<a name="09-links--documents"></a>
+### Documents
+
++ [APIGUIDE][my_apiguide_url]
+
+<a name="09-links--reports"></a>
+### Reports
+
++ [Build Status @travis][my_travis_url]
++ [Analysis Result @codeclimate][my_codeclimate_url]
++ [Issues @github](https://github.com/okunishinishi/coz/issues)
++ [Coverage Report][my_coverage_url]
+
+<a name="10-license"></a>
+License
+-------
+This software is released under the [MIT License][my_license_url].
+
+<a name="11-project"></a>
+About this project
+--------
+
+<a name="11-project--author"></a>
+### Author
+
++ [Taka Okunishi](http://okunishitaka.com)
+
+<a name="11-project--donation"></a>
+### Donation
+
+Support this project and [others by okunishinishi][my_gittip_url] via [gittip][my_gittip_url].
+
+[<img src="https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png" alt="Support via Gittip"/>][my_gittip_url]
+
 
 <!-- Links start -->
 
@@ -113,6 +158,7 @@ $ coz render .*.bud
 [my_codeclimate_badge_url]: http://img.shields.io/codeclimate/github/okunishinishi/coz.svg?style=flat
 [my_codeclimate_coverage_badge_url]: http://img.shields.io/codeclimate/coverage/github/okunishinishi/coz.svg?style=flat
 [my_apiguide_url]: http://okunishinishi.github.io/coz/apiguide/
+[my_coverage_url]: http://okunishinishi.github.io/coz/coverage/lcov-report
 [my_coverage_report_url]: http://okunishinishi.github.io/coz/coverage/lcov-report/
 [my_gittip_url]: http://www.gittip.com/okunishinishi/
 [my_gittip_budge_url]: http://img.shields.io/gittip/okunishinishi.svg?style=flat

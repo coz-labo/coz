@@ -12,3 +12,4 @@ cd ${BASE_DIR}
 node ./ci/bin/render/render_bud.js
 
 bash ./ci/bin/doc/doc_readme.sh
+bash ./examples/render_examples.sh
