@@ -45,3 +45,19 @@ exports['Compile template.'] = function (test) {
         test.done();
     });
 };
+exports['Run buildin helpers.'] = function (test) {
+    var helpers = HandlebarsEngine.buildinHelpers;
+    test.ok(helpers);
+    test.equal(helpers.basename(null), "null");
+    test.equal(helpers.basename("foo/bar.js"), "bar.js");
+    test.equal(helpers.camelcase("foo_bar"), "fooBar");
+    test.equal(helpers.dirname("foo/bar.js"), "foo");
+    test.equal(helpers.extname("foo/bar.js"), ".js");
+    test.equal(helpers.lowercase("Foo"), "foo");
+    test.equal(helpers.snakecase("fooBar"), "foo_bar");
+    test.equal(helpers.pascalcase("foo_bar"), "FooBar");
+    test.equal(helpers.sentencecase("foo_bar"), "Foo bar");
+    test.equal(helpers.spinalcase("foo_bar"), "foo-bar");
+    test.equal(helpers.uppercase("foo_bar"), "FOO_BAR");
+    test.done();
+};
