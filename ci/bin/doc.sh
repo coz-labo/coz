@@ -12,3 +12,5 @@ cd ${BASE_DIR}
 bash ./ci/bin/build.sh
 bash ./ci/bin/doc/doc_apiguide.sh
 bash ./ci/bin/doc/doc_readme.sh
+
+cp assets/images/coz-favicon.png docs/favicon.png
