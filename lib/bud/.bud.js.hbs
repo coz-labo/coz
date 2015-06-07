@@ -1,6 +1,7 @@
 /**
  * Bud constructor.
  * {{about}}
+ * @inner
  * @constructor Bud
  * @memberof module:coz/lib/bud{{#each properties}}{{#if configurable}}
  * @param {{braces type}} {{#if optional}}[{{/if}}config.{{name}}{{#if default}}={{{default}}}{{/if}}{{#if optional}}]{{/if}} - {{description}}.{{/if}}{{/each}}
@@ -12,7 +13,7 @@ var core = require('../core'),
     copying = require('../util/copying'),
     assert = core.assert;
 
-/** @lends Bud */
+/** @lends module:coz/lib/bud~Bud */
 function Bud(config) {
     var s = this;
     copying.copy(config, s);

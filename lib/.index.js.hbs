@@ -1,9 +1,10 @@
 /**
- * @fileOverview {{pkg.description}}
+ * @overview {{pkg.description}}
  * @version {{pkg.version}}
  * @module {{pkg.name}}
- * @author {{pkg.author.name}}
+ * @author {@link {{pkg.author.url}}|{{pkg.author.name}}{{{END_BRACE}}}
  * @license {{pkg.license}}
+ * @see {{pkg.homepage}}
 {{#each pkg.dependencies}} * @requires {@link https://www.npmjs.org/package/{{@key}}|{{@key}}@{{{@this}}}{{{../END_BRACE}}}
 {{/each}}
  */
@@ -33,7 +34,6 @@ coz.{{camelcase @key}} = require('./{{snakecase @key}}');
 
 {{/each}}
 
-
 //---------------------
 // Aliases
 //---------------------
@@ -47,3 +47,4 @@ coz.{{camelcase @key}} = require('./{{snakecase @key}}');
 coz.{{camelcase @key}} = {{aliasOf}};
 
 {{/each}}
+

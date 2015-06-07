@@ -10,6 +10,8 @@ BASE_DIR=$(cd "${HERE}/../../.." && pwd)
 
 cd ${BASE_DIR}
 
+rm -rf docs/apiguide
+
 npm run apiguide -- README.md ${BASE_DIR}/lib/*.js ${BASE_DIR}/lib/*/*.js ${BASE_DIR}/lib/*/*/*.js \
 --verbose \
 --destination ${BASE_DIR}/docs/apiguide \

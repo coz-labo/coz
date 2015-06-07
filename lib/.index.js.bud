@@ -15,7 +15,9 @@ module.exports = {
             return {
                 bud: 'Module to handle bud files',
                 template: 'Module to handle templates',
-                util: 'Module for utility functions'
+                util: 'Module for utility functions',
+                ext: 'External modules installed via npm',
+                core: 'Nodejs build modules'
             }
         },
         get aliases() {
