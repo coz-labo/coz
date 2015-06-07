@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>coz</head>
-<style></style>
+<meta charset="UTF-8"/>
 <style>
         body {
     padding: 50px;
-    color: #555;
+    color: #666;
+    font-family: sans-serif;
+    font-weight: 100 !important;
+    font-size: 24px;
 }
 
 .container {
@@ -13,27 +15,61 @@
     position: relative;
     margin: 0 auto;
 }
+
+a {
+    color: #4ec600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header h1 {
+}
+
+article {
+    max-width: 640px;
+}
+
+th, td {
+    padding: 2px 4px;
+}
+
+footer {
+    padding: 10px 4px;
+    border-top: 1px solid #F5F5F5;
+    margin: 40px 10px 0;
+    color: #999;
+}
+
+footer .nav-item {
+    display: inline-block;
+    margin: 0 10px;
+}
 </style>
+<title>coz</title>
+
 <body>
 <header>
-
+    <h1>documents</h1>
 </header>
 <main>
     <div class="container">
-        <table>
-            <tbody>
-            <tr>
-                <th>
-                    <a href="./apiguide/index.html">API guide</a>
-                </th>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
+        <ul>
+            <li><a href="./apiguide/index.html">API Guide</a></li>
+            <li><a href="./coverage/lcov-report/index.html">Coverage Report</a></li>
+        </ul>
     </div>
 </main>
 <footer>
-
+    <div class="container">
+        <span>
+            @ 2015 Taka Okunishi
+        </span>
+        <span><a class="nav-item" href="https://github.com/okunishinishi/coz#readme">Homepage</a></span>
+    </div>
 </footer>
 </body>
 </html>

@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>{{pkg.name}}</head>
-<style></style>
+<meta charset="UTF-8"/>
 <style>
         {{{style}}}
 </style>
+<title>{{pkg.name}}</title>
+
 <body>
 <header>
-
+    <h1>documents</h1>
 </header>
 <main>
     <div class="container">
-        <table>
-            <tbody>
-            <tr>
-                <th>
-                    <a href="./apiguide/index.html">API guide</a>
-                </th>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
+        <ul>
+            <li><a href="./apiguide/index.html">API Guide</a></li>
+            <li><a href="./coverage/lcov-report/index.html">Coverage Report</a></li>
+        </ul>
     </div>
 </main>
 <footer>
-
+    <div class="container">
+        <span>
+            @ 2015 Taka Okunishi
+        </span>
+        <span><a class="nav-item" href="{{pkg.homepage}}">Homepage</a></span>
+    </div>
 </footer>
 </body>
 </html>

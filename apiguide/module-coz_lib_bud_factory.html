@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>coz Module: coz/lib/template/tmpls</title>
+	<title>coz Module: coz/lib/bud/factory</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -170,12 +170,12 @@
 					
 
 
-	<h1 class="page-title">Module: coz/lib/template/tmpls</h1>
+	<h1 class="page-title">Module: coz/lib/bud/factory</h1>
 <section>
 
 <header>
     <h2>
-    coz/lib/template/tmpls
+    coz/lib/bud/factory
     </h2>
     
 </header>
@@ -186,11 +186,86 @@
 
     
         
-            <div class="description"><p>Predefined template modules.</p></div>
+            <div class="description"><p>Bud instance factories.</p></div>
         
 
         
 <dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>indexJsBud</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>indexJsBud module.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>nodeunitTestcaseJsBud</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>nodeunitTestcaseJsBud module.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
 	
 
 	
@@ -243,7 +318,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id=".indexjsTmpl"><span class="type-signature">&lt;static> </span>indexjsTmpl<span class="signature">(data)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id=".indexJsBud"><span class="type-signature">&lt;static> </span>indexJsBud<span class="signature">(config)</span><span class="type-signature"> &rarr; {<a href="Bud.html">Bud</a>}</span></h4>
     
     
 </dt>
@@ -251,7 +326,7 @@
     
     
     <div class="description">
-        <p>Template for sentencecase indexjs.</p>
+        <p>Bud for index.js</p>
     </div>
     
 
@@ -285,7 +360,7 @@
 
         <tr>
             
-                <td class="name"><code>data</code></td>
+                <td class="name"><code>config</code></td>
             
 
             <td class="type">
@@ -301,7 +376,102 @@
 
             
 
-            <td class="description last"><p>Data to render.</p></td>
+            <td class="description last"><p>Index js configuration.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>dirname</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Directory name.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>doc</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Document annotations.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>docProperties</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Should doc property or not.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+            </td>
         </tr>
 
 	
@@ -355,7 +525,9 @@
     
             
 <div class="param-desc">
-    <p>rendered string.</p>
+    <ul>
+<li>Bud for index.js</li>
+</ul>
 </div>
 
 
@@ -366,7 +538,7 @@
 	</dt>
 	<dd>
 		
-<span class="param-type">string</span>
+<span class="param-type"><a href="Bud.html">Bud</a></span>
 
 
 	</dd>
@@ -381,7 +553,7 @@
         
             
 <dt>
-    <h4 class="name" id=".nodeunitTestcasejsTmpl"><span class="type-signature">&lt;static> </span>nodeunitTestcasejsTmpl<span class="signature">(data)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id=".nodeunitTestcaseJsBud"><span class="type-signature">&lt;static> </span>nodeunitTestcaseJsBud<span class="signature">(config)</span><span class="type-signature"> &rarr; {<a href="Bud.html">Bud</a>}</span></h4>
     
     
 </dt>
@@ -389,7 +561,7 @@
     
     
     <div class="description">
-        <p>Template for sentencecase nodeunit_testcasejs.</p>
+        <p>Bud for nodeunit testcase.</p>
     </div>
     
 
@@ -423,7 +595,7 @@
 
         <tr>
             
-                <td class="name"><code>data</code></td>
+                <td class="name"><code>config</code></td>
             
 
             <td class="type">
@@ -439,7 +611,82 @@
 
             
 
-            <td class="description last"><p>Data to render.</p></td>
+            <td class="description last"><p>Nodeunit testcase configuration.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>src</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Source file name pattern.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>dest</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Destination directory path.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+            </td>
         </tr>
 
 	
@@ -493,7 +740,9 @@
     
             
 <div class="param-desc">
-    <p>rendered string.</p>
+    <ul>
+<li>Bud for nodeunit testcase.</li>
+</ul>
 </div>
 
 
@@ -504,7 +753,7 @@
 	</dt>
 	<dd>
 		
-<span class="param-type">string</span>
+<span class="param-type"><a href="Bud.html">Bud</a></span>
 
 
 	</dd>

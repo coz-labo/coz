@@ -7,6 +7,7 @@
   "my_codeclimate_badge_url": "http://img.shields.io/codeclimate/github/okunishinishi/coz.svg?style=flat",
   "my_codeclimate_coverage_badge_url": "http://img.shields.io/codeclimate/coverage/github/okunishinishi/coz.svg?style=flat",
   "my_apiguide_url": "http://okunishinishi.github.io/coz/apiguide/",
+  "my_coverage_url": "http://okunishinishi.github.io/coz/coverage/lcov-report",
   "my_coverage_report_url": "http://okunishinishi.github.io/coz/coverage/lcov-report/",
   "my_gittip_url": "http://www.gittip.com/okunishinishi/",
   "my_gittip_budge_url": "http://img.shields.io/gittip/okunishinishi.svg?style=flat",
