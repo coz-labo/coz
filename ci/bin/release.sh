@@ -21,7 +21,7 @@ case ${answer:0:1} in
         bash ./ci/bin/deploy.sh
         node ./ci/bin/version/versionup.js
         npm publish .
-        node .ci/bin/tag/tag_git.js
+        node ./ci/bin/tag/tag_git.js
         git add . -A
         git commit -m 'Version up'
         git push
