@@ -12,6 +12,11 @@ module.exports = indexJsBud({
     doc: {
         module: 'coz/lib/bud'
     },
-    pascalPattern:'bud*'
+    memberDocs: {
+        factory: {
+            "description": "This is an alias for {@link module:coz/lib/bud/factory}."
+        }
+    },
+    pascalPattern: 'bud*'
 });
 
