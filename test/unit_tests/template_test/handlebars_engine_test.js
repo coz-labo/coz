@@ -69,6 +69,7 @@ exports['Run buildin helpers.'] = function (test) {
     test.ok(helpers);
     test.equal(helpers.basename(null), "null");
     test.equal(helpers.basename("foo/bar.js"), "bar.js");
+    test.equal(helpers.braces("foo"), "{foo}");
     test.equal(helpers.camelcase("foo_bar"), "fooBar");
     test.equal(helpers.dirname("foo/bar.js"), "foo");
     test.equal(helpers.extname("foo/bar.js"), ".js");
