@@ -21,19 +21,19 @@ Flexible generator.
 Table of Contents
 -----
 - [About coz](#01-about)
-    - [### What's this?](#01-about---whats-this)
-    - [### Why this?](#01-about---why-this)
+    - [Whats this](#01-about--whats-this)
+    - [Why this](#01-about--why-this)
 - [Getting started](#02-howto)
-    - [### Requirements](#02-howto---requirements)
-    - [### Install](#02-howto---install)
-    - [### Simple example](#02-howto---simple-example)
+    - [Requirements](#02-howto--requirements)
+    - [Install](#02-howto--install)
+    - [Simple example](#02-howto--simple-example)
 
 
 <a name="01-about"></a>
 About coz
 ------
 
-<a name="01-about---whats-this"></a>
+<a name="01-about--whats-this"></a>
 ### What's this?
 
 File generator.
@@ -41,7 +41,7 @@ coz, you can keep your source code maintainable and readable.
 
 
 
-<a name="01-about---why-this"></a>
+<a name="01-about--why-this"></a>
 ### Why this?
 
 + No more meta programming
@@ -54,13 +54,13 @@ coz, you can keep your source code maintainable and readable.
 Getting started
 ------
 
-<a name="02-howto---requirements"></a>
+<a name="02-howto--requirements"></a>
 ### Requirements
 
 + [node.js][nodejs_url]
 
 
-<a name="02-howto---install"></a>
+<a name="02-howto--install"></a>
 ### Install
 
 ```bash
@@ -69,7 +69,7 @@ $ npm install coz -g
 
 ```
 
-<a name="02-howto---simple-example"></a>
+<a name="02-howto--simple-example"></a>
 ### Simple example
 
 Step01 **Configure bud file**

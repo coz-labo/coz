@@ -1,0 +1,16 @@
+/**
+ * Bud file for index.html
+ */
+
+"use strict";
+
+var fs = require('fs');
+
+module.exports = {
+    force: true,
+    mode: '444',
+    data: {
+        pkg: require('../package.json'),
+        style:String(fs.readFileSync(__dirname + '/.index.css'))
+    }
+};
