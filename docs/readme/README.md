@@ -14,21 +14,21 @@ coz
 Flexible generator, which makes your project clean and maintainable.
 
 
-<a href="https://github.com/okunishinishi/coz#readme"><img style="height:128px;" src="assets/images/coz-banner.jpg" height="128"/></a>
+<a href="https://github.com/okunishinishi/coz#readme"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a>
 
 
 Table of Contents
 -----
 - [About coz](#01-about)
     - [What's this?](#01-about--whats-this)
-    - [When to use?](#01-about--when-to-use)
+    - [What for?](#01-about--what-for)
     - [Why this?](#01-about--why-this)
 - [Getting started](#02-howto)
     - [Requirements](#02-howto--requirements)
     - [Install](#02-howto--install)
     - [Simple example](#02-howto--simple-example)
-- [Bud](#03-bud)
-    - [Supported properties for a bud.](#03-bud--supported-properties-for-a-bud-)
+- [Specifications](#03-spec)
+    - [Bud file specification.](#03-spec--bud-file-specification-)
 - [Links](#09-links)
     - [Documents](#09-links--documents)
     - [Reports](#09-links--reports)
@@ -45,22 +45,34 @@ About coz
 <a name="01-about--whats-this"></a>
 ### What's this?
 
-The basic idea of coz is that creating file from file.
+The basic idea of coz is that creating files from files.
 
-Write a meta file called `.bud` file and run coz generates the magic.
+Write a meta file called [.bud file][#spec-bud-spec] and run coz generates the magic.
 
-<img style="height:128px;" src="assets/images/coz-outline.jpg" height="128">
+<img style="height:256px;" src="assets/images/coz-outline.jpg" height="256">
 
-This could be useful when you generate source code or documentations.
+<a name="01-about--what-for"></a>
+### What for?
+
+##### Automation.
 
 
-<a name="01-about--when-to-use"></a>
-### When to use?
+##### No more meta programming.
 
 
 
 <a name="01-about--why-this"></a>
 ### Why this?
+
+##### - Because it's fast.
+coz is lightweight engine and do nothing but rendering.
+
+##### - Because it's extensible.
+coz is an unopinionated provides ways to customize.
+
+##### - Because it's flexible.
+coz is attentive, like handling array or async operations, and guess a lot unless otherwise specified.
+
 
 
 <a name="02-howto"></a>
@@ -77,9 +89,7 @@ Getting started
 ### Install
 
 ```bash
-
 $ npm install coz -g
-
 ```
 
 <a name="02-howto--simple-example"></a>
@@ -115,40 +125,61 @@ Step03 **Render file**
 ```bash
 $ coz render .*.bud
 ```
-<a name="03-bud"></a>
-Bud
+<a name="03-spec"></a>
+Specifications
 ---------
 
-`.bud` file contains all meta data of file to generate.
-They are actually a javascript file and could be written nodejs format.
+<a name="spec-bud-spec"></a>
+<a name="03-spec--bud-file-specification-"></a>
+### Bud file specification.
+
+A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.
+
+You can specify bud data by writing `.bud` file, which is actually a javascript file and could be written nodejs format.
 
 ```Javascript
-
 module.exports = {
     path: 'my_file.txt',
     tmpl: '.my_file.txt.hbs',
     data: require('./.my_data')
 }
-
 ```
 
+And bud could be an array like:
 
-<a name="03-bud--supported-properties-for-a-bud-"></a>
-### Supported properties for a bud.
+```Javascript
+module.exports = [
+    {path: 'my_file.txt', /*...*/},
+    {path: 'my_other_file.txt', /*...*/},
+]
+```
+
+Or an async function.
+
+```Javascript
+module.exports = function(callback){
+    myAsync(function(data){
+        var error = null;
+        callback(err, data);
+    });
+}
+```
+
+##### Supported properties
 
 Name | Type | Description
 ----- | ----- | -----
-engine | string&amp;#124;object | Template compile function or name of function |
+engine | string&#124;object | Template compile function or name of function |
 cwd | string | Working directory path |
 data | object | Data to template render with |
 done | boolean | Done to writeout or not |
 mkdirp | boolean | Make parent directories if needed |
 setup | object | Properties to set engine |
 force | boolean | Should overwrite file when already exists, or not |
-mode | string&amp;#124;number | File permission |
+mode | string&#124;number | File permission |
 path | string | Destination file path. If not provided, guess from bud file path |
 src | string | Bud source file path |
-tmpl | string&amp;#124;function | Template file path or registered template name or template function |
+tmpl | string&#124;function | Template file path or registered template name or template function |
 
 <a name="09-links"></a>
 Links
@@ -157,7 +188,7 @@ Links
 <a name="09-links--documents"></a>
 ### Documents
 
-+ [APIGUIDE][my_apiguide_url]
++ [API Guide][my_apiguide_url]
 
 <a name="09-links--reports"></a>
 ### Reports

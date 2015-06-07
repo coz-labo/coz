@@ -1,0 +1,49 @@
+/**
+ * @fileOverview {{pkg.description}}
+ * @version {{pkg.version}}
+ * @module {{pkg.name}}
+ * @author {{pkg.author.name}}
+ * @license {{pkg.license}}
+{{#each pkg.dependencies}} * @requires {@link https://www.npmjs.org/package/{{@key}}|{{@key}}@{{{@this}}}{{{../END_BRACE}}}
+{{/each}}
+ */
+
+"use strict";
+
+var Coz = require('./coz');
+
+var coz = module.exports = new Coz();
+
+//---------------------
+// Classes
+//---------------------
+coz.Coz = Coz;
+
+//---------------------
+// Sub modules
+//---------------------
+{{#each submodules}}
+/**
+ * {{this}}.
+ * @name {@link module:coz/lib/{{camelcase @key}}|{{camelcase @key}}{{{../END_BRACE}}}
+ * @memberof module:coz
+ * @see module:coz/lib/bud
+ */
+coz.{{camelcase @key}} = require('./{{snakecase @key}}');
+
+{{/each}}
+
+
+//---------------------
+// Aliases
+//---------------------
+{{#each aliases}}
+/**
+ * This is an alias for {{aliasOf}}
+ * @name {@link module:{{module}}|{{camelcase @key}}{{{../END_BRACE}}}
+ * @memberof module:coz
+ * @see module:{{module}}
+ */
+coz.{{camelcase @key}} = {{aliasOf}};
+
+{{/each}}

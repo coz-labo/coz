@@ -13,5 +13,8 @@ cd ${BASE_DIR}
 npm run apiguide -- README.md ${BASE_DIR}/lib/*.js ${BASE_DIR}/lib/*/*.js ${BASE_DIR}/lib/*/*/*.js \
 --verbose \
 --destination ${BASE_DIR}/docs/apiguide \
---template ${BASE_DIR}/node_modules/ink-docstrap/ink-docstrap/template \
+--template ${BASE_DIR}/node_modules/ink-docstrap/template \
 --configure ${BASE_DIR}/docs/.apiguide.json
+
+# Copy assets to resolve relative path
+cp -rf assets docs/apiguide

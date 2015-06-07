@@ -10,6 +10,7 @@ module.exports = {
     force: true,
     mode: '444',
     data: {
+        about: bud.about,
         get properties() {
             return Object.keys(bud.properties).map(function (key) {
                 var data = bud.properties[key];

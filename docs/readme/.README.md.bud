@@ -29,6 +29,7 @@ function _section(filename, callback) {
                     get bud() {
                         var bud = require('../../lib/bud/.bud.json');
                         return {
+                            about: bud.about,
                             get properties() {
                                 return Object.keys(bud.properties).map(function (key) {
                                     var data = bud.properties[key];
@@ -44,7 +45,7 @@ function _section(filename, callback) {
                     return this.content.split('\n').map(function (content) {
                         return {
                             content: content,
-                            isTopic: content.match(/^###/),
+                            isTopic: content.match(/^###[^#]/),
                             name: content.replace(/[#\?'"]/g, '').trim(),
                             title: content.replace(/^#+/g, '').trim()
                         }

@@ -3,7 +3,7 @@ Links
 
 ### Documents
 
-+ [APIGUIDE][my_apiguide_url]
++ [API Guide][my_apiguide_url]
 
 ### Reports
 

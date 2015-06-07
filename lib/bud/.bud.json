@@ -1,4 +1,5 @@
 {
+  "about": "A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.",
   "properties": {
     "engine": {
       "configurable": true,

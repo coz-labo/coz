@@ -1,0 +1,16 @@
+{{!
+    Template for index.js
+}}/**
+ * {{desc}}{{#each doc}}
+ * @{{@key}} {{this}}{{/each}}{{#if docProperties}}{{#each modules}}
+ * @property {{camelcase name}} {object} - {{#if ../doc.module}}{@link {{#if isModule}}module:{{../../../doc.module}}/{{else}}{{../../../doc.module}}.{{/if}}{{camelcase name}}|{{camelcase name}} module}.{{/if}}{{else}}{{snakecase name}} {{/each}}
+{{else}}
+
+{{/if}} */
+
+"use strict";
+
+module.exports = {
+{{#each modules}}    get {{#if isPascal}}{{pascalcase name}}{{else}}{{camelcase name}}{{/if}}() { return require('./{{snakecase name}}'); }{{#if @last}}{{else}},
+{{/if}}{{/each}}
+};
