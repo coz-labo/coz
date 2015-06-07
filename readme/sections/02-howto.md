@@ -9,9 +9,7 @@ Getting started
 ### Install
 
 ```bash
-
 $ npm install {{pkg.name}} -g
-
 ```
 
 ### Simple example

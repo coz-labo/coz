@@ -202,20 +202,23 @@
 <a href="http://www.npmjs.org/package/coz"><img src="http://img.shields.io/npm/v/coz.svg?style=flat" alt="npm version"></a>
 <a href="http://www.gittip.com/okunishinishi/"><img src="http://img.shields.io/gittip/okunishinishi.svg?style=flat" alt="Git tip"></a>
 <!-- Badge end --></p>
-<p>Flexible generator.</p>
-<!-- Banner start -->
-<p><a href="http://nodejs.org/"><img style="height:40px;" src="http://nodejs.org/images/logos/nodejs-dark.png" height="40"></a>&nbsp;
-<!-- Banner end --></p>
+<p>Flexible generator, which makes your project clean and maintainable.</p>
+<p><a href="https://github.com/okunishinishi/coz#readme"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a></p>
 <h2>Table of Contents</h2><ul>
 <li><a href="#01-about">About coz</a><ul>
-<li><a href="#01-about--whats-this">Whats this</a></li>
-<li><a href="#01-about--why-this">Why this</a></li>
+<li><a href="#01-about--whats-this">What's this?</a></li>
+<li><a href="#01-about--what-for">What for?</a></li>
+<li><a href="#01-about--why-this">Why this?</a></li>
 </ul>
 </li>
 <li><a href="#02-howto">Getting started</a><ul>
 <li><a href="#02-howto--requirements">Requirements</a></li>
 <li><a href="#02-howto--install">Install</a></li>
 <li><a href="#02-howto--simple-example">Simple example</a></li>
+</ul>
+</li>
+<li><a href="#03-spec">Specifications</a><ul>
+<li><a href="#03-spec--bud-file-specification-">Bud file specification.</a></li>
 </ul>
 </li>
 <li><a href="#09-links">Links</a><ul>
@@ -232,23 +235,21 @@
 </ul>
 <p><a name="01-about"></a></p>
 <h2>About coz</h2><p><a name="01-about--whats-this"></a></p>
-<h3>What's this?</h3><p>File generator.
-coz, you can keep your source code maintainable and readable.</p>
-<p><a name="01-about--why-this"></a></p>
-<h3>Why this?</h3><ul>
-<li>No more meta programming</li>
-<li>Any programming language</li>
-<li>Extensible</li>
-<li>Fast</li>
-</ul>
+<h3>What's this?</h3><p>The basic idea of coz is that creating files from files.</p>
+<p>Write a meta file called [.bud file][#spec-bud-spec] and run coz generates the magic.</p>
+<p><img style="height:256px;" src="assets/images/coz-outline.jpg" height="256"></p>
+<p><a name="01-about--what-for"></a></p>
+<h3>What for?</h3><h5>Automation.</h5><h5>No more meta programming.</h5><p><a name="01-about--why-this"></a></p>
+<h3>Why this?</h3><h5>- Because it's fast.</h5><p>coz is lightweight engine and do nothing but rendering.</p>
+<h5>- Because it's extensible.</h5><p>coz is an unopinionated provides ways to customize.</p>
+<h5>- Because it's flexible.</h5><p>coz is attentive, like handling array or async operations, and guess a lot unless otherwise specified.</p>
 <p><a name="02-howto"></a></p>
 <h2>Getting started</h2><p><a name="02-howto--requirements"></a></p>
 <h3>Requirements</h3><ul>
 <li><a href="http://nodejs.org/">node.js</a></li>
 </ul>
 <p><a name="02-howto--install"></a></p>
-<h3>Install</h3><pre class="prettyprint source lang-bash"><code>
-$ npm install coz -g</code></pre><p><a name="02-howto--simple-example"></a></p>
+<h3>Install</h3><pre class="prettyprint source lang-bash"><code>$ npm install coz -g</code></pre><p><a name="02-howto--simple-example"></a></p>
 <h3>Simple example</h3><p>Step01 <strong>Configure bud file</strong></p>
 <pre class="prettyprint source lang-Javascript"><code>module.exports = {
     force: true,
@@ -266,10 +267,106 @@ $ npm install coz -g</code></pre><p><a name="02-howto--simple-example"></a></p>
 module.exports = function {{pascalcase name}}Entity(){
 };
 {{/each}}</code></pre><p>Step03 <strong>Render file</strong></p>
-<pre class="prettyprint source lang-bash"><code>$ coz render .*.bud</code></pre><p><a name="09-links"></a></p>
+<pre class="prettyprint source lang-bash"><code>$ coz render .*.bud</code></pre><p><a name="03-spec"></a></p>
+<h2>Specifications</h2><p><a name="spec-bud-spec"></a>
+<a name="03-spec--bud-file-specification-"></a></p>
+<h3>Bud file specification.</h3><p>A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.</p>
+<p>You can specify bud data by writing <code>.bud</code> file, which is actually a javascript file and could be written nodejs format.</p>
+<pre class="prettyprint source lang-Javascript"><code>module.exports = {
+    path: 'my_file.txt',
+    tmpl: '.my_file.txt.hbs',
+    data: require('./.my_data')
+}</code></pre><p>And bud could be an array like:</p>
+<pre class="prettyprint source lang-Javascript"><code>module.exports = [
+    {path: 'my_file.txt', /*...*/},
+    {path: 'my_other_file.txt', /*...*/},
+]</code></pre><p>Or an async function.</p>
+<pre class="prettyprint source lang-Javascript"><code>module.exports = function(callback){
+    myAsync(function(data){
+        var error = null;
+        callback(err, data);
+    });
+}</code></pre><h5>Supported properties</h5><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>engine</td>
+<td>string&#124;object</td>
+<td>Template compile function or name of function</td>
+<td></td>
+</tr>
+<tr>
+<td>cwd</td>
+<td>string</td>
+<td>Working directory path</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Data to template render with</td>
+<td></td>
+</tr>
+<tr>
+<td>done</td>
+<td>boolean</td>
+<td>Done to writeout or not</td>
+<td></td>
+</tr>
+<tr>
+<td>mkdirp</td>
+<td>boolean</td>
+<td>Make parent directories if needed</td>
+<td></td>
+</tr>
+<tr>
+<td>setup</td>
+<td>object</td>
+<td>Properties to set engine</td>
+<td></td>
+</tr>
+<tr>
+<td>force</td>
+<td>boolean</td>
+<td>Should overwrite file when already exists, or not</td>
+<td></td>
+</tr>
+<tr>
+<td>mode</td>
+<td>string&#124;number</td>
+<td>File permission</td>
+<td></td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>Destination file path. If not provided, guess from bud file path</td>
+<td></td>
+</tr>
+<tr>
+<td>src</td>
+<td>string</td>
+<td>Bud source file path</td>
+<td></td>
+</tr>
+<tr>
+<td>tmpl</td>
+<td>string&#124;function</td>
+<td>Template file path or registered template name or template function</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="09-links"></a></p>
 <h2>Links</h2><p><a name="09-links--documents"></a></p>
 <h3>Documents</h3><ul>
-<li><a href="http://okunishinishi.github.io/coz/apiguide/">APIGUIDE</a></li>
+<li><a href="http://okunishinishi.github.io/coz/apiguide/">API Guide</a></li>
 </ul>
 <p><a name="09-links--reports"></a></p>
 <h3>Reports</h3><ul>
