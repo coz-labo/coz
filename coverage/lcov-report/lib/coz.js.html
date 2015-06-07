@@ -15,10 +15,10 @@
 <div class="header high">
     <h1>Code coverage report for <span class="entity">lib/coz.js</span></h1>
     <h2>
-        Statements: <span class="metric">92.31% <small>(24 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">25% <small>(1 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(11 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">92.31% <small>(24 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">100% <small>(26 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">50% <small>(2 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(12 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(26 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">lib/</a> &#187; coz.js</div>
@@ -125,7 +125,12 @@
 98
 99
 100
-101</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+101
+102
+103
+104
+105
+106</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -146,8 +151,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -160,8 +165,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -211,10 +216,15 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -226,9 +236,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Kyo context.
+ * Coz context.
  * @memberof module:coz
- * @constructor Kyo
+ * @constructor Coz
  */
 &nbsp;
 "use strict";
@@ -239,18 +249,18 @@ var ext = require('./ext'),
     file = require('./util/file'),
     bud = require('./bud'),
     EngineSet = require('./template/engine_set'),
-    BudLoader = require('./bud/bud_loader'),
-    BudCompiler = require('./bud/bud_compiler'),
-    BudWriter = require('./bud/bud_writer'),
-    BudLogger = require('./bud/bud_logger');
+    BudLoader = bud.BudLoader,
+    BudCompiler = bud.BudCompiler,
+    BudWriter = bud.BudWriter,
+    BudLogger = bud.BudLogger;
 &nbsp;
-/** @lends Kyo */
-function Kyo() {
+/** @lends Coz */
+function Coz() {
     var s = this;
     s.init.apply(s, arguments);
 }
 &nbsp;
-Kyo.prototype = {
+Coz.prototype = {
 &nbsp;
     // --------------------
     // Public properties.
@@ -283,7 +293,7 @@ Kyo.prototype = {
             }),
             writer = new BudWriter();
 &nbsp;
-        logger.info('[Kyo] Render start...');
+        logger.info('[Coz] Render start...');
         async.waterfall([
             function (callback) {
                 file.expandGlob(filenames, callback);
@@ -308,18 +318,23 @@ Kyo.prototype = {
             }
         ], function (err) {
             logger.info('...done!(' + (new Date() - startAt) + 'ms)');
-            <span class="missing-if-branch" title="else path not taken" >E</span>if (callback) {
-                callback(err);
-            } else {
-<span class="cstat-no" title="statement not covered" >                if (err) {</span>
-<span class="cstat-no" title="statement not covered" >                    console.error(err);</span>
-                }
-            }
+            callback = callback || <span class="branch-1 cbranch-no" title="branch not covered" >s._handleError.bind(s);</span>
+            callback(err);
         });
+    },
+    /**
+     * Handle an error.
+     * @param {Error} err - Error to handle.
+     * @private
+     */
+    _handleError: function (err) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (err) {
+            console.error(err);
+        }
     }
 };
 &nbsp;
-module.exports = Kyo;
+module.exports = Coz;
 &nbsp;
 &nbsp;
 /**
@@ -330,7 +345,7 @@ module.exports = Kyo;
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 07 2015 12:19:55 GMT+0900 (JST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 07 2015 14:42:17 GMT+0900 (JST)</div>
 </div>
 <script src="../prettify.js"></script>
 <script>
