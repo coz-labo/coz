@@ -195,18 +195,67 @@
 
     <section class="readme-section">
         <article><h1>coz</h1><!-- Badge start -->
-<p><a href="http://travis-ci.org/okunishinishi/leaf"><img src="http://img.shields.io/travis/okunishinishi/leaf.svg?style=flat" alt="Build Status"></a>
-<a href="http://codeclimate.com/github/okunishinishi/leaf"><img src="http://img.shields.io/codeclimate/github/okunishinishi/leaf.svg?style=flat" alt="Code Climate"></a>
-<a href="http://codeclimate.com/github/okunishinishi/leaf"><img src="http://img.shields.io/codeclimate/coverage/github/okunishinishi/leaf.svg?style=flat" alt="Code Coverage"></a>
-<a href="http://gemnasium.com/okunishinishi/leaf"><img src="http://img.shields.io/gemnasium/okunishinishi/leaf.svg?style=flat" alt="dependencies"></a>
-<a href="http://www.npmjs.org/package/leaf"><img src="http://img.shields.io/npm/v/leaf.svg?style=flat" alt="npm version"></a>
+<p><a href="http://travis-ci.org/okunishinishi/coz"><img src="http://img.shields.io/travis/okunishinishi/coz.svg?style=flat" alt="Build Status"></a>
+<a href="http://codeclimate.com/github/okunishinishi/coz"><img src="http://img.shields.io/codeclimate/github/okunishinishi/coz.svg?style=flat" alt="Code Climate"></a>
+<a href="http://codeclimate.com/github/okunishinishi/coz"><img src="http://img.shields.io/codeclimate/coverage/github/okunishinishi/coz.svg?style=flat" alt="Code Coverage"></a>
+<a href="http://gemnasium.com/okunishinishi/coz"><img src="http://img.shields.io/gemnasium/okunishinishi/coz.svg?style=flat" alt="dependencies"></a>
+<a href="http://www.npmjs.org/package/coz"><img src="http://img.shields.io/npm/v/coz.svg?style=flat" alt="npm version"></a>
 <a href="http://www.gittip.com/okunishinishi/"><img src="http://img.shields.io/gittip/okunishinishi.svg?style=flat" alt="Git tip"></a>
 <!-- Badge end --></p>
-<p>Meta framework for template-driven-development</p>
+<p>Flexible generator.</p>
 <!-- Banner start -->
 <p><a href="http://nodejs.org/"><img style="height:40px;" src="http://nodejs.org/images/logos/nodejs-dark.png" height="40"></a>&nbsp;
 <!-- Banner end --></p>
-<!-- Links start -->
+<h2>Table of Contents</h2><ul>
+<li><a href="#01-about">About coz</a><ul>
+<li><a href="#01-about---whats-this">### What's this?</a></li>
+<li><a href="#01-about---why-this">### Why this?</a></li>
+</ul>
+</li>
+<li><a href="#02-howto">Getting started</a><ul>
+<li><a href="#02-howto---requirements">### Requirements</a></li>
+<li><a href="#02-howto---install">### Install</a></li>
+<li><a href="#02-howto---simple-example">### Simple example</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="01-about"></a></p>
+<h2>About coz</h2><p><a name="01-about---whats-this"></a></p>
+<h3>What's this?</h3><p>File generator.
+coz, you can keep your source code maintainable and readable.</p>
+<p><a name="01-about---why-this"></a></p>
+<h3>Why this?</h3><ul>
+<li>No more meta programming</li>
+<li>Any programming language</li>
+<li>Extensible</li>
+<li>Fast</li>
+</ul>
+<p><a name="02-howto"></a></p>
+<h2>Getting started</h2><p><a name="02-howto---requirements"></a></p>
+<h3>Requirements</h3><ul>
+<li><a href="http://nodejs.org/">node.js</a></li>
+</ul>
+<p><a name="02-howto---install"></a></p>
+<h3>Install</h3><pre class="prettyprint source lang-bash"><code>
+$ npm install coz -g</code></pre><p><a name="02-howto---simple-example"></a></p>
+<h3>Simple example</h3><p>Step01 <strong>Configure bud file</strong></p>
+<pre class="prettyprint source lang-Javascript"><code>module.exports = {
+    force: true,
+    mode: '444',
+    data: {
+        entities: [
+            {name: 'User'},
+            {name: 'Machine'},
+        ]
+    }
+}</code></pre><p>Step02 <strong>Prepare template</strong></p>
+<pre class="prettyprint source lang-Javascript"><code>
+{{#each entities}}
+/** Entity for {{snakecase name}} */
+module.exports = function {{pascalcase name}}Entity(){
+};
+{{/each}}</code></pre><p>Step03 <strong>Render file</strong></p>
+<pre class="prettyprint source lang-bash"><code>$ coz render .*.bud</code></pre><!-- Links start -->
 <!-- Links end--></article>
     </section>
 
