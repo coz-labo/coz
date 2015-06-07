@@ -10,6 +10,7 @@ exports['Index js bud'] = function (test) {
         dirname: __dirname
     });
     test.ok(bud);
+    test.ok(bud.data.modules);
     test.done();
 };
 
