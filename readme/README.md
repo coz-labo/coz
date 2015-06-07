@@ -11,13 +11,97 @@ coz
 <!-- Badge end -->
 
 
-Meta framework for template-driven-development
+Flexible generator.
 
 <!-- Banner start -->
 
 <a href="http://nodejs.org/"><img style="height:40px;" src="http://nodejs.org/images/logos/nodejs-dark.png" height="40"></a>&nbsp;
 <!-- Banner end -->
 
+Table of Contents
+-----
+- [About coz](#01-about)
+    - [### What's this?](#01-about---whats-this)
+    - [### Why this?](#01-about---why-this)
+- [Getting started](#02-howto)
+    - [### Requirements](#02-howto---requirements)
+    - [### Install](#02-howto---install)
+    - [### Simple example](#02-howto---simple-example)
+
+
+<a name="01-about"></a>
+About coz
+------
+
+<a name="01-about---whats-this"></a>
+### What's this?
+
+File generator.
+coz, you can keep your source code maintainable and readable.
+
+
+
+<a name="01-about---why-this"></a>
+### Why this?
+
++ No more meta programming
++ Any programming language
++ Extensible
++ Fast
+
+
+<a name="02-howto"></a>
+Getting started
+------
+
+<a name="02-howto---requirements"></a>
+### Requirements
+
++ [node.js][nodejs_url]
+
+
+<a name="02-howto---install"></a>
+### Install
+
+```bash
+
+$ npm install coz -g
+
+```
+
+<a name="02-howto---simple-example"></a>
+### Simple example
+
+Step01 **Configure bud file**
+
+```Javascript
+module.exports = {
+    force: true,
+    mode: '444',
+    data: {
+        entities: [
+            {name: 'User'},
+            {name: 'Machine'},
+        ]
+    }
+}
+```
+
+Step02 **Prepare template**
+```Javascript
+
+{{#each entities}}
+/** Entity for {{snakecase name}} */
+module.exports = function {{pascalcase name}}Entity(){
+};
+{{/each}}
+
+```
+
+Step03 **Render file**
+```bash
+$ coz render .*.bud
+```
 
 <!-- Links start -->
 

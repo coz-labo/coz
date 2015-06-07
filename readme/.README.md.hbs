@@ -17,6 +17,20 @@
 {{/each}}
 <!-- Banner end -->
 
+Table of Contents
+-----
+{{#each sections}}- [{{{title}}}](#{{spinalcase name}})
+{{#each topics}}    - [{{{content}}}](#{{spinalcase ../name}}-{{spinalcase name}})
+{{/each}}
+{{/each}}
+
+
+{{#each sections}}
+<a name="{{spinalcase name}}"></a>
+{{#each lines}}{{#if isTopic}}<a name="{{spinalcase ../../name}}-{{spinalcase name}}"></a>
+{{/if}}{{{content}}}
+{{/each}}
+{{/each}}
 
 <!-- Links start -->
 
