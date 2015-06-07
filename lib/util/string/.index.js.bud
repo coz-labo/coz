@@ -1,14 +1,14 @@
 "use strict";
 
-var kyo = require('../../../lib'),
-    indexJsBud = kyo.factory.indexJsBud;
+var coz = require('../../../lib'),
+    indexJsBud = coz.factory.indexJsBud;
 
 module.exports = indexJsBud({
     dirname: __dirname,
     docProperties: false,
     desc: 'String manipulate functions.',
     doc: {
-        module: 'kyo/lib/util/string'
+        module: 'coz/lib/util/string'
     }
 });
 

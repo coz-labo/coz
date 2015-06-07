@@ -1,5 +1,5 @@
 {
-  "name": "kyo",
+  "name": "coz",
   "version": "1.0.0",
   "description": "Meta framework for template-driven-development",
   "main": "lib/index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/okunishinishi/kyo.git"
+    "url": "git+https://github.com/okunishinishi/coz.git"
   },
   "keywords": [
     "template",
@@ -21,9 +21,9 @@
   "author": "Taka Okunishi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/okunishinishi/kyo/issues"
+    "url": "https://github.com/okunishinishi/coz/issues"
   },
-  "homepage": "https://github.com/okunishinishi/kyo#readme",
+  "homepage": "https://github.com/okunishinishi/coz#readme",
   "dependencies": {
     "async": "^1.2.0",
     "cli-color": "^1.0.0",

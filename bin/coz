@@ -12,7 +12,6 @@ program
 
 program
     .command('render [src]')
-    .alias('bls')
     .description('Compile and render bud files.')
     .option('-v, --verbose', 'Show verbose logs.')
     .action(function (src, opitons) {

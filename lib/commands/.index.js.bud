@@ -1,7 +1,7 @@
 "use strict";
 
-var kyo = require('../../lib'),
-    indexJsBud = kyo.factory.indexJsBud;
+var coz = require('../../lib'),
+    indexJsBud = coz.factory.indexJsBud;
 
 module.exports = indexJsBud({
     dirname: __dirname,
@@ -10,7 +10,7 @@ module.exports = indexJsBud({
         'Commands invoked via bin script.'
     ].join('\n * '),
     doc: {
-        module: 'kyo/lib/commands'
+        module: 'coz/lib/commands'
     }
 });
 

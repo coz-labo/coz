@@ -5,12 +5,12 @@
 
 "use strict";
 
-var leafBin = require.resolve('../../../bin/leaf'),
+var bin = require.resolve('../../../bin/coz'),
     childProcess = require('child_process');
 
 
 exports['Show help.'] = function (test) {
-    var spawned = childProcess.spawn(leafBin, ['-h']);
+    var spawned = childProcess.spawn(bin, ['-h']);
     //spawned.stdout.pipe(process.stdout);
     //spawned.stderr.pipe(process.stderr);
     spawned.on('exit', function () {
@@ -20,7 +20,7 @@ exports['Show help.'] = function (test) {
 
 
 exports['Show render help.'] = function (test) {
-    var spawned = childProcess.spawn(leafBin, ['render', '-h']);
+    var spawned = childProcess.spawn(bin, ['render', '-h']);
     //spawned.stdout.pipe(process.stdout);
     //spawned.stderr.pipe(process.stderr);
     spawned.on('exit', function () {

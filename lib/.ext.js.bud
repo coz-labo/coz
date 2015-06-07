@@ -11,7 +11,7 @@ module.exports = {
     data: {
         doc: {
             file: 'External modules, installed via npm.',
-            module: 'kyo/lib/ext'
+            module: 'coz/lib/ext'
         },
         get modules() {
             var dependencies = pkg.dependencies,

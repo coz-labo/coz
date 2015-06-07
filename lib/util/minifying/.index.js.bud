@@ -1,7 +1,7 @@
 "use strict";
 
-var kyo = require('../../../lib'),
-    indexJsBud = kyo.factory.indexJsBud;
+var coz = require('../../../lib'),
+    indexJsBud = coz.factory.indexJsBud;
 
 module.exports = indexJsBud({
     dirname: __dirname,
@@ -10,7 +10,7 @@ module.exports = indexJsBud({
         'Utility functions for minify source code.'
     ].join('\n * '),
     doc: {
-        module: 'kyo/lib/util/minifying'
+        module: 'coz/lib/util/minifying'
     }
 });
 

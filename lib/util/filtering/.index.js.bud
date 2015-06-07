@@ -1,14 +1,14 @@
 "use strict";
 
-var kyo = require('../../../lib'),
-    indexJsBud = kyo.factory.indexJsBud;
+var coz = require('../../../lib'),
+    indexJsBud = coz.factory.indexJsBud;
 
 module.exports = indexJsBud({
     dirname: __dirname,
     docProperties: true,
     desc: 'Array filtering functions.',
     doc: {
-        module: 'kyo/lib/util/filtering'
+        module: 'coz/lib/util/filtering'
     }
 });
 
