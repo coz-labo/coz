@@ -5,13 +5,18 @@ var coz = require('../../lib'),
 
 module.exports = indexJsBud({
     dirname: __dirname,
-    docProperties: false,
     desc: [
         'This module provides interfaces working with bud.'
     ].join('\n * '),
-    doc: {
-        module: 'coz/lib/bud'
-    },
+    module: 'coz/lib/bud',
+    submodules: ['factory'],
+    subclasses: [
+        'Bud',
+        'BudCompiler',
+        'BudLoader',
+        'BudLogger',
+        'BudWriter'
+    ],
     memberDocs: {
         factory: {
             "description": "This is an alias for {@link module:coz/lib/bud/factory}."

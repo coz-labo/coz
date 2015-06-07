@@ -5,13 +5,10 @@ var coz = require('../../../lib'),
 
 module.exports = indexJsBud({
     dirname: __dirname,
-    //docProperties: true,
     desc: [
         'Template engine modules.'
     ].join('\n * '),
-    doc: {
-        module: 'coz/lib/template/engines'
-    },
-    pascalPattern: '*'
+    module: 'coz/lib/template/engines',
+    subclasses: ['HandlebarsEngine']
 });
 

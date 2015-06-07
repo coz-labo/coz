@@ -5,12 +5,9 @@ var coz = require('../../../lib'),
 
 module.exports = indexJsBud({
     dirname: __dirname,
-    docProperties: false,
     desc: [
         'Utility functions for compile source code.'
     ].join('\n * '),
-    doc: {
-        module: 'coz/lib/util/compiling'
-    }
+    module: 'coz/lib/util/compiling'
 });
 

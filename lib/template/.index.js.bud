@@ -5,14 +5,12 @@ var coz = require('../../lib'),
 
 module.exports = indexJsBud({
     dirname: __dirname,
-    docProperties: true,
     desc: [
         'This module provides interfaces working with file template systems.',
         'They are designed to be extensible and you can register own template engine and helpers.'
     ].join('\n * '),
-    doc: {
-        module: 'coz/lib/template'
-    },
-    pascalPattern: '*_set'
+    module: 'coz/lib/template',
+    submodules: ['buildinEngines', 'buildinTmpls'],
+    subclasses: ['Engine', 'EngineSet', 'TmplSet']
 });
 

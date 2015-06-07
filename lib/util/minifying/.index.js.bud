@@ -5,12 +5,9 @@ var coz = require('../../../lib'),
 
 module.exports = indexJsBud({
     dirname: __dirname,
-    docProperties: true,
     desc: [
         'Utility functions for minify source code.'
     ].join('\n * '),
-    doc: {
-        module: 'coz/lib/util/minifying'
-    }
+    module: 'coz/lib/util/minifying'
 });
 

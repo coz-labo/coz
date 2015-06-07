@@ -13,10 +13,3 @@ exports['Index js bud'] = function (test) {
     test.ok(bud.data.modules);
     test.done();
 };
-
-exports['Data functions.'] = function (test) {
-    test.equal(indexJsBud._isPascal(null, 'foo/bar.js', 'bar'), false);
-    test.equal(indexJsBud._isPascal('bar.*', 'foo/bar.js', 'bar'), true);
-    test.equal(indexJsBud._isPascal('bar', 'foo/bar.js', 'bar'), true);
-    test.done();
-};

@@ -5,11 +5,18 @@ var coz = require('../../lib'),
 
 module.exports = indexJsBud({
     dirname: __dirname,
-    docProperties: true,
     desc: [
         'Utility modules.'
     ].join('\n * '),
-    doc: {
-        module: 'coz/lib/util'
-    }
+    module: 'coz/lib/util',
+    submodules: [
+        'compiling',
+        'copying',
+        'file',
+        'filtering',
+        'logging',
+        'minifying',
+        'sorting',
+        'string'
+    ]
 });

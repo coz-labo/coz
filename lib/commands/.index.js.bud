@@ -5,12 +5,9 @@ var coz = require('../../lib'),
 
 module.exports = indexJsBud({
     dirname: __dirname,
-    docProperties: true,
     desc: [
         'Commands invoked via bin script.'
     ].join('\n * '),
-    doc: {
-        module: 'coz/lib/commands'
-    }
+    module: 'coz/lib/commands'
 });
 
