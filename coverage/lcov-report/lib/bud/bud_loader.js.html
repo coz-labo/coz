@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/bud/bud_loader.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">lib/bud/bud_loader.js</span></h1>
+    <h2>
+        Statements: <span class="metric">81.25% <small>(39 / 48)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">50% <small>(6 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">85% <small>(17 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">81.25% <small>(39 / 48)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">lib/bud/</a> &#187; bud_loader.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Bud file loader.
+ * @memberof coz/lib/bud
+ * @constructor BudLoader
+ */
+&nbsp;
+"use strict";
+&nbsp;
+var core = require('../core'),
+    ext = require('../ext'),
+    glob = ext.glob,
+    path = core.path,
+    fs = core.fs,
+    async = ext.async,
+    copying = require('../util/copying'),
+    _concatBuds = require('./_concat_buds'),
+    Bud = require('./bud');
+&nbsp;
+/** @lends BudLoader */
+function BudLoader() {
+    var s = this;
+}
+&nbsp;
+BudLoader.prototype = {
+    /**
+     * Load bud.
+     * @param {Bud|string} bud - Bud or source filename of it.
+     * @param {budLoaderLoadCallback} callback - Callback when done.
+     */
+    load: function (bud, callback) {
+        var s = this;
+        bud = [].concat(bud).map(Bud.new);
+        async.waterfall([
+            function requireBud(callback) {
+                s._requireBud(bud, callback);
+            },
+            function evaluateBud(bud, callback) {
+                s._evaluateBud(bud, callback);
+            },
+            function makeupBud(bud, callback) {
+                s._makeupBud(bud, callback);
+            },
+            function convertBud(bud, callback) {
+                s._convertBud(bud, callback);
+            }
+        ], callback);
+    },
+    /**
+     * Require a module.
+     * @param {Bud} bud - Bud to require.
+     * @param {function} callback - Callback when done.
+     * @private
+     */
+    _requireBud: function (bud, callback) {
+        var s = this;
+        _concatBuds(bud, function (bud, callback) {
+            var src = bud.src || <span class="branch-1 cbranch-no" title="branch not covered" >bud;</span>
+            async.waterfall([
+                function (callback) {
+                    var filename = path.resolve(src);
+                    fs.exists(filename, function (exists) {
+                        callback(null, exists ? filename : <span class="branch-1 cbranch-no" title="branch not covered" >src)</span>;
+                    });
+                },
+                function (name) {
+                    var err = null;
+                    try {
+                        bud = require(name);
+                    } catch (catched) {
+<span class="cstat-no" title="statement not covered" >                        err = "[BudLoader]" + catched;</span>
+                    } finally {
+                        bud.src = path.resolve(src);
+                        callback(err, bud);
+                    }
+                }
+            ], callback);
+        }, callback);
+    },
+    /**
+     * Evaluate bud content.
+     * @param {object|function} bud - Module to evaluate.
+     * @param {function} callback - Callback when done.
+     * @private
+     */
+    _evaluateBud: function (bud, callback) {
+        var s = this;
+        _concatBuds(bud, function (bud, callback) {
+            switch (typeof(bud)) {
+<span class="branch-0 cbranch-no" title="branch not covered" >                case 'function':</span>
+<span class="cstat-no" title="statement not covered" >                    var load = bud;</span>
+<span class="cstat-no" title="statement not covered" >                    load(<span class="fstat-no" title="function not covered" >function (err, bud) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        bud = [].concat(bud).map(<span class="fstat-no" title="function not covered" >function (bud) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            copying.fallbackCopy(load, bud);</span>
+<span class="cstat-no" title="statement not covered" >                            return bud;</span>
+                        });
+<span class="cstat-no" title="statement not covered" >                        callback(err, bud)</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                    break;</span>
+                default:
+                    callback(null, bud);
+                    break;
+            }
+        }, callback);
+    },
+    /**
+     * Makeup bud content.
+     * @param {Bud} bud - Configuration to evaluate.
+     * @param {function} callback - Callback when done.
+     * @private
+     */
+    _makeupBud: function (bud, callback) {
+        var s = this;
+        _concatBuds(bud, function (bud, callback) {
+            var src = path.resolve(bud.src || <span class="branch-1 cbranch-no" title="branch not covered" >bud)</span>,
+                dirname = path.dirname(src),
+                basename = path.basename(src, path.extname(src));
+            bud.path = path.resolve(dirname, bud.path || <span class="branch-1 cbranch-no" title="branch not covered" >basename.replace(/^[\._]/, ''))</span>;
+            bud.cwd = dirname;
+            bud.tmpl = bud.tmpl || <span class="branch-1 cbranch-no" title="branch not covered" >glob.sync(path.resolve(dirname, basename + '.*'))</span>
+                .filter(<span class="fstat-no" title="function not covered" >function (tmpl) {</span>
+<span class="cstat-no" title="statement not covered" >                    return tmpl !== src;</span>
+                })
+                .shift();
+            callback(null, bud);
+        }, callback);
+    },
+    /**
+     * Convert bud content.
+     * @param {Bud} bud - Configuration to convert.
+     * @param {function} callback - Callback when done.
+     * @private
+     */
+    _convertBud: function (bud, callback) {
+        var s = this;
+        _concatBuds(bud, function (data, callback) {
+            callback(null, Bud.new(data));
+        }, callback);
+    }
+};
+&nbsp;
+module.exports = BudLoader;
+&nbsp;
+&nbsp;
+/**
+ * Callback for bud load
+ * @memberof coz/lib/bud
+ * @callback budLoaderLoadCallback
+ * @param {Error} err - Load error.
+ * @param {Bud} bud - Loaded bud.
+ */</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 07 2015 12:17:43 GMT+0900 (JST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
