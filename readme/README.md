@@ -11,18 +11,17 @@ coz
 <!-- Badge end -->
 
 
-Flexible generator.
+Flexible generator, which makes your project clean and maintainable.
 
 <!-- Banner start -->
 
-<a href="http://nodejs.org/"><img style="height:40px;" src="http://nodejs.org/images/logos/nodejs-dark.png" height="40"></a>&nbsp;
 <!-- Banner end -->
 
 Table of Contents
 -----
 - [About coz](#01-about)
-    - [Whats this](#01-about--whats-this)
-    - [Why this](#01-about--why-this)
+    - [What's this?](#01-about--whats-this)
+    - [Why this?](#01-about--why-this)
 - [Getting started](#02-howto)
     - [Requirements](#02-howto--requirements)
     - [Install](#02-howto--install)

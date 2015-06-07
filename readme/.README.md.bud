@@ -32,7 +32,8 @@ function _section(filename, callback) {
                         return {
                             content: content,
                             isTopic: content.match(/^###/),
-                            name: content.replace(/[#\?'"]/g, '').trim()
+                            name: content.replace(/[#\?'"]/g, '').trim(),
+                            title: content.replace(/^#+/g, '').trim()
                         }
                     });
                 },
