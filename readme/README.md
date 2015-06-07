@@ -16,12 +16,12 @@ Flexible generator, which makes your project clean and maintainable.
 
 <a href="https://github.com/okunishinishi/coz#readme"><img style="height:128px;" src="assets/images/coz-banner.jpg" height="128"/></a>
 
-<img style="height:128px;" src="assets/images/coz-outline.jpg" height="128">
 
 Table of Contents
 -----
 - [About coz](#01-about)
     - [What's this?](#01-about--whats-this)
+    - [When to use?](#01-about--when-to-use)
     - [Why this?](#01-about--why-this)
 - [Getting started](#02-howto)
     - [Requirements](#02-howto--requirements)
@@ -43,10 +43,17 @@ About coz
 <a name="01-about--whats-this"></a>
 ### What's this?
 
-File generator tool for autocoding.
+The basic idea of coz is that creating file from file.
 
-Create a *.bud* file with contains meta data of file.
+Write a meta file called `.bud` file and run coz generates the magic.
 
+<img style="height:128px;" src="assets/images/coz-outline.jpg" height="128">
+
+This could be useful when you generate source code or documentations.
+
+
+<a name="01-about--when-to-use"></a>
+### When to use?
 
 
 
