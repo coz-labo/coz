@@ -8,6 +8,7 @@ script:
 - "./ci/bin/build.sh"
 - "./ci/bin/test.sh"
 - "./ci/bin/cover.sh"
+- "./ci/bin/report.sh"
 env:
   global:
     secure: j9JmDODV/bvashU3KJU1Au1rW8ROuezKjcZS+QXYS7mK9wRs1PyOFrwIL5bDwrXs6KcDRP5Qm3nbOvuOiOKbtdB7q8p1D+yA44tbDz/40KjCnZGV3pUbVFmNQCbTFXbMAn7mo5VpVYXJ/vXM3m8yHGZ06PDdBxNvFLeVU4y/aL+3FQSiRZb0FCUujOIbgqaja1uqIX2TlzvFb/8DRKD4u+TVvxtPrOK6pHcNjlLsg7Ghv1tp0ZIEw9131yrTiT+OWOyYqnBva6Rgq+2Pp9I8mp0CN+Ch8XIkY2IcZpPdEo2wOOopchjki5L+uy9GjsTGJyoIa8LXF58GhLhA6/jqRX8sVBKoEUsmxxtBGcJp3FV1P0n2hM4XL1Dw5WwSo1OP42UXoXrNKfSfWLyu+1j5T/W96CTyI3GmJ3/LXMmXCsyRvVUbfCKUy8v3FW5lqA05+KQ5TsdKNE5W/cFc2QZYHeeOKfuXVQ4y/8tCKM5LhQCcTmaz/lEeNH1M0wrB/LQ15sPi2BpB3b+o+QfX4RKSynqahVKvRUWIRFc5hcFwjmEfCLavDrzPt/aVj2NppF247u2bsWZ8mxcWSPd6Du8f1Jb4XRE6TJPcRWi23qZdHfknVSZdc6IhKBt0EdpOCDwW6jLb3y8EnypF0hGUsB7dtFxzCWEqlLH8++afPLmK5u8=

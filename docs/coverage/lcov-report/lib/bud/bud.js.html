@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/bud/bud.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">lib/bud/bud.js</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(28 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(4 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(4 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(28 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">lib/bud/</a> &#187; bud.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">110</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">78</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Bud configuration.
+ * @constructor Bud
+ * @memberof module:coz/lib/bud
+ * @param {object} config - Configuration values.
+ * @param {string|function} [config.engine='handlebars'] - Template compile function or name of function.
+ * @param {string|cwd} [config.cwd=process.cwd()] - Current working directory.
+ * @param {object} - [config.data] - Rendering values.
+ * @param {object} - [config.helpers] - Rendering helpers.
+ * @param {boolean} [config.force=false] - Force to write or not.
+ * @param {string|number} [config.mode='644'] - File permission.
+ * @param {!string} config.path - File path to render.
+ * @param {string} config.src - Source file path of bud.
+ * @param {string|function} [config.tmpl='json'] - Template file path or template function.
+ */
+&nbsp;
+"use strict";
+&nbsp;
+var core = require('../core'),
+    copying = require('../util/copying'),
+    assert = core.assert;
+&nbsp;
+&nbsp;
+/** @lends Bud */
+function Bud(config) {
+    var s = this;
+    copying.copy(config, s);
+    copying.fallbackCopy(Bud.defaults, s);
+    s.validate();
+}
+&nbsp;
+&nbsp;
+Bud.prototype = {
+    /** Date when rendered last time. */
+    at: undefined,
+    /** Template compile engine */
+    engine: 'handlebars',
+    /** Data to render with template */
+    data: undefined,
+    /** Done or not */
+    done: false,
+    /** Should mkdirp when render */
+    mkdirp: false,
+    /** File permission */
+    mode: '644',
+    /** File output */
+    out: undefined,
+    /** File name to write */
+    path: undefined,
+    /** Bud file name */
+    src: undefined,
+    /** Template name */
+    tmpl: 'json',
+    /** Working directory path */
+    cwd: process.cwd(),
+    /**
+     * Validate this configuration.
+     */
+    validate: function () {
+        var s = this;
+&nbsp;
+        function _assertType(value, types, msg) {
+            if (typeof(value) === 'undefined') {
+                return;
+            }
+            assert(!!~types.indexOf(typeof(value)), msg);
+        }
+&nbsp;
+        _assertType(s.cwd, ['string'], 'bud.cwd should be string or function.');
+        _assertType(s.engine, ['string', 'object'], 'bud.engine should be string or object.');
+        _assertType(s.data, ['object'], 'bud.data should be object.');
+        _assertType(s.done, ['boolean'], 'bud.data should be boolean.');
+        _assertType(s.helpers, ['object'], 'bud.helpers should be object.');
+        _assertType(s.force, ['boolean', 'number'], 'bud.force should be boolean for number.');
+        _assertType(s.out, ['string'], 'bud.out should be string.');
+        _assertType(s.path, ['string'], 'bud.path should be string.');
+        _assertType(s.mkdirp, ['boolean'], 'bud.mkdirp should be boolean.');
+        _assertType(s.mode, ['string', 'number'], 'bud.mode should be string or number.');
+        _assertType(s.tmpl, ['string', 'function'], 'bud.tmpl should be string or function.');
+    }
+};
+&nbsp;
+/**
+ * Create new buds.
+ * @param {object} config - Bud config.
+ * @returns {Bud} - A new bud.
+ */
+Bud.new = function (config) {
+    if (typeof(config) === 'string') {
+        config = {src: config};
+    }
+    return new Bud(config);
+};
+&nbsp;
+&nbsp;
+module.exports = Bud;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 07 2015 12:17:43 GMT+0900 (JST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
