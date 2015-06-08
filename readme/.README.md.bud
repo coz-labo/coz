@@ -9,6 +9,8 @@ var pkg = require('../../package.json'),
 
 var engine = new HandlebarsEngine({});
 
+var BANNER_SIZE = 128;
+
 function _section(filename, callback) {
     async.waterfall([
         function (callback) {
@@ -25,6 +27,7 @@ function _section(filename, callback) {
             callback(null, {
                 name: path.basename(filename, path.extname(filename)),
                 content: tmpl({
+                    BANNER_SIZE:BANNER_SIZE,
                     pkg: pkg,
                     get bud() {
                         var bud = require('../../lib/bud/.bud.json');
