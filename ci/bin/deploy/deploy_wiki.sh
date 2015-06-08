@@ -19,6 +19,8 @@ if [[ -n $(git diff --stat --cached origin/master) ]]; then
     git push
 fi
 
+cd ${BASE_DIR}
 
-git add docs/wiki/ -A
+git add docs/wiki/ -fA
 git commit -am "Update wiki"
+git push
