@@ -14,6 +14,9 @@ cd docs/wiki/
 git add . -A
 git commit -am "Update wiki"
 
+git pull
+git merge origin/master
+
 if [[ -n $(git diff --stat --cached origin/master) ]]; then
     # Push only if needed.
     git push
