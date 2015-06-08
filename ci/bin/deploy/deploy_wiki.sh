@@ -14,7 +14,7 @@ cd docs/wiki/
 git add . -A
 git commit -am "Update wiki"
 
-git pull
+git pull origin master
 git merge origin/master
 
 if [[ -n $(git diff --stat --cached origin/master) ]]; then
