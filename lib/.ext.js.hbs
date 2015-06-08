@@ -1,14 +1,16 @@
 {{!
     Template for ext.js
 }}/**
- * External modules, installed via npm.
- * @module coz/lib/ext{{#each modules}}
- * @property {object} {{camelcase name}} - The npm {@link https://www.npmjs.org/package/{{requireName}}|{{requireName}} module}@{{version}}. {{/each}}
+ * External modules, installed via {@link https://www.npmjs.com|npm}.
+ * @module coz/lib/ext
  */
 
 "use strict";
 
 module.exports = {
-{{#each modules}}    get {{camelcase name}}() { return require('{{name}}'); }{{#if @last}}{{else}},
+{{#each modules}}    /**
+     * This is an alias for {@link https://www.npmjs.org/package/{{name}}|{{name}}@{{{version}}}{{{../END_BRACE}}} module.
+     */
+    get {{camelcase name}}() { return require('{{name}}'); }{{#if @last}}{{else}},
 {{/if}}{{/each}}
 };

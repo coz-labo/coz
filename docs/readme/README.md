@@ -1,7 +1,9 @@
 coz
 =====
-<!-- Badge start -->
 
+Flexible generator, which makes your project clean and maintainable.
+
+<!-- Badge start -->
 [![Build Status][my_travis_badge_url]][my_travis_url]
 [![Code Climate][my_codeclimate_badge_url]][my_codeclimate_url]
 [![Code Coverage][my_codeclimate_coverage_badge_url]][my_codeclimate_url]
@@ -11,12 +13,12 @@ coz
 <!-- Badge end -->
 
 
-Flexible generator, which makes your project clean and maintainable.
+<!-- Banner start -->
+<a href="https://github.com/okunishinishi/coz#readme"><img style="height:px;" src="assets/images/coz-banner.png" height=""/></a>
+<!-- Banner end -->
 
 
-<a href="https://github.com/okunishinishi/coz#readme"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a>
-
-
+<!-- Table start -->
 Table of Contents
 -----
 - [About coz](#01-about)
@@ -36,8 +38,10 @@ Table of Contents
 - [About this project](#11-project)
     - [Author](#11-project--author)
     - [Donation](#11-project--donation)
+<!-- Table end -->
 
 
+<!-- Sections start -->
 <a name="01-about"></a>
 About coz
 ------
@@ -201,7 +205,7 @@ Links
 <a name="10-license"></a>
 License
 -------
-This software is released under the [MIT License][my_license_url].
+This software is released under the [MIT License](https://raw.githubusercontent.com/okunishinishi/coz/master/LICENSE).
 
 <a name="11-project"></a>
 About this project
@@ -219,11 +223,11 @@ Support this project and [others by okunishinishi][my_gittip_url] via [gittip][m
 
 [<img src="https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png" alt="Support via Gittip"/>][my_gittip_url]
 
+<!-- Sections end -->
+
 
 <!-- Links start -->
-
 [nodejs_url]: http://nodejs.org/
-[my_license_url]: http://raw.github.com/okunishinishi/coz/master/LICENSE
 [my_travis_url]: http://travis-ci.org/okunishinishi/coz
 [my_travis_badge_url]: http://img.shields.io/travis/okunishinishi/coz.svg?style=flat
 [my_codeclimate_url]: http://codeclimate.com/github/okunishinishi/coz

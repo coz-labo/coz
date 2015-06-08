@@ -6,8 +6,8 @@ var coz = require('../../../lib'),
 module.exports = indexJsBud({
     dirname: __dirname,
     desc: [
-        'Predefined template modules.'
+        'Buildin tmpl modules.'
     ].join('\n * '),
-    module: 'coz/lib/template/tmpls'
+    module: 'coz/lib/template/buildinTmpls'
 });
 

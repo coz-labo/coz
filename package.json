@@ -1,50 +1,53 @@
 {
-    "name": "coz",
-    "version": "1.0.4",
-    "description": "Flexible generator, which makes your project clean and maintainable.",
-    "main": "lib/index.js",
-    "bin": {
-        "coz": "bin/coz"
-    },
-    "scripts": {
-        "unittest": "nodeunit",
-        "cover": "istanbul cover nodeunit",
-        "report": "codeclimate",
-        "apiguide": "jsdoc"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/okunishinishi/coz.git"
-    },
-    "keywords": [
-        "development",
-        "generator",
-        "sourcecode"
-    ],
-    "author": {
-        "name": "Taka Okunishi",
-        "url": "http://okunishitaka.com"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/okunishinishi/coz/issues"
-    },
-    "homepage": "https://github.com/okunishinishi/coz#readme",
-    "dependencies": {
-        "async": "^1.2.0",
-        "cli-color": "^1.0.0",
-        "commander": "^2.8.1",
-        "glob": "^5.0.10",
-        "handlebars": "^3.0.3",
-        "minimatch": "^2.0.8",
-        "mkdirp": "^0.5.1",
-        "uglify-js": "^2.4.23"
-    },
-    "devDependencies": {
-        "codeclimate-test-reporter": "0.0.4",
-        "ink-docstrap": "^0.4.12",
-        "istanbul": "^0.3.14",
-        "jsdoc": "^3.3.0",
-        "nodeunit": "^0.9.1"
-    }
+  "name": "coz",
+  "version": "1.0.4",
+  "description": "Flexible generator, which makes your project clean and maintainable.",
+  "main": "lib/index.js",
+  "bin": {
+    "coz": "bin/coz"
+  },
+  "scripts": {
+    "unittest": "nodeunit",
+    "cover": "istanbul cover nodeunit",
+    "report": "codeclimate",
+    "apiguide": "jsdoc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okunishinishi/coz.git"
+  },
+  "keywords": [
+    "development",
+    "generator",
+    "sourcecode"
+  ],
+  "author": {
+    "name": "Taka Okunishi",
+    "url": "http://okunishitaka.com"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://raw.githubusercontent.com/okunishinishi/coz/master/LICENSE"
+  },
+  "bugs": {
+    "url": "https://github.com/okunishinishi/coz/issues"
+  },
+  "homepage": "https://github.com/okunishinishi/coz#readme",
+  "dependencies": {
+    "async": "^1.2.0",
+    "cli-color": "^1.0.0",
+    "commander": "^2.8.1",
+    "glob": "^5.0.10",
+    "handlebars": "^3.0.3",
+    "minimatch": "^2.0.8",
+    "mkdirp": "^0.5.1",
+    "uglify-js": "^2.4.23"
+  },
+  "devDependencies": {
+    "codeclimate-test-reporter": "0.0.4",
+    "ink-docstrap": "^0.4.12",
+    "istanbul": "^0.3.14",
+    "jsdoc": "^3.3.0",
+    "nodeunit": "^0.9.1"
+  }
 }

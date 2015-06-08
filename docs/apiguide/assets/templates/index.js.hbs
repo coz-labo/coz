@@ -9,10 +9,12 @@
 
 module.exports = {
 {{#each modules}}{{#if isSubmodules}}    /**
-      * @see {@link module:{{../../module}}/{{camelcase name}}{{{../../END_BRACE}}}
-      */
+     * @memberof module:{{../../module}}
+     * @name {@link module:{{../../module}}/{{camelcase name}}|{{camelcase name}}{{{../../END_BRACE}}}
+     */
 {{/if}}    {{#if isSubclass}}/**
-     * @see {@link module:{{../../module}}~{{pascalcase name}}{{{../../END_BRACE}}}
+     * @memberof module:{{../../module}}
+     * @name {@link module:{{../../module}}~{{pascalcase name}}|{{pascalcase name}}{{{../../END_BRACE}}}
      */
     get {{pascalcase name}}{{else}}get {{camelcase name}}{{/if}}() { return require('./{{snakecase name}}'); }{{#if @last}}{{else}},
 {{/if}}{{/each}}

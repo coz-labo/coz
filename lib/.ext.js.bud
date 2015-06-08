@@ -9,10 +9,7 @@ var pkg = require('../package');
 module.exports = {
     force: true,
     data: {
-        doc: {
-            file: 'External modules, installed via npm.',
-            module: 'coz/lib/ext'
-        },
+        END_BRACE:'}',
         get modules() {
             var dependencies = pkg.dependencies,
                 names = Object.keys(dependencies);

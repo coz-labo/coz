@@ -3,7 +3,7 @@
  * @version {{pkg.version}}
  * @module {{pkg.name}}
  * @author {@link {{pkg.author.url}}|{{pkg.author.name}}{{{END_BRACE}}}
- * @license {{pkg.license}}
+ * @license {@link {{pkg.license.url}}|{{pkg.license.type}}{{{END_BRACE}}}
  * @see {{pkg.homepage}}
 {{#each pkg.dependencies}} * @requires {@link https://www.npmjs.org/package/{{@key}}|{{@key}}@{{{@this}}}{{{../END_BRACE}}}
 {{/each}}
@@ -28,7 +28,7 @@ coz.Coz = Coz;
  * {{this}}.
  * @name {@link module:coz/lib/{{camelcase @key}}|{{camelcase @key}}{{{../END_BRACE}}}
  * @memberof module:coz
- * @see module:coz/lib/bud
+ * @see module:coz/lib/{{snakecase @key}}
  */
 coz.{{camelcase @key}} = require('./{{snakecase @key}}');
 
