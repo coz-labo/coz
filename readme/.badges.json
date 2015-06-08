@@ -25,9 +25,9 @@
         "link": "my_npm_url"
     },
     {
-        "alt": "Git tip",
-        "img": "my_gittip_budge_url",
-        "link": "my_gittip_url"
+        "alt": "Gratipay",
+        "img": "my_gratipay_budge_url",
+        "link": "my_gratipay_url"
     }
 
 ]

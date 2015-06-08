@@ -7,6 +7,6 @@ About this project
 
 ### Donation
 
-Support this project and [others by okunishinishi][my_gittip_url] via [gittip][my_gittip_url].
+Support this project and [others by okunishinishi][my_gratipay_url] via [gratipay][my_gratipay_url].
 
-[<img src="https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png" alt="Support via Gittip"/>][my_gittip_url]
+[<img src="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg" alt="Support via Gratipay"/>][my_gratipay_url]
