@@ -14,6 +14,7 @@ rm -rf docs/apiguide
 
 npm run apiguide -- README.md ${BASE_DIR}/lib/*.js ${BASE_DIR}/lib/*/*.js ${BASE_DIR}/lib/*/*/*.js \
 --verbose \
+--tutorials ${BASE_DIR}/docs/tutorial \
 --destination ${BASE_DIR}/docs/apiguide \
 --template ${BASE_DIR}/node_modules/ink-docstrap/template \
 --configure ${BASE_DIR}/docs/.apiguide.json
