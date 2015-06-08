@@ -19,4 +19,8 @@ git merge origin/master
 git submodule update
 
 git commit -am "Update wiki"
-git push
+
+if [[ -n $(git diff --stat --cached origin/master) ]]; then
+    # Push only if needed.
+    git push
+fi
