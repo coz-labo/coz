@@ -1,11 +1,9 @@
 {
   "01-simple-examples": {
     "bud-width-minimum-structure": {
-      "shell": ""
+      "shell": "bud-width-minimum-structure.sh"
     },
     "separate-template-and-data": {
-    },
-    "handle-list": {
     }
   },
   "02-complex-examples": {
