@@ -1,0 +1,15 @@
+{
+  "01-simple-examples": {
+    "bud-width-minimum-structure": {
+      "shell": ""
+    },
+    "separate-template-and-data": {
+    },
+    "handle-list": {
+    }
+  },
+  "02-complex-examples": {
+  },
+  "03-advanced-examples": {
+  }
+}

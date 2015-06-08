@@ -10,32 +10,33 @@ var coz = require('../../lib'),
     EOL = coz.core.os.EOL,
     format = coz.core.util.format,
     async = coz.ext.async,
-    glob = coz.ext.glob;
+    glob = coz.ext.glob
+    ;
 
 var pkg = require('../../package.json');
 
-function _read(filename) {
-    filename = path.resolve(__dirname, filename);
-    return String(fs.readFileSync(filename));
+function _linkList(data) {
+    return Object.keys(data).map(function (name) {
+        return format('+ [%s](%s)', name, data[name]);
+    }).join(EOL)
 }
 
 function _tutorialList(pattern) {
     pattern = path.resolve(__dirname, pattern);
-    var lines = glob.sync(pattern).map(function (filename) {
+    return glob.sync(pattern).map(function (filename) {
         var name = path.basename(filename, path.extname(filename));
         return format('+ [%s](tutorial-%s.html)', name, name);
-    });
-    return [
-        format('<!-- Tutorials start -->'),
-        lines.join(EOL) + EOL,
-        format('<!-- Tutorials end -->'),
-    ].join(EOL)
+    }).join(EOL);
 }
 
-function _isPrivateFile(filename) {
-    var basename = path.basename(filename);
-    return !/^_/.test(basename);
+function _wrapped(data, comment) {
+    return [
+        format('<!-- %s start -->', comment),
+        data + EOL,
+        format('<!-- %s end -->', comment)
+    ].join(EOL);
 }
+
 
 function _concat(a, b) {
     return a.concat(b);
@@ -47,26 +48,25 @@ function _tutorialBud(src, dest, link) {
         mode: '444',
         path: dest,
         tmpl: src,
+        mkdirp: true,
         data: {
             pkg: pkg,
-            links: _read('.src/_links.md'),
-            tutorials: _tutorialList('*.md', link)
+            links: _wrapped(_linkList(require('./.links')), 'Links'),
+            tutorials: _wrapped(_tutorialList('*.md', link), 'Tutorials')
         }
     }
 }
 
-
 module.exports = function (callback) {
-    var pattern = path.join(__dirname, '.src/*.src.md');
+    var pattern = path.join(__dirname, '/.*.md.hbs');
     async.waterfall([
         function (callback) {
             glob(pattern, callback);
         },
         function (filenames, callback) {
             var bud = filenames
-                .filter(_isPrivateFile)
                 .map(function (filename) {
-                    var name = path.basename(filename, '.src.md');
+                    var name = path.basename(filename, '.md.hbs').replace(/^\./, '');
                     return [
                         _tutorialBud(filename, name + '.md', '+ [%s](%s.md)'),
                         _tutorialBud(filename, '.jsdoc_precompiled/' + name + '.md', '+ [%s](%s.md)')
