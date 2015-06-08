@@ -9,7 +9,7 @@ Flexible generator, which makes your project clean and maintainable.
 [![Code Coverage][my_codeclimate_coverage_badge_url]][my_codeclimate_url]
 [![dependencies][my_gemnasium_badge_url]][my_gemnasium_url]
 [![npm version][my_npm_budge_url]][my_npm_url]
-[![Git tip][my_gittip_budge_url]][my_gittip_url]
+[![Gratipay][my_gratipay_budge_url]][my_gratipay_url]
 <!-- Badge end -->
 
 
@@ -219,9 +219,9 @@ About this project
 <a name="11-project--donation"></a>
 ### Donation
 
-Support this project and [others by okunishinishi][my_gittip_url] via [gittip][my_gittip_url].
+Support this project and [others by okunishinishi][my_gratipay_url] via [gratipay][my_gratipay_url].
 
-[<img src="https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png" alt="Support via Gittip"/>][my_gittip_url]
+[<img src="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg" alt="Support via Gratipay"/>][my_gratipay_url]
 
 <!-- Sections end -->
 
@@ -236,8 +236,8 @@ Support this project and [others by okunishinishi][my_gittip_url] via [gittip][m
 [my_apiguide_url]: http://okunishinishi.github.io/coz/apiguide/
 [my_coverage_url]: http://okunishinishi.github.io/coz/coverage/lcov-report
 [my_coverage_report_url]: http://okunishinishi.github.io/coz/coverage/lcov-report/
-[my_gittip_url]: http://www.gittip.com/okunishinishi/
-[my_gittip_budge_url]: http://img.shields.io/gittip/okunishinishi.svg?style=flat
+[my_gratipay_url]: https://gratipay.com/okunishinishi/
+[my_gratipay_budge_url]: http://img.shields.io/gratipay/okunishinishi.svg?style=flat
 [my_npm_url]: http://www.npmjs.org/package/coz
 [my_npm_budge_url]: http://img.shields.io/npm/v/coz.svg?style=flat
 [my_tag_url]: http://github.com/okunishinishi/coz/releases/tag/

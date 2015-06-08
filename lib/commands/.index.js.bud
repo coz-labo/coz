@@ -7,7 +7,8 @@ module.exports = indexJsBud({
     dirname: __dirname,
     desc: [
         'Commands invoked via bin script.'
-    ].join('\n * '),
+    ],
+    parentmodule: 'coz/lib',
     module: 'coz/lib/commands'
 });
 

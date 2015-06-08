@@ -6,6 +6,7 @@ var coz = require('../../../lib'),
 module.exports = indexJsBud({
     dirname: __dirname,
     desc: 'Bud instance factories.',
-    module: 'coz/lib/bud/factory'
+    module: 'coz/lib/bud/factory',
+    parentmodule: 'coz/lib/bud'
 });
 

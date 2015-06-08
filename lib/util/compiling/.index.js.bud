@@ -7,7 +7,8 @@ module.exports = indexJsBud({
     dirname: __dirname,
     desc: [
         'Utility functions for compile source code.'
-    ].join('\n * '),
+    ],
+    parentmodule: 'coz/lib/util',
     module: 'coz/lib/util/compiling'
 });
 

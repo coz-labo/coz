@@ -7,7 +7,8 @@ module.exports = indexJsBud({
     dirname: __dirname,
     desc: [
         'This module provides interfaces working with bud.'
-    ].join('\n * '),
+    ],
+    parentmodule: 'coz/lib',
     module: 'coz/lib/bud',
     submodules: ['factory'],
     subclasses: [
@@ -16,12 +17,6 @@ module.exports = indexJsBud({
         'BudLoader',
         'BudLogger',
         'BudWriter'
-    ],
-    memberDocs: {
-        factory: {
-            "description": "This is an alias for {@link module:coz/lib/bud/factory}."
-        }
-    },
-    pascalPattern: 'bud*'
+    ]
 });
 

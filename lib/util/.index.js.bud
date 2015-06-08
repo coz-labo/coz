@@ -8,6 +8,7 @@ module.exports = indexJsBud({
     desc: [
         'Utility modules.'
     ].join('\n * '),
+    parentmodule: 'coz/lib',
     module: 'coz/lib/util',
     submodules: [
         'compiling',

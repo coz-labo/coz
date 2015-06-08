@@ -7,8 +7,9 @@ module.exports = indexJsBud({
     dirname: __dirname,
     desc: [
         'Utility functions for logging.'
-    ].join('\n * '),
+    ],
     module: 'coz/lib/util/logging',
-    subclasses: 'ConsoleLogger'
+    parentmodule: 'coz/lib/util',
+    subclasses: ['ConsoleLogger']
 });
 
