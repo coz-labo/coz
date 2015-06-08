@@ -27,8 +27,8 @@ function _tutorialList(pattern) {
     });
     return [
         format('<!-- Tutorials start -->'),
-        lines.join(EOL),
-        format('<!-- Tutorials end -->')
+        lines.join(EOL) + EOL,
+        format('<!-- Tutorials end -->'),
     ].join(EOL)
 }
 
