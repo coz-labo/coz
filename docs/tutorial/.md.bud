@@ -7,6 +7,8 @@
 var coz = require('../../lib'),
     path = coz.core.path,
     fs = coz.core.fs,
+    EOL = coz.core.os.EOL,
+    format = coz.core.util.format,
     async = coz.ext.async,
     glob = coz.ext.glob;
 
@@ -17,32 +19,60 @@ function _read(filename) {
     return String(fs.readFileSync(filename));
 }
 
+function _tutorialList(pattern) {
+    pattern = path.resolve(__dirname, pattern);
+    var lines = glob.sync(pattern).map(function (filename) {
+        var name = path.basename(filename, path.extname(filename));
+        return format('+ [%s](tutorial-%s.html)', name, name);
+    });
+    return [
+        format('<!-- Tutorials start -->'),
+        lines.join(EOL),
+        format('<!-- Tutorials end -->')
+    ].join(EOL)
+}
+
+function _isPrivateFile(filename) {
+    var basename = path.basename(filename);
+    return !/^_/.test(basename);
+}
+
+function _concat(a, b) {
+    return a.concat(b);
+}
+
+function _tutorialBud(src, dest, link) {
+    return {
+        force: true,
+        mode: '444',
+        path: dest,
+        tmpl: src,
+        data: {
+            pkg: pkg,
+            links: _read('.src/_links.md'),
+            tutorials: _tutorialList('*.md', link)
+        }
+    }
+}
+
+
 module.exports = function (callback) {
-    var pattern = path.join(__dirname, 'src/*.src.md');
+    var pattern = path.join(__dirname, '.src/*.src.md');
     async.waterfall([
         function (callback) {
             glob(pattern, callback);
         },
         function (filenames, callback) {
-
             var bud = filenames
-                .filter(function (filename) {
-                    var basename = path.basename(filename);
-                    return !/^_/.test(basename);
-                })
+                .filter(_isPrivateFile)
                 .map(function (filename) {
                     var name = path.basename(filename, '.src.md');
-                    return {
-                        force: true,
-                        mode: '444',
-                        path: name + '.md',
-                        tmpl: filename,
-                        data: {
-                            pkg: pkg,
-                            links: _read('src/_links.md')
-                        }
-                    }
-                });
+                    return [
+                        _tutorialBud(filename, name + '.md', '+ [%s](%s.md)'),
+                        _tutorialBud(filename, '.jsdoc_precompiled/' + name + '.md', '+ [%s](%s.md)')
+                    ];
+                })
+                .reduce(_concat, []);
             callback(null, bud);
         }
     ], callback);
