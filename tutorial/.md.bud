@@ -1,0 +1,51 @@
+/**
+ * Bud file for tutorial markdowns.
+ */
+
+"use strict";
+
+var coz = require('../../lib'),
+    path = coz.core.path,
+    fs = coz.core.fs,
+    async = coz.ext.async,
+    glob = coz.ext.glob;
+
+var pkg = require('../../package.json');
+
+function _read(filename) {
+    filename = path.resolve(__dirname, filename);
+    return String(fs.readFileSync(filename));
+}
+
+module.exports = function (callback) {
+    var pattern = path.join(__dirname, 'src/*.src.md');
+    async.waterfall([
+        function (callback) {
+            glob(pattern, callback);
+        },
+        function (filenames, callback) {
+
+            var bud = filenames
+                .filter(function (filename) {
+                    var basename = path.basename(filename);
+                    return !/^_/.test(basename);
+                })
+                .map(function (filename) {
+                    var name = path.basename(filename, '.src.md');
+                    return {
+                        force: true,
+                        mode: '444',
+                        path: name + '.md',
+                        tmpl: filename,
+                        data: {
+                            pkg: pkg,
+                            links: _read('src/_links.md')
+                        }
+                    }
+                });
+            callback(null, bud);
+        }
+    ], callback);
+
+};
+
