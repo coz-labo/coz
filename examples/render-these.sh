@@ -6,4 +6,4 @@
 
 HERE=$(cd "$(dirname $0)" && pwd)
 cd ${HERE}
-coz render */.*.bud
+coz render "**/.*.bud"

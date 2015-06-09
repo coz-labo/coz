@@ -1,0 +1,24 @@
+/**
+ * .what-colors.html.bud
+ * This is a bud file for "examples/02-separated-template"
+ */
+
+// Exports as a Node.js module.
+module.exports = {
+
+    // Template file path. Relative to this bud file.
+    tmpl: '.what-colors.html.hbs',
+
+    // Overwrite when already existing.
+    force: true,
+
+    // File path to write out.
+    path: 'what-colors.html',
+
+    // File permission.
+    mode: '444',
+
+    // Data to render.
+    data: require('./.what-colors.html.json')
+};
+

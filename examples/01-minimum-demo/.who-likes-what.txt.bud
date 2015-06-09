@@ -5,12 +5,19 @@
 
 // Exports as a Node.js module.
 module.exports = {
+
     // Template string. By default, parsed by Handlebars engine.
     tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
+
     // Overwrite when already existing.
     force: true,
+
+    // File path to write out.
+    path: 'who-likes-what.txt',
+
     // File permission.
     mode: '444',
+
     // Data to render.
     data: {
         members: {

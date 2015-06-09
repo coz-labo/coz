@@ -14,7 +14,7 @@ Flexible generator, which makes your project clean and maintainable.
 
 
 <!-- Banner start -->
-<a href="https://github.com/okunishinishi/coz#readme"><img style="height:px;" src="assets/images/coz-banner.png" height=""/></a>
+<a href="https://github.com/okunishinishi/coz#readme"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a>
 <!-- Banner end -->
 
 
