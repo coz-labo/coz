@@ -155,7 +155,16 @@ will generate:
 ```
 
 
+
 ___
+
+### See also
+
+<!-- See also start -->
+
++ [03 - Mastering coz bud][tutorial_03_mastering_coz_bud_url]
+
+<!-- See also end -->
 
 
 ### Tutorials
@@ -164,8 +173,8 @@ ___
 
 + [01 - Installing coz][tutorial_01_installing_coz_url]
 + [02 - Rendering bud files][tutorial_02_rendering_bud_files_url]
-+ [03 - Digging deeper into bud][tutorial_03_digging_deeper_into_bud_url]
-+ [04 - Using programmatic API][tutorial_04_using_programmatic__a_p_i_url]
++ [03 - Mastering coz bud][tutorial_03_mastering_coz_bud_url]
++ [04 - Using programmatic API][tutorial_04_using_programmatic_a_p_i_url]
 + [05 - Customizing coz][tutorial_05_customizing_coz_url]
 
 <!-- Tutorials end -->
@@ -183,8 +192,8 @@ ___
 [my_npm_url]: http://www.npmjs.org/package/coz
 [tutorial_01_installing_coz_url]: tutorial-01%20-%20Installing%20coz.html
 [tutorial_02_rendering_bud_files_url]: tutorial-02%20-%20Rendering%20bud%20files.html
-[tutorial_03_digging_deeper_into_bud_url]: tutorial-03%20-%20Digging%20deeper%20into%20bud.html
-[tutorial_04_using_programmatic__a_p_i_url]: tutorial-04%20-%20Using%20programmatic%20API.html
+[tutorial_03_mastering_coz_bud_url]: tutorial-03%20-%20Mastering%20coz%20bud.html
+[tutorial_04_using_programmatic_a_p_i_url]: tutorial-04%20-%20Using%20programmatic%20API.html
 [tutorial_05_customizing_coz_url]: tutorial-05%20-%20Customizing%20coz.html
 
 <!-- URLs end -->

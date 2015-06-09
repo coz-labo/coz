@@ -15,7 +15,7 @@ var coz = require('../../lib'),
     ;
 
 var pkg = require('../../package.json'),
-        bud = require('../../lib/bud/.bud.json');
+    bud = require('../../lib/bud/.bud.json');
 
 function _urlItem(key, url) {
     return format('[%s]: %s', key, encodeURI(url));
@@ -62,7 +62,7 @@ function _tutorialKey(filename) {
     return [
         'tutorial',
         string.snakecase(path.basename(filename, path.extname(filename)))
-    ].join('_').replace(/__+/, '_');
+    ].join('_').replace(/__+/g, '_');
 }
 
 function _urls(items) {
@@ -79,6 +79,19 @@ function _tutorials(filenames) {
         return _linkItem(name, url);
     }).join(EOL);
     return _wrapped(tutorials, 'Tutorials');
+}
+
+function _seeAlso(filenames) {
+    var seeAlso = filenames
+        .filter(function (filename) {
+            return !!filename;
+        })
+        .map(function (filename) {
+            var url = _tutorialKey(filename.replace(/\.md\.hbs$/, '')) + '_url',
+                name = path.basename(filename, '.md.hbs');
+            return _linkItem(name.replace(/^[\._]/g, ''), url);
+        }).join(EOL);
+    return _wrapped(seeAlso, 'See also');
 }
 
 function _injectCodeMarkup(lines) {
@@ -103,12 +116,12 @@ module.exports = function (callback) {
             glob(pattern, callback);
         },
         function (filenames, callback) {
+            var tutorials = glob.sync('*.md', {cwd: __dirname});
             var bud = filenames
-                .map(function (filename) {
+                .map(function (filename, i) {
                     var name = path.basename(filename, '.md.hbs').replace(/^\./, ''),
                         lines = fs.readFileSync(filename).toString().split(EOL);
 
-                    var tutorials = glob.sync('*.md', {cwd: __dirname});
                     return [
                         _tutorialBud({
                             path: name + '.md',
@@ -126,6 +139,10 @@ module.exports = function (callback) {
                                 },
                                 get tutorials() {
                                     return _tutorials(tutorials);
+                                },
+                                get seeAlso() {
+                                    var filename = filenames[i + 1];
+                                    return _seeAlso([filename]);
                                 }
                             })
                         }),
@@ -146,6 +163,10 @@ module.exports = function (callback) {
                                 },
                                 get tutorials() {
                                     return _tutorials(tutorials);
+                                },
+                                get seeAlso() {
+                                    var filename = filenames[i + 1];
+                                    return _seeAlso([filename]);
                                 }
                             })
                         })

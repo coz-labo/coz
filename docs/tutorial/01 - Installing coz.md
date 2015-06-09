@@ -34,7 +34,23 @@ $ coz --version
 If you do not want do it globally, install it local and use [programmatic API][tutorial_04_using_programmatic__a_p_i_url].
 
 
+
 ___
+
+### See also
+
+<!-- See also start -->
+
++ [02 - Rendering bud files][tutorial_02_rendering_bud_files_url]
+
+<!-- See also end -->
+
+### Links
+
++ [Node.js][nodejs_url]
++ [NPM][npm_url]
++ [nvm][nvm_url]
++ [coz @ npm][my_npm_url]
 
 
 ### Tutorials
@@ -43,18 +59,12 @@ ___
 
 + [01 - Installing coz][tutorial_01_installing_coz_url]
 + [02 - Rendering bud files][tutorial_02_rendering_bud_files_url]
-+ [03 - Digging deeper into bud][tutorial_03_digging_deeper_into_bud_url]
-+ [04 - Using programmatic API][tutorial_04_using_programmatic__a_p_i_url]
++ [03 - Mastering coz bud][tutorial_03_mastering_coz_bud_url]
++ [04 - Using programmatic API][tutorial_04_using_programmatic_a_p_i_url]
 + [05 - Customizing coz][tutorial_05_customizing_coz_url]
 
 <!-- Tutorials end -->
 
-### Links
-
-+ [Node.js][nodejs_url]
-+ [NPM][npm_url]
-+ [nvm][nvm_url]
-+ [coz @ npm][my_npm_url]
 
 <!-- URLs start -->
 
@@ -65,8 +75,8 @@ ___
 [my_npm_url]: http://www.npmjs.org/package/coz
 [tutorial_01_installing_coz_url]: 01%20-%20Installing%20coz.md
 [tutorial_02_rendering_bud_files_url]: 02%20-%20Rendering%20bud%20files.md
-[tutorial_03_digging_deeper_into_bud_url]: 03%20-%20Digging%20deeper%20into%20bud.md
-[tutorial_04_using_programmatic__a_p_i_url]: 04%20-%20Using%20programmatic%20API.md
+[tutorial_03_mastering_coz_bud_url]: 03%20-%20Mastering%20coz%20bud.md
+[tutorial_04_using_programmatic_a_p_i_url]: 04%20-%20Using%20programmatic%20API.md
 [tutorial_05_customizing_coz_url]: 05%20-%20Customizing%20coz.md
 
 <!-- URLs end -->

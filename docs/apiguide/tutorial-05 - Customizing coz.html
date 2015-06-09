@@ -176,7 +176,7 @@
 						</li>
 						
 						<li>
-							<a href="tutorial-03 - Digging deeper into bud.html">03 - Digging deeper into bud</a>
+							<a href="tutorial-03 - Mastering coz bud.html">03 - Mastering coz bud</a>
 						</li>
 						
 						<li>
@@ -210,178 +210,26 @@
 </header>
 
 <article>
-    <p>{
-    &quot;urls&quot;: &quot;<!-- URLs start -->\n\n[nodejs_url]: http://nodejs.org/\n[nodejs_download_url]: https://nodejs.org/download/\n[npm_url]: https://www.npmjs.com/\n[nvm_url]: https://github.com/creationix/nvm\n[my_npm_url]: http://www.npmjs.org/package/coz\n[tutorial_01_installing_coz_url]: tutorial-01%20-%20Installing%20coz.html\n[tutorial_02_rendering_bud_files_url]: tutorial-02%20-%20Rendering%20bud%20files.html\n[tutorial_03_digging_deeper_into_bud_url]: tutorial-03%20-%20Digging%20deeper%20into%20bud.html\n[tutorial_04_using_programmatic<strong>a_p_i_url]: tutorial-04%20-%20Using%20programmatic%20API.html\n[tutorial_05_customizing_coz_url]: tutorial-05%20-%20Customizing%20coz.html\n\n<!-- URLs end -->&quot;,
-    &quot;tutorials&quot;: &quot;<!-- Tutorials start -->\n\n+ [01 - Installing coz][tutorial_01_installing_coz_url]\n+ [02 - Rendering bud files][tutorial_02_rendering_bud_files_url]\n+ [03 - Digging deeper into bud][tutorial_03_digging_deeper_into_bud_url]\n+ [04 - Using programmatic API][tutorial_04_using_programmatic</strong>a_p_i_url]\n+ [05 - Customizing coz][tutorial_05_customizing_coz_url]\n\n<!-- Tutorials end -->&quot;,
-    &quot;pkg&quot;: {
-        &quot;name&quot;: &quot;coz&quot;,
-        &quot;version&quot;: &quot;1.0.7&quot;,
-        &quot;description&quot;: &quot;Flexible generator, which makes your project clean and maintainable.&quot;,
-        &quot;main&quot;: &quot;lib/index.js&quot;,
-        &quot;bin&quot;: {
-            &quot;coz&quot;: &quot;bin/coz&quot;
-        },
-        &quot;scripts&quot;: {
-            &quot;unittest&quot;: &quot;nodeunit&quot;,
-            &quot;cover&quot;: &quot;istanbul cover nodeunit&quot;,
-            &quot;report&quot;: &quot;codeclimate&quot;,
-            &quot;apiguide&quot;: &quot;jsdoc&quot;
-        },
-        &quot;repository&quot;: {
-            &quot;type&quot;: &quot;git&quot;,
-            &quot;url&quot;: &quot;git+https://github.com/okunishinishi/coz.git&quot;
-        },
-        &quot;keywords&quot;: [
-            &quot;development&quot;,
-            &quot;generator&quot;,
-            &quot;sourcecode&quot;
-        ],
-        &quot;author&quot;: {
-            &quot;name&quot;: &quot;Taka Okunishi&quot;,
-            &quot;url&quot;: &quot;http://okunishitaka.com&quot;
-        },
-        &quot;license&quot;: {
-            &quot;type&quot;: &quot;MIT&quot;,
-            &quot;url&quot;: &quot;https://raw.githubusercontent.com/okunishinishi/coz/master/LICENSE&quot;
-        },
-        &quot;bugs&quot;: {
-            &quot;url&quot;: &quot;https://github.com/okunishinishi/coz/issues&quot;
-        },
-        &quot;homepage&quot;: &quot;https://github.com/okunishinishi/coz#readme&quot;,
-        &quot;dependencies&quot;: {
-            &quot;async&quot;: &quot;^1.2.0&quot;,
-            &quot;cli-color&quot;: &quot;^1.0.0&quot;,
-            &quot;commander&quot;: &quot;^2.8.1&quot;,
-            &quot;glob&quot;: &quot;^5.0.10&quot;,
-            &quot;handlebars&quot;: &quot;^3.0.3&quot;,
-            &quot;minimatch&quot;: &quot;^2.0.8&quot;,
-            &quot;mkdirp&quot;: &quot;^0.5.1&quot;,
-            &quot;uglify-js&quot;: &quot;^2.4.23&quot;
-        },
-        &quot;devDependencies&quot;: {
-            &quot;codeclimate-test-reporter&quot;: &quot;0.0.4&quot;,
-            &quot;ink-docstrap&quot;: &quot;^0.4.12&quot;,
-            &quot;istanbul&quot;: &quot;^0.3.14&quot;,
-            &quot;jsdoc&quot;: &quot;^3.3.0&quot;,
-            &quot;nodeunit&quot;: &quot;^0.9.1&quot;
-        },
-        &quot;engines&quot;: {
-            &quot;node&quot;: &quot;&gt;=0.10.3&quot;
-        }
-    },
-    &quot;bud&quot;: {
-        &quot;about&quot;: &quot;A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.&quot;,
-        &quot;properties&quot;: [
-            {
-                &quot;configurable&quot;: true,
-                &quot;default&quot;: &quot;'handlebars'&quot;,
-                &quot;description&quot;: &quot;Template compile function or name of function&quot;,
-                &quot;required&quot;: false,
-                &quot;type&quot;: &quot;string&#124;object&quot;,
-                &quot;typeAsArray&quot;: &quot;'string' ,'object'&quot;,
-                &quot;optional&quot;: true,
-                &quot;name&quot;: &quot;engine&quot;
-            },
-            {
-                &quot;configurable&quot;: true,
-                &quot;default&quot;: &quot;process.cwd()&quot;,
-                &quot;description&quot;: &quot;Working directory path&quot;,
-                &quot;required&quot;: false,
-                &quot;type&quot;: &quot;string&quot;,
-                &quot;typeAsArray&quot;: &quot;'string'&quot;,
-                &quot;optional&quot;: true,
-                &quot;name&quot;: &quot;cwd&quot;
-            },
-            {
-                &quot;configurable&quot;: true,
-                &quot;description&quot;: &quot;Data to template render with&quot;,
-                &quot;required&quot;: true,
-                &quot;type&quot;: &quot;object&quot;,
-                &quot;typeAsArray&quot;: &quot;'object'&quot;,
-                &quot;optional&quot;: false,
-                &quot;name&quot;: &quot;data&quot;
-            },
-            {
-                &quot;configurable&quot;: false,
-                &quot;description&quot;: &quot;Done to writeout or not&quot;,
-                &quot;type&quot;: &quot;boolean&quot;,
-                &quot;typeAsArray&quot;: &quot;'boolean'&quot;,
-                &quot;optional&quot;: true,
-                &quot;name&quot;: &quot;done&quot;
-            },
-            {
-                &quot;configurable&quot;: true,
-                &quot;description&quot;: &quot;Make parent directories if needed&quot;,
-                &quot;default&quot;: false,
-                &quot;type&quot;: &quot;boolean&quot;,
-                &quot;typeAsArray&quot;: &quot;'boolean'&quot;,
-                &quot;optional&quot;: true,
-                &quot;name&quot;: &quot;mkdirp&quot;
-            },
-            {
-                &quot;configurable&quot;: true,
-                &quot;description&quot;: &quot;Properties to set engine&quot;,
-                &quot;required&quot;: false,
-                &quot;type&quot;: &quot;object&quot;,
-                &quot;typeAsArray&quot;: &quot;'object'&quot;,
-                &quot;optional&quot;: true,
-                &quot;name&quot;: &quot;setup&quot;
-            },
-            {
-                &quot;configurable&quot;: true,
-                &quot;description&quot;: &quot;Should overwrite file when already exists, or not&quot;,
-                &quot;default&quot;: &quot;false&quot;,
-                &quot;required&quot;: false,
-                &quot;type&quot;: &quot;boolean&quot;,
-                &quot;typeAsArray&quot;: &quot;'boolean'&quot;,
-                &quot;optional&quot;: true,
-                &quot;name&quot;: &quot;force&quot;
-            },
-            {
-                &quot;configurable&quot;: true,
-                &quot;description&quot;: &quot;File permission&quot;,
-                &quot;default&quot;: &quot;'644'&quot;,
-                &quot;required&quot;: false,
-                &quot;type&quot;: &quot;string&#124;number&quot;,
-                &quot;typeAsArray&quot;: &quot;'string' ,'number'&quot;,
-                &quot;optional&quot;: true,
-                &quot;name&quot;: &quot;mode&quot;
-            },
-            {
-                &quot;configurable&quot;: true,
-                &quot;description&quot;: &quot;Destination file path. If not provided, guess from bud file path&quot;,
-                &quot;required&quot;: false,
-                &quot;type&quot;: &quot;string&quot;,
-                &quot;typeAsArray&quot;: &quot;'string'&quot;,
-                &quot;optional&quot;: true,
-                &quot;name&quot;: &quot;path&quot;
-            },
-            {
-                &quot;configurable&quot;: false,
-                &quot;description&quot;: &quot;Bud source file path&quot;,
-                &quot;type&quot;: &quot;string&quot;,
-                &quot;typeAsArray&quot;: &quot;'string'&quot;,
-                &quot;optional&quot;: true,
-                &quot;name&quot;: &quot;src&quot;
-            },
-            {
-                &quot;configurable&quot;: true,
-                &quot;default&quot;: &quot;'json'&quot;,
-                &quot;description&quot;: &quot;Template file path or registered template name or template function&quot;,
-                &quot;required&quot;: &quot;false&quot;,
-                &quot;type&quot;: &quot;string&#124;function&quot;,
-                &quot;typeAsArray&quot;: &quot;'string' ,'function'&quot;,
-                &quot;optional&quot;: false,
-                &quot;name&quot;: &quot;tmpl&quot;
-            }
-        ]
-    },
-    &quot;$$bud&quot;: {
-        &quot;cwd&quot;: &quot;/Users/okuni/projects/coz/docs/tutorial&quot;,
-        &quot;src&quot;: &quot;/Users/okuni/projects/coz/docs/tutorial/.md.bud&quot;,
-        &quot;path&quot;: &quot;/Users/okuni/projects/coz/docs/tutorial/.jsdoc_precompiled/05 - Customizing coz.md&quot;
-    }
-}</p>
+    <hr>
+<h3>See also</h3><!-- See also start -->
+<!-- See also end -->
+<h3>Tutorials</h3><!-- Tutorials start -->
+<ul>
+<li><a href="tutorial-01%20-%20Installing%20coz.html">01 - Installing coz</a></li>
+<li><a href="tutorial-02%20-%20Rendering%20bud%20files.html">02 - Rendering bud files</a></li>
+<li><a href="tutorial-03%20-%20Mastering%20coz%20bud.html">03 - Mastering coz bud</a></li>
+<li><a href="tutorial-04%20-%20Using%20programmatic%20API.html">04 - Using programmatic API</a></li>
+<li><a href="tutorial-05%20-%20Customizing%20coz.html">05 - Customizing coz</a></li>
+</ul>
+<!-- Tutorials end -->
+<h3>Links</h3><ul>
+<li><a href="http://nodejs.org/">Node.js</a></li>
+<li><a href="https://www.npmjs.com/">NPM</a></li>
+<li><a href="https://github.com/creationix/nvm">nvm</a></li>
+<li><a href="http://www.npmjs.org/package/coz">coz @ npm</a></li>
+</ul>
+<!-- URLs start -->
+<!-- URLs end -->
 </article>
 
 </section>
@@ -402,7 +250,7 @@
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0</a>
-		on 2015-06-09 using the <a
+		on 2015-06-10 using the <a
 			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>

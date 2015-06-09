@@ -163,7 +163,7 @@ Links
 
 + [01 - Installing coz](01%20-%20Installing%20coz)
 + [02 - Rendering bud files](02%20-%20Rendering%20bud%20files)
-+ [03 - Digging deeper into bud](03%20-%20Digging%20deeper%20into%20bud)
++ [03 - Mastering coz bud](03%20-%20Mastering%20coz%20bud)
 + [04 - Using programmatic API](04%20-%20Using%20programmatic%20API)
 + [05 - Customizing coz](05%20-%20Customizing%20coz)
 
