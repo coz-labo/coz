@@ -8,11 +8,13 @@
 <!-- Badge start -->
 {{#each badges}}[![{{alt}}][{{img}}]][{{link}}]
 {{/each}}
+
 <!-- Badge end -->
 
 
 <!-- Banner start -->
 <a href="{{pkg.homepage}}"><img style="height:{{BANNER_SIZE}}px;" src="assets/images/coz-banner.png" height="{{BANNER_SIZE}}"/></a>
+
 <!-- Banner end -->
 
 
@@ -23,6 +25,7 @@ Table of Contents
 {{#each topics}}    - [{{{title}}}](#{{spinalcase ../name}}-{{spinalcase name}})
 {{/each}}
 {{/each}}
+
 <!-- Table end -->
 
 
@@ -33,10 +36,12 @@ Table of Contents
 {{/if}}{{{content}}}
 {{/each}}
 {{/each}}
+
 <!-- Sections end -->
 
 
 <!-- Links start -->
 {{#each links}}[{{@key}}]: {{this}}
 {{/each}}
+
 <!-- Links end-->
