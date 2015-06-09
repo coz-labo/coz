@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>coz Source: template/engine.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top ">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">coz</a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="module-coz.html">coz</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib.html">coz/lib</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud.html">coz/lib/bud</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud_factory.html">coz/lib/bud/factory</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_commands.html">coz/lib/commands</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_core.html">coz/lib/core</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_ext.html">coz/lib/ext</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template.html">coz/lib/template</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template_buildinEngines.html">coz/lib/template/buildinEngines</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template_buildinTmpls.html">coz/lib/template/buildinTmpls</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util.html">coz/lib/util</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_compiling.html">coz/lib/util/compiling</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_copying.html">coz/lib/util/copying</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_file.html">coz/lib/util/file</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_filtering.html">coz/lib/util/filtering</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_logging.html">coz/lib/util/logging</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_minifying.html">coz/lib/util/minifying</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_sorting.html">coz/lib/util/sorting</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_string.html">coz/lib/util/string</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="module-coz_lib_bud-Bud.html">coz/lib/bud~Bud</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud-BudCompiler.html">coz/lib/bud~BudCompiler</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud-BudLoader.html">coz/lib/bud~BudLoader</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud-BudLogger.html">coz/lib/bud~BudLogger</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud-BudWriter.html">coz/lib/bud~BudWriter</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template_engines-HandlebarsEngine.html">coz/lib/template/engines~HandlebarsEngine</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template-Engine.html">coz/lib/template~Engine</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_logging-ConsoleLogger.html">coz/lib/util/logging~ConsoleLogger</a>
+						</li>
+						
+						<li>
+							<a href="module-coz-Coz.html">coz~Coz</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="tutorial-01 - Installation.html">01 - Installation</a>
+						</li>
+						
+						<li>
+							<a href="tutorial-02 - Render bud files.html">02 - Render bud files</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+			<div class="span12">
+				
+				<div id="main">
+					
+
+
+		<h1 class="page-title">Source: template/engine.js</h1>
+    
+<section>
+	<article>
+		<pre
+			class="sunlight-highlight-javascript linenums">/**
+ * Abstract engine. All engine should inherit this class.
+ * @memberof module:coz/lib/template
+ * @inner
+ * @constructor Engine
+ * @param {object} [options] - Optional settings.
+ */
+
+"use strict";
+
+var core = require('../core'),
+    assert = core.assert;
+
+/** @lends module:coz/lib/template~Engine */
+function Engine() {
+    var s = this;
+    s.init.apply(s, arguments);
+}
+Engine.prototype = {
+
+    //------------------------
+    // Public methods
+    //------------------------
+    /**
+     * Name of this module.
+     * This property will be use by resolve to find the engine.
+     * @abstract
+     * @type {string}
+     */
+    $name: undefined,
+
+    /**
+     * Alias name of this module.
+     * This property will be use by resolve to find the engine.
+     * @abstract
+     * @type {string[]}
+     */
+    $aliases: undefined,
+    /**
+     * Initialize a engine.
+     * @abstract
+     * @param {object} options - Optional settings.
+     * @param {string} [options.basedir] - Base directory path.
+     */
+    init: function (options) {
+        var s = this;
+        options = options || {};
+        s.basedir = options.basedir || s.basedir;
+    },
+    /**
+     * Base directory path.
+     */
+    basedir: process.cwd(),
+    /**
+     * Clone this engine.
+     * @returns {*} - Clone of engine.
+     */
+    clone: function () {
+        var s = this;
+        var Constructor = s._constructor;
+        var clone = new Constructor(s);
+        clone.set(s);
+        return clone;
+    },
+    /**
+     * Get a property.
+     * @param {string} key - Key for property.
+     * @returns {*} - Property value.
+     */
+    get: function (key) {
+        var s = this;
+        return s[key];
+    },
+    /**
+     * Set a property to this property.
+     * You set multiple properties by passing a single, object-type argument.
+     * @param {string|object} key - Key for property.
+     * @param {?*} [val] - Value to set.
+     * @returns {Engine} - Returns self for chaining.
+     * @example
+     * engine.set('foo', 'bar');
+     * engine.set({foo: 'bar'});
+     */
+    set: function (key, val) {
+        var s = this;
+        var args = arguments;
+        var multiple = typeof(args[0]) === 'object';
+        if (multiple) {
+            s._setProperties(args[0]);
+        } else {
+            s._setProperty(key, val);
+        }
+        return s;
+    },
+    /**
+     * Precompile a template string.
+     * Precompiled template is a string with represents compiled template function.
+     * @abstract
+     * @param {string} source - Template source string.
+     * @param {module:coz/lib/template~precompileCallback} callback - callback when done.
+     */
+    precompile: function (source, callback) {
+        throw new Error('[precompile]Not implemented!');
+    },
+    /**
+     * Compile a template string.
+     * Compiled template is a function.
+     * @abstract
+     * @param {string} source - Template source string.
+     * @param {module:coz/lib/template~compileCallback} callback - Callback when done.
+     */
+    compile: function (source, callback) {
+        throw new Error('[compile]Not implemented!');
+    },
+    //------------------------
+    // Private properties
+    //------------------------
+
+
+    /**
+     * Constructor class.
+     * @function
+     * @private
+     */
+    _constructor: Engine,
+    /**
+     * Set a property.
+     * @param {string} key - Key for property.
+     * @param {*} val - Value to set.
+     * @returns {Engine} - Returns self for chaining.
+     * @private
+     */
+    _setProperty: function (key, val) {
+        var s = this;
+        s[key] = val;
+        return s;
+    },
+    /**
+     * Set multiple properties.
+     * @param {object} values - Properties to set.
+     * @returns {Engine} - Returns self for chaining.
+     * @private
+     */
+    _setProperties: function (values) {
+        var s = this,
+            keys = Object.keys(values || {});
+        for (var i = 0, len = keys.length; i &lt; len; i++) {
+            var key = keys[i];
+            s._setProperty(key, values[key]);
+        }
+        return s;
+    }
+};
+
+
+/**
+ * Define a engine constructor.
+ * @param {object} properties - Properties for constructor.
+ * @returns {function} - Constructor function.
+ */
+Engine.define = function (properties) {
+    assert(properties, "Properties is required.");
+
+    var DefinedEngine = function () {
+        var s = this;
+        s.init.apply(s, arguments);
+    };
+    DefinedEngine.$isEngine = true;
+
+    DefinedEngine.prototype = new Engine().set(properties);
+    DefinedEngine.prototype._constructor = DefinedEngine;
+
+    DefinedEngine.$name = properties.$name;
+    DefinedEngine.$aliases = [].concat(properties.$aliases || []);
+
+    assert(properties.$name, "$name is required. This will be used by resolver.");
+    assert(properties.compile, "properties.compile is should be required.");
+
+
+    return DefinedEngine;
+};
+
+module.exports = Engine;
+
+
+/**
+ * Callback for engine precompile function.
+ * @memberof module:coz/lib/template
+ * @inner
+ * @callback precompileCallback
+ * @param {?Error} err - precompile err
+ * @param {string} tmplFunctionString - Precompiled template function.
+ */
+
+/**
+ * Callback for engine compile function.
+ * @memberof module:coz/lib/template
+ * @inner
+ * @callback compileCallback
+ * @param {?Error} err - Compile err
+ * @param {function} tmpl - Compiled template function.
+ */</pre>
+	</article>
+</section>
+
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					<script>var h=document.head;h.innerHTML=h.innerHTML+'<link rel="shortcut icon" href="../../assets/images/coz-favicon.png"/><style>.navbar .navbar-inner{  background-image: none;background-color: rgba(250, 250, 250, 0.9);} .navbar .dropdown-menu{border-radius:4px; width:auto; max-height:500px;  background-color: rgba(42, 42, 42, 0.91);} a{color:#418300;background-color:transparent !important;} a:hover{color:#418300;} .nav-pills > li > a{padding:4px 8px;} .nav > li > a:hover, .nav > li > a:focus{text-decoration: underline;} #toc .toc-active{background-color:#418300;} #toc .toc-active a:hover{cursor:default; text-decoration:none;} .navbar .nav > li > a:focus, .navbar .nav > li > a:hover, .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle{color:#418300;} .navbar .nav li.dropdown > a:hover .caret, .navbar .nav li.dropdown > a:focus .caret{border-top-color:#418300 !important; border-bottom-color:#418300 !important;} .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a{background-image:none;background-color:#418300 !important;} .sunlight-menu{display:none;} .navbar .dropdown-menu a{padding: 2px 4px;}</style>';</script>
+					<br />
+					
+					
+		<span class="copyright">
+		okunishitaka.com Copyright © 2015
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0</a>
+		on 2015-06-09 using the <a
+			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		</span>
+				</footer>
+			</div>
+
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : "100px"
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : true,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>

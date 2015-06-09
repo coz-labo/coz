@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>coz Source: template/buildin_engines/handlebars_engine.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top ">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">coz</a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="module-coz.html">coz</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib.html">coz/lib</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud.html">coz/lib/bud</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud_factory.html">coz/lib/bud/factory</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_commands.html">coz/lib/commands</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_core.html">coz/lib/core</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_ext.html">coz/lib/ext</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template.html">coz/lib/template</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template_buildinEngines.html">coz/lib/template/buildinEngines</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template_buildinTmpls.html">coz/lib/template/buildinTmpls</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util.html">coz/lib/util</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_compiling.html">coz/lib/util/compiling</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_copying.html">coz/lib/util/copying</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_file.html">coz/lib/util/file</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_filtering.html">coz/lib/util/filtering</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_logging.html">coz/lib/util/logging</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_minifying.html">coz/lib/util/minifying</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_sorting.html">coz/lib/util/sorting</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_string.html">coz/lib/util/string</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="module-coz_lib_bud-Bud.html">coz/lib/bud~Bud</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud-BudCompiler.html">coz/lib/bud~BudCompiler</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud-BudLoader.html">coz/lib/bud~BudLoader</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud-BudLogger.html">coz/lib/bud~BudLogger</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud-BudWriter.html">coz/lib/bud~BudWriter</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template_engines-HandlebarsEngine.html">coz/lib/template/engines~HandlebarsEngine</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template-Engine.html">coz/lib/template~Engine</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_util_logging-ConsoleLogger.html">coz/lib/util/logging~ConsoleLogger</a>
+						</li>
+						
+						<li>
+							<a href="module-coz-Coz.html">coz~Coz</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="tutorial-01 - Installation.html">01 - Installation</a>
+						</li>
+						
+						<li>
+							<a href="tutorial-02 - Render bud files.html">02 - Render bud files</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+			<div class="span12">
+				
+				<div id="main">
+					
+
+
+		<h1 class="page-title">Source: template/buildin_engines/handlebars_engine.js</h1>
+    
+<section>
+	<article>
+		<pre
+			class="sunlight-highlight-javascript linenums">/**
+ * Engine for handlebars.
+ * @memberof module:coz/lib/template/engines
+ * @inner
+ * @augments module:coz/lib/template~Engine
+ * @constructor HandlebarsEngine
+ * @param {object} options - Optional settings.
+ * @param {object} options.helpers - Handlebars helper functions.
+ * @see http://handlebarsjs.com/
+ */
+
+"use strict";
+
+var core = require('../../core'),
+    ext = require('../../ext'),
+    fs = core.fs,
+    path = core.path,
+    handlebars = ext.handlebars,
+    Engine = require('../engine'),
+    string = require('../../util/string'),
+    compiling = require('../../util/compiling');
+
+/** @lends module:coz/lib/template/engines.HandlebarsEngine */
+var HandlebarsEngine = Engine.define(
+    /** @lends HandlebarsEngine.prototype */
+    {
+        $name: 'handlebars',
+        $aliases: [
+            'handlebarsEngine',
+            'hbs',
+            'hbsEngine'
+        ],
+        init: function (options) {
+            var s = this;
+            options = options || {};
+            s.registerHelpers(HandlebarsEngine.buildinHelpers);
+            s.registerHelpers(options.helpers);
+        },
+        precompile: function (source, callback) {
+            var s = this;
+            s._tryAsync(function () {
+                return compiling.precompileHandlebars(source, {
+                    helpers: s.helpers
+                });
+            }, callback);
+        },
+        compile: function (source, callback) {
+            var s = this;
+            s._tryAsync(function () {
+                return compiling.compileHandlebars(source, {
+                    helpers: s.helpers
+                });
+            }, callback);
+        },
+        /**
+         * Helper functions.
+         * @type {object}
+         */
+        helpers: undefined,
+        /**
+         * Register a helper.
+         * @param {string} name - Name of the helper.
+         * @param {function} helper - Helper function.
+         * @returns {HandlebarsEngine} - Returns self.
+         */
+        registerHelper: function (name, helper) {
+            var s = this;
+            s.helpers = s.helpers || {};
+            s.helpers[name] = helper;
+            return s;
+        },
+        /**
+         * Register multiple helpers.
+         * @param {object} helpers - Helpers to register.
+         * @returns {HandlebarsEngine} - Returns self.
+         */
+        registerHelpers: function (helpers) {
+            var s = this,
+                names = Object.keys(helpers || {});
+            for (var i = 0, len = names.length; i &lt; len; i++) {
+                var name = names[i];
+                s.registerHelper(name, helpers[name]);
+            }
+            return s;
+        },
+        _tryAsync: function (task, callback) {
+            var s = this;
+            var result;
+            try {
+                result = task.call(s);
+            } catch (e) {
+                callback(e);
+                return;
+            }
+            callback(null, result);
+        }
+    });
+
+/**
+ * Create template from precompiled
+ * @returns {function} - Handlebars context.
+ */
+HandlebarsEngine.createHandlebars = function () {
+    var Handlebars = handlebars.create();
+    var helpers = HandlebarsEngine.buildinHelpers;
+    if (helpers) {
+        Object.keys(helpers).forEach(function (name) {
+            var helper = helpers[name];
+            Handlebars.registerHelper(name, helper);
+        });
+    }
+    return Handlebars;
+};
+
+/**
+ * Handlebars helpers.
+ * @type {object}
+ */
+HandlebarsEngine.buildinHelpers = {
+    /**
+     * Get base name for a path.
+     * @param {string} value - Pathname.
+     * @returns {string} - Basename of given path.
+     */
+    basename: function (value) {
+        return path.basename(value);
+    },
+    /**
+     * Wrap string with braces.
+     * @param {string} value - Value to wrap with braces.
+     * @returns {string} - Wrapped string.
+     */
+    braces: function (value) {
+        return '{' + value + '}';
+    },
+    /**
+     * Convert into camel case string.
+     * @param {string} value - String value to convert.
+     * @returns {string} - Converted string.
+     */
+    camelcase: function (value) {
+        return string.camelcase(value);
+    },
+    /**
+     * Get directory name for a path.
+     * @param {string} value - Pathname.
+     * @returns {string} - Directory name of given path.
+     */
+    dirname: function (value) {
+        return path.dirname(value);
+    },
+    /**
+     * Get extension name for a path.
+     * @param {string} value - Pathname.
+     * @returns {string} - Extension name of given path.
+     */
+    extname: function (value) {
+        return path.extname(value);
+    },
+    /**
+     * Replace string into numeric.
+     * Only number or "." or "," will be remain.
+     * @param {string} value - String.
+     * @returns {string} - Numeric string.
+     */
+    numeric: function (value) {
+        return value &amp;&amp; String(value).replace(/[^\d\.,]/g, '') || '';
+    },
+    /**
+     * Read a file content.
+     * @param {string} value - Path name of the file to read.
+     * @returns {string} - File content string.
+     */
+    read: function (value) {
+        var basedir = HandlebarsEngine._basedirWithContext(arguments[1]);
+        var filename = path.resolve(basedir, value);
+        var exists = fs.existsSync(filename);
+        if (exists) {
+            return String(fs.readFileSync(filename));
+        }
+        return '';
+    },
+    /**
+     * Convert into lower case string.
+     * @param {string} value - String value to convert.
+     * @returns {string} - Converted string.
+     */
+    lowercase: function (value) {
+        return string.lowercase(value);
+    },
+    /**
+     * Convert into snake case string
+     * @param {string} value - String value to convert.
+     * @returns {string} - Converted string.
+     */
+    snakecase: function (value) {
+        return string.snakecase(value);
+    },
+    /**
+     * Convert into pascal case string
+     * @param {string} value - String value to convert.
+     * @returns {string} - Converted string.
+     */
+    pascalcase: function (value) {
+        return string.pascalcase(value);
+    },
+    /**
+     * Convert into sentence case string
+     * @param {string} value - String value to convert.
+     * @returns {string} - Converted string.
+     */
+    sentencecase: function (value) {
+        return string.sentencecase(value);
+    },
+    /**
+     * Convert into spinal case string
+     * @param {string} value - String value to convert.
+     * @returns {string} - Converted string.
+     */
+    spinalcase: function (value) {
+        return string.spinalcase(value);
+    },
+    /**
+     * Convert into upper case string.
+     * @param {string} value - String value to convert.
+     * @returns {string} - Converted string.
+     */
+    uppercase: function (value) {
+        return string.uppercase(value);
+    }
+};
+
+//Find basedir from $$bud in Handlebars context.
+HandlebarsEngine._basedirWithContext = function (ctx) {
+    var data = ctx &amp;&amp; ctx.data,
+        $$bud = data &amp;&amp; data.root &amp;&amp; data.root['$$bud'] || {};
+    return $$bud.cwd || process.cwd();
+};
+
+module.exports = HandlebarsEngine;</pre>
+	</article>
+</section>
+
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					<script>var h=document.head;h.innerHTML=h.innerHTML+'<link rel="shortcut icon" href="../../assets/images/coz-favicon.png"/><style>.navbar .navbar-inner{  background-image: none;background-color: rgba(250, 250, 250, 0.9);} .navbar .dropdown-menu{border-radius:4px; width:auto; max-height:500px;  background-color: rgba(42, 42, 42, 0.91);} a{color:#418300;background-color:transparent !important;} a:hover{color:#418300;} .nav-pills > li > a{padding:4px 8px;} .nav > li > a:hover, .nav > li > a:focus{text-decoration: underline;} #toc .toc-active{background-color:#418300;} #toc .toc-active a:hover{cursor:default; text-decoration:none;} .navbar .nav > li > a:focus, .navbar .nav > li > a:hover, .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle{color:#418300;} .navbar .nav li.dropdown > a:hover .caret, .navbar .nav li.dropdown > a:focus .caret{border-top-color:#418300 !important; border-bottom-color:#418300 !important;} .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a{background-image:none;background-color:#418300 !important;} .sunlight-menu{display:none;} .navbar .dropdown-menu a{padding: 2px 4px;}</style>';</script>
+					<br />
+					
+					
+		<span class="copyright">
+		okunishitaka.com Copyright © 2015
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0</a>
+		on 2015-06-09 using the <a
+			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		</span>
+				</footer>
+			</div>
+
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : "100px"
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : true,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>
