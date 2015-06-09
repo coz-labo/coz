@@ -7,13 +7,13 @@ With coz, you can generate any file with *2* step.
 
 A bud contains file meta data like:
 
-+ *which template to use*
-+ *where to render it*
-+ *what permission to give*
++ Which template to use?
++ Where to render it?
++ What permission to give?
 
 , and so on.
 
-For more
+For more detail see the next tutorial **
 
 
 *****
@@ -59,9 +59,9 @@ module.exports = {
 
 ```
 
-As you see, `.bud` file is actuary a JavaScript file and exports contents with Node.js way.
+As you see, `.bud` file is actuary a JavaScript file and could be exportsd an a Node.js module.
 
-Save this file as `.who-likes-what.txt.bud` and then,
+Save this file as `.who-likes-what.txt.bud` and then, run:
 
 ```bash
 $ coz render ".who-likes-what.txt.bud"
@@ -151,3 +151,32 @@ will generate:
     </tbody>
 </table>
 ```
+
+
+___
+
+
+### Tutorials
+
+<!-- Tutorials start -->
+
++ [01 - Installation][tutorial_01_installation_url]
++ [02 - Render bud files][tutorial_02_render_bud_files_url]
+
+<!-- Tutorials end -->
+
+### Links
+
++ [coz @ npm][my_npm_url]
+
+<!-- URLs start -->
+
+[nodejs_url]: http://nodejs.org/
+[nodejs_download_url]: https://nodejs.org/download/
+[npm_url]: https://www.npmjs.com/
+[nvm_url]: https://github.com/creationix/nvm
+[my_npm_url]: http://www.npmjs.org/package/coz
+[tutorial_01_installation_url]: 01%20-%20Installation.md
+[tutorial_02_render_bud_files_url]: 02%20-%20Render%20bud%20files.md
+
+<!-- URLs end -->

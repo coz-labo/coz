@@ -39,8 +39,8 @@ ___
 
 <!-- Tutorials start -->
 
-+ [01 - Installation](tutorial-01 - Installation.html)
-+ [02 - Render bud files](tutorial-02 - Render bud files.html)
++ [01 - Installation][tutorial_01_installation_url]
++ [02 - Render bud files][tutorial_02_render_bud_files_url]
 
 <!-- Tutorials end -->
 
@@ -51,14 +51,14 @@ ___
 + [nvm][nvm_url]
 + [coz @ npm][my_npm_url]
 
-<!-- Links start -->
+<!-- URLs start -->
 
-+ [nodejs_url](http://nodejs.org/)
-+ [nodejs_download_url](https://nodejs.org/download/)
-+ [npm_url](https://www.npmjs.com/)
-+ [nvm_url](https://github.com/creationix/nvm)
-+ [tutorial_install_url](./tutorial-01.Installation.html)
-+ [tutorial_programmatic_url](?)
-+ [my_npm_url](http://www.npmjs.org/package/coz)
+[nodejs_url]: http://nodejs.org/
+[nodejs_download_url]: https://nodejs.org/download/
+[npm_url]: https://www.npmjs.com/
+[nvm_url]: https://github.com/creationix/nvm
+[my_npm_url]: http://www.npmjs.org/package/coz
+[tutorial_01_installation_url]: 01%20-%20Installation.md
+[tutorial_02_render_bud_files_url]: 02%20-%20Render%20bud%20files.md
 
-<!-- Links end -->
+<!-- URLs end -->

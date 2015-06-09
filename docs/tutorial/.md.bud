@@ -6,6 +6,7 @@
 
 var coz = require('../../lib'),
     path = coz.core.path,
+    string = coz.util.string,
     fs = coz.core.fs,
     EOL = coz.core.os.EOL,
     format = coz.core.util.format,
@@ -15,18 +16,11 @@ var coz = require('../../lib'),
 
 var pkg = require('../../package.json');
 
-function _linkList(data) {
-    return Object.keys(data).map(function (name) {
-        return format('+ [%s](%s)', name, data[name]);
-    }).join(EOL)
+function _urlItem(key, url) {
+    return format('[%s]: %s', key, encodeURI(url));
 }
-
-function _tutorialList(pattern) {
-    pattern = path.resolve(__dirname, pattern);
-    return glob.sync(pattern).map(function (filename) {
-        var name = path.basename(filename, path.extname(filename));
-        return format('+ [%s](tutorial-%s.html)', name, name);
-    }).join(EOL);
+function _linkItem(text, name) {
+    return format('+ [%s][%s]', text, name);
 }
 
 function _wrapped(data, comment) {
@@ -37,32 +31,60 @@ function _wrapped(data, comment) {
     ].join(EOL);
 }
 
+function _tutorialBud(data) {
+    data.force = true;
+    data.mode = '444';
+    data.mkdirp = true;
+    return data;
+}
 
+function _budData(data) {
+    data.pkg = pkg;
+    return data;
+}
 function _concat(a, b) {
     return a.concat(b);
 }
 
-function _tutorialBud(src, dest, link, mapper) {
-    return {
-        force: true,
-        mode: '444',
-        path: dest,
-        tmpl: fs.readFileSync(src).toString().split(EOL).map(function (line, i, lines) {
-            if (mapper) {
-                return mapper(line, i, lines)
+function _tutorialKey(filename) {
+    return [
+        'tutorial',
+        string.snakecase(path.basename(filename, path.extname(filename)))
+    ].join('_').replace(/__+/, '_');
+}
+
+function _urls(items) {
+    var urls = items.reduce(_concat, []).map(function (obj) {
+        return _urlItem(obj.name, obj.url);
+    }).join(EOL);
+    return _wrapped(urls, 'URLs');
+}
+
+function _tutorials(filenames) {
+    var tutorials = filenames.map(function (filename) {
+        var url = _tutorialKey(filename) + '_url',
+            name = path.basename(filename, path.extname(filename));
+        return _linkItem(name, url);
+    }).join(EOL);
+    return _wrapped(tutorials, 'Tutorials');
+}
+
+function _injectCodeMarkup(lines) {
+    return lines.map(function (line, i, lines) {
+        var prev = lines[i - 1];
+        if (/^```/.test(prev)) {
+            // Add ink-docstrap lang markup.
+            var lang = prev.replace(/```/, '').trim();
+            if (lang) {
+                return format('{@lang %s}', lang) + line;
             }
-            return line;
-        }).join(EOL),
-        mkdirp: true,
-        data: {
-            pkg: pkg,
-            links: _wrapped(_linkList(require('./.links')), 'Links'),
-            tutorials: _wrapped(_tutorialList('*.md', link), 'Tutorials')
         }
-    }
+        return line;
+    });
 }
 
 module.exports = function (callback) {
+    var links = require('./.links');
     var pattern = path.join(__dirname, '/.*.md.hbs');
     async.waterfall([
         function (callback) {
@@ -71,19 +93,49 @@ module.exports = function (callback) {
         function (filenames, callback) {
             var bud = filenames
                 .map(function (filename) {
-                    var name = path.basename(filename, '.md.hbs').replace(/^\./, '');
+                    var name = path.basename(filename, '.md.hbs').replace(/^\./, ''),
+                        lines = fs.readFileSync(filename).toString().split(EOL);
+
+                    var tutorials = glob.sync('*.md', {cwd: __dirname});
                     return [
-                        _tutorialBud(filename, name + '.md', '+ [%s](%s.md)'),
-                        _tutorialBud(filename, '.jsdoc_precompiled/' + name + '.md', '+ [%s](%s.md)', function (line, i, lines) {
-                            var prev = lines[i - 1];
-                            if (/^```/.test(prev)) {
-                                // Add ink-docstrap lang markup.
-                                var lang = prev.replace(/```/, '').trim();
-                                if (lang) {
-                                    return format('{@lang %s}', lang) + line;
+                        _tutorialBud({
+                            path: name + '.md',
+                            tmpl: filename,
+                            data: _budData({
+                                get urls() {
+                                    var linkUrls = Object.keys(links).map(function (name) {
+                                            return {name: name, url: links[name]};
+                                        }),
+                                        tutorialUrls = tutorials.map(function (filename) {
+                                            var name = _tutorialKey(filename) + '_url';
+                                            return {name: name, url: path.basename(filename)};
+                                        });
+                                    return _urls([linkUrls, tutorialUrls]);
+                                },
+                                get tutorials() {
+                                    return _tutorials(tutorials);
                                 }
-                            }
-                            return line;
+                            })
+                        }),
+                        _tutorialBud({
+                            path: '.jsdoc_precompiled/' + name + '.md',
+                            tmpl: _injectCodeMarkup(lines).join(EOL),
+                            data: _budData({
+                                get urls() {
+                                    var linkUrls = Object.keys(links).map(function (name) {
+                                            return {name: name, url: links[name]};
+                                        }),
+                                        tutorialUrls = tutorials.map(function (filename) {
+                                            var name = _tutorialKey(filename) + '_url';
+                                            var basename = path.basename(filename, '.md');
+                                            return {name: name, url: 'tutorial-' + basename + '.html'};
+                                        });
+                                    return _urls([linkUrls, tutorialUrls]);
+                                },
+                                get tutorials() {
+                                    return _tutorials(tutorials);
+                                }
+                            })
                         })
                     ];
                 })
