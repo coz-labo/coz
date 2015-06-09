@@ -217,7 +217,9 @@ var core = require('../core'),
     Bud = require('./bud'),
     file = require('../util/file'),
     _concatBuds = require('./_concat_buds'),
-    template = require('../template');
+    template = require('../template'),
+    _resolveStringValue = require('./_resolve_string_value');
+
 
 /** @lends module:coz/lib/bud~BudCompiler */
 function BudCompiler(config) {
@@ -269,6 +271,10 @@ BudCompiler.prototype = {
         var s = this;
         _concatBuds(bud, function (bud, callback) {
             var data = bud.data || {};
+            if(typeof(data) === 'string'){
+                var filename = path.resolve(bud.cwd, data);
+                data = require(filename);
+            }
             data.$$bud = {
                 cwd: bud.cwd,
                 src: bud.src,
@@ -296,20 +302,10 @@ BudCompiler.prototype = {
                 callback(new Error('[BudCompiler]Template not found:' + bud.tmpl));
                 return;
             }
-            var isString = typeof(tmpl) === 'string';
-            if (isString) {
-                var src = path.resolve(bud.cwd, tmpl);
-                file.readFile(src, function (err, read) {
-                    if (!err &amp;&amp; read) {
-                        tmpl = read;
-                    }
-                    bud.tmpl = tmpl;
-                    callback(null, bud);
-                });
-            } else {
+            _resolveStringValue(tmpl, bud.cwd, function (err, tmpl) {
                 bud.tmpl = tmpl;
-                callback(null, bud);
-            }
+                callback(err, bud);
+            });
         }, callback);
     },
     /**

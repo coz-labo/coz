@@ -198,15 +198,24 @@
 </header>
 
 <article>
-    <h3>Overview</h3><p>With coz, you can generate any file with two step.</p>
+    <h3>Overview</h3><p>With coz, you can generate any file with <em>2</em> step.</p>
 <ol>
-<li>Prepare a <code>.bud</code> file.</li>
+<li>Create a <code>.bud</code> file.</li>
 <li>Run <code>coz render</code> command.</li>
 </ol>
-<p>A bud contains file meta data like <em>witch template to use</em>, <em>where to render it</em>, <em>what permission to give</em>, and so on.</p>
+<p>A bud contains file meta data like:</p>
+<ul>
+<li><em>which template to use</em></li>
+<li><em>where to render it</em></li>
+<li><em>what permission to give</em></li>
+</ul>
+<p>, and so on.</p>
+<p>For more</p>
 <hr>
-<h3>Render a single file.</h3><p>At first,  prepare a <code>.bud</code> file.</p>
-<pre class="prettyprint source lang-javascript"><code>/**
+<h3>Basic usage.</h3><p>The most simple usage is generate a single file from a single <code>.bud</code> file.</p>
+<p>Here is an example:</p>
+<p><strong>.who-likes-what.txt.bud</strong> (bud file)</p>
+<pre class="prettyprint source lang-javascript"><code>{@lang javascript}/**
  * .who-likes-what.txt.bud
  * This is a bud file for &quot;examples/01-minimum-demo&quot;
  */
@@ -236,12 +245,56 @@ module.exports = {
     }
 };</code></pre><p>As you see, <code>.bud</code> file is actuary a JavaScript file and exports contents with Node.js way.</p>
 <p>Save this file as <code>.who-likes-what.txt.bud</code> and then,</p>
-<pre class="prettyprint source lang-bash"><code>$ coz render .who-likes-what.txt.bud</code></pre><p>This will generate a file named <code>who-likes-what.txt</code>.</p>
+<pre class="prettyprint source lang-bash"><code>{@lang bash}$ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will generate a file named <code>who-likes-what.txt</code>.</p>
+<p><strong>who-likes-what.txt</strong> (generated file)</p>
 <pre class="prettyprint source"><code>Hi, my name is Mai. I like apple.
 Hi, my name is Tom. I like Orange.
 Hi, my name is Rita. I like Banana.</code></pre><hr>
-<h3>Seperate template and data.</h3><pre class="prettyprint source lang-javascript"><code>
-</code></pre>
+<h3>Separate template and data.</h3><p>For more comple rending, you may want to save template and and to seperated files from the <code>.bud</code> file.</p>
+<p><code>tmpl</code> attribute could be a file path.</p>
+<p><code>data</code> attribute may be required js/json module.</p>
+<p><strong>.what-colors.html.bud</strong> (bud file)</p>
+<pre class="prettyprint source lang-javascript"><code>{@lang javascript}/**
+ * .what-colors.html.bud
+ * This is a bud file for &quot;examples/02-separated-template&quot;
+ */
+
+// Exports as a Node.js module.
+module.exports = {
+
+    // Template file path. Relative to this bud file.
+    tmpl: '.what-colors.html.hbs',
+
+    // Overwrite when already existing.
+    force: true,
+
+    // File path to write out.
+    path: 'what-colors.html',
+
+    // File permission.
+    mode: '444',
+
+    // Data to render.
+    data: require('./.what-colors.html.json')
+};</code></pre><p><strong>.what-colors.html.hbs</strong> (template file)</p>
+<pre class="prettyprint source lang-xml"><code>{@lang xml}&lt;table>
+    &lt;caption>Colors&lt;/caption>
+    &lt;tbody>
+    {{#each colors}}
+        &lt;tr>&lt;th>{{@key}}&lt;/th>{{this}}&lt;/tr>
+    {{/each}}
+    &lt;/tbody>
+&lt;/table></code></pre><p>And run:</p>
+<pre class="prettyprint source lang-bash"><code>{@lang bash}$ coz render .what-colors.html.bud</code></pre><p>will generate:</p>
+<p><strong>what-colors.html</strong> (generated file)</p>
+<pre class="prettyprint source lang-xml"><code>{@lang xml}&lt;table>
+    &lt;caption>Colors&lt;/caption>
+    &lt;tbody>
+        &lt;tr>&lt;th>banana&lt;/th>yellow&lt;/tr>
+        &lt;tr>&lt;th>apple&lt;/th>red&lt;/tr>
+        &lt;tr>&lt;th>grape&lt;/th>purple&lt;/tr>
+    &lt;/tbody>
+&lt;/table></code></pre>
 </article>
 
 </section>

@@ -11,5 +11,5 @@ cd ${BASE_DIR}
 
 node ./ci/bin/render/render_bud.js
 
+bash ./docs/examples/render_examples.sh
 cp -rf docs/examples .
-bash ./examples/render-these.sh

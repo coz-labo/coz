@@ -14,7 +14,7 @@ ___
 Install coz from [NPM][npm_url] with npm command.
 
 ```bash
-# Install coz commandline interface.
+{@lang bash}# Install coz commandline interface.
 $ npm install coz -g
 ```
 
@@ -22,10 +22,10 @@ With `-g` option, npm installs the module globally and you can run coz simply by
 (It may need to be run via `sudo`)
 
 Show the coz version to check install is successfully.
-The latest version `1.0.6` will be shown unless you specified older.
+The latest version `1.0.7` will be shown unless you specified older.
 
 ```bash
-# Show coz version.
+{@lang bash}# Show coz version.
 $ coz --version
 ```
 
@@ -38,6 +38,7 @@ ___
 ### Tutorials
 
 <!-- Tutorials start -->
+
 + [01 - Installation](tutorial-01 - Installation.html)
 + [02 - Render bud files](tutorial-02 - Render bud files.html)
 
@@ -51,6 +52,7 @@ ___
 + [coz @ npm][my_npm_url]
 
 <!-- Links start -->
+
 + [nodejs_url](http://nodejs.org/)
 + [nodejs_download_url](https://nodejs.org/download/)
 + [npm_url](https://www.npmjs.com/)

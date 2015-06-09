@@ -1,17 +1,31 @@
 ### Overview
 
-With {{pkg.name}}, you can generate any file with two step.
+With {{pkg.name}}, you can generate any file with *2* step.
 
-1. Prepare a `.bud` file.
+1. Create a `.bud` file.
 2. Run `coz render` command.
 
-A bud contains file meta data like *witch template to use*, *where to render it*, *what permission to give*, and so on.
-___
+A bud contains file meta data like:
 
-### Render a single file.
++ Which template to use?
++ Where to render it?
++ What permission to give?
 
-At first,  prepare a `.bud` file.
+, and so on.
 
+For more detail see the next tutorial **
+
+
+*****
+
+### Basic usage.
+
+
+The most simple usage is generate a single file from a single `.bud` file.
+
+Here is an example:
+
+**.who-likes-what.txt.bud** (bud file)
 ```javascript
 {{{read '../examples/01-minimum-demo/.who-likes-what.txt.bud'}}}
 ```
@@ -21,19 +35,49 @@ As you see, `.bud` file is actuary a JavaScript file and exports contents with N
 Save this file as `.who-likes-what.txt.bud` and then,
 
 ```bash
-$ coz render .who-likes-what.txt.bud
+$ coz render ".who-likes-what.txt.bud"
 ```
 
 This will generate a file named `who-likes-what.txt`.
 
+**who-likes-what.txt** (generated file)
 ```
 {{{read '../examples/01-minimum-demo/who-likes-what.txt'}}}
 ```
 
-___
+*****
 
-### Seperate template and data.
+
+### Separate template and data.
+
+For more comple rending, you may want to save template and and to seperated files from the `.bud` file.
+
+`tmpl` attribute could be a file path.
+
+`data` attribute may be required js/json module.
+
+
+**.what-colors.html.bud** (bud file)
 
 ```javascript
+{{{read '../examples/02-separated-template/.what-colors.html.bud'}}}
+```
 
+**.what-colors.html.hbs** (template file)
+
+```xml
+{{{read '../examples/02-separated-template/.what-colors.html.hbs'}}}
+```
+
+And run:
+
+```bash
+$ coz render .what-colors.html.bud
+```
+
+will generate:
+
+**what-colors.html** (generated file)
+```xml
+{{{read '../examples/02-separated-template/what-colors.html'}}}
 ```

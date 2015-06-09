@@ -32,7 +32,7 @@ function _tutorialList(pattern) {
 function _wrapped(data, comment) {
     return [
         format('<!-- %s start -->', comment),
-        data + EOL,
+        EOL + data + EOL,
         format('<!-- %s end -->', comment)
     ].join(EOL);
 }
@@ -42,12 +42,17 @@ function _concat(a, b) {
     return a.concat(b);
 }
 
-function _tutorialBud(src, dest, link) {
+function _tutorialBud(src, dest, link, mapper) {
     return {
         force: true,
         mode: '444',
         path: dest,
-        tmpl: src,
+        tmpl: fs.readFileSync(src).toString().split(EOL).map(function (line, i, lines) {
+            if (mapper) {
+                return mapper(line, i, lines)
+            }
+            return line;
+        }).join(EOL),
         mkdirp: true,
         data: {
             pkg: pkg,
@@ -69,7 +74,17 @@ module.exports = function (callback) {
                     var name = path.basename(filename, '.md.hbs').replace(/^\./, '');
                     return [
                         _tutorialBud(filename, name + '.md', '+ [%s](%s.md)'),
-                        _tutorialBud(filename, '.jsdoc_precompiled/' + name + '.md', '+ [%s](%s.md)')
+                        _tutorialBud(filename, '.jsdoc_precompiled/' + name + '.md', '+ [%s](%s.md)', function (line, i, lines) {
+                            var prev = lines[i - 1];
+                            if (/^```/.test(prev)) {
+                                // Add ink-docstrap lang markup.
+                                var lang = prev.replace(/```/, '').trim();
+                                if (lang) {
+                                    return format('{@lang %s}', lang) + line;
+                                }
+                            }
+                            return line;
+                        })
                     ];
                 })
                 .reduce(_concat, []);
