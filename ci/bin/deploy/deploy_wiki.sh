@@ -9,21 +9,24 @@ BASE_DIR=$(cd "${HERE}/../../.." && pwd)
 
 cd ${BASE_DIR}
 
-cd docs/wiki/
+WORK_DIR="${BASE_DIR}/.work/wiki_repo"
+SRC_DIR="${BASE_DIR}/docs/wiki"
 
+rm -rf ${WORK_DIR}
+mkdir -p ${WORK_DIR}
+
+cd ${WORK_DIR}
+
+git clone https://github.com/okunishinishi/coz.wiki.git ${WORK_DIR}
+
+rm ${WORK_DIR}/*.md
+cp ${SRC_DIR}/*.md ${WORK_DIR}
+
+cd ${WORK_DIR}
 git add . -A
 git commit -am "Update wiki"
-
-git pull origin master
-git merge origin/master
-
-if [[ -n $(git diff --stat --cached origin/master) ]]; then
-    # Push only if needed.
-    git push
-fi
+git push
 
 cd ${BASE_DIR}
 
-git add docs/wiki/ -fA
-git commit -am "Update wiki"
-git push
+rm -rf ${WORK_DIR}
