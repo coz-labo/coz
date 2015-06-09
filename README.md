@@ -10,11 +10,13 @@ Flexible generator, which makes your project clean and maintainable.
 [![dependencies][my_gemnasium_badge_url]][my_gemnasium_url]
 [![npm version][my_npm_budge_url]][my_npm_url]
 [![Gratipay][my_gratipay_budge_url]][my_gratipay_url]
+
 <!-- Badge end -->
 
 
 <!-- Banner start -->
 <a href="https://github.com/okunishinishi/coz#readme"><img style="height:px;" src="assets/images/coz-banner.png" height=""/></a>
+
 <!-- Banner end -->
 
 
@@ -38,6 +40,7 @@ Table of Contents
 - [About this project](#11-project)
     - [Author](#11-project--author)
     - [Donation](#11-project--donation)
+
 <!-- Table end -->
 
 
@@ -223,6 +226,7 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 
 [<img src="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg" alt="Support via Gratipay"/>][my_gratipay_url]
 
+
 <!-- Sections end -->
 
 
@@ -244,4 +248,5 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 [my_tag_badge_url]: http://img.shields.io/github/tag/okunishinishi/coz.svg?style=flat
 [my_gemnasium_url]: http://gemnasium.com/okunishinishi/coz
 [my_gemnasium_badge_url]: http://img.shields.io/gemnasium/okunishinishi/coz.svg?style=flat
+
 <!-- Links end-->

@@ -12,3 +12,4 @@ cd ${BASE_DIR}
 bash ./ci/bin/build.sh
 bash ./ci/bin/deploy/deploy_docs.sh
 bash ./ci/bin/deploy/deploy_wiki.sh
+bash ./ci/bin/deploy/deploy_examples.sh
