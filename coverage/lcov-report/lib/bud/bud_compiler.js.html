@@ -15,10 +15,10 @@
 <div class="header high">
     <h1>Code coverage report for <span class="entity">lib/bud/bud_compiler.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(59 / 59)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">95.45% <small>(21 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(16 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(59 / 59)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">100% <small>(69 / 69)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">92.31% <small>(24 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(20 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(69 / 69)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">lib/bud/</a> &#187; bud_compiler.js</div>
@@ -179,7 +179,34 @@
 152
 153
 154
-155</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -227,11 +254,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -281,6 +333,8 @@
 <span class="cline-any cline-yes">3</span>
 <span class="cline-any cline-yes">3</span>
 <span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3</span>
@@ -374,6 +428,12 @@ BudCompiler.prototype = {
         bud = [].concat(bud).map(Bud.new);
         async.waterfall([
             function (callback) {
+                callback(null, bud);
+            },
+            function (bud, callback) {
+                s._prepareBudData(bud, callback);
+            },
+            function (bud, callback) {
                 s._prepareBudTmpl(bud, callback);
             },
             function (bud, callback) {
@@ -388,6 +448,25 @@ BudCompiler.prototype = {
         ], function (err, bud) {
             callback(err, bud);
         });
+    },
+    /**
+     * Update bud data.
+     * @param {module:coz/lib/bud~Bud} bud - Bud to work with.
+     * @param {function} callback - Callback when done.
+     * @private
+     */
+    _prepareBudData: function (bud, callback) {
+        var s = this;
+        _concatBuds(bud, function (bud, callback) {
+            var data = bud.data || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+            data.$$bud = {
+                cwd: bud.cwd,
+                src: bud.src,
+                path: bud.path
+            };
+            bud.data = data;
+            callback(null, bud);
+        }, callback);
     },
     /**
      * Update bud tmpl.
@@ -435,7 +514,9 @@ BudCompiler.prototype = {
             var engine = bud.engine;
             var Engine = s.engineSet.resolveEngine(engine);
             if (Engine) {
-                engine = new Engine({});
+                var setup = bud.setup || {};
+                setup.basedir = bud.cwd;
+                engine = new Engine(setup);
             }
             if (!engine) {
                 callback(new Error('[BudCompiler]Engine not found:' + bud.engine));
@@ -492,7 +573,7 @@ module.exports = BudCompiler;
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jun 08 2015 00:41:07 GMT+0900 (JST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 09 2015 09:20:25 GMT+0900 (JST)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>
