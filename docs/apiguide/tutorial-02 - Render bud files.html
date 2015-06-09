@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>coz Source: util/filtering/index.js</title>
+	<title>coz tutorial02 - Render bud files</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -189,32 +189,43 @@
 			<div class="span12">
 				
 				<div id="main">
-					
+					<section class="tutorial-section">
 
-
-		<h1 class="page-title">Source: util/filtering/index.js</h1>
+<header>
     
-<section>
-	<article>
-		<pre
-			class="sunlight-highlight-javascript linenums">/**
- * Array filtering functions.
- * @module coz/lib/util/filtering
- * @see module:coz/lib/util
+
+    <h2>02 - Render bud files</h2>
+</header>
+
+<article>
+    <p>The most powerful feature of coz is rendering files from files.</p>
+<p>First you prepare a <code>.bud</code> file.
+A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.</p>
+<pre class="prettyprint source lang-javascript"><code>{@lang javascript}/**
+ * .who-likes-what.txt.bud
+ * This is a bud file for &quot;examples/01-minimum-demo&quot;
  */
 
-"use strict";
-
+// Exports as a Node.js module.
 module.exports = {
-    get emptyReject() { return require('./empty_reject'); },
-    get patternReject() { return require('./pattern_reject'); }
-};</pre>
-	</article>
+    // Template string. By default, parsed by Handlebars engine.
+    tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
+    // Overwrite when already existing.
+    force: true,
+    // File permission.
+    mode: '444',
+    // Data to render.
+    data: {
+        members: {
+            &quot;Mai&quot;: &quot;apple&quot;,
+            &quot;Tom&quot;: &quot;Orange&quot;,
+            &quot;Rita&quot;: &quot;Banana&quot;
+        }
+    }
+};</code></pre>
+</article>
+
 </section>
-
-
-
-
 
 				</div>
 
