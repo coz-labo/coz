@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header high">
+<div class="header medium">
     <h1>Code coverage report for <span class="entity">lib/template/buildin_tmpls/indexjs_tmpl.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(17 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">55.1% <small>(27 / 49)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(8 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(17 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">66.67% <small>(14 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">24.49% <small>(24 / 98)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">60% <small>(6 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">66.67% <small>(14 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">lib/template/buildin_tmpls/</a> &#187; indexjs_tmpl.js</div>
@@ -85,7 +85,36 @@
 58
 59
 60
-61</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -100,11 +129,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4</span>
@@ -116,7 +146,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -126,7 +185,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,40 +217,69 @@ var HandlebarsEngine = require('../buildin_engines').HandlebarsEngine,
     Handlebars = HandlebarsEngine.createHandlebars();
 &nbsp;
 //noinspection UnterminatedStatementJS
-var precompiled = Handlebars.template({"1":function(depth0,helpers,partials,data) {
-	    var helper, alias1=this.escapeExpression;
+var precompiled = Handlebars.template({"1":<span class="fstat-no" title="function not covered" >function(depth0,helpers,partials,data) {</span>
+<span class="cstat-no" title="statement not covered" >	    var helper;</span>
 	
-	  return "\n * @"
-	    + alias1(((helper = (helper = helpers.key || (data &amp;&amp; data.key)) != null ? helper : <span class="branch-1 cbranch-no" title="branch not covered" >helpers.helperMissing)</span>,(typeof helper === "function" ? <span class="branch-0 cbranch-no" title="branch not covered" >helper.call(depth0,{"name":"key","hash":{},"data":data}) </span>: helper)))
-	    + " "
-	    + alias1(this.lambda(depth0, depth0));
-	},"3":function(depth0,helpers,partials,data) {
+<span class="cstat-no" title="statement not covered" >	  return "\n * @module "</span>
+	    + this.escapeExpression(((helper = (helper = helpers.module || (depth0 != null ? depth0.module : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"module","hash":{},"data":data}) : helper)));
+	},"3":<span class="fstat-no" title="function not covered" >function(depth0,helpers,partials,data) {</span>
+<span class="cstat-no" title="statement not covered" >	    return "\n * @see module:"</span>
+	    + this.escapeExpression(this.lambda(depth0, depth0));
+	},"5":function(depth0,helpers,partials,data,blockParams,depths) {
 	    var stack1;
 	
-	  return "    get "
-	    + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.isPascal : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"if","hash":{},"fn":this.program(4, data, 0),"inverse":this.program(6, data, 0),"data":data})) != null ? stack1 : <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>
+	  return ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.isSubmodules : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"if","hash":{},"fn":this.program(6, data, 0, blockParams, depths),"inverse":this.noop,"data":data})) != null ? stack1 : <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>
+	    + "    "
+	    + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.isSubclass : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"if","hash":{},"fn":this.program(8, data, 0, blockParams, depths),"inverse":this.program(10, data, 0, blockParams, depths),"data":data})) != null ? stack1 : <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>
 	    + "() { return require('./"
 	    + this.escapeExpression((helpers.snakecase || (<span class="branch-1 cbranch-no" title="branch not covered" >depth0 </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >depth0.snakecase)</span> || <span class="branch-3 cbranch-no" title="branch not covered" >helpers.helperMissing)</span>.call(depth0,(depth0 != null ? depth0.name : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"snakecase","hash":{},"data":data}))
 	    + "'); }"
-	    + ((stack1 = helpers['if'].call(depth0,(data &amp;&amp; data.last),{"name":"if","hash":{},"fn":this.program(8, data, 0),"inverse":this.program(10, data, 0),"data":data})) != null ? stack1 : <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>;
-	},"4":function(depth0,helpers,partials,data) {
-	    return this.escapeExpression((helpers.pascalcase || (<span class="branch-1 cbranch-no" title="branch not covered" >depth0 </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >depth0.pascalcase)</span> || <span class="branch-3 cbranch-no" title="branch not covered" >helpers.helperMissing)</span>.call(depth0,(depth0 != null ? depth0.name : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"pascalcase","hash":{},"data":data}));
-	},"6":function(depth0,helpers,partials,data) {
-	    return this.escapeExpression((helpers.camelcase || (<span class="branch-1 cbranch-no" title="branch not covered" >depth0 </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >depth0.camelcase)</span> || <span class="branch-3 cbranch-no" title="branch not covered" >helpers.helperMissing)</span>.call(depth0,(depth0 != null ? depth0.name : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"camelcase","hash":{},"data":data}));
-	},"8":function(depth0,helpers,partials,data) {
-	    return "";
+	    + ((stack1 = helpers['if'].call(depth0,(data &amp;&amp; data.last),{"name":"if","hash":{},"fn":this.program(12, data, 0, blockParams, depths),"inverse":this.program(14, data, 0, blockParams, depths),"data":data})) != null ? stack1 : <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>;
+	},"6":<span class="fstat-no" title="function not covered" >function(depth0,helpers,partials,data,blockParams,depths) {</span>
+<span class="cstat-no" title="statement not covered" >	    var stack1, alias1=this.lambda, alias2=this.escapeExpression, alias3=helpers.helperMissing;</span>
+	
+<span class="cstat-no" title="statement not covered" >	  return "    /**\n     * @memberof module:"</span>
+	    + alias2(alias1((depths[2] != null ? depths[2].module : depths[2]), depth0))
+	    + "\n     * @name {@link module:"
+	    + alias2(alias1((depths[2] != null ? depths[2].module : depths[2]), depth0))
+	    + "/"
+	    + alias2((helpers.camelcase || (depth0 &amp;&amp; depth0.camelcase) || alias3).call(depth0,(depth0 != null ? depth0.name : depth0),{"name":"camelcase","hash":{},"data":data}))
+	    + "|"
+	    + alias2((helpers.camelcase || (depth0 &amp;&amp; depth0.camelcase) || alias3).call(depth0,(depth0 != null ? depth0.name : depth0),{"name":"camelcase","hash":{},"data":data}))
+	    + ((stack1 = alias1((depths[2] != null ? depths[2].END_BRACE : depths[2]), depth0)) != null ? stack1 : "")
+	    + "\n     */\n";
+	},"8":<span class="fstat-no" title="function not covered" >function(depth0,helpers,partials,data,blockParams,depths) {</span>
+<span class="cstat-no" title="statement not covered" >	    var stack1, alias1=this.lambda, alias2=this.escapeExpression, alias3=helpers.helperMissing;</span>
+	
+<span class="cstat-no" title="statement not covered" >	  return "/**\n     * @memberof module:"</span>
+	    + alias2(alias1((depths[2] != null ? depths[2].module : depths[2]), depth0))
+	    + "\n     * @name {@link module:"
+	    + alias2(alias1((depths[2] != null ? depths[2].module : depths[2]), depth0))
+	    + "~"
+	    + alias2((helpers.pascalcase || (depth0 &amp;&amp; depth0.pascalcase) || alias3).call(depth0,(depth0 != null ? depth0.name : depth0),{"name":"pascalcase","hash":{},"data":data}))
+	    + "|"
+	    + alias2((helpers.pascalcase || (depth0 &amp;&amp; depth0.pascalcase) || alias3).call(depth0,(depth0 != null ? depth0.name : depth0),{"name":"pascalcase","hash":{},"data":data}))
+	    + ((stack1 = alias1((depths[2] != null ? depths[2].END_BRACE : depths[2]), depth0)) != null ? stack1 : "")
+	    + "\n     */\n    get "
+	    + alias2((helpers.pascalcase || (depth0 &amp;&amp; depth0.pascalcase) || alias3).call(depth0,(depth0 != null ? depth0.name : depth0),{"name":"pascalcase","hash":{},"data":data}));
 	},"10":function(depth0,helpers,partials,data) {
+	    return "get "
+	    + this.escapeExpression((helpers.camelcase || (<span class="branch-1 cbranch-no" title="branch not covered" >depth0 </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >depth0.camelcase)</span> || <span class="branch-3 cbranch-no" title="branch not covered" >helpers.helperMissing)</span>.call(depth0,(depth0 != null ? depth0.name : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"camelcase","hash":{},"data":data}));
+	},"12":function(depth0,helpers,partials,data) {
+	    return "";
+	},"14":function(depth0,helpers,partials,data) {
 	    return ",\n";
-	},"compiler":[6,"&gt;= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+	},"compiler":[6,"&gt;= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data,blockParams,depths) {
 	    var stack1, helper;
 	
 	  return "/**\n * "
 	    + this.escapeExpression(((helper = (helper = helpers.desc || (depth0 != null ? depth0.desc : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"desc","hash":{},"data":data}) : helper)))
-	    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.doc : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>
+	    + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.module : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"if","hash":{},"fn":this.program(1, data, 0, blockParams, depths),"inverse":this.noop,"data":data})) != null ? stack1 : <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>
+	    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.parentmodule : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"each","hash":{},"fn":this.program(3, data, 0, blockParams, depths),"inverse":this.noop,"data":data})) != null ? stack1 : <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>
 	    + "\n */\n\n\"use strict\";\n\nmodule.exports = {\n"
-	    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.modules : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"each","hash":{},"fn":this.program(3, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>
+	    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.modules : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"each","hash":{},"fn":this.program(5, data, 0, blockParams, depths),"inverse":this.noop,"data":data})) != null ? stack1 : <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>
 	    + "\n};";
-	},"useData":true});;
+	},"useData":true,"useDepths":true});;
 &nbsp;
 /** @lends indexjsTmpl */
 function indexjsTmpl(data) {
@@ -210,7 +297,7 @@ module.exports = indexjsTmpl;</pre></td></tr>
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jun 08 2015 00:41:07 GMT+0900 (JST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jun 09 2015 09:20:25 GMT+0900 (JST)</div>
 </div>
 <script src="../../../prettify.js"></script>
 <script>
