@@ -37,6 +37,7 @@ Table of Contents
 - [Specifications](#03-spec)
     - [Bud file specification.](#03-spec--bud-file-specification-)
 - [Links](#09-links)
+    - [Tutorials](#09-links--tutorials)
     - [Documents](#09-links--documents)
     - [Reports](#09-links--reports)
 - [License](#10-license)
@@ -62,30 +63,18 @@ Write a meta file called [.bud file][#spec-bud-spec] and run coz generates the m
 
 <img style="height:256px;" src="assets/images/coz-outline.jpg" height="256">
 
+
 <a name="01-about--what-for"></a>
 ### What for?
 
-##### Automation.
-
-
-##### No more meta programming.
-
-
++ **Automation**
 
 <a name="01-about--why-this"></a>
 ### Why this?
 
-##### - Because it's fast.
-coz is lightweight engine and do nothing but rendering.
-
-##### - Because it's extensible.
-coz is an unopinionated provides ways to customize.
-
-##### - Because it's flexible.
-coz is attentive, like handling array or async operations, and guess a lot unless otherwise specified.
-
-
-
++ **Lightweight and fast**
++ **Unopinionated and flexible**
++ **Simple and extensible**
 <a name="02-howto"></a>
 Getting started
 ------
@@ -180,21 +169,29 @@ module.exports = function(callback){
 
 Name | Type | Description
 ----- | ----- | -----
-engine | string&#124;object | Template compile function or name of function |
-cwd | string | Working directory path |
-data | object | Data to template render with |
-done | boolean | Done to writeout or not |
-mkdirp | boolean | Make parent directories if needed |
-setup | object | Properties to set engine |
-force | boolean | Should overwrite file when already exists, or not |
-mode | string&#124;number | File permission |
-path | string | Destination file path. If not provided, guess from bud file path |
-src | string | Bud source file path |
-tmpl | string&#124;function | Template file path or registered template name or template function |
 
+engine | string&#124;object | Template compile function or name of function | 
+cwd | string | Working directory path | 
+data | object | Data to template render with | 
+mkdirp | boolean | Make parent directories if needed | 
+setup | object | Properties to set engine | 
+force | boolean | Should overwrite file when already exists, or not | 
+mode | string&#124;number | File permission | 
+path | string | Destination file path. If not provided, guess from bud file path | 
+tmpl | string&#124;function | Template file path or registered template name or template function | 
 <a name="09-links"></a>
 Links
 ------
+
+<a name="09-links--tutorials"></a>
+### Tutorials
+
+
++ [01 - Installing coz](01%20-%20Installing%20coz)
++ [02 - Rendering bud files](02%20-%20Rendering%20bud%20files)
++ [03 - Digging deeper into bud](03%20-%20Digging%20deeper%20into%20bud)
++ [04 - Using programmatic API](04%20-%20Using%20programmatic%20API)
++ [05 - Customizing coz](05%20-%20Customizing%20coz)
 
 <a name="09-links--documents"></a>
 ### Documents

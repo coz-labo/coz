@@ -14,7 +14,7 @@ ___
 Install coz from [NPM][npm_url] with npm command.
 
 ```bash
-# Install coz commandline interface.
+{@lang bash}# Install coz commandline interface.
 $ npm install coz -g
 ```
 
@@ -25,7 +25,7 @@ Show the coz version to check install is successfully.
 The latest version `1.0.7` will be shown unless you specified older.
 
 ```bash
-# Show coz version.
+{@lang bash}# Show coz version.
 $ coz --version
 ```
 
@@ -39,8 +39,11 @@ ___
 
 <!-- Tutorials start -->
 
-+ [01 - Installation][tutorial_01_installation_url]
-+ [02 - Render bud files][tutorial_02_render_bud_files_url]
++ [01 - Installing coz][tutorial_01_installing_coz_url]
++ [02 - Rendering bud files][tutorial_02_rendering_bud_files_url]
++ [03 - Digging deeper into bud][tutorial_03_digging_deeper_into_bud_url]
++ [04 - Using programmatic API][tutorial_04_using_programmatic__a_p_i_url]
++ [05 - Customizing coz][tutorial_05_customizing_coz_url]
 
 <!-- Tutorials end -->
 
@@ -58,7 +61,10 @@ ___
 [npm_url]: https://www.npmjs.com/
 [nvm_url]: https://github.com/creationix/nvm
 [my_npm_url]: http://www.npmjs.org/package/coz
-[tutorial_01_installation_url]: 01%20-%20Installation.md
-[tutorial_02_render_bud_files_url]: 02%20-%20Render%20bud%20files.md
+[tutorial_01_installing_coz_url]: tutorial-01%20-%20Installing%20coz.html
+[tutorial_02_rendering_bud_files_url]: tutorial-02%20-%20Rendering%20bud%20files.html
+[tutorial_03_digging_deeper_into_bud_url]: tutorial-03%20-%20Digging%20deeper%20into%20bud.html
+[tutorial_04_using_programmatic__a_p_i_url]: tutorial-04%20-%20Using%20programmatic%20API.html
+[tutorial_05_customizing_coz_url]: tutorial-05%20-%20Customizing%20coz.html
 
 <!-- URLs end -->

@@ -40,6 +40,5 @@ module.exports = function(callback){
 
 Name | Type | Description
 ----- | ----- | -----
-{{#each bud.properties}}
-{{name}} | {{{type}}} | {{description}} |
-{{/each}}
+{{#each bud.properties}}{{#if configurable}}
+{{name}} | {{{type}}} | {{description}} | {{/if}}{{/each}}

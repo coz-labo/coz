@@ -27,7 +27,7 @@ Here is an example:
 
 **.who-likes-what.txt.bud** (bud file)
 ```javascript
-/**
+{@lang javascript}/**
  * .who-likes-what.txt.bud
  * This is a bud file for "examples/01-minimum-demo"
  */
@@ -64,6 +64,7 @@ As you see, `.bud` file is actuary a JavaScript file and could be exportsd an a 
 Save this file as `.who-likes-what.txt.bud` and then, run:
 
 ```bash
+{@lang bash}# Render the bud file
 $ coz render ".who-likes-what.txt.bud"
 ```
 
@@ -92,7 +93,7 @@ For more comple rending, you may want to save template and and to seperated file
 **.what-colors.html.bud** (bud file)
 
 ```javascript
-/**
+{@lang javascript}/**
  * .what-colors.html.bud
  * This is a bud file for "examples/02-separated-template"
  */
@@ -122,7 +123,7 @@ module.exports = {
 **.what-colors.html.hbs** (template file)
 
 ```xml
-<table>
+{@lang xml}<table>
     <caption>Colors</caption>
     <tbody>
     {{#each colors}}
@@ -135,14 +136,15 @@ module.exports = {
 And run:
 
 ```bash
-$ coz render .what-colors.html.bud
+{@lang bash}# Render the bud file
+$ coz render ".what-colors.html.bud"
 ```
 
 will generate:
 
 **what-colors.html** (generated file)
 ```xml
-<table>
+{@lang xml}<table>
     <caption>Colors</caption>
     <tbody>
         <tr><th>banana</th>yellow</tr>
@@ -160,8 +162,11 @@ ___
 
 <!-- Tutorials start -->
 
-+ [01 - Installation][tutorial_01_installation_url]
-+ [02 - Render bud files][tutorial_02_render_bud_files_url]
++ [01 - Installing coz][tutorial_01_installing_coz_url]
++ [02 - Rendering bud files][tutorial_02_rendering_bud_files_url]
++ [03 - Digging deeper into bud][tutorial_03_digging_deeper_into_bud_url]
++ [04 - Using programmatic API][tutorial_04_using_programmatic__a_p_i_url]
++ [05 - Customizing coz][tutorial_05_customizing_coz_url]
 
 <!-- Tutorials end -->
 
@@ -176,7 +181,10 @@ ___
 [npm_url]: https://www.npmjs.com/
 [nvm_url]: https://github.com/creationix/nvm
 [my_npm_url]: http://www.npmjs.org/package/coz
-[tutorial_01_installation_url]: 01%20-%20Installation.md
-[tutorial_02_render_bud_files_url]: 02%20-%20Render%20bud%20files.md
+[tutorial_01_installing_coz_url]: tutorial-01%20-%20Installing%20coz.html
+[tutorial_02_rendering_bud_files_url]: tutorial-02%20-%20Rendering%20bud%20files.html
+[tutorial_03_digging_deeper_into_bud_url]: tutorial-03%20-%20Digging%20deeper%20into%20bud.html
+[tutorial_04_using_programmatic__a_p_i_url]: tutorial-04%20-%20Using%20programmatic%20API.html
+[tutorial_05_customizing_coz_url]: tutorial-05%20-%20Customizing%20coz.html
 
 <!-- URLs end -->

@@ -14,7 +14,8 @@ var coz = require('../../lib'),
     glob = coz.ext.glob
     ;
 
-var pkg = require('../../package.json');
+var pkg = require('../../package.json'),
+        bud = require('../../lib/bud/.bud.json');
 
 function _urlItem(key, url) {
     return format('[%s]: %s', key, encodeURI(url));
@@ -40,6 +41,17 @@ function _tutorialBud(data) {
 
 function _budData(data) {
     data.pkg = pkg;
+    data.bud = {
+        about: bud.about,
+        get properties() {
+            return Object.keys(bud.properties).map(function (key) {
+                var data = bud.properties[key];
+                data.name = key;
+                data.type = String(data.type).replace(/\|/g, '&#124;');
+                return data;
+            });
+        }
+    };
     return data;
 }
 function _concat(a, b) {
