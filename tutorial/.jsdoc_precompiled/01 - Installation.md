@@ -39,6 +39,7 @@ ___
 
 <!-- Tutorials start -->
 + [01 - Installation](tutorial-01 - Installation.html)
++ [02 - Render bud files](tutorial-02 - Render bud files.html)
 
 <!-- Tutorials end -->
 
