@@ -168,11 +168,23 @@
 					<ul class="dropdown-menu ">
 						
 						<li>
-							<a href="tutorial-01 - Installation.html">01 - Installation</a>
+							<a href="tutorial-01 - Installing coz.html">01 - Installing coz</a>
 						</li>
 						
 						<li>
-							<a href="tutorial-02 - Render bud files.html">02 - Render bud files</a>
+							<a href="tutorial-02 - Rendering bud files.html">02 - Rendering bud files</a>
+						</li>
+						
+						<li>
+							<a href="tutorial-03 - Digging deeper into bud.html">03 - Digging deeper into bud</a>
+						</li>
+						
+						<li>
+							<a href="tutorial-04 - Using programmatic API.html">04 - Using programmatic API</a>
+						</li>
+						
+						<li>
+							<a href="tutorial-05 - Customizing coz.html">05 - Customizing coz</a>
 						</li>
 						
 
@@ -232,14 +244,13 @@
 <h2>Table of Contents</h2><ul>
 <li><a href="#01-about">About coz</a><ul>
 <li><a href="#01-about--whats-this">What's this?</a></li>
-<li><a href="#01-about--what-for">What for?</a></li>
-<li><a href="#01-about--why-this">Why this?</a></li>
+<li><a href="#01-about--what--for">What For?</a></li>
+<li><a href="#01-about--why--this">Why This?</a></li>
 </ul>
 </li>
 <li><a href="#02-howto">Getting started</a><ul>
 <li><a href="#02-howto--requirements">Requirements</a></li>
-<li><a href="#02-howto--install">Install</a></li>
-<li><a href="#02-howto--simple-example">Simple example</a></li>
+<li><a href="#02-howto--installation">Installation</a></li>
 </ul>
 </li>
 <li><a href="#03-spec">Specifications</a><ul>
@@ -247,6 +258,7 @@
 </ul>
 </li>
 <li><a href="#09-links">Links</a><ul>
+<li><a href="#09-links--tutorials">Tutorials</a></li>
 <li><a href="#09-links--documents">Documents</a></li>
 <li><a href="#09-links--reports">Reports</a></li>
 </ul>
@@ -263,16 +275,22 @@
 <p><a name="01-about"></a></p>
 <h2>About coz</h2><p><a name="01-about--whats-this"></a></p>
 <h3>What's this?</h3><p>The basic idea of coz is that creating files from files.</p>
-<p>Write a meta file called [.bud file][#spec-bud-spec] and run coz generates the magic.</p>
-<p><img style="height:256px;" src="assets/images/coz-outline.jpg" height="256"></p>
-<p><a name="01-about--what-for"></a></p>
-<h3>What for?</h3><ul>
-<li><strong>Automation</strong></li>
+<ul>
+<li>Writing a meta file called <a href="#spec-bud-spec">.bud file</a>.</li>
+<li>Running <code>coz render</code> command will generate files.</li>
 </ul>
-<p><a name="01-about--why-this"></a></p>
-<h3>Why this?</h3><ul>
-<li><strong>Lightweight and fast</strong></li>
-<li><strong>Unopinionated and flexible</strong></li>
+<p><img style="height:256px;" src="assets/images/coz-outline.jpg" height="256"></p>
+<p><a name="01-about--what--for"></a></p>
+<h3>What For?</h3><h4>Example Usages.</h4><ul>
+<li>Generate Javascript and Python code from database definition.</li>
+<li>Generate <code>package.json</code> and <code>bower.json</code> sharing same meta data.</li>
+</ul>
+<p><a name="01-about--why--this"></a></p>
+<h3>Why This?</h3><ul>
+<li><p><strong>Lightweight and fast</strong></p>
+</li>
+<li><p><strong>Unopinionated and flexible</strong></p>
+</li>
 <li><strong>Simple and extensible</strong>
 <a name="02-howto"></a>
 Getting started</li>
@@ -282,26 +300,9 @@ Getting started</li>
 <h3>Requirements</h3><ul>
 <li><a href="http://nodejs.org/">node.js</a></li>
 </ul>
-<p><a name="02-howto--install"></a></p>
-<h3>Install</h3><pre class="prettyprint source lang-bash"><code>$ npm install coz -g</code></pre><p><a name="02-howto--simple-example"></a></p>
-<h3>Simple example</h3><p>Step01 <strong>Configure bud file</strong></p>
-<pre class="prettyprint source lang-Javascript"><code>module.exports = {
-    force: true,
-    mode: '444',
-    data: {
-        entities: [
-            {name: 'User'},
-            {name: 'Machine'},
-        ]
-    }
-}</code></pre><p>Step02 <strong>Prepare template</strong></p>
-<pre class="prettyprint source lang-Javascript"><code>
-{{#each entities}}
-/** Entity for {{snakecase name}} */
-module.exports = function {{pascalcase name}}Entity(){
-};
-{{/each}}</code></pre><p>Step03 <strong>Render file</strong></p>
-<pre class="prettyprint source lang-bash"><code>$ coz render .*.bud</code></pre><p><a name="03-spec"></a></p>
+<p><a name="02-howto--installation"></a></p>
+<h3>Installation</h3><p>coz is available as an [NPM][npm_url] package.</p>
+<pre class="prettyprint source lang-bash"><code>$ npm install coz -g</code></pre><p><a name="03-spec"></a></p>
 <h2>Specifications</h2><p><a name="spec-bud-spec"></a>
 <a name="03-spec--bud-file-specification-"></a></p>
 <h3>Bud file specification.</h3><p>A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.</p>
@@ -330,75 +331,29 @@ module.exports = function {{pascalcase name}}Entity(){
 </thead>
 <tbody>
 <tr>
-<td>engine</td>
-<td>string&#124;object</td>
-<td>Template compile function or name of function</td>
-<td></td>
-</tr>
-<tr>
-<td>cwd</td>
-<td>string</td>
-<td>Working directory path</td>
-<td></td>
-</tr>
-<tr>
-<td>data</td>
-<td>object</td>
-<td>Data to template render with</td>
-<td></td>
-</tr>
-<tr>
-<td>done</td>
-<td>boolean</td>
-<td>Done to writeout or not</td>
-<td></td>
-</tr>
-<tr>
-<td>mkdirp</td>
-<td>boolean</td>
-<td>Make parent directories if needed</td>
-<td></td>
-</tr>
-<tr>
-<td>setup</td>
-<td>object</td>
-<td>Properties to set engine</td>
-<td></td>
-</tr>
-<tr>
-<td>force</td>
-<td>boolean</td>
-<td>Should overwrite file when already exists, or not</td>
-<td></td>
-</tr>
-<tr>
-<td>mode</td>
-<td>string&#124;number</td>
-<td>File permission</td>
-<td></td>
-</tr>
-<tr>
-<td>path</td>
-<td>string</td>
-<td>Destination file path. If not provided, guess from bud file path</td>
-<td></td>
-</tr>
-<tr>
-<td>src</td>
-<td>string</td>
-<td>Bud source file path</td>
-<td></td>
-</tr>
-<tr>
-<td>tmpl</td>
-<td>string&#124;function</td>
-<td>Template file path or registered template name or template function</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p><a name="09-links"></a></p>
-<h2>Links</h2><p><a name="09-links--documents"></a></p>
+<p>engine | string&#124;object | Template compile function or name of function | 
+cwd | string | Working directory path | 
+data | object | Data to template render with | 
+mkdirp | boolean | Make parent directories if needed | 
+setup | object | Properties to set engine | 
+force | boolean | Should overwrite file when already exists, or not | 
+mode | string&#124;number | File permission | 
+path | string | Destination file path. If not provided, guess from bud file path | 
+tmpl | string&#124;function | Template file path or registered template name or template function | 
+<a name="09-links"></a></p>
+<h2>Links</h2><p><a name="09-links--tutorials"></a></p>
+<h3>Tutorials</h3><ul>
+<li><a href="01%20-%20Installing%20coz">01 - Installing coz</a></li>
+<li><a href="02%20-%20Rendering%20bud%20files">02 - Rendering bud files</a></li>
+<li><a href="03%20-%20Digging%20deeper%20into%20bud">03 - Digging deeper into bud</a></li>
+<li><a href="04%20-%20Using%20programmatic%20API">04 - Using programmatic API</a></li>
+<li><a href="05%20-%20Customizing%20coz">05 - Customizing coz</a></li>
+</ul>
+<p><a name="09-links--documents"></a></p>
 <h3>Documents</h3><ul>
 <li><a href="http://okunishinishi.github.io/coz/apiguide/">API Guide</a></li>
 </ul>

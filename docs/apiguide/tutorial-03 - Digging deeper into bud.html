@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>coz tutorial01 - Installation</title>
+	<title>coz tutorial03 - Digging deeper into bud</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -168,11 +168,23 @@
 					<ul class="dropdown-menu ">
 						
 						<li>
-							<a href="tutorial-01 - Installation.html">01 - Installation</a>
+							<a href="tutorial-01 - Installing coz.html">01 - Installing coz</a>
 						</li>
 						
 						<li>
-							<a href="tutorial-02 - Render bud files.html">02 - Render bud files</a>
+							<a href="tutorial-02 - Rendering bud files.html">02 - Rendering bud files</a>
+						</li>
+						
+						<li>
+							<a href="tutorial-03 - Digging deeper into bud.html">03 - Digging deeper into bud</a>
+						</li>
+						
+						<li>
+							<a href="tutorial-04 - Using programmatic API.html">04 - Using programmatic API</a>
+						</li>
+						
+						<li>
+							<a href="tutorial-05 - Customizing coz.html">05 - Customizing coz</a>
 						</li>
 						
 
@@ -194,37 +206,33 @@
 <header>
     
 
-    <h2>01 - Installation</h2>
+    <h2>03 - Digging deeper into bud</h2>
 </header>
 
 <article>
-    <p>coz runs on <a href="http://nodejs.org/">Node.js</a> and is available as an <a href="https://www.npmjs.com/">NPM</a> package.</p>
-<h3>Installing Node.js</h3><p>Download from <a href="https://nodejs.org/download/">Node.js official page</a>, or use <a href="https://github.com/creationix/nvm">nvm</a> to manage multiple version.</p>
-<p>coz works on node version 0.10.3 or later.</p>
-<hr>
-<h3>Installing coz</h3><p>Install coz from <a href="https://www.npmjs.com/">NPM</a> with npm command.</p>
-<pre class="prettyprint source lang-bash"><code>{@lang bash}# Install coz commandline interface.
-$ npm install coz -g</code></pre><p>With <code>-g</code> option, npm installs the module globally and you can run coz simply by <code>coz</code> from anywhere.
-(It may need to be run via <code>sudo</code>)</p>
-<p>Show the coz version to check install is successfully.
-The latest version <code>1.0.7</code> will be shown unless you specified older.</p>
-<pre class="prettyprint source lang-bash"><code>{@lang bash}# Show coz version.
-$ coz --version</code></pre><p>If you do not want do it globally, install it local and use [programmatic API][tutorial_programmatic_url].</p>
-<hr>
-<h3>Tutorials</h3><!-- Tutorials start -->
-<ul>
-<li><a href="tutorial-01%20-%20Installation.html">01 - Installation</a></li>
-<li><a href="tutorial-02%20-%20Render%20bud%20files.html">02 - Render bud files</a></li>
-</ul>
-<!-- Tutorials end -->
-<h3>Links</h3><ul>
-<li><a href="http://nodejs.org/">Node.js</a></li>
-<li><a href="https://www.npmjs.com/">NPM</a></li>
-<li><a href="https://github.com/creationix/nvm">nvm</a></li>
-<li><a href="http://www.npmjs.org/package/coz">coz @ npm</a></li>
-</ul>
-<!-- URLs start -->
-<!-- URLs end -->
+    <h3>Auto filling properties.</h3><h3>Configurable properteis.</h3><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre class="prettyprint source"><code>engine | string&#124;object | Template compile function or name of function | 
+cwd | string | Working directory path | 
+data | object | Data to template render with | 
+mkdirp | boolean | Make parent directories if needed | 
+setup | object | Properties to set engine | 
+force | boolean | Should overwrite file when already exists, or not | 
+mode | string&#124;number | File permission | 
+path | string | Destination file path. If not provided, guess from bud file path | 
+tmpl | string&#124;function | Template file path or registered template name or template function | </code></pre>
 </article>
 
 </section>

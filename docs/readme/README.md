@@ -28,12 +28,11 @@ Table of Contents
 -----
 - [About coz](#01-about)
     - [What's this?](#01-about--whats-this)
-    - [What for?](#01-about--what-for)
-    - [Why this?](#01-about--why-this)
+    - [What For?](#01-about--what--for)
+    - [Why This?](#01-about--why--this)
 - [Getting started](#02-howto)
     - [Requirements](#02-howto--requirements)
-    - [Install](#02-howto--install)
-    - [Simple example](#02-howto--simple-example)
+    - [Installation](#02-howto--installation)
 - [Specifications](#03-spec)
     - [Bud file specification.](#03-spec--bud-file-specification-)
 - [Links](#09-links)
@@ -59,20 +58,25 @@ About coz
 
 The basic idea of coz is that creating files from files.
 
-Write a meta file called [.bud file][#spec-bud-spec] and run coz generates the magic.
++ Writing a meta file called [.bud file](#spec-bud-spec).
++ Running `coz render` command will generate files.
 
 <img style="height:256px;" src="assets/images/coz-outline.jpg" height="256">
 
+<a name="01-about--what--for"></a>
+### What For?
 
-<a name="01-about--what-for"></a>
-### What for?
 
-+ **Automation**
+#### Example Usages.
++ Generate Javascript and Python code from database definition.
++ Generate `package.json` and `bower.json` sharing same meta data.
 
-<a name="01-about--why-this"></a>
-### Why this?
+
+<a name="01-about--why--this"></a>
+### Why This?
 
 + **Lightweight and fast**
+
 + **Unopinionated and flexible**
 + **Simple and extensible**
 <a name="02-howto"></a>
@@ -85,46 +89,16 @@ Getting started
 + [node.js][nodejs_url]
 
 
-<a name="02-howto--install"></a>
-### Install
+<a name="02-howto--installation"></a>
+### Installation
+
+coz is available as an [NPM][npm_url] package.
 
 ```bash
 $ npm install coz -g
 ```
 
-<a name="02-howto--simple-example"></a>
-### Simple example
 
-Step01 **Configure bud file**
-
-```Javascript
-module.exports = {
-    force: true,
-    mode: '444',
-    data: {
-        entities: [
-            {name: 'User'},
-            {name: 'Machine'},
-        ]
-    }
-}
-```
-
-Step02 **Prepare template**
-```Javascript
-
-{{#each entities}}
-/** Entity for {{snakecase name}} */
-module.exports = function {{pascalcase name}}Entity(){
-};
-{{/each}}
-
-```
-
-Step03 **Render file**
-```bash
-$ coz render .*.bud
-```
 <a name="03-spec"></a>
 Specifications
 ---------

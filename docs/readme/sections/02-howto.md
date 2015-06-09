@@ -6,41 +6,11 @@ Getting started
 + [node.js][nodejs_url]
 
 
-### Install
+### Installation
+
+{{pkg.name}} is available as an [NPM][npm_url] package.
 
 ```bash
 $ npm install {{pkg.name}} -g
 ```
 
-### Simple example
-
-Step01 **Configure bud file**
-
-```Javascript
-module.exports = {
-    force: true,
-    mode: '444',
-    data: {
-        entities: [
-            {name: 'User'},
-            {name: 'Machine'},
-        ]
-    }
-}
-```
-
-Step02 **Prepare template**
-```Javascript
-
-\{{#each entities}}
-/** Entity for \{{snakecase name}} */
-module.exports = function \{{pascalcase name}}Entity(){
-};
-\{{/each}}
-
-```
-
-Step03 **Render file**
-```bash
-$ {{pkg.name}} render .*.bud
-```

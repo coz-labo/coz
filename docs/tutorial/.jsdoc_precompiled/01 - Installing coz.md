@@ -1,15 +1,17 @@
+### Overview
+
 coz runs on [Node.js][nodejs_url] and is available as an [NPM][npm_url] package.
 
 ### Installing Node.js
 
-Download from [Node.js official page][nodejs_download_url], or use [nvm][nvm_url] to manage multiple version.
+If you don't have Node.js, download one from [Node.js official page][nodejs_download_url], or use [nvm][nvm_url] to manage multiple version.
 
 coz works on node version 0.10.3 or later.
 
 ___
 
 
-### Installing coz
+### Installing coz via NPM
 
 Install coz from [NPM][npm_url] with npm command.
 
@@ -29,7 +31,7 @@ The latest version `1.0.7` will be shown unless you specified older.
 $ coz --version
 ```
 
-If you do not want do it globally, install it local and use [programmatic API][tutorial_programmatic_url].
+If you do not want do it globally, install it local and use [programmatic API][tutorial_04_using_programmatic__a_p_i_url].
 
 
 ___

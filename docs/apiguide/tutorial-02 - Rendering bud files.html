@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>coz tutorial02 - Render bud files</title>
+	<title>coz tutorial02 - Rendering bud files</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -168,11 +168,23 @@
 					<ul class="dropdown-menu ">
 						
 						<li>
-							<a href="tutorial-01 - Installation.html">01 - Installation</a>
+							<a href="tutorial-01 - Installing coz.html">01 - Installing coz</a>
 						</li>
 						
 						<li>
-							<a href="tutorial-02 - Render bud files.html">02 - Render bud files</a>
+							<a href="tutorial-02 - Rendering bud files.html">02 - Rendering bud files</a>
+						</li>
+						
+						<li>
+							<a href="tutorial-03 - Digging deeper into bud.html">03 - Digging deeper into bud</a>
+						</li>
+						
+						<li>
+							<a href="tutorial-04 - Using programmatic API.html">04 - Using programmatic API</a>
+						</li>
+						
+						<li>
+							<a href="tutorial-05 - Customizing coz.html">05 - Customizing coz</a>
 						</li>
 						
 
@@ -194,7 +206,7 @@
 <header>
     
 
-    <h2>02 - Render bud files</h2>
+    <h2>02 - Rendering bud files</h2>
 </header>
 
 <article>
@@ -245,7 +257,8 @@ module.exports = {
     }
 };</code></pre><p>As you see, <code>.bud</code> file is actuary a JavaScript file and could be exportsd an a Node.js module.</p>
 <p>Save this file as <code>.who-likes-what.txt.bud</code> and then, run:</p>
-<pre class="prettyprint source lang-bash"><code>{@lang bash}$ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will generate a file named <code>who-likes-what.txt</code>.</p>
+<pre class="prettyprint source lang-bash"><code>{@lang bash}# Render the bud file
+$ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will generate a file named <code>who-likes-what.txt</code>.</p>
 <p><strong>who-likes-what.txt</strong> (generated file)</p>
 <pre class="prettyprint source"><code>Hi, my name is Mai. I like apple.
 Hi, my name is Tom. I like Orange.
@@ -285,7 +298,8 @@ module.exports = {
     {{/each}}
     &lt;/tbody>
 &lt;/table></code></pre><p>And run:</p>
-<pre class="prettyprint source lang-bash"><code>{@lang bash}$ coz render .what-colors.html.bud</code></pre><p>will generate:</p>
+<pre class="prettyprint source lang-bash"><code>{@lang bash}# Render the bud file
+$ coz render &quot;.what-colors.html.bud&quot;</code></pre><p>will generate:</p>
 <p><strong>what-colors.html</strong> (generated file)</p>
 <pre class="prettyprint source lang-xml"><code>{@lang xml}&lt;table>
     &lt;caption>Colors&lt;/caption>
@@ -297,8 +311,11 @@ module.exports = {
 &lt;/table></code></pre><hr>
 <h3>Tutorials</h3><!-- Tutorials start -->
 <ul>
-<li><a href="tutorial-01%20-%20Installation.html">01 - Installation</a></li>
-<li><a href="tutorial-02%20-%20Render%20bud%20files.html">02 - Render bud files</a></li>
+<li><a href="tutorial-01%20-%20Installing%20coz.html">01 - Installing coz</a></li>
+<li><a href="tutorial-02%20-%20Rendering%20bud%20files.html">02 - Rendering bud files</a></li>
+<li><a href="tutorial-03%20-%20Digging%20deeper%20into%20bud.html">03 - Digging deeper into bud</a></li>
+<li><a href="tutorial-04%20-%20Using%20programmatic%20API.html">04 - Using programmatic API</a></li>
+<li><a href="tutorial-05%20-%20Customizing%20coz.html">05 - Customizing coz</a></li>
 </ul>
 <!-- Tutorials end -->
 <h3>Links</h3><ul>
