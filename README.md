@@ -4,6 +4,7 @@ coz
 Flexible generator, which makes your project clean and maintainable.
 
 <!-- Badge start -->
+
 [![Build Status][my_travis_badge_url]][my_travis_url]
 [![Code Climate][my_codeclimate_badge_url]][my_codeclimate_url]
 [![Code Coverage][my_codeclimate_coverage_badge_url]][my_codeclimate_url]
@@ -15,12 +16,14 @@ Flexible generator, which makes your project clean and maintainable.
 
 
 <!-- Banner start -->
+
 <a href="https://github.com/okunishinishi/coz#readme"><img style="height:px;" src="assets/images/coz-banner.png" height=""/></a>
 
 <!-- Banner end -->
 
 
 <!-- Table start -->
+
 Table of Contents
 -----
 - [About coz](#01-about)
@@ -45,6 +48,7 @@ Table of Contents
 
 
 <!-- Sections start -->
+
 <a name="01-about"></a>
 About coz
 ------
@@ -231,6 +235,7 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 
 
 <!-- Links start -->
+
 [nodejs_url]: http://nodejs.org/
 [my_travis_url]: http://travis-ci.org/okunishinishi/coz
 [my_travis_badge_url]: http://img.shields.io/travis/okunishinishi/coz.svg?style=flat

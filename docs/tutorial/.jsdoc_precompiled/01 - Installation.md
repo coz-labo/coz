@@ -22,7 +22,7 @@ With `-g` option, npm installs the module globally and you can run coz simply by
 (It may need to be run via `sudo`)
 
 Show the coz version to check install is successfully.
-The latest version `1.0.5` will be shown unless you specified older.
+The latest version `1.0.6` will be shown unless you specified older.
 
 ```bash
 # Show coz version.

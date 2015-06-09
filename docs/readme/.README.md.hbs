@@ -6,6 +6,7 @@
 {{pkg.description}}
 
 <!-- Badge start -->
+
 {{#each badges}}[![{{alt}}][{{img}}]][{{link}}]
 {{/each}}
 
@@ -13,12 +14,14 @@
 
 
 <!-- Banner start -->
+
 <a href="{{pkg.homepage}}"><img style="height:{{BANNER_SIZE}}px;" src="assets/images/coz-banner.png" height="{{BANNER_SIZE}}"/></a>
 
 <!-- Banner end -->
 
 
 <!-- Table start -->
+
 Table of Contents
 -----
 {{#each sections}}- [{{{title}}}](#{{spinalcase name}})
@@ -30,6 +33,7 @@ Table of Contents
 
 
 <!-- Sections start -->
+
 {{#each sections}}
 <a name="{{spinalcase name}}"></a>
 {{#each lines}}{{#if isTopic}}<a name="{{spinalcase ../../name}}-{{spinalcase name}}"></a>
@@ -41,6 +45,7 @@ Table of Contents
 
 
 <!-- Links start -->
+
 {{#each links}}[{{@key}}]: {{this}}
 {{/each}}
 
