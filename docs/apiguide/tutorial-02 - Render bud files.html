@@ -198,22 +198,32 @@
 </header>
 
 <article>
-    <p>The most powerful feature of coz is rendering files from files.</p>
-<p>First you prepare a <code>.bud</code> file.
-A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.</p>
-<pre class="prettyprint source lang-javascript"><code>{@lang javascript}/**
+    <p>With coz, you can generate any file with two step.</p>
+<ol>
+<li>Prepare a <code>.bud</code> file.</li>
+<li>Run <code>coz render</code> command.</li>
+</ol>
+<hr>
+<h3>Render a single file.</h3><p>First you prepare a <code>.bud</code> file.
+A bud contains file meta data like <em>witch template to use</em>, <em>where to render it</em>, <em>what permission to give</em>, and so on.</p>
+<p>Here the minimum example to render file.</p>
+<pre class="prettyprint source lang-javascript"><code>/**
  * .who-likes-what.txt.bud
  * This is a bud file for &quot;examples/01-minimum-demo&quot;
  */
 
 // Exports as a Node.js module.
 module.exports = {
+
     // Template string. By default, parsed by Handlebars engine.
     tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
+
     // Overwrite when already existing.
     force: true,
+
     // File permission.
     mode: '444',
+
     // Data to render.
     data: {
         members: {
@@ -222,7 +232,12 @@ module.exports = {
             &quot;Rita&quot;: &quot;Banana&quot;
         }
     }
-};</code></pre>
+};</code></pre><p>As you see, <code>.bud</code> file is actuary a JavaScript file and exports contents with Node.js way.</p>
+<p>Save this file as <code>.who-likes-what.txt.bud</code> and then,</p>
+<pre class="prettyprint source lang-bash"><code>$ coz render .who-likes-what.txt.bud</code></pre><p>This will generate a file named <code>who-likes-what.txt</code>.</p>
+<pre class="prettyprint source"><code>Hi, my name is Mai. I like apple.
+Hi, my name is Tom. I like Orange.
+Hi, my name is Rita. I like Banana.</code></pre><hr>
 </article>
 
 </section>

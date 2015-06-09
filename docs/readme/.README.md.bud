@@ -27,7 +27,7 @@ function _section(filename, callback) {
             callback(null, {
                 name: path.basename(filename, path.extname(filename)),
                 content: tmpl({
-                    BANNER_SIZE:BANNER_SIZE,
+                    BANNER_SIZE: BANNER_SIZE,
                     pkg: pkg,
                     get bud() {
                         var bud = require('../../lib/bud/.bud.json');
@@ -92,6 +92,7 @@ module.exports = function (callback) {
                 force: true,
                 mode: '444',
                 data: {
+                    BANNER_SIZE: BANNER_SIZE,
                     pkg: pkg,
                     links: require('./.links.json'),
                     badges: require('./.badges.json'),
