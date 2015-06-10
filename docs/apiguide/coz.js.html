@@ -308,12 +308,37 @@ Coz.prototype = {
     },
     /**
      * Clean filenames
-     * @TODO Implmente this method.
      * @param {string|string[]} filenames - Filenames to clean.
+     * @param {object} [options] - Optional settings.
+     * @param {boolean} [options.force=false] - Clean even if readonly.
      * @param {function} callback - Callback when done.
      */
-    clean: function (filenames, callback) {
+    clean: function (filenames, options, callback) {
 
+        switch (typeof(arguments[1])) {
+            case 'function':
+                callback = callback || arguments[1];
+                options = null;
+                break;
+        }
+        options = options || {};
+        var force = !!options.force;
+
+        var s = this;
+
+        Coz._eachFiles(filenames, function (filename, callback) {
+            async.series([
+                function (callback) {
+                    file.unlinkFile(filename, {force: force}, callback);
+                },
+                function (callback) {
+                    console.log('File cleaned: %s', filename);
+                    callback(null);
+                }
+            ], callback);
+        }, function (err) {
+            callback(err);
+        });
     },
     /**
      * Handle an error.

@@ -7,36 +7,29 @@ var indexjsTmpl = require('../../../lib/template/buildin_tmpls/indexjs_tmpl.js')
 
 exports['Indexjs tmpl'] = function (test) {
     test.ok(indexjsTmpl({
-        docProperties: false,
-        doc: {},
+        module: 'foo',
+        parentmodule: 'bar',
         modules: [
             {
-                isPascal: false,
                 name: 'bazz',
-                isModule: false
+                isSubmodules: false
             },
             {
-                isPascal: true,
                 name: 'quzz',
-                isModule: true
+                isSubmodules: true
             }
         ]
     }));
     test.ok(indexjsTmpl({
         desc: 'foo',
-        doc: {
-            "module": "foo"
-        },
         modules: [
             {
-                isPascal: true,
                 name: 'baz',
-                isModule: false
+                isSubmodules: false
             },
             {
-                isPascal: false,
                 name: 'quz',
-                isModule: true
+                isSubmodules: true
             }
         ],
         docProperties: true

@@ -80,5 +80,12 @@ exports['Run buildin helpers.'] = function (test) {
     test.equal(helpers.sentencecase("foo_bar"), "Foo bar");
     test.equal(helpers.spinalcase("foo_bar"), "foo-bar");
     test.equal(helpers.uppercase("foo_bar"), "FOO_BAR");
+    test.equal(helpers.read('_not_existing_filename'), '');
+    test.done();
+};
+
+exports['Get basedir.'] = function (test) {
+    var basedir = HandlebarsEngine._basedirWithContext({});
+    test.ok(basedir);
     test.done();
 };

@@ -226,9 +226,9 @@ var create = require('../create'),
     fs = core.fs;
 
 /** @lends render */
-function render(src, options, callback) {
+function render(filename, options, callback) {
     var coz = create({});
-    coz.render(src, options, callback);
+    coz.render(filename, options, callback);
 }
 
 render.help = fs.readFileSync(__dirname + '/helps/render-help.txt', 'utf-8');

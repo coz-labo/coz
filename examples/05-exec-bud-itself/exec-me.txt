@@ -1,0 +1,1 @@
+This file is rendered from: "/Users/okuni/projects/coz/docs/examples/05-exec-bud-itself/.exec-me.txt.bud"

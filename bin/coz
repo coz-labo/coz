@@ -22,4 +22,15 @@ program
     });
 
 program
+    .command('clean [filename]')
+    .description('Remove files.')
+    .option('-f, --force', 'Clean even if readonly.')
+    .action(function (src, opitons) {
+        commands.clean(src, opitons);
+    })
+    .on('--help', function () {
+        console.log(commands.clean.help);
+    });
+
+program
     .parse(process.argv);

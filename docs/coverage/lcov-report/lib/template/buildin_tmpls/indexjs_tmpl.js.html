@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header medium">
+<div class="header high">
     <h1>Code coverage report for <span class="entity">lib/template/buildin_tmpls/indexjs_tmpl.js</span></h1>
     <h2>
-        Statements: <span class="metric">66.67% <small>(14 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">24.49% <small>(24 / 98)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">60% <small>(6 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">66.67% <small>(14 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">85.71% <small>(18 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">37.76% <small>(37 / 98)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">80% <small>(8 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">85.71% <small>(18 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">lib/template/buildin_tmpls/</a> &#187; indexjs_tmpl.js</div>
@@ -129,9 +129,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -147,9 +147,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -217,11 +217,11 @@ var HandlebarsEngine = require('../buildin_engines').HandlebarsEngine,
     Handlebars = HandlebarsEngine.createHandlebars();
 &nbsp;
 //noinspection UnterminatedStatementJS
-var precompiled = Handlebars.template({"1":<span class="fstat-no" title="function not covered" >function(depth0,helpers,partials,data) {</span>
-<span class="cstat-no" title="statement not covered" >	    var helper;</span>
+var precompiled = Handlebars.template({"1":function(depth0,helpers,partials,data) {
+	    var helper;
 	
-<span class="cstat-no" title="statement not covered" >	  return "\n * @module "</span>
-	    + this.escapeExpression(((helper = (helper = helpers.module || (depth0 != null ? depth0.module : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"module","hash":{},"data":data}) : helper)));
+	  return "\n * @module "
+	    + this.escapeExpression(((helper = (helper = helpers.module || (depth0 != null ? depth0.module : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>) != null ? helper : <span class="branch-1 cbranch-no" title="branch not covered" >helpers.helperMissing)</span>,(typeof helper === "function" ? <span class="branch-0 cbranch-no" title="branch not covered" >helper.call(depth0,{"name":"module","hash":{},"data":data}) </span>: helper)));
 	},"3":<span class="fstat-no" title="function not covered" >function(depth0,helpers,partials,data) {</span>
 <span class="cstat-no" title="statement not covered" >	    return "\n * @see module:"</span>
 	    + this.escapeExpression(this.lambda(depth0, depth0));
@@ -235,18 +235,18 @@ var precompiled = Handlebars.template({"1":<span class="fstat-no" title="functio
 	    + this.escapeExpression((helpers.snakecase || (<span class="branch-1 cbranch-no" title="branch not covered" >depth0 </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >depth0.snakecase)</span> || <span class="branch-3 cbranch-no" title="branch not covered" >helpers.helperMissing)</span>.call(depth0,(depth0 != null ? depth0.name : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"snakecase","hash":{},"data":data}))
 	    + "'); }"
 	    + ((stack1 = helpers['if'].call(depth0,(data &amp;&amp; data.last),{"name":"if","hash":{},"fn":this.program(12, data, 0, blockParams, depths),"inverse":this.program(14, data, 0, blockParams, depths),"data":data})) != null ? stack1 : <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>;
-	},"6":<span class="fstat-no" title="function not covered" >function(depth0,helpers,partials,data,blockParams,depths) {</span>
-<span class="cstat-no" title="statement not covered" >	    var stack1, alias1=this.lambda, alias2=this.escapeExpression, alias3=helpers.helperMissing;</span>
+	},"6":function(depth0,helpers,partials,data,blockParams,depths) {
+	    var stack1, alias1=this.lambda, alias2=this.escapeExpression, alias3=helpers.helperMissing;
 	
-<span class="cstat-no" title="statement not covered" >	  return "    /**\n     * @memberof module:"</span>
-	    + alias2(alias1((depths[2] != null ? depths[2].module : depths[2]), depth0))
+	  return "    /**\n     * @memberof module:"
+	    + alias2(alias1((depths[2] != null ? depths[2].module : <span class="branch-1 cbranch-no" title="branch not covered" >depths[2])</span>, depth0))
 	    + "\n     * @name {@link module:"
-	    + alias2(alias1((depths[2] != null ? depths[2].module : depths[2]), depth0))
+	    + alias2(alias1((depths[2] != null ? depths[2].module : <span class="branch-1 cbranch-no" title="branch not covered" >depths[2])</span>, depth0))
 	    + "/"
-	    + alias2((helpers.camelcase || (depth0 &amp;&amp; depth0.camelcase) || alias3).call(depth0,(depth0 != null ? depth0.name : depth0),{"name":"camelcase","hash":{},"data":data}))
+	    + alias2((helpers.camelcase || (<span class="branch-1 cbranch-no" title="branch not covered" >depth0 </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >depth0.camelcase)</span> || <span class="branch-3 cbranch-no" title="branch not covered" >alias3)</span>.call(depth0,(depth0 != null ? depth0.name : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"camelcase","hash":{},"data":data}))
 	    + "|"
-	    + alias2((helpers.camelcase || (depth0 &amp;&amp; depth0.camelcase) || alias3).call(depth0,(depth0 != null ? depth0.name : depth0),{"name":"camelcase","hash":{},"data":data}))
-	    + ((stack1 = alias1((depths[2] != null ? depths[2].END_BRACE : depths[2]), depth0)) != null ? stack1 : "")
+	    + alias2((helpers.camelcase || (<span class="branch-1 cbranch-no" title="branch not covered" >depth0 </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >depth0.camelcase)</span> || <span class="branch-3 cbranch-no" title="branch not covered" >alias3)</span>.call(depth0,(depth0 != null ? depth0.name : <span class="branch-1 cbranch-no" title="branch not covered" >depth0)</span>,{"name":"camelcase","hash":{},"data":data}))
+	    + ((stack1 = alias1((depths[2] != null ? depths[2].END_BRACE : <span class="branch-1 cbranch-no" title="branch not covered" >depths[2])</span>, depth0)) != null ? <span class="branch-0 cbranch-no" title="branch not covered" >stack1 </span>: "")
 	    + "\n     */\n";
 	},"8":<span class="fstat-no" title="function not covered" >function(depth0,helpers,partials,data,blockParams,depths) {</span>
 <span class="cstat-no" title="statement not covered" >	    var stack1, alias1=this.lambda, alias2=this.escapeExpression, alias3=helpers.helperMissing;</span>
@@ -297,7 +297,7 @@ module.exports = indexjsTmpl;</pre></td></tr>
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jun 10 2015 09:36:17 GMT+0900 (JST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jun 10 2015 13:41:58 GMT+0900 (JST)</div>
 </div>
 <script src="../../../prettify.js"></script>
 <script>
