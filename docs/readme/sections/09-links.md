@@ -3,7 +3,6 @@ Links
 
 ### Tutorials
 
-
 {{#each tutorials}}+ [{{name}}]({{{url}}})
 {{/each}}
 
