@@ -249,7 +249,7 @@ Coz.prototype = {
         return s;
     },
     /**
-     * @type module:coz/lib/template~EngineSet
+     * @type {module:coz/lib/template~EngineSet}
      */
     engineSet: undefined,
     /**
@@ -282,33 +282,38 @@ Coz.prototype = {
             writer = new BudWriter();
 
         logger.info('[Coz] Rendering started...');
-        async.waterfall([
-            function (callback) {
-                file.expandGlob(filenames, callback);
-            },
-            function (filenames, callback) {
-                async.eachSeries(filenames, function (filename, callback) {
-                    async.waterfall([
-                        function load(callback) {
-                            loader.load(filename, callback);
-                        },
-                        function compile(bud, callback) {
-                            compiler.compile(bud, callback);
-                        },
-                        function write(bud, callback) {
-                            writer.write(bud, callback);
-                        },
-                        function log(bud, callback) {
-                            logger.log(bud, callback);
-                        }
-                    ], callback);
-                }, callback);
-            }
-        ], function (err) {
+        Coz._eachFiles(filenames, function (filename, callback) {
+            async.waterfall([
+                function (callback) {
+                    callback(null, filename);
+                },
+                function load(bud, callback) {
+                    loader.load(filename, callback);
+                },
+                function compile(bud, callback) {
+                    compiler.compile(bud, callback);
+                },
+                function write(bud, callback) {
+                    writer.write(bud, callback);
+                },
+                function log(bud, callback) {
+                    logger.log(bud, callback);
+                }
+            ], callback);
+        }, function (err) {
             logger.info('...done!(' + (new Date() - startAt) + 'ms)');
             callback = callback || s._handleError.bind(s);
             callback(err);
         });
+    },
+    /**
+     * Clean filenames
+     * @TODO Implmente this method.
+     * @param {string|string[]} filenames - Filenames to clean.
+     * @param {function} callback - Callback when done.
+     */
+    clean: function (filenames, callback) {
+
     },
     /**
      * Handle an error.
@@ -320,6 +325,24 @@ Coz.prototype = {
             console.error(err);
         }
     }
+};
+
+/**
+ * Iterate each files.
+ * @param {string|string[]} pattern - Filename pattern to work with.
+ * @param {function} handler - Handle a single filename.
+ * @param {function} callback - Callback when done.
+ * @private
+ */
+Coz._eachFiles = function (pattern, handler, callback) {
+    async.waterfall([
+        function (callback) {
+            file.expandGlob(pattern, callback);
+        },
+        function (filenames, callback) {
+            async.eachSeries(filenames, handler, callback);
+        }
+    ], callback);
 };
 
 module.exports = Coz;
