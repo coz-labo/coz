@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>coz Source: util/filtering/pattern_reject.js</title>
+	<title>coz Source: util/requiring/index.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -234,32 +234,22 @@
 					
 
 
-		<h1 class="page-title">Source: util/filtering/pattern_reject.js</h1>
+		<h1 class="page-title">Source: util/requiring/index.js</h1>
     
 <section>
 	<article>
 		<pre
 			class="sunlight-highlight-javascript linenums">/**
- * Create a filter function to reject values matches a pattern.
- * @memberof module:coz/lib/util/filtering
- * @function patternReject
- * @param {string|RegExp} pattern - Pattern to reject.
- * @returns {function} - Filter function to reject the pattern.
+ * Module requiring functions.
+ * @module coz/lib/util/requiring
+ * @see module:coz/lib/util
  */
 
 "use strict";
 
-/** @lends patternReject */
-function patternReject(pattern) {
-    if (arguments.length > 1) {
-        throw new Error('[patternReject]Invalid args.');
-    }
-    return function (key) {
-        return !String(key).match(pattern);
-    };
-}
-
-module.exports = patternReject;</pre>
+module.exports = {
+    get requireSafely() { return require('./require_safely'); }
+};</pre>
 	</article>
 </section>
 

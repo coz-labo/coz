@@ -14,9 +14,6 @@ module.exports = {
         get properties() {
             return Object.keys(bud.properties).map(function (key) {
                 var data = bud.properties[key];
-                data.typeAsArray = String(data.type).split(/\|/g).map(function (type) {
-                    return "'" + type + "'";
-                }).join(' ,');
                 data.optional = !data.required;
                 data.name = key;
                 return data;

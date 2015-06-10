@@ -13,7 +13,7 @@ A bud contains file meta data like:
 
 , and so on.
 
-For more detail see the next tutorial **
+More detail about bud is described in the next tutorial: [03 - Mastering coz bud][tutorial_03_mastering_coz_bud_url]
 
 
 *****
@@ -87,7 +87,7 @@ For more comple rending, you may want to save template and and to seperated file
 
 `tmpl` attribute could be a file path.
 
-`data` attribute may be required js/json module.
+`data` attribute may be js/json module, acquired via `require`.
 
 
 **.what-colors.html.bud** (bud file)
@@ -189,6 +189,7 @@ ___
 [npm_url]: https://www.npmjs.com/
 [nvm_url]: https://github.com/creationix/nvm
 [my_npm_url]: http://www.npmjs.org/package/coz
+[my_apiguide_url]: http://okunishinishi.github.io/coz/apiguide/
 [tutorial_01_installing_coz_url]: tutorial-01%20-%20Installing%20coz.html
 [tutorial_02_rendering_bud_files_url]: tutorial-02%20-%20Rendering%20bud%20files.html
 [tutorial_03_mastering_coz_bud_url]: tutorial-03%20-%20Mastering%20coz%20bud.html

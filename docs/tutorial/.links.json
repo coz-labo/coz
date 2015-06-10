@@ -3,5 +3,6 @@
   "nodejs_download_url": "https://nodejs.org/download/",
   "npm_url": "https://www.npmjs.com/",
   "nvm_url": "https://github.com/creationix/nvm",
-  "my_npm_url": "http://www.npmjs.org/package/coz"
+  "my_npm_url": "http://www.npmjs.org/package/coz",
+  "my_apiguide_url": "http://okunishinishi.github.io/coz/apiguide/"
 }

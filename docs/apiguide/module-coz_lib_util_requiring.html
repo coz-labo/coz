@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>coz Source: util/filtering/pattern_reject.js</title>
+	<title>coz Module: coz/lib/util/requiring</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -228,41 +228,104 @@
 	<div class="row-fluid">
 
 		
-			<div class="span12">
-				
+		<div class="span8">
+			
 				<div id="main">
 					
 
 
-		<h1 class="page-title">Source: util/filtering/pattern_reject.js</h1>
-    
+	<h1 class="page-title">Module: coz/lib/util/requiring</h1>
 <section>
-	<article>
-		<pre
-			class="sunlight-highlight-javascript linenums">/**
- * Create a filter function to reject values matches a pattern.
- * @memberof module:coz/lib/util/filtering
- * @function patternReject
- * @param {string|RegExp} pattern - Pattern to reject.
- * @returns {function} - Filter function to reject the pattern.
- */
 
-"use strict";
+<header>
+    <h2>
+    coz/lib/util/requiring
+    </h2>
+    
+</header>
 
-/** @lends patternReject */
-function patternReject(pattern) {
-    if (arguments.length > 1) {
-        throw new Error('[patternReject]Invalid args.');
-    }
-    return function (key) {
-        return !String(key).match(pattern);
-    };
-}
+<article>
+    <div class="container-overview">
+    
 
-module.exports = patternReject;</pre>
-	</article>
+    
+        
+            <div class="description"><p>Module requiring functions.</p></div>
+        
+
+        
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="util_requiring_index.js.html">util/requiring/index.js</a>,
+				 <a href="util_requiring_index.js.html#sunlight-1-line-1">line 1</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="module-coz_lib_util.html">module:coz/lib/util</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
 </section>
-
 
 
 
@@ -289,6 +352,10 @@ module.exports = patternReject;</pre>
 				</footer>
 			</div>
 
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
 			
 			<br clear="both">
 		</div>

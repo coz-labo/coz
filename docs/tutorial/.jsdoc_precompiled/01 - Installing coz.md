@@ -73,6 +73,7 @@ ___
 [npm_url]: https://www.npmjs.com/
 [nvm_url]: https://github.com/creationix/nvm
 [my_npm_url]: http://www.npmjs.org/package/coz
+[my_apiguide_url]: http://okunishinishi.github.io/coz/apiguide/
 [tutorial_01_installing_coz_url]: tutorial-01%20-%20Installing%20coz.html
 [tutorial_02_rendering_bud_files_url]: tutorial-02%20-%20Rendering%20bud%20files.html
 [tutorial_03_mastering_coz_bud_url]: tutorial-03%20-%20Mastering%20coz%20bud.html

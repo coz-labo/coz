@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>coz Source: util/filtering/pattern_reject.js</title>
+	<title>coz Source: util/requiring/require_safely.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -234,32 +234,44 @@
 					
 
 
-		<h1 class="page-title">Source: util/filtering/pattern_reject.js</h1>
+		<h1 class="page-title">Source: util/requiring/require_safely.js</h1>
     
 <section>
 	<article>
 		<pre
 			class="sunlight-highlight-javascript linenums">/**
- * Create a filter function to reject values matches a pattern.
- * @memberof module:coz/lib/util/filtering
- * @function patternReject
- * @param {string|RegExp} pattern - Pattern to reject.
- * @returns {function} - Filter function to reject the pattern.
+ * Require a module if possible.
+ * @member coz/lib/util/requiring
+ * @function requireSafely
+ * @param {string} name - Name to require
  */
 
 "use strict";
 
-/** @lends patternReject */
-function patternReject(pattern) {
-    if (arguments.length > 1) {
-        throw new Error('[patternReject]Invalid args.');
+var core = require('../../core'),
+    path = core.path;
+
+/** @lends requireSafely */
+function requireSafely(name) {
+    var renderable = !!name &amp;&amp; (typeof(name) === 'string');
+    if (!renderable) {
+        return null;
     }
-    return function (key) {
-        return !String(key).match(pattern);
-    };
+    try {
+        require.resolve(name);
+        return require(name);
+    } catch (e) {
+        var resolved = path.resolve(name);
+        if (resolved !== name) {
+            return requireSafely(resolved);
+        } else {
+            return null;
+        }
+    }
 }
 
-module.exports = patternReject;</pre>
+module.exports = requireSafely;
+</pre>
 	</article>
 </section>
 

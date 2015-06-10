@@ -1,3 +1,18 @@
+### Overview
+
+coz provides programmatic API.
+
+This is usefull when you do not want to install coz globally.
+
+### Install coz locally
+
+```bash
+$ npm install coz --save-dev
+```
+
+
+### Base usage.
+
 ```javascript
 
 var coz = require('coz');
@@ -11,6 +26,7 @@ coz.render([
 
 ```
 
+###
 
 ***
 ```javascript
@@ -41,9 +57,7 @@ ___
 
 ### Links
 
-+ [Node.js][nodejs_url]
-+ [NPM][npm_url]
-+ [nvm][nvm_url]
++ [API Guide of coz][my_apiguide_url]
 + [coz @ npm][my_npm_url]
 
 <!-- URLs start -->
@@ -53,6 +67,7 @@ ___
 [npm_url]: https://www.npmjs.com/
 [nvm_url]: https://github.com/creationix/nvm
 [my_npm_url]: http://www.npmjs.org/package/coz
+[my_apiguide_url]: http://okunishinishi.github.io/coz/apiguide/
 [tutorial_01_installing_coz_url]: 01%20-%20Installing%20coz.md
 [tutorial_02_rendering_bud_files_url]: 02%20-%20Rendering%20bud%20files.md
 [tutorial_03_mastering_coz_bud_url]: 03%20-%20Mastering%20coz%20bud.md

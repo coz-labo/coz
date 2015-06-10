@@ -1,9 +1,24 @@
+### Overview
+
+{{pkg.name}} provides programmatic API.
+
+This is usefull when you do not want to install {{pkg.name}} globally.
+
+### Install {{pkg.name}} locally
+
+```bash
+$ npm install {{pkg.name}} --save-dev
+```
+
+
+### Base usage.
+
 ```javascript
 
-var coz = require('coz');
+var {{pkg.name}} = require('{{pkg.name}}');
 
 // Render .bud files.
-coz.render([
+{{pkg.name}}.render([
     '**/.*.bud'
 ], function(err){
     console.log(err ? err: 'Done!');
@@ -11,6 +26,7 @@ coz.render([
 
 ```
 
+###
 
 ***
 ```javascript
@@ -29,9 +45,7 @@ ___
 
 ### Links
 
-+ [Node.js][nodejs_url]
-+ [NPM][npm_url]
-+ [nvm][nvm_url]
++ [API Guide of coz][my_apiguide_url]
 + [{{pkg.name}} @ npm][my_npm_url]
 
 {{{urls}}}
