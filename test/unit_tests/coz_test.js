@@ -5,7 +5,8 @@
 
 "use strict";
 
-var Coz = require('../../lib/coz.js');
+var Coz = require('../../lib/coz.js'),
+    fs = require('fs');
 
 var log;
 exports.setUp = function (done) {
@@ -71,6 +72,22 @@ exports['Handle error.'] = function (test) {
 exports['Do render with configuration.'] = function (test) {
     var configuration = require.resolve('../mocks/mock-coz-configuration');
     var coz = new Coz(configuration);
+    var filename = __dirname + '/../.work/some_file2.txt';
+    if (fs.existsSync(filename)) {
+        fs.unlinkSync(filename);
+    }
     test.ok(coz);
-    test.done();
+    coz.render({
+        path: filename,
+        force: true,
+        engine: 'myCustomEngine',
+        tmpl: 'foobarbaz'
+    }, function (err) {
+        test.ifError(err);
+        fs.readFile(filename, function (err, content) {
+            test.ifError(err);
+            test.equal(String(content).trim(), 'renderByMyCustom');
+            test.done();
+        });
+    });
 };

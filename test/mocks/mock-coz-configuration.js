@@ -1,12 +1,18 @@
 module.exports = {
     engines: {
-        foo: {
-            compile: function () {
-
+        myCustomEngine: {
+            compile: function (tmpl, callback) {
+                setTimeout(function () {
+                    callback(null, function () {
+                        return 'renderByMyCustom'
+                    });
+                }, 10);
             }
         }
     },
     tmpls: {
-        baz: 'quz'
+        baz: function () {
+
+        }
     }
 };
