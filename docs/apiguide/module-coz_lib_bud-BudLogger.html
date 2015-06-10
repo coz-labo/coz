@@ -88,6 +88,10 @@
 						</li>
 						
 						<li>
+							<a href="module-coz_lib_util_flow.html">coz/lib/util/flow</a>
+						</li>
+						
+						<li>
 							<a href="module-coz_lib_util_logging.html">coz/lib/util/logging</a>
 						</li>
 						
@@ -127,6 +131,10 @@
 						
 						<li>
 							<a href="module-coz_lib_bud-BudLogger.html">coz/lib/bud~BudLogger</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a>
 						</li>
 						
 						<li>
@@ -185,6 +193,20 @@
 						
 						<li>
 							<a href="tutorial-05 - Customizing coz.html">05 - Customizing coz</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="global.html#eachFiles">eachFiles</a>
 						</li>
 						
 
@@ -317,7 +339,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="log"><span class="type-signature"></span>log<span class="signature">(bud, callback)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="infoFinished"><span class="type-signature"></span>infoFinished<span class="signature">(name, startDate, endDate)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -325,7 +347,326 @@
     
     
     <div class="description">
-        <p>Log a bud.</p>
+        <p>Emit info log about task finished.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Task name.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>startDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Date of started.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>endDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Date of ended.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="bud_bud_logger.js.html">bud/bud_logger.js</a>,
+				 <a href="bud_bud_logger.js.html#sunlight-1-line-94">line 94</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="infoStarted"><span class="type-signature"></span>infoStarted<span class="signature">(name, startDate)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Emit start log about task finished.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Task name.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>startDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Date of started.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="bud_bud_logger.js.html">bud/bud_logger.js</a>,
+				 <a href="bud_bud_logger.js.html#sunlight-1-line-81">line 81</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="logClearing"><span class="type-signature"></span>logClearing<span class="signature">(bud, callback)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Log about bud cleaning.</p>
     </div>
     
 
@@ -435,7 +776,155 @@
 		<ul class="dummy">
 			<li>
 				<a href="bud_bud_logger.js.html">bud/bud_logger.js</a>,
-				 <a href="bud_bud_logger.js.html#sunlight-1-line-30">line 30</a>
+				 <a href="bud_bud_logger.js.html#sunlight-1-line-56">line 56</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="logRendering"><span class="type-signature"></span>logRendering<span class="signature">(bud, callback)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Log about bud rendering.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>bud</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-coz_lib_bud-Bud.html">module:coz/lib/bud~Bud</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Bud to log.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-coz_lib_bud.html#~logCallback">module:coz/lib/bud~logCallback</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Callback when done.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="bud_bud_logger.js.html">bud/bud_logger.js</a>,
+				 <a href="bud_bud_logger.js.html#sunlight-1-line-31">line 31</a>
 			</li>
 		</ul>
 	</dd>

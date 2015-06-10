@@ -88,6 +88,10 @@
 						</li>
 						
 						<li>
+							<a href="module-coz_lib_util_flow.html">coz/lib/util/flow</a>
+						</li>
+						
+						<li>
 							<a href="module-coz_lib_util_logging.html">coz/lib/util/logging</a>
 						</li>
 						
@@ -127,6 +131,10 @@
 						
 						<li>
 							<a href="module-coz_lib_bud-BudLogger.html">coz/lib/bud~BudLogger</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a>
 						</li>
 						
 						<li>
@@ -191,6 +199,20 @@
 					</ul>
 				</li>
 				
+				<li class="dropdown">
+					<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="global.html#eachFiles">eachFiles</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
 			</ul>
 		</div>
 	</div>
@@ -220,6 +242,7 @@
 
 var ext = require('../ext'),
     core = require('../core'),
+    format = core.util.format,
     path = core.path,
     async = ext.async;
 
@@ -234,11 +257,11 @@ function BudLogger(verbose) {
 BudLogger.prototype = new ConsoleLogger();
 
 /**
- * Log a bud.
+ * Log about bud rendering.
  * @param {module:coz/lib/bud~Bud} bud - Bud to log.
  * @param {module:coz/lib/bud~logCallback} callback - Callback when done.
  */
-BudLogger.prototype.log = function (bud, callback) {
+BudLogger.prototype.logRendering = function (bud, callback) {
     var s = this;
     [].concat(bud).forEach(function (bud) {
         if (!bud.at) {
@@ -257,6 +280,56 @@ BudLogger.prototype.log = function (bud, callback) {
     });
     callback(null, bud);
 };
+
+/**
+ * Log about bud cleaning.
+ * @param {module:coz/lib/bud~Bud} bud - Bud to log.
+ * @param {module:coz/lib/bud~logCallback} callback - Callback when done.
+ */
+BudLogger.prototype.logClearing = function (bud, callback) {
+    var s = this;
+    [].concat(bud).forEach(function (bud) {
+        if (bud.done) {
+            return;
+        }
+        var cleaned = path.relative(process.cwd(), bud.path);
+        s.debug('File cleaned:' + cleaned);
+        if (s.verbose) {
+            s.trace({
+                src: bud.src,
+                path: bud.path,
+                force: bud.force,
+                mode: bud.mode
+            });
+        }
+    });
+    callback(null, bud);
+};
+
+/**
+ * Emit start log about task finished.
+ * @param {string} name - Task name.
+ * @param {Date} startDate - Date of started.
+ */
+BudLogger.prototype.infoStarted = function (name, startDate) {
+    var s = this;
+    var msg = format('[Coz] %s started...', name);
+    s.info(msg);
+};
+
+
+/**
+ * Emit info log about task finished.
+ * @param {string} name - Task name.
+ * @param {Date} startDate - Date of started.
+ * @param {Date} endDate - Date of ended.
+ */
+BudLogger.prototype.infoFinished = function (name, startDate, endDate) {
+    var s = this;
+    var msg = format('...done!(%dms)', endDate - startDate);
+    s.info(msg);
+};
+
 
 module.exports = BudLogger;
 

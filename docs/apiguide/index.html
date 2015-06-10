@@ -88,6 +88,10 @@
 						</li>
 						
 						<li>
+							<a href="module-coz_lib_util_flow.html">coz/lib/util/flow</a>
+						</li>
+						
+						<li>
 							<a href="module-coz_lib_util_logging.html">coz/lib/util/logging</a>
 						</li>
 						
@@ -127,6 +131,10 @@
 						
 						<li>
 							<a href="module-coz_lib_bud-BudLogger.html">coz/lib/bud~BudLogger</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a>
 						</li>
 						
 						<li>
@@ -185,6 +193,20 @@
 						
 						<li>
 							<a href="tutorial-05 - Customizing coz.html">05 - Customizing coz</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="global.html#eachFiles">eachFiles</a>
 						</li>
 						
 
@@ -251,6 +273,7 @@
 <li><a href="#02-howto">Getting started</a><ul>
 <li><a href="#02-howto--requirements">Requirements</a></li>
 <li><a href="#02-howto--installation">Installation</a></li>
+<li><a href="#02-howto--quickstart">Quickstart</a></li>
 </ul>
 </li>
 <li><a href="#03-spec">Specifications</a><ul>
@@ -277,32 +300,50 @@
 <h3>What's this?</h3><p>The basic idea of coz is that creating files from files.</p>
 <ul>
 <li>Writing a meta file called <a href="#spec-bud-spec">.bud file</a>.</li>
-<li>Running <code>coz render</code> command will generate files.</li>
+<li>Running <code>coz render</code> command.</li>
+<li>Files will be generated!</li>
 </ul>
 <p><img style="height:256px;" src="assets/images/coz-outline.jpg" height="256"></p>
 <p><a name="01-about--what--for"></a></p>
-<h3>What For?</h3><h4>Example Usages.</h4><ul>
+<h3>What For?</h3><p>Automation. Generating files makes your project clean and maintainable.</p>
+<p>You can define a single datasource and distribute it in various forms.</p>
+<p>For example,</p>
+<ul>
 <li>Generate Javascript and Python code from database definition.</li>
 <li>Generate <code>package.json</code> and <code>bower.json</code> sharing same meta data.</li>
+<li>Generate Web API document and Swift client entity from json schema objects.</li>
+<li>Generate empty test case files from project files.</li>
 </ul>
 <p><a name="01-about--why--this"></a></p>
 <h3>Why This?</h3><ul>
-<li><p><strong>Lightweight and fast</strong></p>
-</li>
-<li><p><strong>Unopinionated and flexible</strong></p>
-</li>
-<li><strong>Simple and extensible</strong>
-<a name="02-howto"></a>
-Getting started</li>
+<li><strong>Lightweight and fast</strong><ul>
+<li>coz doing nothing bud file templating, it's very fast.</li>
 </ul>
-<hr>
-<p><a name="02-howto--requirements"></a></p>
+</li>
+<li><strong>Unopinionated and flexible</strong><ul>
+<li>coz could be used to any kind of strings files.</li>
+</ul>
+</li>
+<li><strong>Simple and extensible</strong><ul>
+<li>coz provides ways to customize, like registering you own template engine.</li>
+</ul>
+</li>
+</ul>
+<p><a name="02-howto"></a></p>
+<h2>Getting started</h2><p><a name="02-howto--requirements"></a></p>
 <h3>Requirements</h3><ul>
 <li><a href="http://nodejs.org/">node.js</a></li>
 </ul>
 <p><a name="02-howto--installation"></a></p>
 <h3>Installation</h3><p>coz is available as an [NPM][npm_url] package.</p>
-<pre class="prettyprint source lang-bash"><code>$ npm install coz -g</code></pre><p><a name="03-spec"></a></p>
+<pre class="prettyprint source lang-bash"><code>$ npm install coz -g</code></pre><p><a name="02-howto--quickstart"></a></p>
+<h3>Quickstart</h3><p><strong>.who-likes-what.txt.bud</strong> (bud file)</p>
+<pre class="prettyprint source lang-javascript"><code>
+</code></pre><p>As you see, <code>.bud</code> file is actuary a JavaScript file and could be exported an a Node.js module.</p>
+<p>Save this file as <code>.who-likes-what.txt.bud</code> and then, run:</p>
+<pre class="prettyprint source lang-bash"><code># Render the bud file
+$ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will generate a file named <code>who-likes-what.txt</code>.
+<a name="03-spec"></a></p>
 <h2>Specifications</h2><p><a name="spec-bud-spec"></a>
 <a name="03-spec--bud-file-specification-"></a></p>
 <h3>Bud file specification.</h3><p>A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.</p>

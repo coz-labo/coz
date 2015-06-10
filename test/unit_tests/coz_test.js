@@ -10,8 +10,8 @@ var Coz = require('../../lib/coz.js');
 var log;
 exports.setUp = function (done) {
     log = console.log;
-    console.log = function () {
-    };
+    //console.log = function () {
+    //};
     done();
 };
 
@@ -65,5 +65,12 @@ exports['Handle error.'] = function (test) {
     };
     coz._handleError('foo');
     console.error = error;
+    test.done();
+};
+
+exports['Do render with configuration.'] = function (test) {
+    var configuration = require.resolve('../mocks/mock-coz-configuration');
+    var coz = new Coz(configuration);
+    test.ok(coz);
     test.done();
 };

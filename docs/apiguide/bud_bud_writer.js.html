@@ -88,6 +88,10 @@
 						</li>
 						
 						<li>
+							<a href="module-coz_lib_util_flow.html">coz/lib/util/flow</a>
+						</li>
+						
+						<li>
 							<a href="module-coz_lib_util_logging.html">coz/lib/util/logging</a>
 						</li>
 						
@@ -127,6 +131,10 @@
 						
 						<li>
 							<a href="module-coz_lib_bud-BudLogger.html">coz/lib/bud~BudLogger</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a>
 						</li>
 						
 						<li>
@@ -191,6 +199,20 @@
 					</ul>
 				</li>
 				
+				<li class="dropdown">
+					<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="global.html#eachFiles">eachFiles</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
 			</ul>
 		</div>
 	</div>
@@ -220,14 +242,11 @@
 
 var core = require('../core'),
     ext = require('../ext'),
-    path = core.path,
-    fs = core.fs,
     async = ext.async,
     Bud = require('./bud'),
     file = require('../util/file'),
     _nextTick = require('./_next_tick'),
-    _concatBuds = require('./_concat_buds'),
-    template = require('../template');
+    _concatBuds = require('./_concat_buds');
 
 /** @lends module:coz/lib/bud~BudWriter */
 function BudWriter() {

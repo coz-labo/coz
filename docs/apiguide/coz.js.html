@@ -88,6 +88,10 @@
 						</li>
 						
 						<li>
+							<a href="module-coz_lib_util_flow.html">coz/lib/util/flow</a>
+						</li>
+						
+						<li>
 							<a href="module-coz_lib_util_logging.html">coz/lib/util/logging</a>
 						</li>
 						
@@ -127,6 +131,10 @@
 						
 						<li>
 							<a href="module-coz_lib_bud-BudLogger.html">coz/lib/bud~BudLogger</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a>
 						</li>
 						
 						<li>
@@ -191,6 +199,20 @@
 					</ul>
 				</li>
 				
+				<li class="dropdown">
+					<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="global.html#eachFiles">eachFiles</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
 			</ul>
 		</div>
 	</div>
@@ -222,10 +244,13 @@ var ext = require('./ext'),
     path = core.path,
     async = ext.async,
     file = require('./util/file'),
+    flow = require('./util/flow'),
     bud = require('./bud'),
     EngineSet = require('./template/engine_set'),
+    TmplSet = require('./template/tmpl_set'),
     BudLoader = bud.BudLoader,
     BudCompiler = bud.BudCompiler,
+    BudRemover = bud.BudRemover,
     BudWriter = bud.BudWriter,
     BudLogger = bud.BudLogger;
 
@@ -246,6 +271,7 @@ Coz.prototype = {
     init: function () {
         var s = this;
         s.engineSet = new EngineSet();
+        s.tmplSet = new TmplSet();
         return s;
     },
     /**
@@ -253,13 +279,13 @@ Coz.prototype = {
      */
     engineSet: undefined,
     /**
-     * Render bud files.
-     * @param {string|string[]} filenames - Bud file name pattern.
+     * Render files from bud.
+     * @param {string|string[]} patterns - Bud file name patterns.
      * @param {object} [options] - Optional settings.
      * @param {boolean} [options.verbose=false] - Log verbose.
      * @param {module:coz~renderCallback} callback - Callback when done.
      */
-    render: function (filenames, options, callback) {
+    render: function (patterns, options, callback) {
 
         switch (typeof(arguments[1])) {
             case 'function':
@@ -271,24 +297,26 @@ Coz.prototype = {
 
         var s = this;
 
-        var startAt = new Date();
-        var verbose = options.verbose;
+        var name = 'Rendering',
+            startAt = new Date(),
+            verbose = !!options.verbose;
 
         var logger = new BudLogger(!!verbose),
             loader = new BudLoader(),
             compiler = new BudCompiler({
-                engineSet: s.engineSet
+                engineSet: s.engineSet,
+                tmplSet: s.tmplSet
             }),
             writer = new BudWriter();
 
-        logger.info('[Coz] Rendering started...');
-        Coz._eachFiles(filenames, function (filename, callback) {
+        logger.infoStarted(name, startAt);
+        flow.eachFiles(patterns, function (filename, callback) {
             async.waterfall([
                 function (callback) {
                     callback(null, filename);
                 },
                 function load(bud, callback) {
-                    loader.load(filename, callback);
+                    loader.load(bud, callback);
                 },
                 function compile(bud, callback) {
                     compiler.compile(bud, callback);
@@ -297,23 +325,23 @@ Coz.prototype = {
                     writer.write(bud, callback);
                 },
                 function log(bud, callback) {
-                    logger.log(bud, callback);
+                    logger.logRendering(bud, callback);
                 }
             ], callback);
         }, function (err) {
-            logger.info('...done!(' + (new Date() - startAt) + 'ms)');
+            logger.infoFinished(name, startAt, new Date());
             callback = callback || s._handleError.bind(s);
             callback(err);
         });
     },
     /**
-     * Clean filenames
-     * @param {string|string[]} filenames - Filenames to clean.
+     * Clean files from bud.
+     * @param {string|string[]} patterns - Bud file names.
      * @param {object} [options] - Optional settings.
-     * @param {boolean} [options.force=false] - Clean even if readonly.
-     * @param {function} callback - Callback when done.
+     * @param {boolean} [options.verbose=false] - Log verbose.
+     * @param {cleanCallback} callback - Callback when done.
      */
-    clean: function (filenames, options, callback) {
+    clean: function (patterns, options, callback) {
 
         switch (typeof(arguments[1])) {
             case 'function':
@@ -322,21 +350,36 @@ Coz.prototype = {
                 break;
         }
         options = options || {};
-        var force = !!options.force;
 
         var s = this;
 
-        Coz._eachFiles(filenames, function (filename, callback) {
-            async.series([
+        var name = 'Clearing',
+            startAt = new Date(),
+            verbose = !!options.verbose;
+
+        var logger = new BudLogger(!!verbose),
+            loader = new BudLoader(),
+            remover = new BudRemover();
+
+        logger.infoStarted(name, startAt);
+        flow.eachFiles(patterns, function (filename, callback) {
+            async.waterfall([
                 function (callback) {
-                    file.unlinkFile(filename, {force: force}, callback);
+                    callback(null, filename);
                 },
-                function (callback) {
-                    console.log('File cleaned: %s', filename);
-                    callback(null);
+                function load(bud, callback) {
+                    loader.load(bud, callback);
+                },
+                function remove(bud, callback) {
+                    remover.remove(bud, callback);
+                },
+                function log(bud, callback) {
+                    logger.logClearing(bud, callback);
                 }
             ], callback);
         }, function (err) {
+            logger.infoFinished(name, startAt, new Date());
+            callback = callback || s._handleError.bind(s);
             callback(err);
         });
     },
@@ -352,23 +395,6 @@ Coz.prototype = {
     }
 };
 
-/**
- * Iterate each files.
- * @param {string|string[]} pattern - Filename pattern to work with.
- * @param {function} handler - Handle a single filename.
- * @param {function} callback - Callback when done.
- * @private
- */
-Coz._eachFiles = function (pattern, handler, callback) {
-    async.waterfall([
-        function (callback) {
-            file.expandGlob(pattern, callback);
-        },
-        function (filenames, callback) {
-            async.eachSeries(filenames, handler, callback);
-        }
-    ], callback);
-};
 
 module.exports = Coz;
 
@@ -379,6 +405,14 @@ module.exports = Coz;
  * @inner
  * @callback renderCallback
  * @param {?Error} error - Render error.
+ */
+
+/**
+ * Callback for coz render.
+ * @memberof module:coz
+ * @inner
+ * @callback cleanCallback
+ * @param {?Error} error - Clean error.
  */</pre>
 	</article>
 </section>
