@@ -14,6 +14,7 @@ program
     .command('render [bud]')
     .description('Render files from bud.')
     .option('-v, --verbose', 'Show verbose logs.')
+    .option('-c, --configuration [configuration]', 'Configuration module path.')
     .action(function (src, opitons) {
         commands.render(src, opitons);
     })
@@ -25,6 +26,7 @@ program
     .command('clean [bud]')
     .description('Clean files rendered from bud.')
     .option('-v, --verbose', 'Show verbose logs.')
+    .option('-c, --configuration [configuration]', 'Configuration module path.')
     .action(function (src, opitons) {
         commands.clean(src, opitons);
     })

@@ -27,3 +27,15 @@ exports['Show render help.'] = function (test) {
         test.done();
     });
 };
+
+
+exports['Render by custom configuration.'] = function (test) {
+    var bud = __dirname + '/../../mocks/mock-bud.bud',
+        configuration = __dirname + '/../../mocks/mock-coz-configuration.js';
+    var spawned = childProcess.spawn(bin, ['render', '-c', configuration, bud]);
+    spawned.stdout.pipe(process.stdout);
+    spawned.stderr.pipe(process.stderr);
+    spawned.on('exit', function () {
+        test.done();
+    });
+};
