@@ -228,8 +228,9 @@ var core = require('../core'),
     async = ext.async,
     Bud = require('./bud'),
     file = require('../util/file'),
-    _concatBuds = require('./_concat_buds'),
     template = require('../template'),
+    _nextTick = require('./_next_tick'),
+    _concatBuds = require('./_concat_buds'),
     _resolveStringValue = require('./_resolve_string_value');
 
 
@@ -252,7 +253,7 @@ BudCompiler.prototype = {
         bud = [].concat(bud).map(Bud.new);
         async.waterfall([
             function (callback) {
-                callback(null, bud);
+                _nextTick(bud, callback);
             },
             function (bud, callback) {
                 s._prepareBudData(bud, callback);
@@ -283,7 +284,7 @@ BudCompiler.prototype = {
         var s = this;
         _concatBuds(bud, function (bud, callback) {
             var data = bud.data || {};
-            if(typeof(data) === 'string'){
+            if (typeof(data) === 'string') {
                 var filename = path.resolve(bud.cwd, data);
                 data = require(filename);
             }

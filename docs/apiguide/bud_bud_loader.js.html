@@ -225,6 +225,7 @@ var core = require('../core'),
     fs = core.fs,
     async = ext.async,
     copying = require('../util/copying'),
+    _nextTick = require('./_next_tick'),
     _concatBuds = require('./_concat_buds'),
     Bud = require('./bud');
 
@@ -243,7 +244,10 @@ BudLoader.prototype = {
         var s = this;
         bud = [].concat(bud).map(Bud.new);
         async.waterfall([
-            function requireBud(callback) {
+            function (callback) {
+                _nextTick(bud, callback);
+            },
+            function requireBud(bud, callback) {
                 s._requireBud(bud, callback);
             },
             function evaluateBud(bud, callback) {

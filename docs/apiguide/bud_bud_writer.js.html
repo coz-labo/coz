@@ -225,6 +225,7 @@ var core = require('../core'),
     async = ext.async,
     Bud = require('./bud'),
     file = require('../util/file'),
+    _nextTick = require('./_next_tick'),
     _concatBuds = require('./_concat_buds'),
     template = require('../template');
 
@@ -244,6 +245,9 @@ BudWriter.prototype = {
         bud = [].concat(bud).map(Bud.new);
         async.waterfall([
             function (callback) {
+                _nextTick(bud, callback);
+            },
+            function (bud, callback) {
                 s._renderBudOut(bud, callback);
             },
             function (bud, callback) {

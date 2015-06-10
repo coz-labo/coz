@@ -255,11 +255,20 @@ Coz.prototype = {
     /**
      * Render bud files.
      * @param {string|string[]} filenames - Bud file name pattern.
-     * @param {object} options - Optional settings.
+     * @param {object} [options] - Optional settings.
      * @param {boolean} [options.verbose=false] - Log verbose.
      * @param {module:coz~renderCallback} callback - Callback when done.
      */
     render: function (filenames, options, callback) {
+
+        switch (typeof(arguments[1])) {
+            case 'function':
+                callback = callback || arguments[1];
+                options = null;
+                break;
+        }
+        options = options || {};
+
         var s = this;
 
         var startAt = new Date();
@@ -272,7 +281,7 @@ Coz.prototype = {
             }),
             writer = new BudWriter();
 
-        logger.info('[Coz] Render start...');
+        logger.info('[Coz] Rendering started...');
         async.waterfall([
             function (callback) {
                 file.expandGlob(filenames, callback);
