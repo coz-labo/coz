@@ -203,24 +203,6 @@
 					</ul>
 				</li>
 				
-				<li class="dropdown">
-					<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b
-						class="caret"></b></a>
-
-					<ul class="dropdown-menu ">
-						
-						<li>
-							<a href="global.html#eachFiles">eachFiles</a>
-						</li>
-						
-						<li>
-							<a href="global.html#requireSafely">requireSafely</a>
-						</li>
-						
-
-					</ul>
-				</li>
-				
 			</ul>
 		</div>
 	</div>
@@ -248,6 +230,7 @@
 "use strict";
 
 module.exports = {
+    get bad2() { return require('./bad2'); },
     /**
      * @memberof module:coz/lib/bud
      * @name {@link module:coz/lib/bud~BudCompiler|BudCompiler}
