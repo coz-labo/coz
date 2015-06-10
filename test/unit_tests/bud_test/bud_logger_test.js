@@ -17,10 +17,10 @@ exports.tearDown = function (done) {
     done()
 };
 
-exports['Bud logger'] = function (test) {
+exports['Log rendering.'] = function (test) {
     var logger = new BudLogger(true);
     test.ok(logger);
-    logger.log({
+    logger.logRendering({
         at: new Date(),
         path: __filename
     }, function (err) {

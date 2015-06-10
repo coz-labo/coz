@@ -59,7 +59,7 @@ module.exports = {
 
 ```
 
-As you see, `.bud` file is actuary a JavaScript file and could be exportsd an a Node.js module.
+As you see, `.bud` file is actuary a JavaScript file and could be exported an a Node.js module.
 
 Save this file as `.who-likes-what.txt.bud` and then, run:
 

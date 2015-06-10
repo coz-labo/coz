@@ -16,6 +16,7 @@ module.exports = indexJsBud({
         'BudCompiler',
         'BudLoader',
         'BudLogger',
+        'BudRemover',
         'BudWriter'
     ]
 });

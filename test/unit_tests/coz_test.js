@@ -50,8 +50,8 @@ exports['Do render without options.'] = function (test) {
 
 exports['Do clean.'] = function (test) {
     var coz = new Coz();
-    var filename = __dirname + '/../.work/some_file.txt';
-    require('fs').writeFileSync(filename, 'foo');
+    var filename = __dirname + '/../.work/some_file.txt.bud';
+    require('fs').writeFileSync(filename, 'module.exports = {path:__filename}');
     coz.clean(filename, function (err) {
         test.ifError(err);
         test.done();

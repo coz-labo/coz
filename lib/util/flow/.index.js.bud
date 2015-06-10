@@ -1,0 +1,12 @@
+"use strict";
+
+var coz = require('../../../lib'),
+    indexJsBud = coz.factory.indexJsBud;
+
+module.exports = indexJsBud({
+    dirname: __dirname,
+    desc: 'Utility functions for async tasks.',
+    parentmodule: 'coz/lib/util',
+    module: 'coz/lib/util/flow'
+});
+
