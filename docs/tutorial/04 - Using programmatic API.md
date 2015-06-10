@@ -1,3 +1,21 @@
+```javascript
+
+var coz = require('coz');
+
+// Render .bud files.
+coz.render([
+    '**/.*.bud'
+], function(err){
+    console.log(err ? err: 'Done!');
+});
+
+```
+
+
+***
+```javascript
+This file is rendered from: "/Users/okuni/projects/coz/docs/examples/05-exec-bud-itself/.exec-me.txt.bud"
+```
 
 ___
 

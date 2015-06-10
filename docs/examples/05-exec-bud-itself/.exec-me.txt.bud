@@ -1,0 +1,24 @@
+#!/usr/bin/env
+
+/**
+ * .exec-me.txt.bud
+ * This is a bud file for "examples/04-exec-bud-itself"
+ */
+
+module.exports = {
+    force: true,
+    mode: '444',
+    tmpl: 'This file is rendered from: "{{from}}"',
+    data: {
+        from: __filename
+    }
+};
+
+// If there is no parent, it means that this module is executed directory.
+// e.g., `node .exec-me.txt.bud`
+var main = module.parent == null;
+if (!main) {
+    // Render this bud file.
+    // `__filename` is Node.js reserved word and contains path of this file.
+    require('coz').render(__filename);
+}

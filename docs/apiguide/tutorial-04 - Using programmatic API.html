@@ -210,7 +210,16 @@
 </header>
 
 <article>
-    <hr>
+    <pre class="prettyprint source lang-javascript"><code>{@lang javascript}
+var coz = require('coz');
+
+// Render .bud files.
+coz.render([
+    '**/.*.bud'
+], function(err){
+    console.log(err ? err: 'Done!');
+});</code></pre><hr>
+<pre class="prettyprint source lang-javascript"><code>{@lang javascript}This file is rendered from: &quot;/Users/okuni/projects/coz/docs/examples/05-exec-bud-itself/.exec-me.txt.bud&quot;</code></pre><hr>
 <h3>See also</h3><!-- See also start -->
 <ul>
 <li><a href="tutorial-05%20-%20Customizing%20coz.html">05 - Customizing coz</a></li>
