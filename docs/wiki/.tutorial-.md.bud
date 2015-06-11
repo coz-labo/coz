@@ -1,0 +1,38 @@
+/**
+ * Bud file for tutorial wiki.
+ */
+
+"use strict";
+
+var coz = require('../../lib'),
+    path = coz.core.path,
+    fs = coz.core.fs,
+    format = coz.core.util.format,
+    async = coz.ext.async,
+    glob = coz.ext.glob;
+
+var tutorialDir = path.resolve(__dirname, '../tutorial');
+
+module.exports = function (callback) {
+    async.waterfall([
+        function (callback) {
+            glob(tutorialDir + '/*.md', callback);
+        },
+        function (src) {
+            var bud = src.map(function (src) {
+                var name = path.basename(src, '.md').replace(/\./g, ':-');
+                return {
+                    force: true,
+                    mode: '444',
+                    path: path.resolve(__dirname, 'Tutorial' + name + '.md'),
+                    tmpl: src
+                }
+            });
+            callback(null, bud);
+        }
+    ], callback);
+};
+
+if (!module.parent) {
+    require('coz').render(__filename);
+}
