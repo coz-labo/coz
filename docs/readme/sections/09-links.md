@@ -3,7 +3,7 @@ Links
 
 ### Tutorials
 
-{{#each tutorials}}+ [{{name}}]({{{url}}})
+{{#each tutorials}}+ [{{name}}][{{{url}}}]
 {{/each}}
 
 ### Documents

@@ -16,7 +16,7 @@ $ npm install {{pkg.name}} -g
 ```
 
 Or you can install it without `-g` option and use [Programmatic API](#programmatic-api).
-For more details, see tutorial section "[01 - Installing coz](01%20-%20Installing%20coz)".
+For more details, see tutorial section "[01 - Installing coz][01_installing_coz_url]".
 
 
 ### Quickstart
@@ -37,7 +37,7 @@ $ coz render ".who-likes-what.txt.bud"
 
 This will generate a file named `who-likes-what.txt`.
 
-For more details, see tutorial section "[02 - Rendering bud files](02%20-%20Rendering%20bud%20files)".
+For more details, see tutorial section "[02 - Rendering bud files][03_mastering_coz_bud_url]".
 
 
 <a name="programmatic-api" />
@@ -49,5 +49,5 @@ For more details, see tutorial section "[02 - Rendering bud files](02%20-%20Rend
 {{{read './examples/05-exec-bud-itself/run_rendering.js'}}}
 ```
 
-For more details, see tutorial section "[04 - Using programmatic API](04%20-%20Using%20programmatic%20API)".
+For more details, see tutorial section "[04 - Using programmatic API][04_using_programmatic_a_p_i_url]".
 

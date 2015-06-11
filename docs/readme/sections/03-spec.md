@@ -36,7 +36,7 @@ module.exports = function(callback){
 }
 ```
 
-For more details, see tutorial section "[03 - Mastering coz bud](03%20-%20Mastering%20coz%20bud)".
+For more details, see tutorial section "[03 - Mastering coz bud][03_mastering_coz_bud_url]".
 
 ##### Supported properties
 

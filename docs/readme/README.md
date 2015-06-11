@@ -117,7 +117,7 @@ $ npm install coz -g
 ```
 
 Or you can install it without `-g` option and use [Programmatic API](#programmatic-api).
-For more details, see tutorial section "[01 - Installing coz](01%20-%20Installing%20coz)".
+For more details, see tutorial section "[01 - Installing coz][01_installing_coz_url]".
 
 
 <a name="02-howto--quickstart"></a>
@@ -168,7 +168,7 @@ $ coz render ".who-likes-what.txt.bud"
 
 This will generate a file named `who-likes-what.txt`.
 
-For more details, see tutorial section "[02 - Rendering bud files](02%20-%20Rendering%20bud%20files)".
+For more details, see tutorial section "[02 - Rendering bud files][03_mastering_coz_bud_url]".
 
 
 <a name="programmatic-api" />
@@ -181,7 +181,7 @@ coz provides programmatic API which enables you to execute coz commands from Nod
 
 ```
 
-For more details, see tutorial section "[04 - Using programmatic API](04%20-%20Using%20programmatic%20API)".
+For more details, see tutorial section "[04 - Using programmatic API][04_using_programmatic_a_p_i_url]".
 
 
 <a name="03-spec"></a>
@@ -224,7 +224,7 @@ module.exports = function(callback){
 }
 ```
 
-For more details, see tutorial section "[03 - Mastering coz bud](03%20-%20Mastering%20coz%20bud)".
+For more details, see tutorial section "[03 - Mastering coz bud][03_mastering_coz_bud_url]".
 
 ##### Supported properties
 
@@ -249,11 +249,11 @@ Links
 <a name="09-links--tutorials"></a>
 ### Tutorials
 
-+ [01 - Installing coz](docs/tutorials/01%20-%20Installing%20coz)
-+ [02 - Rendering bud files](docs/tutorials/02%20-%20Rendering%20bud%20files)
-+ [03 - Mastering coz bud](docs/tutorials/03%20-%20Mastering%20coz%20bud)
-+ [04 - Using programmatic API](docs/tutorials/04%20-%20Using%20programmatic%20API)
-+ [05 - Customizing coz](docs/tutorials/05%20-%20Customizing%20coz)
++ [01 - Installing coz][01_installing_coz_url]
++ [02 - Rendering bud files][02_rendering_bud_files_url]
++ [03 - Mastering coz bud][03_mastering_coz_bud_url]
++ [04 - Using programmatic API][04_using_programmatic_a_p_i_url]
++ [05 - Customizing coz][05_customizing_coz_url]
 
 <a name="09-links--documents"></a>
 ### Documents
@@ -316,3 +316,13 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 [my_gemnasium_badge_url]: http://img.shields.io/gemnasium/okunishinishi/coz.svg?style=flat
 
 <!-- Links end-->
+
+<!-- Tutorial urls start -->
+
+[01_installing_coz_url]: docs/tutorial/01%20-%20Installing%20coz.md
+[02_rendering_bud_files_url]: docs/tutorial/02%20-%20Rendering%20bud%20files.md
+[03_mastering_coz_bud_url]: docs/tutorial/03%20-%20Mastering%20coz%20bud.md
+[04_using_programmatic_a_p_i_url]: docs/tutorial/04%20-%20Using%20programmatic%20API.md
+[05_customizing_coz_url]: docs/tutorial/05%20-%20Customizing%20coz.md
+
+<!-- Tutorial urls end -->
