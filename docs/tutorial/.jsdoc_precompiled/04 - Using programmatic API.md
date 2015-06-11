@@ -13,17 +13,10 @@ This is usefull when you do not want to install coz globally.
 
 ### Base usage.
 
+This is an example to execute rendering via programmatic API.
+
 ```javascript
 {@lang javascript}
-var coz = require('coz');
-
-// Render .bud files.
-coz.render([
-    '**/.*.bud'
-], function(err){
-    console.log(err ? err: 'Done!');
-});
-
 ```
 
 ###

@@ -13,17 +13,10 @@ $ npm install {{pkg.name}} --save-dev
 
 ### Base usage.
 
+This is an example to execute rendering via programmatic API.
+
 ```javascript
-
-var {{pkg.name}} = require('{{pkg.name}}');
-
-// Render .bud files.
-{{pkg.name}}.render([
-    '**/.*.bud'
-], function(err){
-    console.log(err ? err: 'Done!');
-});
-
+{{{read '../examples/05-exec-bud-itself/run_rendering.js'}}}
 ```
 
 ###

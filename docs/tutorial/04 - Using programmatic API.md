@@ -13,16 +13,9 @@ $ npm install coz --save-dev
 
 ### Base usage.
 
+This is an example to execute rendering via programmatic API.
+
 ```javascript
-
-var coz = require('coz');
-
-// Render .bud files.
-coz.render([
-    '**/.*.bud'
-], function(err){
-    console.log(err ? err: 'Done!');
-});
 
 ```
 

@@ -27,13 +27,14 @@ Flexible generator, which makes your project clean and maintainable.
 Table of Contents
 -----
 - [About coz](#01-about)
-    - [What's this?](#01-about--whats-this)
+    - [What's This?](#01-about--whats--this)
     - [What For?](#01-about--what--for)
     - [Why This?](#01-about--why--this)
 - [Getting started](#02-howto)
     - [Requirements](#02-howto--requirements)
     - [Installation](#02-howto--installation)
     - [Quickstart](#02-howto--quickstart)
+    - [Programmatic API](#02-howto--programmatic--a-p-i)
 - [Specifications](#03-spec)
     - [Bud file specification.](#03-spec--bud-file-specification-)
 - [Links](#09-links)
@@ -54,8 +55,8 @@ Table of Contents
 About coz
 ------
 
-<a name="01-about--whats-this"></a>
-### What's this?
+<a name="01-about--whats--this"></a>
+### What's This?
 
 The basic idea of coz is that creating files from files.
 
@@ -75,7 +76,7 @@ You can define a single datasource and distribute it in various forms.
 
 For example,
 
-+ Generate Javascript and Python code from database definition.
++ Generate Javascript and Python entity from database definition.
 + Generate `package.json` and `bower.json` sharing same meta data.
 + Generate Web API document and Swift client entity from json schema objects.
 + Generate empty test case files from project files.
@@ -88,6 +89,8 @@ For example,
     + coz doing nothing bud file templating, it's very fast.
 + **Unopinionated and flexible**
     + coz could be used to any kind of strings files.
+    + Bunch of options to manipulate files.
+    + Could be used by CLI or programmatically.
 + **Simple and extensible**
     + coz provides ways to customize, like registering you own template engine.
 
@@ -117,10 +120,39 @@ $ npm install coz -g
 
 **.who-likes-what.txt.bud** (bud file)
 ```javascript
+/**
+ * .who-likes-what.txt.bud
+ * This is a bud file for "examples/01-minimum-demo"
+ */
+
+// Exports as a Node.js module.
+module.exports = {
+
+    // Template string. By default, parsed by Handlebars engine.
+    tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
+
+    // Overwrite when already existing.
+    force: true,
+
+    // File path to write out.
+    path: 'who-likes-what.txt',
+
+    // File permission.
+    mode: '444',
+
+    // Data to render.
+    data: {
+        members: {
+            "Mai": "apple",
+            "Tom": "Orange",
+            "Rita": "Banana"
+        }
+    }
+};
 
 ```
 
-As you see, `.bud` file is actuary a JavaScript file and could be exported an a Node.js module.
+As you see, `.bud` file is actuary a JavaScript file and could be exported a Node.js module.
 
 Save this file as `.who-likes-what.txt.bud` and then, run:
 
@@ -130,6 +162,16 @@ $ coz render ".who-likes-what.txt.bud"
 ```
 
 This will generate a file named `who-likes-what.txt`.
+
+
+<a name="02-howto--programmatic--a-p-i"></a>
+### Programmatic API
+
+coz provides programmatic API which enables you to execute coz commands from Node.js program.
+
+```javascript
+
+```
 <a name="03-spec"></a>
 Specifications
 ---------
@@ -172,18 +214,20 @@ module.exports = function(callback){
 
 ##### Supported properties
 
-Name | Type | Description
------ | ----- | -----
+| Name | Type | Description |
+| ----- | ----- | ----- |
+ | engine | string&#124;object | Template compile function or name of function |
+ | cwd | string | Working directory path |
+ | data | object | Data to template render with |
+ | mkdirp | boolean | Make parent directories if needed |
+ | setup | object | Properties to set engine |
+ | force | boolean | Should overwrite file when already exists, or not |
+ | mode | string&#124;number | File permission |
+ | path | string | Destination file path. If not provided, guess from bud file path |
+ | tmpl | string&#124;function | Template file path or registered template name or template function |
 
-engine | string&#124;object | Template compile function or name of function | 
-cwd | string | Working directory path | 
-data | object | Data to template render with | 
-mkdirp | boolean | Make parent directories if needed | 
-setup | object | Properties to set engine | 
-force | boolean | Should overwrite file when already exists, or not | 
-mode | string&#124;number | File permission | 
-path | string | Destination file path. If not provided, guess from bud file path | 
-tmpl | string&#124;function | Template file path or registered template name or template function | 
+
+
 <a name="09-links"></a>
 Links
 ------
@@ -238,6 +282,8 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 <!-- Links start -->
 
 [nodejs_url]: http://nodejs.org/
+[npm_url]: https://www.npmjs.com/
+[nvm_url]: https://github.com/creationix/nvm
 [my_travis_url]: http://travis-ci.org/okunishinishi/coz
 [my_travis_badge_url]: http://img.shields.io/travis/okunishinishi/coz.svg?style=flat
 [my_codeclimate_url]: http://codeclimate.com/github/okunishinishi/coz

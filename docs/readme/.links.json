@@ -1,5 +1,7 @@
 {
   "nodejs_url": "http://nodejs.org/",
+  "npm_url": "https://www.npmjs.com/",
+  "nvm_url": "https://github.com/creationix/nvm",
   "my_travis_url": "http://travis-ci.org/okunishinishi/coz",
   "my_travis_badge_url": "http://img.shields.io/travis/okunishinishi/coz.svg?style=flat",
   "my_codeclimate_url": "http://codeclimate.com/github/okunishinishi/coz",

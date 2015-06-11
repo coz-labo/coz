@@ -1,7 +1,7 @@
 About {{pkg.name}}
 ------
 
-### What's this?
+### What's This?
 
 The basic idea of {{pkg.name}} is that creating files from files.
 
@@ -20,7 +20,7 @@ You can define a single datasource and distribute it in various forms.
 
 For example,
 
-+ Generate Javascript and Python code from database definition.
++ Generate Javascript and Python entity from database definition.
 + Generate `package.json` and `bower.json` sharing same meta data.
 + Generate Web API document and Swift client entity from json schema objects.
 + Generate empty test case files from project files.
@@ -32,6 +32,8 @@ For example,
     + {{pkg.name}} doing nothing bud file templating, it's very fast.
 + **Unopinionated and flexible**
     + {{pkg.name}} could be used to any kind of strings files.
+    + Bunch of options to manipulate files.
+    + Could be used by CLI or programmatically.
 + **Simple and extensible**
     + {{pkg.name}} provides ways to customize, like registering you own template engine.
 

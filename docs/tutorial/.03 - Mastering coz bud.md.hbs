@@ -1,13 +1,11 @@
 ### Auto filling properties.
 
-### Configurable properteis.
+### Configurable properties.
 
-Name | Type | Description
------ | ----- | -----
-{{#each bud.properties}}{{#if configurable}}
-{{name}} | {{{type}}} | {{description}} | {{/if}}{{/each}}
-
-
+| Name | Type | Description |
+| ----- | ----- | ----- |
+{{#each bud.properties}}{{#if configurable}}| {{name}} | {{{type}}} | {{description}} |
+{{/if}}{{/each}}
 ___
 
 ### See also

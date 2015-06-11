@@ -18,10 +18,10 @@ $ npm install {{pkg.name}} -g
 
 **.who-likes-what.txt.bud** (bud file)
 ```javascript
-{{{read '../examples/01-minimum-demo/.who-likes-what.txt.bud'}}}
+{{{read './examples/01-minimum-demo/.who-likes-what.txt.bud'}}}
 ```
 
-As you see, `.bud` file is actuary a JavaScript file and could be exported an a Node.js module.
+As you see, `.bud` file is actuary a JavaScript file and could be exported a Node.js module.
 
 Save this file as `.who-likes-what.txt.bud` and then, run:
 
@@ -31,3 +31,13 @@ $ coz render ".who-likes-what.txt.bud"
 ```
 
 This will generate a file named `who-likes-what.txt`.
+
+
+### Programmatic API
+
+{{pkg.name}} provides programmatic API which enables you to execute {{pkg.name}} commands from Node.js program.
+
+```javascript
+{{{read './examples/05-exec-bud-itself/run_rendering.js'}}}
+```
+

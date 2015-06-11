@@ -222,7 +222,7 @@
 </header>
 
 <article>
-    <h3>Auto filling properties.</h3><h3>Configurable properteis.</h3><table>
+    <h3>Auto filling properties.</h3><h3>Configurable properties.</h3><table>
 <thead>
 <tr>
 <th>Name</th>
@@ -232,19 +232,52 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td>engine</td>
+<td>string&#124;object</td>
+<td>Template compile function or name of function</td>
+</tr>
+<tr>
+<td>cwd</td>
+<td>string</td>
+<td>Working directory path</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Data to template render with</td>
+</tr>
+<tr>
+<td>mkdirp</td>
+<td>boolean</td>
+<td>Make parent directories if needed</td>
+</tr>
+<tr>
+<td>setup</td>
+<td>object</td>
+<td>Properties to set engine</td>
+</tr>
+<tr>
+<td>force</td>
+<td>boolean</td>
+<td>Should overwrite file when already exists, or not</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>string&#124;number</td>
+<td>File permission</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>Destination file path. If not provided, guess from bud file path</td>
+</tr>
+<tr>
+<td>tmpl</td>
+<td>string&#124;function</td>
+<td>Template file path or registered template name or template function</td>
 </tr>
 </tbody>
 </table>
-<p>engine | string&#124;object | Template compile function or name of function | 
-cwd | string | Working directory path | 
-data | object | Data to template render with | 
-mkdirp | boolean | Make parent directories if needed | 
-setup | object | Properties to set engine | 
-force | boolean | Should overwrite file when already exists, or not | 
-mode | string&#124;number | File permission | 
-path | string | Destination file path. If not provided, guess from bud file path | 
-tmpl | string&#124;function | Template file path or registered template name or template function | </p>
 <hr>
 <h3>See also</h3><!-- See also start -->
 <ul>

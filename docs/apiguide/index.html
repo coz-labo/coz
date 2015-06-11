@@ -255,7 +255,7 @@
 <!-- Table start -->
 <h2>Table of Contents</h2><ul>
 <li><a href="#01-about">About coz</a><ul>
-<li><a href="#01-about--whats-this">What's this?</a></li>
+<li><a href="#01-about--whats--this">What's This?</a></li>
 <li><a href="#01-about--what--for">What For?</a></li>
 <li><a href="#01-about--why--this">Why This?</a></li>
 </ul>
@@ -264,6 +264,7 @@
 <li><a href="#02-howto--requirements">Requirements</a></li>
 <li><a href="#02-howto--installation">Installation</a></li>
 <li><a href="#02-howto--quickstart">Quickstart</a></li>
+<li><a href="#02-howto--programmatic--a-p-i">Programmatic API</a></li>
 </ul>
 </li>
 <li><a href="#03-spec">Specifications</a><ul>
@@ -286,8 +287,8 @@
 <!-- Table end -->
 <!-- Sections start -->
 <p><a name="01-about"></a></p>
-<h2>About coz</h2><p><a name="01-about--whats-this"></a></p>
-<h3>What's this?</h3><p>The basic idea of coz is that creating files from files.</p>
+<h2>About coz</h2><p><a name="01-about--whats--this"></a></p>
+<h3>What's This?</h3><p>The basic idea of coz is that creating files from files.</p>
 <ul>
 <li>Writing a meta file called <a href="#spec-bud-spec">.bud file</a>.</li>
 <li>Running <code>coz render</code> command.</li>
@@ -299,7 +300,7 @@
 <p>You can define a single datasource and distribute it in various forms.</p>
 <p>For example,</p>
 <ul>
-<li>Generate Javascript and Python code from database definition.</li>
+<li>Generate Javascript and Python entity from database definition.</li>
 <li>Generate <code>package.json</code> and <code>bower.json</code> sharing same meta data.</li>
 <li>Generate Web API document and Swift client entity from json schema objects.</li>
 <li>Generate empty test case files from project files.</li>
@@ -312,6 +313,8 @@
 </li>
 <li><strong>Unopinionated and flexible</strong><ul>
 <li>coz could be used to any kind of strings files.</li>
+<li>Bunch of options to manipulate files.</li>
+<li>Could be used by CLI or programmatically.</li>
 </ul>
 </li>
 <li><strong>Simple and extensible</strong><ul>
@@ -325,15 +328,45 @@
 <li><a href="http://nodejs.org/">node.js</a></li>
 </ul>
 <p><a name="02-howto--installation"></a></p>
-<h3>Installation</h3><p>coz is available as an [NPM][npm_url] package.</p>
+<h3>Installation</h3><p>coz is available as an <a href="https://www.npmjs.com/">NPM</a> package.</p>
 <pre class="prettyprint source lang-bash"><code>$ npm install coz -g</code></pre><p><a name="02-howto--quickstart"></a></p>
 <h3>Quickstart</h3><p><strong>.who-likes-what.txt.bud</strong> (bud file)</p>
-<pre class="prettyprint source lang-javascript"><code>
-</code></pre><p>As you see, <code>.bud</code> file is actuary a JavaScript file and could be exported an a Node.js module.</p>
+<pre class="prettyprint source lang-javascript"><code>/**
+ * .who-likes-what.txt.bud
+ * This is a bud file for &quot;examples/01-minimum-demo&quot;
+ */
+
+// Exports as a Node.js module.
+module.exports = {
+
+    // Template string. By default, parsed by Handlebars engine.
+    tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
+
+    // Overwrite when already existing.
+    force: true,
+
+    // File path to write out.
+    path: 'who-likes-what.txt',
+
+    // File permission.
+    mode: '444',
+
+    // Data to render.
+    data: {
+        members: {
+            &quot;Mai&quot;: &quot;apple&quot;,
+            &quot;Tom&quot;: &quot;Orange&quot;,
+            &quot;Rita&quot;: &quot;Banana&quot;
+        }
+    }
+};</code></pre><p>As you see, <code>.bud</code> file is actuary a JavaScript file and could be exported a Node.js module.</p>
 <p>Save this file as <code>.who-likes-what.txt.bud</code> and then, run:</p>
 <pre class="prettyprint source lang-bash"><code># Render the bud file
-$ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will generate a file named <code>who-likes-what.txt</code>.
-<a name="03-spec"></a></p>
+$ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will generate a file named <code>who-likes-what.txt</code>.</p>
+<p><a name="02-howto--programmatic--a-p-i"></a></p>
+<h3>Programmatic API</h3><p>coz provides programmatic API which enables you to execute coz commands from Node.js program.</p>
+<pre class="prettyprint source lang-javascript"><code>
+</code></pre><p><a name="03-spec"></a></p>
 <h2>Specifications</h2><p><a name="spec-bud-spec"></a>
 <a name="03-spec--bud-file-specification-"></a></p>
 <h3>Bud file specification.</h3><p>A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.</p>
@@ -362,20 +395,53 @@ $ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will genera
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td>engine</td>
+<td>string&#124;object</td>
+<td>Template compile function or name of function</td>
+</tr>
+<tr>
+<td>cwd</td>
+<td>string</td>
+<td>Working directory path</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Data to template render with</td>
+</tr>
+<tr>
+<td>mkdirp</td>
+<td>boolean</td>
+<td>Make parent directories if needed</td>
+</tr>
+<tr>
+<td>setup</td>
+<td>object</td>
+<td>Properties to set engine</td>
+</tr>
+<tr>
+<td>force</td>
+<td>boolean</td>
+<td>Should overwrite file when already exists, or not</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>string&#124;number</td>
+<td>File permission</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>Destination file path. If not provided, guess from bud file path</td>
+</tr>
+<tr>
+<td>tmpl</td>
+<td>string&#124;function</td>
+<td>Template file path or registered template name or template function</td>
 </tr>
 </tbody>
 </table>
-<p>engine | string&#124;object | Template compile function or name of function | 
-cwd | string | Working directory path | 
-data | object | Data to template render with | 
-mkdirp | boolean | Make parent directories if needed | 
-setup | object | Properties to set engine | 
-force | boolean | Should overwrite file when already exists, or not | 
-mode | string&#124;number | File permission | 
-path | string | Destination file path. If not provided, guess from bud file path | 
-tmpl | string&#124;function | Template file path or registered template name or template function | 
-<a name="09-links"></a></p>
+<p><a name="09-links"></a></p>
 <h2>Links</h2><p><a name="09-links--tutorials"></a></p>
 <h3>Tutorials</h3><ul>
 <li><a href="01%20-%20Installing%20coz">01 - Installing coz</a></li>
