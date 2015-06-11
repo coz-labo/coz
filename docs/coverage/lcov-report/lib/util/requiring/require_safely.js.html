@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for lib/util/minifying/minify_javascript.js</title>
+    <title>Code coverage report for lib/util/requiring/require_safely.js</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../../../prettify.css">
     <link rel="stylesheet" href="../../../base.css">
@@ -13,15 +13,15 @@
 </head>
 <body>
 <div class="header high">
-    <h1>Code coverage report for <span class="entity">lib/util/minifying/minify_javascript.js</span></h1>
+    <h1>Code coverage report for <span class="entity">lib/util/requiring/require_safely.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(7 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">100% <small>(4 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">100% <small>(13 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(6 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Functions: <span class="metric">100% <small>(1 / 1)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(7 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(13 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">lib/util/minifying/</a> &#187; minify_javascript.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">lib/util/requiring/</a> &#187; require_safely.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
@@ -52,10 +52,12 @@
 25
 26
 27
-28</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+28
+29
+30
+31
+32
+33</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -69,44 +71,57 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">25</span>
+<span class="cline-any cline-yes">25</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Minify javascript source.
- * @memberof module:coz/lib/util/minifying
- * @function minifyJavascript
- * @param {string} source - Javascript source string.
- * @param {object] options - Optional settings.
- * @returns {string} - Minified string.
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Require a module if possible.
+ * @memberof module:coz/lib/util/requiring
+ * @function requireSafely
+ * @param {string} name - Name to require
  */
 &nbsp;
 "use strict";
 &nbsp;
+var core = require('../../core'),
+    path = core.path;
 &nbsp;
-var ext = require('../../ext'),
-    uglifyJs = ext.uglifyJs;
-&nbsp;
-/** @lends minifyJavascript */
-function minifyJavascript(source, options) {
-    if (!source) {
+/** @lends requireSafely */
+function requireSafely(name) {
+    var renderable = !!name &amp;&amp; (typeof(name) === 'string');
+    if (!renderable) {
         return null;
     }
-    options = options || {};
-    return uglifyJs.minify(source, {
-        fromString: true
-    }).code;
+    try {
+        require.resolve(name);
+        return require(name);
+    } catch (e) {
+        var resolved = path.resolve(name);
+        if (resolved !== name) {
+            return requireSafely(resolved);
+        } else {
+            return null;
+        }
+    }
 }
 &nbsp;
-&nbsp;
-module.exports = minifyJavascript;</pre></td></tr>
+module.exports = requireSafely;
+&nbsp;</pre></td></tr>
 </table></pre>
 
 </div>

@@ -112,8 +112,13 @@ Getting started
 coz is available as an [NPM][npm_url] package.
 
 ```bash
+# Install coz as a global module.
 $ npm install coz -g
 ```
+
+Or you can install it without `-g` option and use [Programmatic API](#programmatic-api).
+For more details, see tutorial section "[01 - Installing coz](01%20-%20Installing%20coz)".
+
 
 <a name="02-howto--quickstart"></a>
 ### Quickstart
@@ -163,7 +168,10 @@ $ coz render ".who-likes-what.txt.bud"
 
 This will generate a file named `who-likes-what.txt`.
 
+For more details, see tutorial section "[02 - Rendering bud files](02%20-%20Rendering%20bud%20files)".
 
+
+<a name="programmatic-api" />
 <a name="02-howto--programmatic--a-p-i"></a>
 ### Programmatic API
 
@@ -172,6 +180,10 @@ coz provides programmatic API which enables you to execute coz commands from Nod
 ```javascript
 
 ```
+
+For more details, see tutorial section "[04 - Using programmatic API](04%20-%20Using%20programmatic%20API)".
+
+
 <a name="03-spec"></a>
 Specifications
 ---------
@@ -212,19 +224,21 @@ module.exports = function(callback){
 }
 ```
 
+For more details, see tutorial section "[03 - Mastering coz bud](03%20-%20Mastering%20coz%20bud)".
+
 ##### Supported properties
 
 | Name | Type | Description |
 | ----- | ----- | ----- |
- | engine | string&#124;object | Template compile function or name of function |
- | cwd | string | Working directory path |
- | data | object | Data to template render with |
- | mkdirp | boolean | Make parent directories if needed |
- | setup | object | Properties to set engine |
- | force | boolean | Should overwrite file when already exists, or not |
- | mode | string&#124;number | File permission |
- | path | string | Destination file path. If not provided, guess from bud file path |
- | tmpl | string&#124;function | Template file path or registered template name or template function |
+| engine | string&#124;object | Template compile function or name of function |
+| cwd | string | Working directory path |
+| data | object | Data to template render with |
+| mkdirp | boolean | Make parent directories if needed |
+| setup | object | Properties to set engine |
+| force | boolean | Should overwrite file when already exists, or not |
+| mode | string&#124;number | File permission |
+| path | string | Destination file path. If not provided, guess from bud file path |
+| tmpl | string&#124;function | Template file path or registered template name or template function |
 
 
 
@@ -235,11 +249,11 @@ Links
 <a name="09-links--tutorials"></a>
 ### Tutorials
 
-+ [01 - Installing coz](01%20-%20Installing%20coz)
-+ [02 - Rendering bud files](02%20-%20Rendering%20bud%20files)
-+ [03 - Mastering coz bud](03%20-%20Mastering%20coz%20bud)
-+ [04 - Using programmatic API](04%20-%20Using%20programmatic%20API)
-+ [05 - Customizing coz](05%20-%20Customizing%20coz)
++ [01 - Installing coz](docs/tutorials/01%20-%20Installing%20coz)
++ [02 - Rendering bud files](docs/tutorials/02%20-%20Rendering%20bud%20files)
++ [03 - Mastering coz bud](docs/tutorials/03%20-%20Mastering%20coz%20bud)
++ [04 - Using programmatic API](docs/tutorials/04%20-%20Using%20programmatic%20API)
++ [05 - Customizing coz](docs/tutorials/05%20-%20Customizing%20coz)
 
 <a name="09-links--documents"></a>
 ### Documents

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for lib/template/buildin_engines/index.js</title>
+    <title>Code coverage report for lib/util/flow/index.js</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../../../prettify.css">
     <link rel="stylesheet" href="../../../base.css">
@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="header high">
-    <h1>Code coverage report for <span class="entity">lib/template/buildin_engines/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">lib/util/flow/index.js</span></h1>
     <h2>
         Statements: <span class="metric">100% <small>(2 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -21,7 +21,7 @@
         Lines: <span class="metric">100% <small>(2 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">lib/template/buildin_engines/</a> &#187; index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">lib/util/flow/</a> &#187; index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
@@ -35,11 +35,7 @@
 8
 9
 10
-11
-12
-13
-14
-15</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+11</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -48,25 +44,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">4</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Buildin template engine modules.
- * @module coz/lib/template/buildinEngines
- * @see module:coz/lib/template
+ * Utility functions for async tasks.
+ * @module coz/lib/util/flow
+ * @see module:coz/lib/util
  */
 &nbsp;
 "use strict";
 &nbsp;
 module.exports = {
-    /**
-     * @memberof module:coz/lib/template/buildinEngines
-     * @name {@link module:coz/lib/template/buildinEngines~HandlebarsEngine|HandlebarsEngine}
-     */
-    get HandlebarsEngine() { return require('./handlebars_engine'); }
+    get eachFiles() { return require('./each_files'); }
 };</pre></td></tr>
 </table></pre>
 

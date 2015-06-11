@@ -36,10 +36,12 @@ module.exports = function(callback){
 }
 ```
 
+For more details, see tutorial section "[03 - Mastering coz bud](03%20-%20Mastering%20coz%20bud)".
+
 ##### Supported properties
 
 | Name | Type | Description |
 | ----- | ----- | ----- |
-{{#each bud.properties}}{{#if configurable}} | {{name}} | {{{type}}} | {{description}} |
+{{#each bud.properties}}{{#if configurable}}| {{name}} | {{{type}}} | {{description}} |
 {{/if}}{{/each}}
 
