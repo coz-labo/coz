@@ -50,7 +50,7 @@ function _section(filename, callback) {
                             var name = path.basename(filename, path.extname(filename));
                             return {
                                 name: name,
-                                url: encodeURI("docs/tutorials/" + name)
+                                url: encodeURI("docs/tutorial/" + name)
                             }
                         });
                     }
