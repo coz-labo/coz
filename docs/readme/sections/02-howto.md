@@ -3,7 +3,7 @@ Getting started
 
 ### Requirements
 
-+ [node.js][nodejs_url]
++ [node.js{{pkg.engines.node}}][nodejs_url]
 
 
 ### Installation

@@ -29,7 +29,7 @@ For example,
 ### Why This?
 
 + **Lightweight and fast**
-    + {{pkg.name}} doing nothing bud file templating, it's very fast.
+    + {{pkg.name}} does nothing bud file templating, it's very fast.
 + **Unopinionated and flexible**
     + {{pkg.name}} could be used to any kind of strings files.
     + Bunch of options to manipulate files.

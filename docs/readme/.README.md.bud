@@ -14,6 +14,8 @@ var engine = new HandlebarsEngine({});
 
 var BANNER_SIZE = 128;
 
+var TUTORIAL_BASE = 'https://github.com/okunishinishi/coz/blob/master/';
+
 function _section(filename, callback) {
     async.waterfall([
         function (callback) {
@@ -117,7 +119,7 @@ module.exports = function (callback) {
                             var name = path.basename(filename, path.extname(filename));
                             return {
                                 name: string.snakecase(name + '_url').replace(/__+/g, '_'),
-                                url: encodeURI("docs/tutorial/" + name + '.md')
+                                url: TUTORIAL_BASE + encodeURI("docs/tutorial/" + name + '.md')
                             }
                         });
                     }

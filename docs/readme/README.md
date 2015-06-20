@@ -86,7 +86,7 @@ For example,
 ### Why This?
 
 + **Lightweight and fast**
-    + coz doing nothing bud file templating, it's very fast.
+    + coz does nothing bud file templating, it's very fast.
 + **Unopinionated and flexible**
     + coz could be used to any kind of strings files.
     + Bunch of options to manipulate files.
@@ -103,7 +103,7 @@ Getting started
 <a name="02-howto--requirements"></a>
 ### Requirements
 
-+ [node.js][nodejs_url]
++ [node.js&gt;=0.10.3][nodejs_url]
 
 
 <a name="02-howto--installation"></a>
@@ -319,10 +319,10 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 
 <!-- Tutorial urls start -->
 
-[01_installing_coz_url]: docs/tutorial/01%20-%20Installing%20coz.md
-[02_rendering_bud_files_url]: docs/tutorial/02%20-%20Rendering%20bud%20files.md
-[03_mastering_coz_bud_url]: docs/tutorial/03%20-%20Mastering%20coz%20bud.md
-[04_using_programmatic_a_p_i_url]: docs/tutorial/04%20-%20Using%20programmatic%20API.md
-[05_customizing_coz_url]: docs/tutorial/05%20-%20Customizing%20coz.md
+[01_installing_coz_url]: https://github.com/okunishinishi/coz/blob/master/docs/tutorial/01%20-%20Installing%20coz.md
+[02_rendering_bud_files_url]: https://github.com/okunishinishi/coz/blob/master/docs/tutorial/02%20-%20Rendering%20bud%20files.md
+[03_mastering_coz_bud_url]: https://github.com/okunishinishi/coz/blob/master/docs/tutorial/03%20-%20Mastering%20coz%20bud.md
+[04_using_programmatic_a_p_i_url]: https://github.com/okunishinishi/coz/blob/master/docs/tutorial/04%20-%20Using%20programmatic%20API.md
+[05_customizing_coz_url]: https://github.com/okunishinishi/coz/blob/master/docs/tutorial/05%20-%20Customizing%20coz.md
 
 <!-- Tutorial urls end -->
