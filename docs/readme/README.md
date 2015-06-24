@@ -17,7 +17,7 @@ Flexible generator, which makes your project clean and maintainable.
 
 <!-- Banner start -->
 
-<a href="https://github.com/okunishinishi/coz#readme"><img style="height:px;" src="assets/images/coz-banner.png" height=""/></a>
+<a href="http://okunishinishi.github.io/coz/apiguide/"><img style="height:px;" src="assets/images/coz-banner.png" height=""/></a>
 
 <!-- Banner end -->
 
@@ -178,7 +178,21 @@ For more details, see tutorial section "[02 - Rendering bud files][03_mastering_
 coz provides programmatic API which enables you to execute coz commands from Node.js program.
 
 ```javascript
+#!/usr/bin/env
 
+/**
+ * run_rendering.js
+ * This is a bud file for "04-from-programmatic-api/run_rendering.js"
+ */
+
+var coz = require('coz');
+
+// Render .bud files.
+coz.render([
+    '**/.*.bud'
+], function (err) {
+    console.log(err ? err : 'Done!');
+});
 ```
 
 For more details, see tutorial section "[04 - Using programmatic API][04_using_programmatic_a_p_i_url]".

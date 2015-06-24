@@ -46,7 +46,7 @@ For more details, see tutorial section "[02 - Rendering bud files][03_mastering_
 {{pkg.name}} provides programmatic API which enables you to execute {{pkg.name}} commands from Node.js program.
 
 ```javascript
-{{{read './examples/05-exec-bud-itself/run_rendering.js'}}}
+{{{read './examples/04-from-programmatic-api/run_rendering.js'}}}
 ```
 
 For more details, see tutorial section "[04 - Using programmatic API][04_using_programmatic_a_p_i_url]".
