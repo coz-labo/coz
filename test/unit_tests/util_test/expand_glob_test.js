@@ -19,7 +19,7 @@ exports.setUp = function (done) {
 exports.tearDown = function (done) {
     console.warn = warn;
     done();
-}
+};
 
 exports['Expand glob filename pattern.'] = function (test) {
     expandGlob(__dirname + '/**/*.js', function (err, filenames) {
@@ -37,4 +37,12 @@ exports['Expand invalid.'] = function (test) {
             test.done();
         });
     });
+};
+
+exports['Expand sync.'] = function (test) {
+    var filenames = expandGlob.sync([
+        __dirname + '/*.*'
+    ], {});
+    test.ok(filenames.length > 0);
+    test.done();
 };
