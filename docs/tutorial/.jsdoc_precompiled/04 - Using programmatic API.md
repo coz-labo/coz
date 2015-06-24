@@ -33,9 +33,12 @@ coz.render([
 });
 ```
 
-###
 
-***
+### Execute bud file it self.
+
+You can mark .bud as an executable file and trigger rendering itself.
+
+
 ```javascript
 {@lang javascript}#!/usr/bin/env
 
