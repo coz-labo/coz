@@ -16,14 +16,51 @@ This is usefull when you do not want to install coz globally.
 This is an example to execute rendering via programmatic API.
 
 ```javascript
-{@lang javascript}
+{@lang javascript}#!/usr/bin/env
+
+/**
+ * run_rendering.js
+ * This is a bud file for "04-from-programmatic-api/run_rendering.js"
+ */
+
+var coz = require('coz');
+
+// Render .bud files.
+coz.render([
+    '**/.*.bud'
+], function (err) {
+    console.log(err ? err : 'Done!');
+});
 ```
 
 ###
 
 ***
 ```javascript
-{@lang javascript}This file is rendered from: "/Users/okuni/projects/coz/docs/examples/05-exec-bud-itself/.exec-me.txt.bud"
+{@lang javascript}#!/usr/bin/env
+
+/**
+ * .exec-me.txt.bud
+ * This is a bud file for "examples/04-exec-bud-itself"
+ */
+
+module.exports = {
+    force: true,
+    mode: '444',
+    tmpl: 'This file is rendered from: "{{from}}"',
+    data: {
+        from: __filename
+    }
+};
+
+// If there is no parent, it means that this module is executed directory.
+// e.g., `node .exec-me.txt.bud`
+var main = module.parent == null;
+if (!main) {
+    // Render this bud file.
+    // `__filename` is Node.js reserved word and contains path of this file.
+    require('coz').render(__filename);
+}
 ```
 
 ___
