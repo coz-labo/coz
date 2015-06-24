@@ -21,6 +21,26 @@ Flexible generator, which makes your project clean and maintainable.
 
 <!-- Banner end -->
 
+```JavaScript
+// Define file meta data to generate.
+module.exports={
+    path:'have-a-nice-day.txt', // File path to write out
+    tmpl:'.have-a-nice-day.txt.hbs', // Template to use
+    force:true, // Overwrite each time
+    mode:'444',  // Write as readyonly file
+    data: require('./my-data-source.json') // Template data to render
+}
+
+```
+
+Save this as ***.my-first-bud.bud*** , then running 
+ 
+```bash
+$ coz render ".my-first-bud.bud"
+```
+
+will do the magic.
+
 
 <!-- Table start -->
 
