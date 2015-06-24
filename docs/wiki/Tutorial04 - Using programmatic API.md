@@ -20,7 +20,7 @@ This is an example to execute rendering via programmatic API.
 
 /**
  * run_rendering.js
- * This is a bud file for "04-from-programmatic-api/run_rendering.js"
+ * This is a bud file for "examples/04-from-programmatic-api/run_rendering.js"
  */
 
 var coz = require('coz');

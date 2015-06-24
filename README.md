@@ -202,7 +202,7 @@ coz provides programmatic API which enables you to execute coz commands from Nod
 
 /**
  * run_rendering.js
- * This is a bud file for "04-from-programmatic-api/run_rendering.js"
+ * This is a bud file for "examples/04-from-programmatic-api/run_rendering.js"
  */
 
 var coz = require('coz');
