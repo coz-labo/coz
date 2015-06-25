@@ -2,7 +2,7 @@ Specifications
 ---------
 
 <a name="spec-bud-spec"></a>
-### Bud file specification.
+### Bud File Specification
 
 {{bud.about}}
 
@@ -38,7 +38,7 @@ module.exports = function(callback){
 
 For more details, see tutorial section "[03 - Mastering coz bud][03_mastering_coz_bud_url]".
 
-##### Supported properties
+##### Supported Properties
 
 List of properties configurable in bud files.
 

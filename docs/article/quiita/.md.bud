@@ -1,0 +1,79 @@
+"use strict";
+
+var coz = require('coz'),
+    glob = coz.ext.glob,
+    async = coz.ext.async,
+    fs = coz.core.fs,
+    os = coz.core.os,
+    path = coz.core.path,
+    string = coz.string,
+    EOL = os.EOL,
+    HandlebarsEngine = coz.template.buildinEngines.HandlebarsEngine;
+
+function _isHeading(line) {
+    return /^#/.test(line.trim());
+}
+
+function _anchorName(line) {
+    return string.spinalcase(line.replace(/^[#\s]+/, ''));
+}
+
+function _bud(src, callback) {
+    var dest = path.basename(src, '.hbs').replace(/^\./, '');
+    async.waterfall([
+        function (callback) {
+            fs.readFile(src, callback);
+        },
+        function (src, callback) {
+            new HandlebarsEngine().compile(String(src), callback);
+        },
+        function (compiled, callback) {
+            var bud = {
+                force: true,
+                mode: '444',
+                tmpl: function (data) {
+                    return compiled(data).split(EOL).map(function (line) {
+                        if (_isHeading(line)) {
+                            line = [
+                                '<a name="' + _anchorName(line) + '"></a>',
+                                line
+                            ].join(EOL);
+                        }
+                        return line;
+                    }).join(EOL);
+                },
+                path: dest,
+                data: {
+                    title: path.basename(dest, path.extname(dest)),
+                    pkg: require('../../../package.json'),
+                    list: fs.readFileSync(src).toString().split(EOL)
+                        .filter(_isHeading)
+                        .map(function (line) {
+                            return {
+                                name: line.replace(/^[#\s]+/, ''),
+                                href: '#' + _anchorName(line),
+                                indent: /^###/.test(line) ? '\t' : ''
+                            }
+                        })
+                }
+            };
+            callback(null, bud);
+        }
+    ], callback);
+}
+
+module.exports = function (callback) {
+    async.waterfall([
+        function (callback) {
+            glob(path.resolve(__dirname, '.*.md.hbs'), callback);
+        },
+        function (tmpl, callback) {
+            async.concat(tmpl, _bud, callback);
+        }
+    ], callback);
+}
+;
+
+if (!module.parent) {
+    require('coz').render(__filename);
+}

@@ -17,7 +17,7 @@ Flexible generator, which makes your project clean and maintainable.
 
 <!-- Banner start -->
 
-<a href="http://okunishinishi.github.io/coz/apiguide/"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a>
+<a href="http://okunishinishi.github.io/coz/homepage"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a>
 
 <!-- Banner end -->
 
@@ -62,7 +62,7 @@ Table of Contents
     - [Quickstart](#02-howto--quickstart)
     - [Programmatic API](#02-howto--programmatic--a-p-i)
 - [Specifications](#03-spec)
-    - [Bud file specification.](#03-spec--bud-file-specification-)
+    - [Bud File Specification](#03-spec--bud--file--specification)
 - [Links](#09-links)
     - [Website](#09-links--website)
     - [Tutorials](#09-links--tutorials)
@@ -230,8 +230,8 @@ Specifications
 ---------
 
 <a name="spec-bud-spec"></a>
-<a name="03-spec--bud-file-specification-"></a>
-### Bud file specification.
+<a name="03-spec--bud--file--specification"></a>
+### Bud File Specification
 
 A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.
 
@@ -267,7 +267,7 @@ module.exports = function(callback){
 
 For more details, see tutorial section "[03 - Mastering coz bud][03_mastering_coz_bud_url]".
 
-##### Supported properties
+##### Supported Properties
 
 List of properties configurable in bud files.
 
@@ -292,7 +292,7 @@ Links
 <a name="09-links--website"></a>
 ### Website
 
-+ [coz](http://okunishinishi.github.io/coz/apiguide/)
++ [coz](http://okunishinishi.github.io/coz/homepage)
 + [coz @npm][my_npm_url]
 + [coz @github][my_repo_rul]
 
