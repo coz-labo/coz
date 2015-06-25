@@ -64,6 +64,7 @@ Table of Contents
 - [Specifications](#03-spec)
     - [Bud file specification.](#03-spec--bud-file-specification-)
 - [Links](#09-links)
+    - [Website](#09-links--website)
     - [Tutorials](#09-links--tutorials)
     - [Documents](#09-links--documents)
     - [Reports](#09-links--reports)
@@ -268,6 +269,8 @@ For more details, see tutorial section "[03 - Mastering coz bud][03_mastering_co
 
 ##### Supported properties
 
+List of properties configurable in bud files.
+
 | Name | Type | Default | Description |
 | ----- | ----- | ----- | ----- |
 | `engine` | string&#124;object | &#x27;handlebars&#x27; | Template engine name or engine itself |
@@ -285,6 +288,13 @@ For more details, see tutorial section "[03 - Mastering coz bud][03_mastering_co
 <a name="09-links"></a>
 Links
 ------
+
+<a name="09-links--website"></a>
+### Website
+
++ [coz](http://okunishinishi.github.io/coz/apiguide/)
++ [coz @npm][my_npm_url]
++ [coz @github][my_repo_rul]
 
 <a name="09-links--tutorials"></a>
 ### Tutorials
@@ -338,12 +348,13 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 [nodejs_url]: http://nodejs.org/
 [npm_url]: https://www.npmjs.com/
 [nvm_url]: https://github.com/creationix/nvm
+[my_repo_rul]: https://github.com/okunishinishi/coz
 [my_travis_url]: http://travis-ci.org/okunishinishi/coz
 [my_travis_badge_url]: http://img.shields.io/travis/okunishinishi/coz.svg?style=flat
 [my_codeclimate_url]: http://codeclimate.com/github/okunishinishi/coz
 [my_codeclimate_badge_url]: http://img.shields.io/codeclimate/github/okunishinishi/coz.svg?style=flat
 [my_codeclimate_coverage_badge_url]: http://img.shields.io/codeclimate/coverage/github/okunishinishi/coz.svg?style=flat
-[my_apiguide_url]: http://okunishinishi.github.io/coz/apiguide/
+[my_apiguide_url]: http://okunishinishi.github.io/coz/apiguide/module-coz.html
 [my_coverage_url]: http://okunishinishi.github.io/coz/coverage/lcov-report
 [my_coverage_report_url]: http://okunishinishi.github.io/coz/coverage/lcov-report/
 [my_gratipay_url]: https://gratipay.com/okunishinishi/

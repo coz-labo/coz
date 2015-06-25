@@ -32,7 +32,7 @@
     "bugs": {
         "url": "https://github.com/okunishinishi/coz/issues"
     },
-    "homepage": "http://okunishinishi.github.io/coz/apiguide/",
+    "homepage": "http://okunishinishi.github.io/coz/homepage",
     "dependencies": {
         "async": "^1.2.0",
         "cli-color": "^1.0.0",

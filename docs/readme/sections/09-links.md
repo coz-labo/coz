@@ -1,6 +1,12 @@
 Links
 ------
 
+### Website
+
++ [coz]({{pkg.homepage}})
++ [coz @npm][my_npm_url]
++ [coz @github][my_repo_rul]
+
 ### Tutorials
 
 {{#each tutorials}}+ [{{name}}][{{{url}}}]
