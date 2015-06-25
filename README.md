@@ -118,7 +118,7 @@ For example,
     + Bunch of options to manipulate files.
     + Could be used by CLI or programmatically.
 + **Simple and extensible**
-    + coz provides ways to customize, like registering you own template engine.
+    + coz provides ways to customize, like registering your own template engine.
 
 
 
@@ -194,7 +194,7 @@ $ coz render ".who-likes-what.txt.bud"
 
 This will generate a file named `who-likes-what.txt`.
 
-For more details, see tutorial section "[02 - Rendering bud files][03_mastering_coz_bud_url]".
+For more details, see tutorial section "[02 - Rendering bud files][02_rendering_bud_files_url]".
 
 
 <a name="programmatic-api" />

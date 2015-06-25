@@ -35,6 +35,6 @@ For example,
     + Bunch of options to manipulate files.
     + Could be used by CLI or programmatically.
 + **Simple and extensible**
-    + {{pkg.name}} provides ways to customize, like registering you own template engine.
+    + {{pkg.name}} provides ways to customize, like registering your own template engine.
 
 
