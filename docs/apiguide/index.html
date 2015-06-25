@@ -255,9 +255,9 @@
 <pre class="prettyprint source lang-JavaScript"><code>// Define file meta data to generate.
 module.exports={
     path:'have-a-nice-day.txt', // File path to write out
-    tmpl:'.have-a-nice-day.txt.hbs', // Template to use
+    tmpl:'.have-a-nice-day.txt.hbs', // Template file
     force:true, // Overwrite each time
-    mode:'444',  // Write as readyonly file
+    mode:'444',  // As readyonly
     data: require('./my-data-source.json') // Template data to render
 }</code></pre><p>Save this as <strong><em>.my-first-bud.bud</em></strong> , then running </p>
 <pre class="prettyprint source lang-bash"><code>$ coz render &quot;.my-first-bud.bud&quot;</code></pre><p>will do the magic.</p>
@@ -379,11 +379,11 @@ $ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will genera
 <p><a name="programmatic-api" />
 <a name="02-howto--programmatic--a-p-i"></a></p>
 <h3>Programmatic API</h3><p>coz provides programmatic API which enables you to execute coz commands from Node.js program.</p>
-<pre class="prettyprint source lang-javascript"><code>#!/usr/bin/env
+<pre class="prettyprint source lang-javascript"><code>#!/usr/bin/env node
 
 /**
  * run_rendering.js
- * This is a bud file for &quot;examples/04-from-programmatic-api/run_rendering.js&quot;
+ * This is an executable file for &quot;examples/04-from-programmatic-api/run_rendering.js&quot;
  */
 
 var coz = require('coz');
@@ -426,7 +426,7 @@ coz.render([
 <tr>
 <td>engine</td>
 <td>string&#124;object</td>
-<td>Template compile function or name of function</td>
+<td>Template engine name or engine itself</td>
 </tr>
 <tr>
 <td>cwd</td>
@@ -436,7 +436,7 @@ coz.render([
 <tr>
 <td>data</td>
 <td>object</td>
-<td>Data to template render with</td>
+<td>Data which template render with</td>
 </tr>
 <tr>
 <td>mkdirp</td>
@@ -446,7 +446,7 @@ coz.render([
 <tr>
 <td>setup</td>
 <td>object</td>
-<td>Properties to set engine</td>
+<td>Optional settings for template engine</td>
 </tr>
 <tr>
 <td>force</td>
@@ -456,7 +456,7 @@ coz.render([
 <tr>
 <td>mode</td>
 <td>string&#124;number</td>
-<td>File permission</td>
+<td>Permission of generated files. (eg., &#x27;444&#x27; for readonly files)</td>
 </tr>
 <tr>
 <td>path</td>

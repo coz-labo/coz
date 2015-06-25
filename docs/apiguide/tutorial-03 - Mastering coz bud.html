@@ -222,64 +222,95 @@
 </header>
 
 <article>
-    <h3>Auto filling properties.</h3><h3>Configurable properties.</h3><table>
+    <h3>Configurable Properties.</h3><p>List of properties configurable in bud files.</p>
+<table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Type</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>engine</td>
+<td><code>engine</code></td>
 <td>string&#124;object</td>
-<td>Template compile function or name of function</td>
+<td>&#x27;handlebars&#x27;</td>
+<td>Template engine name or engine itself</td>
 </tr>
 <tr>
-<td>cwd</td>
+<td><code>cwd</code></td>
 <td>string</td>
+<td>process.cwd()</td>
 <td>Working directory path</td>
 </tr>
 <tr>
-<td>data</td>
+<td><code>data</code></td>
 <td>object</td>
-<td>Data to template render with</td>
+<td></td>
+<td>Data which template render with</td>
 </tr>
 <tr>
-<td>mkdirp</td>
+<td><code>mkdirp</code></td>
 <td>boolean</td>
+<td>false</td>
 <td>Make parent directories if needed</td>
 </tr>
 <tr>
-<td>setup</td>
+<td><code>setup</code></td>
 <td>object</td>
-<td>Properties to set engine</td>
+<td></td>
+<td>Optional settings for template engine</td>
 </tr>
 <tr>
-<td>force</td>
+<td><code>force</code></td>
 <td>boolean</td>
+<td>false</td>
 <td>Should overwrite file when already exists, or not</td>
 </tr>
 <tr>
-<td>mode</td>
+<td><code>mode</code></td>
 <td>string&#124;number</td>
-<td>File permission</td>
+<td>&#x27;644&#x27;</td>
+<td>Permission of generated files. (eg., &#x27;444&#x27; for readonly files)</td>
 </tr>
 <tr>
-<td>path</td>
+<td><code>path</code></td>
 <td>string</td>
+<td></td>
 <td>Destination file path. If not provided, guess from bud file path</td>
 </tr>
 <tr>
-<td>tmpl</td>
+<td><code>tmpl</code></td>
 <td>string&#124;function</td>
+<td>&#x27;json&#x27;</td>
 <td>Template file path or registered template name or template function</td>
 </tr>
 </tbody>
 </table>
+<h3>Understanding Auto Filling Properties.</h3><p>Some properties are optional and coz guess missing properties with some rules.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Guessing Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tmpl</code></td>
+<td>If <code>tmpl</code> is not provided, coz guess it from bud file path. <br/> For example, <strong><em>&quot;.my-world.txt.bud&quot;</em></strong> without <code>tmpl</code> property  search template with pattern <strong><em>&quot;.my-world.txt.*&quot;</em></strong>. <br/> If no template found, uses JSON template as fallback.</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>If <code>path</code> is not provided, coz guess it from bud file path. <br/> Remove `/^/.</td>
+<td>.bud$/<code>from basename and use it as writeout path. &lt;br/&gt; For example, **_&quot;.my-world.txt.bud&quot;_** without</code>path` property will generate <strong><em>&quot;my-world.txt&quot;</em></strong>.</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h3>See also</h3><!-- See also start -->
+<h3>See Also</h3><!-- See also start -->
 <ul>
 <li><a href="tutorial-04%20-%20Using%20programmatic%20API.html">04 - Using programmatic API</a></li>
 </ul>

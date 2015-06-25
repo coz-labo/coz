@@ -110,6 +110,7 @@ module.exports = function (callback) {
                 mode: '444',
                 data: {
                     pkg: pkg,
+                    BANNER_SIZE: BANNER_SIZE,
                     links: require('./.links.json'),
                     badges: require('./.badges.json'),
                     banners: require('./.banners.json'),

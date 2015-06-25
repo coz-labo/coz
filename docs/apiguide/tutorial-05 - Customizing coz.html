@@ -222,8 +222,149 @@
 </header>
 
 <article>
-    <hr>
-<h3>See also</h3><!-- See also start -->
+    <p><a name="register-custom-template"></a></p>
+<h3>Register Custom Template Function.</h3><p>You can register custom template to coz context and call it from .bud file by name.</p>
+<p><strong>render-with-custom-tmpl.js</strong> (executable file)</p>
+<pre class="prettyprint source lang-javascript"><code>{@lang javascript}#!/usr/bin/env node
+
+/**
+ * render-with-custom-tmpl.js
+ * This is an executable file for &quot;examples/06-customize-coz&quot;
+ */
+
+
+var Coz = require('coz').Coz;
+
+// Create a custom coz context.
+var coz = new Coz({
+    // Define custom templates.
+    tmpls: {
+        // Custom template to generate single line json string.
+        singleLineJson: function (data) {
+            return JSON.stringify(data, null, 0);
+        }
+    }
+});
+
+coz.render({
+    force: true,
+    mode: '444',
+    path: 'render-by-my-custom-tmpl-01.json',
+    // Use custom tmpl
+    tmpl: 'singleLineJson',
+    // Data to pass custom tmpl.
+    data: {
+        'generator': __filename,
+        'coz is': 'wonderful'
+    }
+}, function (err) {
+    console.log('Compile done with custom tmpl.');
+});</code></pre><p>Run this will generate:</p>
+<p><strong>render-by-my-custom-tmpl-01.json</strong> (generated file)</p>
+<pre class="prettyprint source"><code>{&quot;generator&quot;:&quot;/Users/okuni/projects/coz/docs/examples/06-customize-coz/render-with-custom-tmpl.js&quot;,&quot;coz is&quot;:&quot;wonderful&quot;,&quot;$$bud&quot;:{&quot;cwd&quot;:&quot;/Users/okuni/projects/coz/docs/examples/06-customize-coz&quot;,&quot;path&quot;:&quot;/Users/okuni/projects/coz/docs/examples/06-customize-coz/render-by-my-custom-tmpl-01.json&quot;}}</code></pre><p><a name="register-custom-template-engine"></a></p>
+<h3>Register Custom Template Engine.</h3><p>By default, coz use <a href="http://handlebarsjs.com/">Handlebars</a> as template engine.</p>
+<p>You can register your own engine and use it from .bud files.</p>
+<p><strong>render-with-custom-engine.js</strong> (executable file)</p>
+<pre class="prettyprint source lang-javascript"><code>{@lang javascript}#!/usr/bin/env node
+
+/**
+ * render-with-custom-engine.js
+ * This is an executable file for &quot;examples/06-customize-coz&quot;
+ */
+
+
+var Coz = require('coz').Coz;
+
+// Create a custom coz context.
+var coz = new Coz({
+    // Define custom engines.
+    engines: {
+        'myCustomEngine01': {
+            // Aliases for this engine.
+            // These names also can be used in &quot;engine&quot; property of bud.
+            $aliases: [
+                'myCustom01'
+            ],
+            /**
+             * Compile template string and create template function.
+             * @implements {module:coz/lib/template~Engine.prototype.compile}
+             * @param {string} source - Source string to compile.
+             * @param {function} callback - Callback when done.
+             */
+            'compile': function (source, callback) {
+
+                // Define a template function with source.
+                // Template function takes a single agument `data` object and returns rendered string.
+
+                /**
+                 * Compiled template function
+                 * @param {object} data - Data to render with.
+                 * @returns {string} - Rendered string.
+                 */
+                function compiledTemplate(data) {
+                    var rendered = String(source);
+                    Object.keys(data).forEach(function (key) {
+                        rendered = rendered.replace('__' + key + '___', data[key]);
+                    });
+                    return rendered;
+                }
+
+                // Pass the template function to callback.
+                var err = null;
+                callback(err, compiledTemplate);
+            }
+        }
+    }
+});
+
+// Use custom coz context to render.
+coz.render({
+    force: true,
+    mode: '444',
+    // Use engine defined above.
+    engine: 'myCustomEngine01',
+    path: __dirname + '/render-by-my-custom-engine-01.txt',
+    // Template source string to compile with the custom engine.
+    tmpl: 'This is good day to __goodToDo___.',
+    // Data to passed to compiled template function.
+    data: {
+        goodToDo: 'die'
+    }
+}, function (err) {
+    console.log('Compile done with custom engine');
+});</code></pre><p>Run this will generate:</p>
+<p><strong>render-by-my-custom-engine-01.txt</strong> (generated file)</p>
+<pre class="prettyprint source"><code>This is good day to die.</code></pre><p><a name="use-custom-config-from-cli"></a></p>
+<h3>Use Custom Configurations From CLI Interface.</h3><p>To customize CLI Interface, create a configuration file and pass it's pathname to <code>--configuration</code> (or <code>-c</code>) options.</p>
+<p><strong>use-custom-config-from-cli.config.js</strong> (configuration file)</p>
+<pre class="prettyprint source"><code>/**
+ * use-custom-config-from-cli.config.js
+ * This is a CLI configuration file for &quot;examples/06-customize-coz&quot;
+ */
+
+// Custom configuration for CLI
+module.exports = {
+    tmpls: {
+        // Custom template function.
+        myCustomTmpl01: function (data) {
+            return JSON.stringify(data, null, 0);
+        }
+    }
+};</code></pre><p><strong>use-custom-config-from-cli.sh</strong> (CLI shell)</p>
+<pre class="prettyprint source"><code>#!/bin/bash
+
+###
+# use-custom-config-from-cli.sh
+# This is a CLI shell file for &quot;examples/06-customize-coz&quot;
+##
+
+HERE=$(dirname $0)
+
+cd ${HERE}
+
+# Render bud with custom configuration.
+coz render &quot;render-by-custom-cli.txt.bud&quot; -c &quot;use-custom-config-from-cli.config.js&quot;</code></pre><hr>
+<h3>See Also</h3><!-- See also start -->
 <!-- See also end -->
 <h3>Tutorials</h3><!-- Tutorials start -->
 <ul>

@@ -224,12 +224,12 @@
 <article>
     <h3>Overview</h3><p>coz provides programmatic API.</p>
 <p>This is usefull when you do not want to install coz globally.</p>
-<h3>Install coz locally</h3><pre class="prettyprint source lang-bash"><code>{@lang bash}$ npm install coz --save-dev</code></pre><h3>Base usage.</h3><p>This is an example to execute rendering via programmatic API.</p>
-<pre class="prettyprint source lang-javascript"><code>{@lang javascript}#!/usr/bin/env
+<h3>Install coz Locally</h3><pre class="prettyprint source lang-bash"><code>{@lang bash}$ npm install coz --save-dev</code></pre><h3>Base Usage.</h3><p>This is an example to execute rendering via programmatic API.</p>
+<pre class="prettyprint source lang-javascript"><code>{@lang javascript}#!/usr/bin/env node
 
 /**
  * run_rendering.js
- * This is a bud file for &quot;examples/04-from-programmatic-api/run_rendering.js&quot;
+ * This is an executable file for &quot;examples/04-from-programmatic-api/run_rendering.js&quot;
  */
 
 var coz = require('coz');
@@ -239,8 +239,8 @@ coz.render([
     '**/.*.bud'
 ], function (err) {
     console.log(err ? err : 'Done!');
-});</code></pre><h2>#</h2><hr>
-<pre class="prettyprint source lang-javascript"><code>{@lang javascript}#!/usr/bin/env
+});</code></pre><h3>Execute bud file it self.</h3><p>You can mark .bud as an executable file and trigger rendering itself.</p>
+<pre class="prettyprint source lang-javascript"><code>{@lang javascript}#!/usr/bin/env node
 
 /**
  * .exec-me.txt.bud
@@ -259,12 +259,12 @@ module.exports = {
 // If there is no parent, it means that this module is executed directory.
 // e.g., `node .exec-me.txt.bud`
 var main = module.parent == null;
-if (!main) {
+if (main) {
     // Render this bud file.
     // `__filename` is Node.js reserved word and contains path of this file.
     require('coz').render(__filename);
 }</code></pre><hr>
-<h3>See also</h3><!-- See also start -->
+<h3>See Also</h3><!-- See also start -->
 <ul>
 <li><a href="tutorial-05%20-%20Customizing%20coz.html">05 - Customizing coz</a></li>
 </ul>

@@ -235,10 +235,11 @@ var buildinTmpls = require('./buildin_tmpls'),
 
 
 /** @lends module:coz/lib/template~TmplSet */
-function TmplSet() {
+function TmplSet(tmpls) {
     var s = this;
     s._tmpls = {};
     s.registerTmpls(buildinTmpls);
+    s.registerTmpls(tmpls || {});
 }
 
 TmplSet.prototype = {

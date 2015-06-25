@@ -227,13 +227,13 @@
  * @memberof module:coz/lib/bud
  * @inner
  * @constructor Bud
- * @param {string|object} [config.engine='handlebars'] - Template compile function or name of function.
+ * @param {string|object} [config.engine='handlebars'] - Template engine name or engine itself.
  * @param {string} [config.cwd=process.cwd()] - Working directory path.
- * @param {object} config.data - Data to template render with.
+ * @param {object} config.data - Data which template render with.
  * @param {boolean} [config.mkdirp] - Make parent directories if needed.
- * @param {object} [config.setup] - Properties to set engine.
+ * @param {object} [config.setup] - Optional settings for template engine.
  * @param {boolean} [config.force=false] - Should overwrite file when already exists, or not.
- * @param {string|number} [config.mode='644'] - File permission.
+ * @param {string|number} [config.mode='644'] - Permission of generated files. (eg., &amp;#x27;444&amp;#x27; for readonly files).
  * @param {string} [config.path] - Destination file path. If not provided, guess from bud file path.
  * @param {string|function} config.tmpl='json' - Template file path or registered template name or template function.
  */
@@ -254,7 +254,7 @@ function Bud(config) {
 
 Bud.prototype = {
     /**
-     * Template compile function or name of function
+     * Template engine name or engine itself
      * @type {string|object}
      */
     engine: 'handlebars',
@@ -264,7 +264,7 @@ Bud.prototype = {
      */
     cwd: process.cwd(),
     /**
-     * Data to template render with
+     * Data which template render with
      * @type {object}
      */
     data: undefined,
@@ -279,7 +279,7 @@ Bud.prototype = {
      */
     mkdirp: undefined,
     /**
-     * Properties to set engine
+     * Optional settings for template engine
      * @type {object}
      */
     setup: undefined,
@@ -289,7 +289,7 @@ Bud.prototype = {
      */
     force: false,
     /**
-     * File permission
+     * Permission of generated files. (eg., &amp;#x27;444&amp;#x27; for readonly files)
      * @type {string|number}
      */
     mode: '644',
