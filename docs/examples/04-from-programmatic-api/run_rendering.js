@@ -1,8 +1,8 @@
-#!/usr/bin/env
+#!/usr/bin/env node
 
 /**
  * run_rendering.js
- * This is a bud file for "examples/04-from-programmatic-api/run_rendering.js"
+ * This is an executable file for "examples/04-from-programmatic-api/run_rendering.js"
  */
 
 var coz = require('coz');

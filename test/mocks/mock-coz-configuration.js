@@ -1,7 +1,7 @@
 module.exports = {
     engines: {
         myCustomEngine: {
-            compile: function (tmpl, callback) {
+            compile: function (source, callback) {
                 setTimeout(function () {
                     callback(null, function () {
                         return 'renderByMyCustom'

@@ -1,6 +1,4 @@
-### Auto filling properties.
-
-### Configurable properties.
+### Configurable Properties.
 
 | Name | Type | Description |
 | ----- | ----- | ----- |
@@ -14,9 +12,18 @@
 | path | string | Destination file path. If not provided, guess from bud file path |
 | tmpl | string&#124;function | Template file path or registered template name or template function |
 
+
+
+### Understanding Auto Filling Properties.
+
+Some properties are optional and coz guess missinge properties with some rules.
+
+@TODO Write guess rules.
+
+
 ___
 
-### See also
+### See Also
 
 <!-- See also start -->
 

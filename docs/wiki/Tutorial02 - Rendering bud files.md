@@ -18,7 +18,7 @@ More detail about bud is described in the next tutorial: [03 - Mastering coz bud
 
 *****
 
-### Basic usage.
+### Basic Usage.
 
 
 The most simple usage is generate a single file from a single `.bud` file.
@@ -81,7 +81,7 @@ Hi, my name is Rita. I like Banana.
 *****
 
 
-### Separate template and data.
+### Separate Template and Data.
 
 For more comple rending, you may want to save template and and to seperated files from the `.bud` file.
 
@@ -154,7 +154,7 @@ will generate:
 
 ___
 
-### See also
+### See Also
 
 <!-- See also start -->
 

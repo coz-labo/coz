@@ -4,23 +4,23 @@ coz provides programmatic API.
 
 This is usefull when you do not want to install coz globally.
 
-### Install coz locally
+### Install coz Locally
 
 ```bash
 $ npm install coz --save-dev
 ```
 
 
-### Base usage.
+### Base Usage.
 
 This is an example to execute rendering via programmatic API.
 
 ```javascript
-#!/usr/bin/env
+#!/usr/bin/env node
 
 /**
  * run_rendering.js
- * This is a bud file for "examples/04-from-programmatic-api/run_rendering.js"
+ * This is an executable file for "examples/04-from-programmatic-api/run_rendering.js"
  */
 
 var coz = require('coz');
@@ -40,7 +40,7 @@ You can mark .bud as an executable file and trigger rendering itself.
 
 
 ```javascript
-#!/usr/bin/env
+#!/usr/bin/env node
 
 /**
  * .exec-me.txt.bud
@@ -59,7 +59,7 @@ module.exports = {
 // If there is no parent, it means that this module is executed directory.
 // e.g., `node .exec-me.txt.bud`
 var main = module.parent == null;
-if (!main) {
+if (main) {
     // Render this bud file.
     // `__filename` is Node.js reserved word and contains path of this file.
     require('coz').render(__filename);
@@ -68,7 +68,7 @@ if (!main) {
 
 ___
 
-### See also
+### See Also
 
 <!-- See also start -->
 
