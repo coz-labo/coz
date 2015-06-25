@@ -23,7 +23,7 @@ Flexible generator, which makes your project clean and maintainable.
 
 <!-- Concept start -->
 
-```JavaScript
+```javascript
 // Define rendering rule.
 module.exports = {
     path: 'have-a-nice-day.txt', // File path to write
@@ -32,7 +32,6 @@ module.exports = {
     mode: '444',  // As readyonly file
     data: require('./my-datasource.json') // Data to render
 }
-
 ```
 
 Save this as ***.my-first-bud.bud*** , then running 
@@ -151,7 +150,7 @@ For more details, see tutorial section "[01 - Installing coz][01_installing_coz_
 ### Quickstart
 
 **.who-likes-what.txt.bud** (bud file)
-```Javascript
+```javascript
 /**
  * .who-likes-what.txt.bud
  * This is a bud file for "examples/01-minimum-demo"
@@ -204,7 +203,7 @@ For more details, see tutorial section "[02 - Rendering bud files][03_mastering_
 
 coz provides programmatic API which enables you to execute coz commands from Node.js program.
 
-```Javascript
+```javascript
 #!/usr/bin/env node
 
 /**
@@ -237,7 +236,7 @@ A bud contains file meta data like witch template to use, where to render it, wh
 
 You can specify bud data by writing `.bud` file, which is actually a javascript file and could be written in Node.js format.
 
-```Javascript
+```javascript
 module.exports = {
     path: 'my_file.txt',
     tmpl: '.my_file.txt.hbs',
@@ -247,7 +246,7 @@ module.exports = {
 
 And bud could be an array like:
 
-```Javascript
+```javascript
 module.exports = [
     {path: 'my_file.txt', /*...*/},
     {path: 'my_other_file.txt', /*...*/},
@@ -256,7 +255,7 @@ module.exports = [
 
 Or an async function.
 
-```Javascript
+```javascript
 module.exports = function(callback){
     myAsync(function(data){
         var error = null;

@@ -8,7 +8,7 @@ Specifications
 
 You can specify bud data by writing `.bud` file, which is actually a javascript file and could be written in Node.js format.
 
-```Javascript
+```javascript
 module.exports = {
     path: 'my_file.txt',
     tmpl: '.my_file.txt.hbs',
@@ -18,7 +18,7 @@ module.exports = {
 
 And bud could be an array like:
 
-```Javascript
+```javascript
 module.exports = [
     {path: 'my_file.txt', /*...*/},
     {path: 'my_other_file.txt', /*...*/},
@@ -27,7 +27,7 @@ module.exports = [
 
 Or an async function.
 
-```Javascript
+```javascript
 module.exports = function(callback){
     myAsync(function(data){
         var error = null;

@@ -22,7 +22,7 @@ For more details, see tutorial section "[01 - Installing coz][01_installing_coz_
 ### Quickstart
 
 **.who-likes-what.txt.bud** (bud file)
-```Javascript
+```javascript
 {{{read './examples/01-minimum-demo/.who-likes-what.txt.bud'}}}
 ```
 
@@ -45,7 +45,7 @@ For more details, see tutorial section "[02 - Rendering bud files][03_mastering_
 
 {{pkg.name}} provides programmatic API which enables you to execute {{pkg.name}} commands from Node.js program.
 
-```Javascript
+```javascript
 {{{read './examples/04-from-programmatic-api/run_rendering.js'}}}
 ```
 
