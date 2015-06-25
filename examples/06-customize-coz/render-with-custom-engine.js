@@ -10,11 +10,11 @@ var Coz = require('coz').Coz;
 
 // Create a custom coz context.
 var coz = new Coz({
+    // Define custom engines.
     engines: {
-        // Register a custom engine.
         'myCustomEngine01': {
             // Aliases for this engine.
-            // These names also can be used in `engine` property of bud.
+            // These names also can be used in "engine" property of bud.
             $aliases: [
                 'myCustom01'
             ],
@@ -32,7 +32,7 @@ var coz = new Coz({
                 /**
                  * Compiled template function
                  * @param {object} data - Data to render with.
-                 * @returns {string}
+                 * @returns {string} - Rendered string.
                  */
                 function compiledTemplate(data) {
                     var rendered = String(source);
@@ -42,6 +42,7 @@ var coz = new Coz({
                     return rendered;
                 }
 
+                // Pass the template function to callback.
                 var err = null;
                 callback(err, compiledTemplate);
             }
@@ -58,6 +59,7 @@ coz.render({
     path: __dirname + '/render-by-my-custom-engine-01.txt',
     // Template source string to compile with the custom engine.
     tmpl: 'This is good day to __goodToDo___.',
+    // Data to passed to compiled template function.
     data: {
         goodToDo: 'die'
     }
