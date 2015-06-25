@@ -21,9 +21,11 @@ Flexible generator, which makes your project clean and maintainable.
 
 <!-- Banner end -->
 
+<!-- Concept start -->
+
 ```JavaScript
 // Define file meta data to generate.
-module.exports={
+module.exports = {
     path: 'have-a-nice-day.txt', // File path to write
     tmpl: '.have-a-nice-day.txt.hbs', // Template file
     force: true, // Overwrite each time
@@ -40,6 +42,10 @@ $ coz render ".my-first-bud.bud"
 ```
 
 will do the magic.
+
+
+<!-- Concept end -->
+
 
 
 <!-- Table start -->
@@ -262,17 +268,17 @@ For more details, see tutorial section "[03 - Mastering coz bud][03_mastering_co
 
 ##### Supported properties
 
-| Name | Type | Description |
-| ----- | ----- | ----- |
-| engine | string&#124;object | Template engine name or engine itself |
-| cwd | string | Working directory path |
-| data | object | Data which template render with |
-| mkdirp | boolean | Make parent directories if needed |
-| setup | object | Optional settings for template engine |
-| force | boolean | Should overwrite file when already exists, or not |
-| mode | string&#124;number | Permission of generated files. (eg., &#x27;444&#x27; for readonly files) |
-| path | string | Destination file path. If not provided, guess from bud file path |
-| tmpl | string&#124;function | Template file path or registered template name or template function |
+| Name | Type | Default | Description |
+| ----- | ----- | ----- | ----- |
+| `engine` | string&#124;object | &#x27;handlebars&#x27; | Template engine name or engine itself |
+| `cwd` | string | process.cwd() | Working directory path |
+| `data` | object |  | Data which template render with |
+| `mkdirp` | boolean | false | Make parent directories if needed |
+| `setup` | object |  | Optional settings for template engine |
+| `force` | boolean | false | Should overwrite file when already exists, or not |
+| `mode` | string&#124;number | &#x27;644&#x27; | Permission of generated files. (eg., &#x27;444&#x27; for readonly files) |
+| `path` | string |  | Destination file path. If not provided, guess from bud file path |
+| `tmpl` | string&#124;function | &#x27;json&#x27; | Template file path or registered template name or template function |
 
 
 

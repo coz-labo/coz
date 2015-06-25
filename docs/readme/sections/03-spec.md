@@ -40,8 +40,8 @@ For more details, see tutorial section "[03 - Mastering coz bud][03_mastering_co
 
 ##### Supported properties
 
-| Name | Type | Description |
-| ----- | ----- | ----- |
-{{#each bud.properties}}{{#if configurable}}| {{name}} | {{{type}}} | {{description}} |
+| Name | Type | Default | Description |
+| ----- | ----- | ----- | ----- |
+{{#each bud.properties}}{{#if configurable}}| `{{name}}` | {{{type}}} | {{default}} | {{description}} |
 {{/if}}{{/each}}
 
