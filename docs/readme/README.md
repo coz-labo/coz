@@ -17,18 +17,18 @@ Flexible generator, which makes your project clean and maintainable.
 
 <!-- Banner start -->
 
-<a href="http://okunishinishi.github.io/coz/apiguide/"><img style="height:px;" src="assets/images/coz-banner.png" height=""/></a>
+<a href="http://okunishinishi.github.io/coz/apiguide/"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a>
 
 <!-- Banner end -->
 
 ```JavaScript
 // Define file meta data to generate.
 module.exports={
-    path:'have-a-nice-day.txt', // File path to write out
-    tmpl:'.have-a-nice-day.txt.hbs', // Template file
-    force:true, // Overwrite each time
-    mode:'444',  // As readyonly
-    data: require('./my-data-source.json') // Template data to render
+    path: 'have-a-nice-day.txt', // File path to write
+    tmpl: '.have-a-nice-day.txt.hbs', // Template file
+    force: true, // Overwrite each time
+    mode: '444',  // As readyonly file
+    data: require('./my-datasource.json') // Data to render
 }
 
 ```
