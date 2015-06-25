@@ -150,7 +150,7 @@ For more details, see tutorial section "[01 - Installing coz][01_installing_coz_
 ### Quickstart
 
 **.who-likes-what.txt.bud** (bud file)
-```javascript
+```Javascript
 /**
  * .who-likes-what.txt.bud
  * This is a bud file for "examples/01-minimum-demo"
@@ -203,7 +203,7 @@ For more details, see tutorial section "[02 - Rendering bud files][03_mastering_
 
 coz provides programmatic API which enables you to execute coz commands from Node.js program.
 
-```javascript
+```Javascript
 #!/usr/bin/env node
 
 /**
