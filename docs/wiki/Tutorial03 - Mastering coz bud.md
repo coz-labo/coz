@@ -1,24 +1,29 @@
 ### Configurable Properties.
 
-| Name | Type | Description |
-| ----- | ----- | ----- |
-| engine | string&#124;object | Template compile function or name of function |
-| cwd | string | Working directory path |
-| data | object | Data to template render with |
-| mkdirp | boolean | Make parent directories if needed |
-| setup | object | Properties to set engine |
-| force | boolean | Should overwrite file when already exists, or not |
-| mode | string&#124;number | File permission |
-| path | string | Destination file path. If not provided, guess from bud file path |
-| tmpl | string&#124;function | Template file path or registered template name or template function |
+List of properties configurable in bud files.
+
+| Name | Type | Default | Description |
+| ----- | ----- | ----- | ----- |
+| `engine` | string&#124;object | &#x27;handlebars&#x27; | Template engine name or engine itself |
+| `cwd` | string | process.cwd() | Working directory path |
+| `data` | object |  | Data which template render with |
+| `mkdirp` | boolean | false | Make parent directories if needed |
+| `setup` | object |  | Optional settings for template engine |
+| `force` | boolean | false | Should overwrite file when already exists, or not |
+| `mode` | string&#124;number | &#x27;644&#x27; | Permission of generated files. (eg., &#x27;444&#x27; for readonly files) |
+| `path` | string |  | Destination file path. If not provided, guess from bud file path |
+| `tmpl` | string&#124;function | &#x27;json&#x27; | Template file path or registered template name or template function |
 
 
 
 ### Understanding Auto Filling Properties.
 
-Some properties are optional and coz guess missinge properties with some rules.
+Some properties are optional and coz guess missing properties with some rules.
 
-@TODO Write guess rules.
+| Property | Guessing Rule |
+| --- | --- |
+| `tmpl` | If `tmpl` is not provided, coz guess it from bud file path. <br/> For example, **_".my-world.txt.bud"_** without `tmpl` property  search template with pattern **_".my-world.txt.\*"_**. <br/> If no template found, uses JSON template as fallback. |
+| `path` | If `path` is not provided, coz guess it from bud file path. <br/> Remove `/^/.|\.bud$/` from basename and use it as writeout path. <br/> For example, **_".my-world.txt.bud"_** without `path` property will generate **_"my-world.txt"_**. |
 
 
 ___

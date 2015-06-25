@@ -1,16 +1,21 @@
 ### Configurable Properties.
 
-| Name | Type | Description |
-| ----- | ----- | ----- |
-{{#each bud.properties}}{{#if configurable}}| {{name}} | {{{type}}} | {{description}} |
+List of properties configurable in bud files.
+
+| Name | Type | Default | Description |
+| ----- | ----- | ----- | ----- |
+{{#each bud.properties}}{{#if configurable}}| `{{name}}` | {{{type}}} | {{default}} | {{description}} |
 {{/if}}{{/each}}
 
 
 ### Understanding Auto Filling Properties.
 
-Some properties are optional and coz guess missinge properties with some rules.
+Some properties are optional and coz guess missing properties with some rules.
 
-@TODO Write guess rules.
+| Property | Guessing Rule |
+| --- | --- |
+| `tmpl` | If `tmpl` is not provided, coz guess it from bud file path. <br/> For example, **_".my-world.txt.bud"_** without `tmpl` property  search template with pattern **_".my-world.txt.\*"_**. <br/> If no template found, uses JSON template as fallback. |
+| `path` | If `path` is not provided, coz guess it from bud file path. <br/> Remove `/^/.|\.bud$/` from basename and use it as writeout path. <br/> For example, **_".my-world.txt.bud"_** without `path` property will generate **_"my-world.txt"_**. |
 
 
 ___

@@ -4,7 +4,7 @@
     "engine": {
       "configurable": true,
       "default": "'handlebars'",
-      "description": "Template compile function or name of function",
+      "description": "Template engine name or engine itself",
       "required": false,
       "type": "string|object"
     },
@@ -17,7 +17,7 @@
     },
     "data": {
       "configurable": true,
-      "description": "Data to template render with",
+      "description": "Data which template render with",
       "required": true,
       "type": "object"
     },
@@ -34,7 +34,7 @@
     },
     "setup": {
       "configurable": true,
-      "description": "Properties to set engine",
+      "description": "Optional settings for template engine",
       "required": false,
       "type": "object"
     },
@@ -47,7 +47,7 @@
     },
     "mode": {
       "configurable": true,
-      "description": "File permission",
+      "description": "Permission of generated files. (eg., '444' for readonly files)",
       "default": "'644'",
       "required": false,
       "type": "string|number"

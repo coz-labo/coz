@@ -1,4 +1,21 @@
+<a name="register-custom-template"></a>
+### Register Custom Template Function.
 
+You can register custom template to coz context and call it from .bud file by name.
+
+**render-with-custom-tmpl.js** (executable file)
+```javascript
+{{{read '../examples/06-customize-coz/render-with-custom-tmpl.js'}}}
+```
+
+Run this will generate:
+
+**render-by-my-custom-tmpl-01.json** (generated file)
+```
+{{{read '../examples/06-customize-coz/render-by-my-custom-tmpl-01.json'}}}
+```
+
+<a name="register-custom-template-engine"></a>
 ### Register Custom Template Engine.
 
 By default, {{pkg.name}} use [Handlebars](http://handlebarsjs.com/) as template engine.
@@ -6,22 +23,37 @@ By default, {{pkg.name}} use [Handlebars](http://handlebarsjs.com/) as template 
 You can register your own engine and use it from .bud files.
 
 
-**render-with-custom-engine.js**
+**render-with-custom-engine.js** (executable file)
 ```javascript
 {{{read '../examples/06-customize-coz/render-with-custom-engine.js'}}}
 ```
 
 Run this will generate:
 
-**render-by-my-custom-engine-01.txt**
+**render-by-my-custom-engine-01.txt** (generated file)
 ```
 {{{read '../examples/06-customize-coz/render-by-my-custom-engine-01.txt'}}}
+```
+
+<a name="use-custom-config-from-cli"></a>
+### Use Custom Configurations From CLI Interface.
+
+To customize CLI Interface, create a configuration file and pass it's pathname to `--configuration` (or `-c`) options.
+
+**use-custom-config-from-cli.config.js** (configuration file)
+```
+{{{read '../examples/06-customize-coz/use-custom-config-from-cli.config.js'}}}
+```
+
+**use-custom-config-from-cli.sh** (CLI shell)
+```
+{{{read '../examples/06-customize-coz/use-custom-config-from-cli.sh'}}}
 ```
 
 ___
 
 
-### See also
+### See Also
 
 {{{seeAlso}}}
 

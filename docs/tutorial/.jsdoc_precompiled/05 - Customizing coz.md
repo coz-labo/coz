@@ -1,4 +1,55 @@
+<a name="register-custom-template"></a>
+### Register Custom Template Function.
 
+You can register custom template to coz context and call it from .bud file by name.
+
+**render-with-custom-tmpl.js** (executable file)
+```javascript
+{@lang javascript}#!/usr/bin/env node
+
+/**
+ * render-with-custom-tmpl.js
+ * This is an executable file for "examples/06-customize-coz"
+ */
+
+
+var Coz = require('coz').Coz;
+
+// Create a custom coz context.
+var coz = new Coz({
+    // Define custom templates.
+    tmpls: {
+        // Custom template to generate single line json string.
+        singleLineJson: function (data) {
+            return JSON.stringify(data, null, 0);
+        }
+    }
+});
+
+coz.render({
+    force: true,
+    mode: '444',
+    path: 'render-by-my-custom-tmpl-01.json',
+    // Use custom tmpl
+    tmpl: 'singleLineJson',
+    // Data to pass custom tmpl.
+    data: {
+        'generator': __filename,
+        'coz is': 'wonderful'
+    }
+}, function (err) {
+    console.log('Compile done with custom tmpl.');
+});
+```
+
+Run this will generate:
+
+**render-by-my-custom-tmpl-01.json** (generated file)
+```
+{"generator":"/Users/okuni/projects/coz/docs/examples/06-customize-coz/render-with-custom-tmpl.js","coz is":"wonderful","$$bud":{"cwd":"/Users/okuni/projects/coz/docs/examples/06-customize-coz","path":"/Users/okuni/projects/coz/docs/examples/06-customize-coz/render-by-my-custom-tmpl-01.json"}}
+```
+
+<a name="register-custom-template-engine"></a>
 ### Register Custom Template Engine.
 
 By default, coz use [Handlebars](http://handlebarsjs.com/) as template engine.
@@ -6,13 +57,13 @@ By default, coz use [Handlebars](http://handlebarsjs.com/) as template engine.
 You can register your own engine and use it from .bud files.
 
 
-**render-with-custom-engine.js**
+**render-with-custom-engine.js** (executable file)
 ```javascript
 {@lang javascript}#!/usr/bin/env node
 
 /**
  * render-with-custom-engine.js
- * This is an executable file for "examples/06-customize-coz/render-with-custom-engine.js"
+ * This is an executable file for "examples/06-customize-coz"
  */
 
 
@@ -74,21 +125,61 @@ coz.render({
         goodToDo: 'die'
     }
 }, function (err) {
-    console.log('done!');
+    console.log('Compile done with custom engine');
 });
 ```
 
 Run this will generate:
 
-**render-by-my-custom-engine-01.txt**
+**render-by-my-custom-engine-01.txt** (generated file)
 ```
 This is good day to die.
+```
+
+<a name="use-custom-config-from-cli"></a>
+### Use Custom Configurations From CLI Interface.
+
+To customize CLI Interface, create a configuration file and pass it's pathname to `--configuration` (or `-c`) options.
+
+**use-custom-config-from-cli.config.js** (configuration file)
+```
+/**
+ * use-custom-config-from-cli.config.js
+ * This is a CLI configuration file for "examples/06-customize-coz"
+ */
+
+// Custom configuration for CLI
+module.exports = {
+    tmpls: {
+        // Custom template function.
+        myCustomTmpl01: function (data) {
+            return JSON.stringify(data, null, 0);
+        }
+    }
+};
+```
+
+**use-custom-config-from-cli.sh** (CLI shell)
+```
+#!/bin/bash
+
+###
+# use-custom-config-from-cli.sh
+# This is a CLI shell file for "examples/06-customize-coz"
+##
+
+HERE=$(dirname $0)
+
+cd ${HERE}
+
+# Render bud with custom configuration.
+coz render "render-by-custom-cli.txt.bud" -c "use-custom-config-from-cli.config.js"
 ```
 
 ___
 
 
-### See also
+### See Also
 
 <!-- See also start -->
 

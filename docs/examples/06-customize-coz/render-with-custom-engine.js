@@ -2,7 +2,7 @@
 
 /**
  * render-with-custom-engine.js
- * This is an executable file for "examples/06-customize-coz/render-with-custom-engine.js"
+ * This is an executable file for "examples/06-customize-coz"
  */
 
 
@@ -64,5 +64,5 @@ coz.render({
         goodToDo: 'die'
     }
 }, function (err) {
-    console.log('done!');
+    console.log('Compile done with custom engine');
 });

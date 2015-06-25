@@ -25,9 +25,9 @@ Flexible generator, which makes your project clean and maintainable.
 // Define file meta data to generate.
 module.exports={
     path:'have-a-nice-day.txt', // File path to write out
-    tmpl:'.have-a-nice-day.txt.hbs', // Template to use
+    tmpl:'.have-a-nice-day.txt.hbs', // Template file
     force:true, // Overwrite each time
-    mode:'444',  // Write as readyonly file
+    mode:'444',  // As readyonly
     data: require('./my-data-source.json') // Template data to render
 }
 
@@ -264,13 +264,13 @@ For more details, see tutorial section "[03 - Mastering coz bud][03_mastering_co
 
 | Name | Type | Description |
 | ----- | ----- | ----- |
-| engine | string&#124;object | Template compile function or name of function |
+| engine | string&#124;object | Template engine name or engine itself |
 | cwd | string | Working directory path |
-| data | object | Data to template render with |
+| data | object | Data which template render with |
 | mkdirp | boolean | Make parent directories if needed |
-| setup | object | Properties to set engine |
+| setup | object | Optional settings for template engine |
 | force | boolean | Should overwrite file when already exists, or not |
-| mode | string&#124;number | File permission |
+| mode | string&#124;number | Permission of generated files. (eg., &#x27;444&#x27; for readonly files) |
 | path | string | Destination file path. If not provided, guess from bud file path |
 | tmpl | string&#124;function | Template file path or registered template name or template function |
 
