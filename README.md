@@ -24,7 +24,7 @@ Flexible generator, which makes your project clean and maintainable.
 <!-- Concept start -->
 
 ```JavaScript
-// Define file meta data to generate.
+// Define rendering rule.
 module.exports = {
     path: 'have-a-nice-day.txt', // File path to write
     tmpl: '.have-a-nice-day.txt.hbs', // Template file
@@ -234,7 +234,7 @@ Specifications
 
 A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.
 
-You can specify bud data by writing `.bud` file, which is actually a javascript file and could be written nodejs format.
+You can specify bud data by writing `.bud` file, which is actually a javascript file and could be written in Node.js format.
 
 ```Javascript
 module.exports = {

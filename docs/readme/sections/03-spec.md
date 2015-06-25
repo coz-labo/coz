@@ -6,7 +6,7 @@ Specifications
 
 {{bud.about}}
 
-You can specify bud data by writing `.bud` file, which is actually a javascript file and could be written nodejs format.
+You can specify bud data by writing `.bud` file, which is actually a javascript file and could be written in Node.js format.
 
 ```Javascript
 module.exports = {
