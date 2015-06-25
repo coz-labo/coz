@@ -253,7 +253,7 @@
 <p><a href="http://okunishinishi.github.io/coz/homepage"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a></p>
 <!-- Banner end -->
 <!-- Concept start -->
-<pre class="prettyprint source lang-JavaScript"><code>// Define rendering rule.
+<pre class="prettyprint source lang-javascript"><code>// Define rendering rule.
 module.exports = {
     path: 'have-a-nice-day.txt', // File path to write
     tmpl: '.have-a-nice-day.txt.hbs', // Template file
@@ -346,7 +346,7 @@ $ npm install coz -g</code></pre><p>Or you can install it without <code>-g</code
 For more details, see tutorial section &quot;<a href="https://github.com/okunishinishi/coz/blob/master/docs/tutorial/01%20-%20Installing%20coz.md">01 - Installing coz</a>&quot;.</p>
 <p><a name="02-howto--quickstart"></a></p>
 <h3>Quickstart</h3><p><strong>.who-likes-what.txt.bud</strong> (bud file)</p>
-<pre class="prettyprint source lang-Javascript"><code>/**
+<pre class="prettyprint source lang-javascript"><code>/**
  * .who-likes-what.txt.bud
  * This is a bud file for &quot;examples/01-minimum-demo&quot;
  */
@@ -382,7 +382,7 @@ $ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will genera
 <p><a name="programmatic-api" />
 <a name="02-howto--programmatic--a-p-i"></a></p>
 <h3>Programmatic API</h3><p>coz provides programmatic API which enables you to execute coz commands from Node.js program.</p>
-<pre class="prettyprint source lang-Javascript"><code>#!/usr/bin/env node
+<pre class="prettyprint source lang-javascript"><code>#!/usr/bin/env node
 
 /**
  * run_rendering.js
@@ -402,16 +402,16 @@ coz.render([
 <a name="03-spec--bud--file--specification"></a></p>
 <h3>Bud File Specification</h3><p>A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.</p>
 <p>You can specify bud data by writing <code>.bud</code> file, which is actually a javascript file and could be written in Node.js format.</p>
-<pre class="prettyprint source lang-Javascript"><code>module.exports = {
+<pre class="prettyprint source lang-javascript"><code>module.exports = {
     path: 'my_file.txt',
     tmpl: '.my_file.txt.hbs',
     data: require('./.my_data')
 }</code></pre><p>And bud could be an array like:</p>
-<pre class="prettyprint source lang-Javascript"><code>module.exports = [
+<pre class="prettyprint source lang-javascript"><code>module.exports = [
     {path: 'my_file.txt', /*...*/},
     {path: 'my_other_file.txt', /*...*/},
 ]</code></pre><p>Or an async function.</p>
-<pre class="prettyprint source lang-Javascript"><code>module.exports = function(callback){
+<pre class="prettyprint source lang-javascript"><code>module.exports = function(callback){
     myAsync(function(data){
         var error = null;
         callback(err, data);
