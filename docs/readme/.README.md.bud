@@ -131,5 +131,5 @@ module.exports = function (callback) {
 };
 
 if (!module.parent) {
-    require('coz').render(__filename);
+    require('../../lib').render(__filename);
 }

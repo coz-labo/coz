@@ -10,7 +10,7 @@ module.exports = {
     mode: '444',
     tmpl: 'This file is rendered from: "{{from}}"',
     data: {
-        from: __filename
+        from: require('path').basename(__filename)
     }
 };
 

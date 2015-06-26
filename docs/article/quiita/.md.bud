@@ -1,6 +1,6 @@
 "use strict";
 
-var coz = require('coz'),
+var coz = require('../../../lib'),
     glob = coz.ext.glob,
     async = coz.ext.async,
     fs = coz.core.fs,
@@ -75,5 +75,5 @@ module.exports = function (callback) {
 ;
 
 if (!module.parent) {
-    require('coz').render(__filename);
+    coz.render(__filename);
 }

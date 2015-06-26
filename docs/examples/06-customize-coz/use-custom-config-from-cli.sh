@@ -10,4 +10,4 @@ HERE=$(dirname $0)
 cd ${HERE}
 
 # Render bud with custom configuration.
-coz render "render-by-custom-cli.txt.bud" -c "use-custom-config-from-cli.config.js"
+coz render ".render-by-custom-cli.txt.bud" -c "use-custom-config-from-cli.config.js"

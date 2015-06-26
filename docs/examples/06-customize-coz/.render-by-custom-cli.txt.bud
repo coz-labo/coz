@@ -9,6 +9,6 @@ module.exports = {
     mode: '444',
     tmpl: 'myCustomTmpl01',
     data: {
-        'generator': __filename
+        'generator': require('path').basename(__filename)
     }
 };

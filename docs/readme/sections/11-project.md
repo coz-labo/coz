@@ -1,6 +1,8 @@
 About this project
 --------
 
+[![Bitdeli Badge][my_bitdeli_badge_url]][bitdeli_url]
+
 ### Author
 
 + [{{pkg.author.name}}]({{pkg.author.url}})

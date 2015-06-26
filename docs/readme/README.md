@@ -293,7 +293,7 @@ Links
 
 + [coz](http://okunishinishi.github.io/coz/homepage)
 + [coz @npm][my_npm_url]
-+ [coz @github][my_repo_rul]
++ [coz @github][my_repo_url]
 
 <a name="09-links--tutorials"></a>
 ### Tutorials
@@ -320,11 +320,13 @@ Links
 <a name="10-license"></a>
 License
 -------
-This software is released under the [MIT License](https://raw.githubusercontent.com/okunishinishi/coz/master/LICENSE).
+This software is released under the [MIT License][my_license_url].
 
 <a name="11-project"></a>
 About this project
 --------
+
+[![Bitdeli Badge][my_bitdeli_badge_url]][bitdeli_url]
 
 <a name="11-project--author"></a>
 ### Author
@@ -347,9 +349,12 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 [nodejs_url]: http://nodejs.org/
 [npm_url]: https://www.npmjs.com/
 [nvm_url]: https://github.com/creationix/nvm
-[my_repo_rul]: https://github.com/okunishinishi/coz
+[bitdeli_url]: https://bitdeli.com/free
+[my_bitdeli_badge_url]: https://d2weczhvl823v0.cloudfront.net/okunishinishi/coz/trend.png
+[my_repo_url]: https://github.com/okunishinishi/coz
 [my_travis_url]: http://travis-ci.org/okunishinishi/coz
 [my_travis_badge_url]: http://img.shields.io/travis/okunishinishi/coz.svg?style=flat
+[my_license_url]: https://github.com/okunishinishi/coz/blob/master/LICENSE
 [my_codeclimate_url]: http://codeclimate.com/github/okunishinishi/coz
 [my_codeclimate_badge_url]: http://img.shields.io/codeclimate/github/okunishinishi/coz.svg?style=flat
 [my_codeclimate_coverage_badge_url]: http://img.shields.io/codeclimate/coverage/github/okunishinishi/coz.svg?style=flat

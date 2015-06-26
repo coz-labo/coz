@@ -5,7 +5,7 @@ Links
 
 + [coz]({{pkg.homepage}})
 + [coz @npm][my_npm_url]
-+ [coz @github][my_repo_rul]
++ [coz @github][my_repo_url]
 
 ### Tutorials
 
