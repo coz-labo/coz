@@ -20,6 +20,9 @@ module.exports = {
                 core: 'Nodejs build modules'
             }
         },
+        get links() {
+            return require('../docs/readme/.links.json');
+        },
         get aliases() {
             return {
                 string: {
@@ -38,3 +41,7 @@ module.exports = {
         }
     }
 };
+
+if (!module.parent) {
+    require('coz').render(__filename);
+}
