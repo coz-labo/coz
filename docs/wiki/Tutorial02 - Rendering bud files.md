@@ -36,7 +36,7 @@ Here is an example:
 module.exports = {
 
     // Template string. By default, parsed by Handlebars engine.
-    tmpl: '',
+    tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
 
     // Overwrite when already existing.
     force: true,
@@ -83,7 +83,7 @@ Hi, my name is Rita. I like Banana.
 
 ### Separate Template and Data.
 
-For more comple rending, you may want to save template and and to seperated files from the `.bud` file.
+For more compile rending, you may want to save template and and to separated files from the `.bud` file.
 
 `tmpl` attribute could be a file path.
 
@@ -126,6 +126,9 @@ module.exports = {
 <table>
     <caption>Colors</caption>
     <tbody>
+    {{#each colors}}
+        <tr><th>{{@key}}</th>{{this}}</tr>
+    {{/each}}
     </tbody>
 </table>
 ```

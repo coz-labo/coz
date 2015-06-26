@@ -1,3 +1,50 @@
+<a name="custom-setup-template"></a>
+### Custom setup with template engine.
+
+You can pass parameters to template engine via `setup` property in bud file.
+For example, handlebars engine accepts helper functions which can be called in template context.
+
+
+**.render-with-custom-setup.txt.bud** (bud file)
+```javascript
+{@lang javascript}/**
+ * render-with-custom-setup.txt.bud
+ * This is a bud file for "examples/06-customize-coz"
+ */
+
+// Bud with custom setup
+module.exports = {
+    force: true,
+    mode: '444',
+    // Template with using custom helper function.
+    tmpl: 'Hey, {{emphasize msg}}',
+    engine: 'handlebars',
+    // Setup options for handlebars engine.
+    setup: {
+        // Register custom handlebars helpers.
+        helpers: {
+            'emphasize': function (txt) {
+                return txt.toUpperCase() + '!!!!';
+            }
+        }
+    },
+    data: {
+        'msg': 'watch out'
+    }
+};
+if (!module.parent) {
+    require('coz').render(__filename);
+}
+```
+
+Running this will generate:
+
+**render-with-custom-setup.txt** (generated file)
+```
+Hey, WATCH OUT!!!!
+```
+
+
 <a name="register-custom-template"></a>
 ### Register Custom Template Function.
 
@@ -42,7 +89,7 @@ coz.render({
 });
 ```
 
-Run this will generate:
+Running this will generate:
 
 **render-by-my-custom-tmpl-01.json** (generated file)
 ```
@@ -129,7 +176,7 @@ coz.render({
 });
 ```
 
-Run this will generate:
+Running this will generate:
 
 **render-by-my-custom-engine-01.txt** (generated file)
 ```
@@ -153,7 +200,7 @@ module.exports = {
     tmpls: {
         // Custom template function.
         myCustomTmpl01: function (data) {
-            return JSON.stringify(data, null, 0);
+            return JSON.stringify(data, null, 2);
         }
     }
 };

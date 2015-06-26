@@ -1,1 +1,1 @@
-{"generator":"/Users/okunishitaka/projects/coz/docs/examples/06-customize-coz/render-by-custom-cli.txt.bud"}
+myCustomTmpl01

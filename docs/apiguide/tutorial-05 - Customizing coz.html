@@ -240,7 +240,40 @@
 </header>
 
 <article>
-    <p><a name="register-custom-template"></a></p>
+    <p><a name="custom-setup-template"></a></p>
+<h3>Custom setup with template engine.</h3><p>You can pass parameters to template engine via <code>setup</code> property in bud file.
+For example, handlebars engine accepts helper functions which can be called in template context.</p>
+<p><strong>.render-with-custom-setup.txt.bud</strong> (bud file)</p>
+<pre class="prettyprint source lang-javascript"><code>{@lang javascript}/**
+ * render-with-custom-setup.txt.bud
+ * This is a bud file for &quot;examples/06-customize-coz&quot;
+ */
+
+// Bud with custom setup
+module.exports = {
+    force: true,
+    mode: '444',
+    // Template with using custom helper function.
+    tmpl: 'Hey, {{emphasize msg}}',
+    engine: 'handlebars',
+    // Setup options for handlebars engine.
+    setup: {
+        // Register custom handlebars helpers.
+        helpers: {
+            'emphasize': function (txt) {
+                return txt.toUpperCase() + '!!!!';
+            }
+        }
+    },
+    data: {
+        'msg': 'watch out'
+    }
+};
+if (!module.parent) {
+    require('coz').render(__filename);
+}</code></pre><p>Running this will generate:</p>
+<p><strong>render-with-custom-setup.txt</strong> (generated file)</p>
+<pre class="prettyprint source"><code>Hey, WATCH OUT!!!!</code></pre><p><a name="register-custom-template"></a></p>
 <h3>Register Custom Template Function.</h3><p>You can register custom template to coz context and call it from .bud file by name.</p>
 <p><strong>render-with-custom-tmpl.js</strong> (executable file)</p>
 <pre class="prettyprint source lang-javascript"><code>{@lang javascript}#!/usr/bin/env node
@@ -277,7 +310,7 @@ coz.render({
     }
 }, function (err) {
     console.log('Compile done with custom tmpl.');
-});</code></pre><p>Run this will generate:</p>
+});</code></pre><p>Running this will generate:</p>
 <p><strong>render-by-my-custom-tmpl-01.json</strong> (generated file)</p>
 <pre class="prettyprint source"><code>{&quot;generator&quot;:&quot;/Users/okuni/projects/coz/docs/examples/06-customize-coz/render-with-custom-tmpl.js&quot;,&quot;coz is&quot;:&quot;wonderful&quot;,&quot;$$bud&quot;:{&quot;cwd&quot;:&quot;/Users/okuni/projects/coz/docs/examples/06-customize-coz&quot;,&quot;path&quot;:&quot;/Users/okuni/projects/coz/docs/examples/06-customize-coz/render-by-my-custom-tmpl-01.json&quot;}}</code></pre><p><a name="register-custom-template-engine"></a></p>
 <h3>Register Custom Template Engine.</h3><p>By default, coz use <a href="http://handlebarsjs.com/">Handlebars</a> as template engine.</p>
@@ -350,7 +383,7 @@ coz.render({
     }
 }, function (err) {
     console.log('Compile done with custom engine');
-});</code></pre><p>Run this will generate:</p>
+});</code></pre><p>Running this will generate:</p>
 <p><strong>render-by-my-custom-engine-01.txt</strong> (generated file)</p>
 <pre class="prettyprint source"><code>This is good day to die.</code></pre><p><a name="use-custom-config-from-cli"></a></p>
 <h3>Use Custom Configurations From CLI Interface.</h3><p>To customize CLI Interface, create a configuration file and pass it's pathname to <code>--configuration</code> (or <code>-c</code>) options.</p>
@@ -365,7 +398,7 @@ module.exports = {
     tmpls: {
         // Custom template function.
         myCustomTmpl01: function (data) {
-            return JSON.stringify(data, null, 0);
+            return JSON.stringify(data, null, 2);
         }
     }
 };</code></pre><p><strong>use-custom-config-from-cli.sh</strong> (CLI shell)</p>
@@ -381,7 +414,7 @@ HERE=$(dirname $0)
 cd ${HERE}
 
 # Render bud with custom configuration.
-coz render &quot;render-by-custom-cli.txt.bud&quot; -c &quot;use-custom-config-from-cli.config.js&quot;</code></pre><hr>
+coz render &quot;.render-by-custom-cli.txt.bud&quot; -c &quot;use-custom-config-from-cli.config.js&quot;</code></pre><hr>
 <h3>See Also</h3><!-- See also start -->
 <!-- See also end -->
 <h3>Tutorials</h3><!-- Tutorials start -->

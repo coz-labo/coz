@@ -3,12 +3,12 @@
  * This is a bud file for "examples/06-customize-coz"
  */
 
-// Custom configuration for CLI
+// Bud for coz CLI with custom configuration
 module.exports = {
     force: true,
     mode: '444',
     tmpl: 'myCustomTmpl01',
     data: {
-        'generator': require('path').basename(__filename)
+        'generator': __filename
     }
 };

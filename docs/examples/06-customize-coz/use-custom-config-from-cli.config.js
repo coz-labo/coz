@@ -8,7 +8,7 @@ module.exports = {
     tmpls: {
         // Custom template function.
         myCustomTmpl01: function (data) {
-            return JSON.stringify(data, null, 0);
+            return JSON.stringify(data, null, 2);
         }
     }
 };

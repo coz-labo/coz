@@ -25,7 +25,9 @@ module.exports = function (callback) {
                     force: true,
                     mode: '444',
                     path: path.resolve(__dirname, 'Tutorial' + name + '.md'),
-                    tmpl: src
+                    tmpl: function () {
+                        return fs.readFileSync(src).toString();
+                    }
                 }
             });
             callback(null, bud);

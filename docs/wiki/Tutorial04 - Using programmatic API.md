@@ -50,7 +50,7 @@ You can mark .bud as an executable file and trigger rendering itself.
 module.exports = {
     force: true,
     mode: '444',
-    tmpl: 'This file is rendered from: ""',
+    tmpl: 'This file is rendered from: "{{from}}"',
     data: {
         from: require('path').basename(__filename)
     }
