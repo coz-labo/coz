@@ -83,7 +83,7 @@ Hi, my name is Rita. I like Banana.
 
 ### Separate Template and Data.
 
-For more comple rending, you may want to save template and and to seperated files from the `.bud` file.
+For more compile rending, you may want to save template and and to separated files from the `.bud` file.
 
 `tmpl` attribute could be a file path.
 
