@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for lib/util/minifying/index.js</title>
+    <title>Code coverage report for lib/template/buildin_helpers/index.js</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../../../prettify.css">
     <link rel="stylesheet" href="../../../base.css">
@@ -12,16 +12,16 @@
     </style>
 </head>
 <body>
-<div class="header high">
-    <h1>Code coverage report for <span class="entity">lib/util/minifying/index.js</span></h1>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">lib/template/buildin_helpers/index.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(2 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">50% <small>(1 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(1 / 1)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(2 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 1)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">50% <small>(1 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">lib/util/minifying/</a> &#187; index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">lib/template/buildin_helpers/</a> &#187; index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
@@ -44,17 +44,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Utility functions for minify source code.
- * @module coz/lib/util/minifying
- * @see module:coz/lib/util
+ * Buildin template helper modules.
+ * @module coz/lib/template/buildin_helpers
+ * @see module:coz/lib/template
  */
 &nbsp;
 "use strict";
 &nbsp;
 module.exports = {
-    get minifyJavascript() { return require('./minify_javascript'); }
+    get handlebarsHelpers<span class="fstat-no" title="function not covered" >() {</span> <span class="cstat-no" title="statement not covered" >return require('./handlebars_helpers'); </span>}
 };</pre></td></tr>
 </table></pre>
 
