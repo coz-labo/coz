@@ -1,0 +1,14 @@
+/**
+ * render-by-custom-cli.txt.bud
+ * This is a bud file for "examples/06-customize-coz"
+ */
+
+// Bud for coz CLI with custom configuration
+module.exports = {
+    force: true,
+    mode: '444',
+    tmpl: 'myCustomTmpl01',
+    data: {
+        'generator': __filename
+    }
+};

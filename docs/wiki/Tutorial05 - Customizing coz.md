@@ -1,3 +1,23 @@
+<a name="custom-setup-template"></a>
+### Custom setup with template engine.
+
+You can pass parameters to template engine via `setup` property in bud file.
+For example, handlebars engine accepts helper functions which can be called in template context.
+
+
+**render-with-custom-setup.txt.bud** (bud file)
+```javascript
+
+```
+
+Running this will generate:
+
+**render-with-custom-setup.txt** (generated file)
+```
+Hey, WATCH OUT!!!!
+```
+
+
 <a name="register-custom-template"></a>
 ### Register Custom Template Function.
 
@@ -42,7 +62,7 @@ coz.render({
 });
 ```
 
-Run this will generate:
+Running this will generate:
 
 **render-by-my-custom-tmpl-01.json** (generated file)
 ```
@@ -129,7 +149,7 @@ coz.render({
 });
 ```
 
-Run this will generate:
+Running this will generate:
 
 **render-by-my-custom-engine-01.txt** (generated file)
 ```

@@ -5,7 +5,7 @@ You can pass parameters to template engine via `setup` property in bud file.
 For example, handlebars engine accepts helper functions which can be called in template context.
 
 
-**render-with-custom-setup.txt.bud** (bud file)
+**.render-with-custom-setup.txt.bud** (bud file)
 ```javascript
 {@lang javascript}/**
  * render-with-custom-setup.txt.bud
@@ -32,7 +32,6 @@ module.exports = {
         'msg': 'watch out'
     }
 };
-
 if (!module.parent) {
     require('coz').render(__filename);
 }
@@ -221,7 +220,7 @@ HERE=$(dirname $0)
 cd ${HERE}
 
 # Render bud with custom configuration.
-coz render "render-by-custom-cli.txt.bud" -c "use-custom-config-from-cli.config.js"
+coz render ".render-by-custom-cli.txt.bud" -c "use-custom-config-from-cli.config.js"
 ```
 
 ___

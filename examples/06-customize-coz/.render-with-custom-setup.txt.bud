@@ -23,7 +23,6 @@ module.exports = {
         'msg': 'watch out'
     }
 };
-
 if (!module.parent) {
     require('coz').render(__filename);
 }
