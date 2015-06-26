@@ -69,6 +69,31 @@ exports['Handle error.'] = function (test) {
     test.done();
 };
 
+exports['With custom setup.'] = function (test) {
+    var coz = new Coz();
+    var filename = __dirname + '/../.work/some_coz_file0008.txt';
+    coz.render({
+        path: filename,
+        force: true,
+        tmpl: '{{myCustomHelper baz}}',
+        setup: {
+            helpers: {
+                myCustomHelper: function (txt) {
+                    return 'my-custom-' + txt;
+                }
+            }
+        },
+        data: {
+            baz: 'quz'
+        }
+    }, function (err) {
+        test.ifError(err);
+        var content = fs.readFileSync(filename).toString();
+        test.equal('my-custom-quz', content.trim());
+        test.done();
+    })
+};
+
 exports['Do render with configuration.'] = function (test) {
     var configuration = require.resolve('../mocks/mock-coz-configuration');
     var coz = new Coz(configuration);
