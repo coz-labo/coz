@@ -9,7 +9,11 @@ module.exports = indexJsBud({
         'Buildin template engine modules.'
     ],
     parentmodule: 'coz/lib/template',
-    module: 'coz/lib/template/buildinEngines',
+    module: 'coz/lib/template/buildin_engines',
     subclasses: ['HandlebarsEngine']
 });
 
+
+if(!module.parent){
+    coz.render(__filename);
+}

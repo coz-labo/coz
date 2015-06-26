@@ -22,6 +22,20 @@
 			<ul class="nav">
 				
 				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="module-coz_lib_template_buildin_helpers.handlebarsHelpers.html">coz/lib/template/buildin_helpers.handlebarsHelpers</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
 					<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b
 						class="caret"></b></a>
 
@@ -60,7 +74,11 @@
 						</li>
 						
 						<li>
-							<a href="module-coz_lib_template_buildinEngines.html">coz/lib/template/buildinEngines</a>
+							<a href="module-coz_lib_template_buildin_engines.html">coz/lib/template/buildin_engines</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template_buildin_helpers.html">coz/lib/template/buildin_helpers</a>
 						</li>
 						
 						<li>
@@ -304,8 +322,7 @@
 </tr>
 <tr>
 <td><code>path</code></td>
-<td>If <code>path</code> is not provided, coz guess it from bud file path. <br/> Remove `/^/.</td>
-<td>.bud$/<code>from basename and use it as writeout path. &lt;br/&gt; For example, **_&quot;.my-world.txt.bud&quot;_** without</code>path` property will generate <strong><em>&quot;my-world.txt&quot;</em></strong>.</td>
+<td>If <code>path</code> is not provided, coz guess it from bud file path. <br/> Remove <code>/^\./</code> and <code>/\.bud$/</code> from basename and use it as writeout path. <br/> For example, <strong><em>&quot;.my-world.txt.bud&quot;</em></strong> without <code>path</code> property will generate <strong><em>&quot;my-world.txt&quot;</em></strong>.</td>
 </tr>
 </tbody>
 </table>

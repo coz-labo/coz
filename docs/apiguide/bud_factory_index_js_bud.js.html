@@ -22,6 +22,20 @@
 			<ul class="nav">
 				
 				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="module-coz_lib_template_buildin_helpers.handlebarsHelpers.html">coz/lib/template/buildin_helpers.handlebarsHelpers</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
 					<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b
 						class="caret"></b></a>
 
@@ -60,7 +74,11 @@
 						</li>
 						
 						<li>
-							<a href="module-coz_lib_template_buildinEngines.html">coz/lib/template/buildinEngines</a>
+							<a href="module-coz_lib_template_buildin_engines.html">coz/lib/template/buildin_engines</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template_buildin_helpers.html">coz/lib/template/buildin_helpers</a>
 						</li>
 						
 						<li>
@@ -283,6 +301,7 @@ function indexJsBud(config) {
                             var name = path.basename(filename, path.extname(filename));
                             return {
                                 name: name,
+                                requireName: name.split(/\./g).map(string.snakecase).join('.'),
                                 isSubmodules: ~submodules.indexOf(string.camelcase(name)),
                                 isSubclass: ~subclasses.indexOf(string.camelcase(name)) || ~subclasses.indexOf(string.pascalcase(name))
                             };

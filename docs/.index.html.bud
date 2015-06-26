@@ -4,13 +4,19 @@
 
 "use strict";
 
-var fs = require('fs');
+var fs = require('fs'),
+    coz = require('../lib');
 
 module.exports = {
     force: true,
     mode: '444',
     data: {
         pkg: require('../package.json'),
-        style:String(fs.readFileSync(__dirname + '/.index.css'))
+        style: String(fs.readFileSync(__dirname + '/.index.css'))
     }
 };
+
+
+if (!module.parent) {
+    coz.render(__filename);
+}

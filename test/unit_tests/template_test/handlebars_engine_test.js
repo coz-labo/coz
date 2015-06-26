@@ -84,8 +84,3 @@ exports['Run buildin helpers.'] = function (test) {
     test.done();
 };
 
-exports['Get basedir.'] = function (test) {
-    var basedir = HandlebarsEngine._basedirWithContext({});
-    test.ok(basedir);
-    test.done();
-};

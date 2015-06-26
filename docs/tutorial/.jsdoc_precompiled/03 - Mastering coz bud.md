@@ -23,7 +23,7 @@ Some properties are optional and coz guess missing properties with some rules.
 | Property | Guessing Rule |
 | --- | --- |
 | `tmpl` | If `tmpl` is not provided, coz guess it from bud file path. <br/> For example, **_".my-world.txt.bud"_** without `tmpl` property  search template with pattern **_".my-world.txt.\*"_**. <br/> If no template found, uses JSON template as fallback. |
-| `path` | If `path` is not provided, coz guess it from bud file path. <br/> Remove `/^/.|\.bud$/` from basename and use it as writeout path. <br/> For example, **_".my-world.txt.bud"_** without `path` property will generate **_"my-world.txt"_**. |
+| `path` | If `path` is not provided, coz guess it from bud file path. <br/> Remove `/^\./` and `/\.bud$/` from basename and use it as writeout path. <br/> For example, **_".my-world.txt.bud"_** without `path` property will generate **_"my-world.txt"_**. |
 
 
 ___

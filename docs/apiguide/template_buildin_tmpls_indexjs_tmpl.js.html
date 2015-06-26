@@ -22,6 +22,20 @@
 			<ul class="nav">
 				
 				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="module-coz_lib_template_buildin_helpers.handlebarsHelpers.html">coz/lib/template/buildin_helpers.handlebarsHelpers</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
 					<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b
 						class="caret"></b></a>
 
@@ -60,7 +74,11 @@
 						</li>
 						
 						<li>
-							<a href="module-coz_lib_template_buildinEngines.html">coz/lib/template/buildinEngines</a>
+							<a href="module-coz_lib_template_buildin_engines.html">coz/lib/template/buildin_engines</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template_buildin_helpers.html">coz/lib/template/buildin_helpers</a>
 						</li>
 						
 						<li>
@@ -244,13 +262,13 @@ var precompiled = Handlebars.template({"1":function(depth0,helpers,partials,data
 	    return "\n * @see module:"
 	    + this.escapeExpression(this.lambda(depth0, depth0));
 	},"5":function(depth0,helpers,partials,data,blockParams,depths) {
-	    var stack1;
+	    var stack1, helper;
 	
 	  return ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.isSubmodules : depth0),{"name":"if","hash":{},"fn":this.program(6, data, 0, blockParams, depths),"inverse":this.noop,"data":data})) != null ? stack1 : "")
 	    + "    "
 	    + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.isSubclass : depth0),{"name":"if","hash":{},"fn":this.program(8, data, 0, blockParams, depths),"inverse":this.program(10, data, 0, blockParams, depths),"data":data})) != null ? stack1 : "")
 	    + "() { return require('./"
-	    + this.escapeExpression((helpers.snakecase || (depth0 &amp;&amp; depth0.snakecase) || helpers.helperMissing).call(depth0,(depth0 != null ? depth0.name : depth0),{"name":"snakecase","hash":{},"data":data}))
+	    + this.escapeExpression(((helper = (helper = helpers.requireName || (depth0 != null ? depth0.requireName : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"requireName","hash":{},"data":data}) : helper)))
 	    + "'); }"
 	    + ((stack1 = helpers['if'].call(depth0,(data &amp;&amp; data.last),{"name":"if","hash":{},"fn":this.program(12, data, 0, blockParams, depths),"inverse":this.program(14, data, 0, blockParams, depths),"data":data})) != null ? stack1 : "");
 	},"6":function(depth0,helpers,partials,data,blockParams,depths) {

@@ -1,0 +1,18 @@
+"use strict";
+
+var coz = require('../../../lib'),
+    indexJsBud = coz.factory.indexJsBud;
+
+module.exports = indexJsBud({
+    dirname: __dirname,
+    desc: [
+        'Buildin template helper modules.'
+    ],
+    parentmodule: 'coz/lib/template',
+    module: 'coz/lib/template/buildin_helpers',
+    subclasses: []
+});
+
+if(!module.parent){
+    coz.render(__filename);
+}

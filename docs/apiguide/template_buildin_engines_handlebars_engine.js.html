@@ -22,6 +22,20 @@
 			<ul class="nav">
 				
 				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="module-coz_lib_template_buildin_helpers.handlebarsHelpers.html">coz/lib/template/buildin_helpers.handlebarsHelpers</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
 					<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b
 						class="caret"></b></a>
 
@@ -60,7 +74,11 @@
 						</li>
 						
 						<li>
-							<a href="module-coz_lib_template_buildinEngines.html">coz/lib/template/buildinEngines</a>
+							<a href="module-coz_lib_template_buildin_engines.html">coz/lib/template/buildin_engines</a>
+						</li>
+						
+						<li>
+							<a href="module-coz_lib_template_buildin_helpers.html">coz/lib/template/buildin_helpers</a>
 						</li>
 						
 						<li>
@@ -227,8 +245,8 @@
  * @inner
  * @augments module:coz/lib/template~Engine
  * @constructor HandlebarsEngine
- * @param {object} options - Optional settings.
- * @param {object} options.helpers - Handlebars helper functions.
+ * @param {object} [options] - Optional settings.
+ * @param {object} [options.helpers] - Handlebars helper functions.
  * @see http://handlebarsjs.com/
  */
 
@@ -241,11 +259,12 @@ var core = require('../../core'),
     handlebars = ext.handlebars,
     Engine = require('../engine'),
     string = require('../../util/string'),
-    compiling = require('../../util/compiling');
+    compiling = require('../../util/compiling'),
+    buildinHelpers = require('../buildin_helpers/handlebars_helpers');
 
-/** @lends module:coz/lib/template/buildin_engines.HandlebarsEngine */
+/** @lends module:coz/lib/template/buildin_engines~HandlebarsEngine */
 var HandlebarsEngine = Engine.define(
-    /** @lends HandlebarsEngine.prototype */
+    /** @lends module:coz/lib/template/buildin_engines~HandlebarsEngine.prototype */
     {
         $name: 'handlebars',
         $aliases: [
@@ -253,12 +272,20 @@ var HandlebarsEngine = Engine.define(
             'hbs',
             'hbsEngine'
         ],
+        /**
+         * Initialize handlebars engine.
+         * @param {object} [options] - Optional settings.
+         * @param {object} [options.helpers] - Handlebars helper functions.
+         */
         init: function (options) {
             var s = this;
             options = options || {};
             s.registerHelpers(HandlebarsEngine.buildinHelpers);
             s.registerHelpers(options.helpers);
         },
+        /**
+         * @implements module:coz/lib/template~Engine.prototype.precompile
+         */
         precompile: function (source, callback) {
             var s = this;
             s._tryAsync(function () {
@@ -267,6 +294,9 @@ var HandlebarsEngine = Engine.define(
                 });
             }, callback);
         },
+        /**
+         * @implements module:coz/lib/template~Engine.prototype.compile
+         */
         compile: function (source, callback) {
             var s = this;
             s._tryAsync(function () {
@@ -339,126 +369,8 @@ HandlebarsEngine.createHandlebars = function () {
  * Handlebars helpers.
  * @type {object}
  */
-HandlebarsEngine.buildinHelpers = {
-    /**
-     * Get base name for a path.
-     * @param {string} value - Pathname.
-     * @returns {string} - Basename of given path.
-     */
-    basename: function (value) {
-        return path.basename(value);
-    },
-    /**
-     * Wrap string with braces.
-     * @param {string} value - Value to wrap with braces.
-     * @returns {string} - Wrapped string.
-     */
-    braces: function (value) {
-        return '{' + value + '}';
-    },
-    /**
-     * Convert into camel case string.
-     * @param {string} value - String value to convert.
-     * @returns {string} - Converted string.
-     */
-    camelcase: function (value) {
-        return string.camelcase(value);
-    },
-    /**
-     * Get directory name for a path.
-     * @param {string} value - Pathname.
-     * @returns {string} - Directory name of given path.
-     */
-    dirname: function (value) {
-        return path.dirname(value);
-    },
-    /**
-     * Get extension name for a path.
-     * @param {string} value - Pathname.
-     * @returns {string} - Extension name of given path.
-     */
-    extname: function (value) {
-        return path.extname(value);
-    },
-    /**
-     * Replace string into numeric.
-     * Only number or "." or "," will be remain.
-     * @param {string} value - String.
-     * @returns {string} - Numeric string.
-     */
-    numeric: function (value) {
-        return value &amp;&amp; String(value).replace(/[^\d\.,]/g, '') || '';
-    },
-    /**
-     * Read a file content.
-     * @param {string} value - Path name of the file to read.
-     * @returns {string} - File content string.
-     */
-    read: function (value) {
-        var basedir = HandlebarsEngine._basedirWithContext(arguments[1]);
-        var filename = path.resolve(basedir, value);
-        var exists = fs.existsSync(filename);
-        if (exists) {
-            return String(fs.readFileSync(filename));
-        }
-        return '';
-    },
-    /**
-     * Convert into lower case string.
-     * @param {string} value - String value to convert.
-     * @returns {string} - Converted string.
-     */
-    lowercase: function (value) {
-        return string.lowercase(value);
-    },
-    /**
-     * Convert into snake case string
-     * @param {string} value - String value to convert.
-     * @returns {string} - Converted string.
-     */
-    snakecase: function (value) {
-        return string.snakecase(value);
-    },
-    /**
-     * Convert into pascal case string
-     * @param {string} value - String value to convert.
-     * @returns {string} - Converted string.
-     */
-    pascalcase: function (value) {
-        return string.pascalcase(value);
-    },
-    /**
-     * Convert into sentence case string
-     * @param {string} value - String value to convert.
-     * @returns {string} - Converted string.
-     */
-    sentencecase: function (value) {
-        return string.sentencecase(value);
-    },
-    /**
-     * Convert into spinal case string
-     * @param {string} value - String value to convert.
-     * @returns {string} - Converted string.
-     */
-    spinalcase: function (value) {
-        return string.spinalcase(value);
-    },
-    /**
-     * Convert into upper case string.
-     * @param {string} value - String value to convert.
-     * @returns {string} - Converted string.
-     */
-    uppercase: function (value) {
-        return string.uppercase(value);
-    }
-};
+HandlebarsEngine.buildinHelpers = buildinHelpers;
 
-//Find basedir from $$bud in Handlebars context.
-HandlebarsEngine._basedirWithContext = function (ctx) {
-    var data = ctx &amp;&amp; ctx.data,
-        $$bud = data &amp;&amp; data.root &amp;&amp; data.root['$$bud'] || {};
-    return $$bud.cwd || process.cwd();
-};
 
 module.exports = HandlebarsEngine;</pre>
 	</article>
