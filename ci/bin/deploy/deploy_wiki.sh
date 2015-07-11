@@ -17,7 +17,7 @@ mkdir -p ${WORK_DIR}
 
 cd ${WORK_DIR}
 
-git clone https://github.com/okunishinishi/coz.wiki.git ${WORK_DIR}
+git clone https://github.com/okunishinishi/node-coz.wiki.git ${WORK_DIR}
 
 rm ${WORK_DIR}/*.md
 cp ${SRC_DIR}/*.md ${WORK_DIR}

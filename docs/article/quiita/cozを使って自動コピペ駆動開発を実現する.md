@@ -1,7 +1,7 @@
 cozを使って自動コピペ駆動開発を実現する
 ===
 
-ファイル生成ツール[coz](http://okunishinishi.github.io/coz/homepage)を使った自動コピペ開発の紹介です。
+ファイル生成ツール[coz](http://okunishinishi.github.io/node-coz/homepage)を使った自動コピペ開発の紹介です。
 
 目次
 ---

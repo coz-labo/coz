@@ -17,7 +17,7 @@ Flexible generator, which makes your project clean and maintainable.
 
 <!-- Banner start -->
 
-<a href="http://okunishinishi.github.io/coz/homepage"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a>
+<a href="http://okunishinishi.github.io/node-coz/homepage"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a>
 
 <!-- Banner end -->
 
@@ -291,7 +291,7 @@ Links
 <a name="09-links--website"></a>
 ### Website
 
-+ [coz](http://okunishinishi.github.io/coz/homepage)
++ [coz](http://okunishinishi.github.io/node-coz/homepage)
 + [coz @npm][my_npm_url]
 + [coz @github][my_repo_url]
 
@@ -314,7 +314,7 @@ Links
 
 + [Build Status @travis][my_travis_url]
 + [Analysis Result @codeclimate][my_codeclimate_url]
-+ [Issues @github](https://github.com/okunishinishi/coz/issues)
++ [Issues @github](https://github.com/okunishinishi/node-coz/issues)
 + [Coverage Report][my_coverage_url]
 
 <a name="10-license"></a>
@@ -350,14 +350,14 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 [npm_url]: https://www.npmjs.com/
 [nvm_url]: https://github.com/creationix/nvm
 [bitdeli_url]: https://bitdeli.com/free
-[my_bitdeli_badge_url]: https://d2weczhvl823v0.cloudfront.net/okunishinishi/coz/trend.png
-[my_repo_url]: https://github.com/okunishinishi/coz
-[my_travis_url]: http://travis-ci.org/okunishinishi/coz
-[my_travis_badge_url]: http://img.shields.io/travis/okunishinishi/coz.svg?style=flat
-[my_license_url]: https://github.com/okunishinishi/coz/blob/master/LICENSE
-[my_codeclimate_url]: http://codeclimate.com/github/okunishinishi/coz
-[my_codeclimate_badge_url]: http://img.shields.io/codeclimate/github/okunishinishi/coz.svg?style=flat
-[my_codeclimate_coverage_badge_url]: http://img.shields.io/codeclimate/coverage/github/okunishinishi/coz.svg?style=flat
+[my_bitdeli_badge_url]: https://d2weczhvl823v0.cloudfront.net/okunishinishi/node-coz/trend.png
+[my_repo_url]: https://github.com/okunishinishi/node-coz
+[my_travis_url]: http://travis-ci.org/okunishinishi/node-coz
+[my_travis_badge_url]: http://img.shields.io/travis/okunishinishi/node-coz.svg?style=flat
+[my_license_url]: https://github.com/okunishinishi/node-coz/blob/master/LICENSE
+[my_codeclimate_url]: http://codeclimate.com/github/okunishinishi/node-coz
+[my_codeclimate_badge_url]: http://img.shields.io/codeclimate/github/okunishinishi/node-coz.svg?style=flat
+[my_codeclimate_coverage_badge_url]: http://img.shields.io/codeclimate/coverage/github/okunishinishi/node-coz.svg?style=flat
 [my_apiguide_url]: http://okunishinishi.github.io/coz/apiguide/module-coz.html
 [my_coverage_url]: http://okunishinishi.github.io/coz/coverage/lcov-report
 [my_coverage_report_url]: http://okunishinishi.github.io/coz/coverage/lcov-report/
@@ -365,19 +365,19 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 [my_gratipay_budge_url]: http://img.shields.io/gratipay/okunishinishi.svg?style=flat
 [my_npm_url]: http://www.npmjs.org/package/coz
 [my_npm_budge_url]: http://img.shields.io/npm/v/coz.svg?style=flat
-[my_tag_url]: http://github.com/okunishinishi/coz/releases/tag/
-[my_tag_badge_url]: http://img.shields.io/github/tag/okunishinishi/coz.svg?style=flat
-[my_gemnasium_url]: http://gemnasium.com/okunishinishi/coz
-[my_gemnasium_badge_url]: http://img.shields.io/gemnasium/okunishinishi/coz.svg?style=flat
+[my_tag_url]: http://github.com/okunishinishi/node-coz/releases/tag/
+[my_tag_badge_url]: http://img.shields.io/github/tag/okunishinishi/node-coz.svg?style=flat
+[my_gemnasium_url]: http://gemnasium.com/okunishinishi/node-coz
+[my_gemnasium_badge_url]: http://img.shields.io/gemnasium/okunishinishi/node-coz.svg?style=flat
 
 <!-- Links end-->
 
 <!-- Tutorial urls start -->
 
-[01_installing_coz_url]: https://github.com/okunishinishi/coz/blob/master/docs/tutorial/01%20-%20Installing%20coz.md
-[02_rendering_bud_files_url]: https://github.com/okunishinishi/coz/blob/master/docs/tutorial/02%20-%20Rendering%20bud%20files.md
-[03_mastering_coz_bud_url]: https://github.com/okunishinishi/coz/blob/master/docs/tutorial/03%20-%20Mastering%20coz%20bud.md
-[04_using_programmatic_a_p_i_url]: https://github.com/okunishinishi/coz/blob/master/docs/tutorial/04%20-%20Using%20programmatic%20API.md
-[05_customizing_coz_url]: https://github.com/okunishinishi/coz/blob/master/docs/tutorial/05%20-%20Customizing%20coz.md
+[01_installing_coz_url]: https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/01%20-%20Installing%20coz.md
+[02_rendering_bud_files_url]: https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/02%20-%20Rendering%20bud%20files.md
+[03_mastering_coz_bud_url]: https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/03%20-%20Mastering%20coz%20bud.md
+[04_using_programmatic_a_p_i_url]: https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/04%20-%20Using%20programmatic%20API.md
+[05_customizing_coz_url]: https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/05%20-%20Customizing%20coz.md
 
 <!-- Tutorial urls end -->

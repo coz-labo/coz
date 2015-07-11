@@ -1,5 +1,5 @@
 TN:
-SF:/Users/okuni/projects/coz/lib/core.js
+SF:/Users/okuni/projects/node-coz/lib/core.js
 FN:36,(anonymous_1)
 FN:37,(anonymous_2)
 FN:38,(anonymous_3)
@@ -90,7 +90,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/coz.js
+SF:/Users/okuni/projects/node-coz/lib/coz.js
 FN:27,_parseConfig
 FN:32,Coz
 FN:49,(anonymous_3)
@@ -232,7 +232,7 @@ BRF:29
 BRH:23
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/ext.js
+SF:/Users/okuni/projects/node-coz/lib/ext.js
 FN:12,(anonymous_1)
 FN:16,(anonymous_2)
 FN:20,(anonymous_3)
@@ -272,7 +272,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/file/index.js
+SF:/Users/okuni/projects/node-coz/lib/util/file/index.js
 FN:10,(anonymous_1)
 FN:11,(anonymous_2)
 FN:12,(anonymous_3)
@@ -297,7 +297,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/flow/index.js
+SF:/Users/okuni/projects/node-coz/lib/util/flow/index.js
 FN:10,(anonymous_1)
 FNF:1
 FNH:1
@@ -310,7 +310,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/requiring/index.js
+SF:/Users/okuni/projects/node-coz/lib/util/requiring/index.js
 FN:10,(anonymous_1)
 FNF:1
 FNH:1
@@ -323,7 +323,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/index.js
+SF:/Users/okuni/projects/node-coz/lib/bud/index.js
 FN:14,(anonymous_1)
 FN:19,(anonymous_2)
 FN:24,(anonymous_3)
@@ -354,7 +354,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/engine_set.js
+SF:/Users/okuni/projects/node-coz/lib/template/engine_set.js
 FN:19,EngineSet
 FN:37,(anonymous_2)
 FN:51,(anonymous_3)
@@ -440,7 +440,7 @@ BRF:20
 BRH:17
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/buildin_engines/index.js
+SF:/Users/okuni/projects/node-coz/lib/template/buildin_engines/index.js
 FN:14,(anonymous_1)
 FNF:1
 FNH:1
@@ -453,7 +453,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/engine.js
+SF:/Users/okuni/projects/node-coz/lib/template/engine.js
 FN:15,Engine
 FN:45,(anonymous_2)
 FN:58,(anonymous_3)
@@ -540,7 +540,7 @@ BRF:10
 BRH:9
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/copying/index.js
+SF:/Users/okuni/projects/node-coz/lib/util/copying/index.js
 FN:10,(anonymous_1)
 FN:11,(anonymous_2)
 FNF:2
@@ -556,7 +556,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/_approximately_equal.js
+SF:/Users/okuni/projects/node-coz/lib/template/_approximately_equal.js
 FN:24,_approximatelyEqual
 FNF:1
 FNH:1
@@ -579,7 +579,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/tmpl_set.js
+SF:/Users/okuni/projects/node-coz/lib/template/tmpl_set.js
 FN:15,TmplSet
 FN:28,(anonymous_2)
 FN:41,(anonymous_3)
@@ -653,7 +653,7 @@ BRF:18
 BRH:17
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/buildin_tmpls/index.js
+SF:/Users/okuni/projects/node-coz/lib/template/buildin_tmpls/index.js
 FN:10,(anonymous_1)
 FN:11,(anonymous_2)
 FN:12,(anonymous_3)
@@ -675,7 +675,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/bud_loader.js
+SF:/Users/okuni/projects/node-coz/lib/bud/bud_loader.js
 FN:24,BudLoader
 FN:34,(anonymous_2)
 FN:38,(anonymous_3)
@@ -804,7 +804,7 @@ BRF:22
 BRH:19
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/_next_tick.js
+SF:/Users/okuni/projects/node-coz/lib/bud/_next_tick.js
 FN:13,_nextTick
 FN:14,(anonymous_2)
 FNF:2
@@ -821,7 +821,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/_concat_buds.js
+SF:/Users/okuni/projects/node-coz/lib/bud/_concat_buds.js
 FN:18,_concatBuds
 FNF:1
 FNH:1
@@ -836,7 +836,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/bud.js
+SF:/Users/okuni/projects/node-coz/lib/bud/bud.js
 FN:25,Bud
 FN:92,(anonymous_2)
 FN:95,_assertType
@@ -886,7 +886,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/bud_compiler.js
+SF:/Users/okuni/projects/node-coz/lib/bud/bud_compiler.js
 FN:26,BudCompiler
 FN:39,(anonymous_2)
 FN:43,(anonymous_3)
@@ -1038,7 +1038,7 @@ BRF:28
 BRH:25
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/index.js
+SF:/Users/okuni/projects/node-coz/lib/template/index.js
 FN:15,(anonymous_1)
 FN:16,(anonymous_2)
 FN:21,(anonymous_3)
@@ -1066,7 +1066,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/_async_with_timeout.js
+SF:/Users/okuni/projects/node-coz/lib/bud/_async_with_timeout.js
 FN:14,_asyncWithTimeout
 FN:15,(anonymous_2)
 FN:23,(anonymous_3)
@@ -1098,7 +1098,7 @@ BRF:4
 BRH:1
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/_resolve_string_value.js
+SF:/Users/okuni/projects/node-coz/lib/bud/_resolve_string_value.js
 FN:18,_resolveStringValue
 FN:25,(anonymous_2)
 FNF:2
@@ -1129,7 +1129,7 @@ BRF:6
 BRH:6
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/bud_remover.js
+SF:/Users/okuni/projects/node-coz/lib/bud/bud_remover.js
 FN:21,BudRemover
 FN:31,(anonymous_2)
 FN:35,(anonymous_3)
@@ -1178,7 +1178,7 @@ BRF:2
 BRH:1
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/bud_writer.js
+SF:/Users/okuni/projects/node-coz/lib/bud/bud_writer.js
 FN:19,BudWriter
 FN:29,(anonymous_2)
 FN:33,(anonymous_3)
@@ -1272,7 +1272,7 @@ BRF:12
 BRH:12
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/bud_logger.js
+SF:/Users/okuni/projects/node-coz/lib/bud/bud_logger.js
 FN:19,BudLogger
 FN:31,(anonymous_2)
 FN:33,(anonymous_3)
@@ -1338,7 +1338,7 @@ BRF:8
 BRH:6
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/logging/console_logger.js
+SF:/Users/okuni/projects/node-coz/lib/util/logging/console_logger.js
 FN:14,ConsoleLogger
 FN:22,(anonymous_2)
 FN:24,(anonymous_3)
@@ -1402,7 +1402,7 @@ BRF:6
 BRH:5
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/requiring/require_safely.js
+SF:/Users/okuni/projects/node-coz/lib/util/requiring/require_safely.js
 FN:14,requireSafely
 FNF:1
 FNH:1
@@ -1432,7 +1432,7 @@ BRF:6
 BRH:6
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/buildin_engines/handlebars_engine.js
+SF:/Users/okuni/projects/node-coz/lib/template/buildin_engines/handlebars_engine.js
 FN:44,(anonymous_1)
 FN:54,(anonymous_2)
 FN:56,(anonymous_3)
@@ -1507,7 +1507,7 @@ BRF:8
 BRH:7
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/compiling/index.js
+SF:/Users/okuni/projects/node-coz/lib/util/compiling/index.js
 FN:10,(anonymous_1)
 FN:11,(anonymous_2)
 FNF:2
@@ -1523,7 +1523,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/buildin_helpers/handlebars_helpers.js
+SF:/Users/okuni/projects/node-coz/lib/template/buildin_helpers/handlebars_helpers.js
 FN:17,_basedirWithContext
 FN:31,(anonymous_2)
 FN:39,(anonymous_3)
@@ -1601,7 +1601,7 @@ BRF:13
 BRH:8
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/buildin_tmpls/indexjs_tmpl.js
+SF:/Users/okuni/projects/node-coz/lib/template/buildin_tmpls/indexjs_tmpl.js
 FN:15,(anonymous_1)
 FN:20,(anonymous_2)
 FN:23,(anonymous_3)
@@ -1751,7 +1751,7 @@ BRF:100
 BRH:40
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/buildin_tmpls/json_tmpl.js
+SF:/Users/okuni/projects/node-coz/lib/template/buildin_tmpls/json_tmpl.js
 FN:12,jsonTmpl
 FNF:1
 FNH:1
@@ -1767,7 +1767,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/buildin_tmpls/nodeunit_testcasejs_tmpl.js
+SF:/Users/okuni/projects/node-coz/lib/template/buildin_tmpls/nodeunit_testcasejs_tmpl.js
 FN:15,(anonymous_1)
 FN:30,nodeunitTestcasejsTmpl
 FNF:2
@@ -1815,7 +1815,7 @@ BRF:26
 BRH:11
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/buildin_tmpls/text_tmpl.js
+SF:/Users/okuni/projects/node-coz/lib/template/buildin_tmpls/text_tmpl.js
 FN:12,textTmpl
 FNF:1
 FNH:1
@@ -1831,7 +1831,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/flow/each_files.js
+SF:/Users/okuni/projects/node-coz/lib/util/flow/each_files.js
 FN:17,eachFiles
 FN:19,(anonymous_2)
 FN:22,(anonymous_3)
@@ -1852,7 +1852,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/file/expand_glob.js
+SF:/Users/okuni/projects/node-coz/lib/util/file/expand_glob.js
 FN:19,expandGlob
 FN:27,(anonymous_2)
 FN:31,(anonymous_3)
@@ -1911,7 +1911,7 @@ BRF:18
 BRH:14
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/copying/copy.js
+SF:/Users/okuni/projects/node-coz/lib/util/copying/copy.js
 FN:13,copy
 FNF:1
 FNH:1
@@ -1935,7 +1935,7 @@ BRF:4
 BRH:3
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/copying/fallback_copy.js
+SF:/Users/okuni/projects/node-coz/lib/util/copying/fallback_copy.js
 FN:14,fallbackCopy
 FNF:1
 FNH:1
@@ -1964,7 +1964,7 @@ BRF:6
 BRH:5
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/file/read_file.js
+SF:/Users/okuni/projects/node-coz/lib/util/file/read_file.js
 FN:18,readFile
 FN:24,(anonymous_2)
 FNF:2
@@ -1996,7 +1996,7 @@ BRF:8
 BRH:7
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/file/unlink_file.js
+SF:/Users/okuni/projects/node-coz/lib/util/file/unlink_file.js
 FN:19,_doUnlink
 FN:21,chmodIfNeeded
 FN:23,(anonymous_3)
@@ -2057,7 +2057,7 @@ BRF:12
 BRH:11
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/file/is_dir.js
+SF:/Users/okuni/projects/node-coz/lib/util/file/is_dir.js
 FN:16,isDir
 FN:17,(anonymous_2)
 FN:22,(anonymous_3)
@@ -2086,7 +2086,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/compiling/compile_handlebars.js
+SF:/Users/okuni/projects/node-coz/lib/util/compiling/compile_handlebars.js
 FN:25,compileHandlebars
 FNF:1
 FNH:1
@@ -2109,7 +2109,7 @@ BRF:4
 BRH:3
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/compiling/_create_handlebars.js
+SF:/Users/okuni/projects/node-coz/lib/util/compiling/_create_handlebars.js
 FN:15,_createHandlebars
 FN:18,(anonymous_2)
 FNF:2
@@ -2133,7 +2133,7 @@ BRF:2
 BRH:1
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/file/write_file.js
+SF:/Users/okuni/projects/node-coz/lib/util/file/write_file.js
 FN:25,writeFile
 FN:32,(anonymous_2)
 FN:39,(anonymous_3)
@@ -2180,7 +2180,7 @@ BRF:12
 BRH:11
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/index.js
+SF:/Users/okuni/projects/node-coz/lib/index.js
 FNF:0
 FNH:0
 DA:24,1
@@ -2201,7 +2201,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/index.js
+SF:/Users/okuni/projects/node-coz/lib/util/index.js
 FN:14,(anonymous_1)
 FN:19,(anonymous_2)
 FN:24,(anonymous_3)
@@ -2238,7 +2238,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/factory/index.js
+SF:/Users/okuni/projects/node-coz/lib/bud/factory/index.js
 FN:10,(anonymous_1)
 FN:11,(anonymous_2)
 FNF:2
@@ -2254,7 +2254,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/factory/index_js_bud.js
+SF:/Users/okuni/projects/node-coz/lib/bud/factory/index_js_bud.js
 FN:29,indexJsBud
 FN:43,(anonymous_2)
 FN:50,(anonymous_3)
@@ -2297,7 +2297,7 @@ BRF:10
 BRH:10
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/sorting/index.js
+SF:/Users/okuni/projects/node-coz/lib/util/sorting/index.js
 FN:10,(anonymous_1)
 FNF:1
 FNH:1
@@ -2310,7 +2310,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/filtering/index.js
+SF:/Users/okuni/projects/node-coz/lib/util/filtering/index.js
 FN:10,(anonymous_1)
 FN:11,(anonymous_2)
 FNF:2
@@ -2326,7 +2326,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/bud/factory/nodeunit_testcase_js_bud.js
+SF:/Users/okuni/projects/node-coz/lib/bud/factory/nodeunit_testcase_js_bud.js
 FN:21,nodeunitTestcaseJsBud
 FN:26,(anonymous_2)
 FN:29,(anonymous_3)
@@ -2367,7 +2367,7 @@ BRF:2
 BRH:1
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/template/buildin_helpers/index.js
+SF:/Users/okuni/projects/node-coz/lib/template/buildin_helpers/index.js
 FN:10,(anonymous_1)
 FNF:1
 FNH:0
@@ -2380,7 +2380,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/compiling/precompile_handlebars.js
+SF:/Users/okuni/projects/node-coz/lib/util/compiling/precompile_handlebars.js
 FN:25,precompileHandlebars
 FNF:1
 FNH:1
@@ -2403,7 +2403,7 @@ BRF:4
 BRH:3
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/filtering/empty_reject.js
+SF:/Users/okuni/projects/node-coz/lib/util/filtering/empty_reject.js
 FN:11,emptyReject
 FN:15,(anonymous_2)
 FNF:2
@@ -2427,7 +2427,7 @@ BRF:5
 BRH:5
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/filtering/pattern_reject.js
+SF:/Users/okuni/projects/node-coz/lib/util/filtering/pattern_reject.js
 FN:12,patternReject
 FN:16,(anonymous_2)
 FNF:2
@@ -2448,7 +2448,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/logging/index.js
+SF:/Users/okuni/projects/node-coz/lib/util/logging/index.js
 FN:14,(anonymous_1)
 FNF:1
 FNH:1
@@ -2461,7 +2461,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/minifying/index.js
+SF:/Users/okuni/projects/node-coz/lib/util/minifying/index.js
 FN:10,(anonymous_1)
 FNF:1
 FNH:1
@@ -2474,7 +2474,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/minifying/minify_javascript.js
+SF:/Users/okuni/projects/node-coz/lib/util/minifying/minify_javascript.js
 FN:17,minifyJavascript
 FNF:1
 FNH:1
@@ -2496,7 +2496,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:/Users/okuni/projects/coz/lib/util/sorting/string_sort.js
+SF:/Users/okuni/projects/node-coz/lib/util/sorting/string_sort.js
 FN:13,stringSort
 FN:19,(anonymous_2)
 FNF:2

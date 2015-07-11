@@ -14,7 +14,7 @@ var engine = new HandlebarsEngine({});
 
 var BANNER_SIZE = 128;
 
-var TUTORIAL_BASE = 'https://github.com/okunishinishi/coz/blob/master/';
+var TUTORIAL_BASE = 'https://github.com/okunishinishi/node-coz/blob/master/';
 
 function _section(filename, callback) {
     async.waterfall([
