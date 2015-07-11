@@ -358,9 +358,9 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 [my_codeclimate_url]: http://codeclimate.com/github/okunishinishi/node-coz
 [my_codeclimate_badge_url]: http://img.shields.io/codeclimate/github/okunishinishi/node-coz.svg?style=flat
 [my_codeclimate_coverage_badge_url]: http://img.shields.io/codeclimate/coverage/github/okunishinishi/node-coz.svg?style=flat
-[my_apiguide_url]: http://okunishinishi.github.io/coz/apiguide/module-coz.html
-[my_coverage_url]: http://okunishinishi.github.io/coz/coverage/lcov-report
-[my_coverage_report_url]: http://okunishinishi.github.io/coz/coverage/lcov-report/
+[my_apiguide_url]: http://okunishinishi.github.io/node-coz/apiguide/module-coz.html
+[my_coverage_url]: http://okunishinishi.github.io/node-coz/coverage/lcov-report
+[my_coverage_report_url]: http://okunishinishi.github.io/node-coz/coverage/lcov-report/
 [my_gratipay_url]: https://gratipay.com/okunishinishi/
 [my_gratipay_budge_url]: http://img.shields.io/gratipay/okunishinishi.svg?style=flat
 [my_npm_url]: http://www.npmjs.org/package/coz
