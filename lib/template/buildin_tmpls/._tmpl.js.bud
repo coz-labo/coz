@@ -6,7 +6,7 @@
 
 var core = require('../../core'),
     ext = require('../../ext'),
-    string = require('../../util/string'),
+    string = ext.stringcase,
     HandlebarsEngine = require('../buildin_engines').HandlebarsEngine,
     async = ext.async,
     glob = ext.glob,

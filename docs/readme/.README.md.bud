@@ -4,7 +4,7 @@ var path = require('path'),
     glob = require('glob'),
     format = require('util').format,
     async = require('async'),
-    string = require('../../lib/util/string'),
+    string = require('stringcase'),
     fs = require('fs');
 
 var pkg = require('../../package.json'),

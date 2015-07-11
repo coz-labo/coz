@@ -6,7 +6,7 @@
 
 var coz = require('../../lib'),
     path = coz.core.path,
-    string = coz.util.string,
+    string = coz.ext.stringcase,
     fs = coz.core.fs,
     EOL = coz.core.os.EOL,
     format = coz.core.util.format,

@@ -6,7 +6,7 @@ var coz = require('../../../lib'),
     fs = coz.core.fs,
     os = coz.core.os,
     path = coz.core.path,
-    string = coz.string,
+    string = coz.ext.stringcase,
     EOL = os.EOL,
     HandlebarsEngine = coz.template.buildinEngines.HandlebarsEngine;
 
