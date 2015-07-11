@@ -1,6 +1,6 @@
 {
     "name": "coz",
-    "version": "1.0.22",
+    "version": "1.0.23",
     "description": "Flexible generator, which makes your project clean and maintainable.",
     "main": "lib/index.js",
     "bin": {
@@ -33,6 +33,7 @@
     "dependencies": {
         "async": "^1.2.0",
         "cli-color": "^1.0.0",
+        "colorprint": "^1.0.3",
         "commander": "^2.8.1",
         "glob": "^5.0.10",
         "handlebars": "^3.0.3",

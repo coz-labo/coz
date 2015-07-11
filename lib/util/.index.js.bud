@@ -15,7 +15,6 @@ module.exports = indexJsBud({
         'copying',
         'file',
         'filtering',
-        'logging',
         'minifying',
         'sorting',
         'string'
