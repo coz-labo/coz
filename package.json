@@ -11,7 +11,8 @@
     "cover": "istanbul cover nodeunit",
     "report": "codeclimate-test-reporter",
     "apiguide": "jsdoc",
-    "versionup": "versionup"
+    "versionup": "versionup",
+    "taggit": "taggit"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,9 @@
   "keywords": [
     "development",
     "generator",
-    "sourcecode"
+    "sourcecode",
+    "automation",
+    "template"
   ],
   "author": {
     "name": "Taka Okunishi",
@@ -50,7 +53,8 @@
     "istanbul": "^0.3.14",
     "jsdoc": "^3.3.0",
     "nodeunit": "^0.9.1",
-    "versionup": "^1.0.4"
+    "taggit": "^1.0.3",
+    "versionup": "^1.0.7"
   },
   "engines": {
     "node": ">=0.10.3"
