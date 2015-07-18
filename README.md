@@ -52,25 +52,25 @@ will do the magic.
 Table of Contents
 -----
 - [About coz](#01-about)
-    - [What's This?](#01-about--whats--this)
-    - [What For?](#01-about--what--for)
-    - [Why This?](#01-about--why--this)
+    - [What's This?](#01-about-whats--this)
+    - [What For?](#01-about-what--for)
+    - [Why This?](#01-about-why--this)
 - [Getting started](#02-howto)
-    - [Requirements](#02-howto--requirements)
-    - [Installation](#02-howto--installation)
-    - [Quickstart](#02-howto--quickstart)
-    - [Programmatic API](#02-howto--programmatic--a-p-i)
+    - [Requirements](#02-howto-requirements)
+    - [Installation](#02-howto-installation)
+    - [Quickstart](#02-howto-quickstart)
+    - [Programmatic API](#02-howto-programmatic--a-p-i)
 - [Specifications](#03-spec)
-    - [Bud File Specification](#03-spec--bud--file--specification)
+    - [Bud File Specification](#03-spec-bud--file--specification)
 - [Links](#09-links)
-    - [Website](#09-links--website)
-    - [Tutorials](#09-links--tutorials)
-    - [Documents](#09-links--documents)
-    - [Reports](#09-links--reports)
+    - [Website](#09-links-website)
+    - [Tutorials](#09-links-tutorials)
+    - [Documents](#09-links-documents)
+    - [Reports](#09-links-reports)
 - [License](#10-license)
 - [About this project](#11-project)
-    - [Author](#11-project--author)
-    - [Donation](#11-project--donation)
+    - [Author](#11-project-author)
+    - [Donation](#11-project-donation)
 
 <!-- Table end -->
 
@@ -81,7 +81,7 @@ Table of Contents
 About coz
 ------
 
-<a name="01-about--whats--this"></a>
+<a name="01-about-whats--this"></a>
 ### What's This?
 
 The basic idea of coz is that creating files from files.
@@ -93,7 +93,7 @@ The basic idea of coz is that creating files from files.
 <img style="height:256px;" src="assets/images/coz-outline.jpg" height="256">
 
 
-<a name="01-about--what--for"></a>
+<a name="01-about-what--for"></a>
 ### What For?
 
 Automation. Generating files makes your project clean and maintainable.
@@ -108,7 +108,7 @@ For example,
 + Generate empty test case files from project files.
 
 
-<a name="01-about--why--this"></a>
+<a name="01-about-why--this"></a>
 ### Why This?
 
 + **Lightweight and fast**
@@ -126,13 +126,13 @@ For example,
 Getting started
 ------
 
-<a name="02-howto--requirements"></a>
+<a name="02-howto-requirements"></a>
 ### Requirements
 
 + [node.js&gt;=0.10.3][nodejs_url]
 
 
-<a name="02-howto--installation"></a>
+<a name="02-howto-installation"></a>
 ### Installation
 
 coz is available as an [NPM][npm_url] package.
@@ -146,7 +146,7 @@ Or you can install it without `-g` option and use [Programmatic API](#programmat
 For more details, see tutorial section "[01 - Installing coz][01_installing_coz_url]".
 
 
-<a name="02-howto--quickstart"></a>
+<a name="02-howto-quickstart"></a>
 ### Quickstart
 
 **.who-likes-what.txt.bud** (bud file)
@@ -198,7 +198,7 @@ For more details, see tutorial section "[02 - Rendering bud files][02_rendering_
 
 
 <a name="programmatic-api" />
-<a name="02-howto--programmatic--a-p-i"></a>
+<a name="02-howto-programmatic--a-p-i"></a>
 ### Programmatic API
 
 coz provides programmatic API which enables you to execute coz commands from Node.js program.
@@ -229,7 +229,7 @@ Specifications
 ---------
 
 <a name="spec-bud-spec"></a>
-<a name="03-spec--bud--file--specification"></a>
+<a name="03-spec-bud--file--specification"></a>
 ### Bud File Specification
 
 A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.
@@ -288,14 +288,14 @@ List of properties configurable in bud files.
 Links
 ------
 
-<a name="09-links--website"></a>
+<a name="09-links-website"></a>
 ### Website
 
 + [coz](http://okunishinishi.github.io/node-coz/homepage)
 + [coz @npm][my_npm_url]
 + [coz @github][my_repo_url]
 
-<a name="09-links--tutorials"></a>
+<a name="09-links-tutorials"></a>
 ### Tutorials
 
 + [01 - Installing coz][01_installing_coz_url]
@@ -304,14 +304,14 @@ Links
 + [04 - Using programmatic API][04_using_programmatic_a_p_i_url]
 + [05 - Customizing coz][05_customizing_coz_url]
 
-<a name="09-links--documents"></a>
+<a name="09-links-documents"></a>
 ### Documents
 
 [![Inline docs][my_inch_badge_url]][my_inch_url]
 
 + [API Guide][my_apiguide_url]
 
-<a name="09-links--reports"></a>
+<a name="09-links-reports"></a>
 ### Reports
 
 + [Build Status @travis][my_travis_url]
@@ -330,12 +330,12 @@ About this project
 
 [![Bitdeli Badge][my_bitdeli_badge_url]][bitdeli_url]
 
-<a name="11-project--author"></a>
+<a name="11-project-author"></a>
 ### Author
 
 + [Taka Okunishi](http://okunishitaka.com)
 
-<a name="11-project--donation"></a>
+<a name="11-project-donation"></a>
 ### Donation
 
 Support this project and [others by okunishinishi][my_gratipay_url] via [gratipay][my_gratipay_url].

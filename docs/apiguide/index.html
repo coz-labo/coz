@@ -110,10 +110,6 @@
 						</li>
 						
 						<li>
-							<a href="module-coz_lib_util_minifying.html">coz/lib/util/minifying</a>
-						</li>
-						
-						<li>
 							<a href="module-coz_lib_util_requiring.html">coz/lib/util/requiring</a>
 						</li>
 						
@@ -272,40 +268,40 @@ module.exports = {
 <!-- Table start -->
 <h2>Table of Contents</h2><ul>
 <li><a href="#01-about">About coz</a><ul>
-<li><a href="#01-about--whats--this">What's This?</a></li>
-<li><a href="#01-about--what--for">What For?</a></li>
-<li><a href="#01-about--why--this">Why This?</a></li>
+<li><a href="#01-about-whats--this">What's This?</a></li>
+<li><a href="#01-about-what--for">What For?</a></li>
+<li><a href="#01-about-why--this">Why This?</a></li>
 </ul>
 </li>
 <li><a href="#02-howto">Getting started</a><ul>
-<li><a href="#02-howto--requirements">Requirements</a></li>
-<li><a href="#02-howto--installation">Installation</a></li>
-<li><a href="#02-howto--quickstart">Quickstart</a></li>
-<li><a href="#02-howto--programmatic--a-p-i">Programmatic API</a></li>
+<li><a href="#02-howto-requirements">Requirements</a></li>
+<li><a href="#02-howto-installation">Installation</a></li>
+<li><a href="#02-howto-quickstart">Quickstart</a></li>
+<li><a href="#02-howto-programmatic--a-p-i">Programmatic API</a></li>
 </ul>
 </li>
 <li><a href="#03-spec">Specifications</a><ul>
-<li><a href="#03-spec--bud--file--specification">Bud File Specification</a></li>
+<li><a href="#03-spec-bud--file--specification">Bud File Specification</a></li>
 </ul>
 </li>
 <li><a href="#09-links">Links</a><ul>
-<li><a href="#09-links--website">Website</a></li>
-<li><a href="#09-links--tutorials">Tutorials</a></li>
-<li><a href="#09-links--documents">Documents</a></li>
-<li><a href="#09-links--reports">Reports</a></li>
+<li><a href="#09-links-website">Website</a></li>
+<li><a href="#09-links-tutorials">Tutorials</a></li>
+<li><a href="#09-links-documents">Documents</a></li>
+<li><a href="#09-links-reports">Reports</a></li>
 </ul>
 </li>
 <li><a href="#10-license">License</a></li>
 <li><a href="#11-project">About this project</a><ul>
-<li><a href="#11-project--author">Author</a></li>
-<li><a href="#11-project--donation">Donation</a></li>
+<li><a href="#11-project-author">Author</a></li>
+<li><a href="#11-project-donation">Donation</a></li>
 </ul>
 </li>
 </ul>
 <!-- Table end -->
 <!-- Sections start -->
 <p><a name="01-about"></a></p>
-<h2>About coz</h2><p><a name="01-about--whats--this"></a></p>
+<h2>About coz</h2><p><a name="01-about-whats--this"></a></p>
 <h3>What's This?</h3><p>The basic idea of coz is that creating files from files.</p>
 <ul>
 <li>Writing a meta file called <a href="#spec-bud-spec">.bud file</a>.</li>
@@ -313,7 +309,7 @@ module.exports = {
 <li>Files will be generated!</li>
 </ul>
 <p><img style="height:256px;" src="assets/images/coz-outline.jpg" height="256"></p>
-<p><a name="01-about--what--for"></a></p>
+<p><a name="01-about-what--for"></a></p>
 <h3>What For?</h3><p>Automation. Generating files makes your project clean and maintainable.</p>
 <p>You can define a single datasource and distribute it in various forms.</p>
 <p>For example,</p>
@@ -323,7 +319,7 @@ module.exports = {
 <li>Generate Web API document and Swift client entity from json schema objects.</li>
 <li>Generate empty test case files from project files.</li>
 </ul>
-<p><a name="01-about--why--this"></a></p>
+<p><a name="01-about-why--this"></a></p>
 <h3>Why This?</h3><ul>
 <li><strong>Lightweight and fast</strong><ul>
 <li>coz does nothing bud file templating, it's very fast.</li>
@@ -341,16 +337,16 @@ module.exports = {
 </li>
 </ul>
 <p><a name="02-howto"></a></p>
-<h2>Getting started</h2><p><a name="02-howto--requirements"></a></p>
+<h2>Getting started</h2><p><a name="02-howto-requirements"></a></p>
 <h3>Requirements</h3><ul>
 <li><a href="http://nodejs.org/">node.js&gt;=0.10.3</a></li>
 </ul>
-<p><a name="02-howto--installation"></a></p>
+<p><a name="02-howto-installation"></a></p>
 <h3>Installation</h3><p>coz is available as an <a href="https://www.npmjs.com/">NPM</a> package.</p>
 <pre class="prettyprint source lang-bash"><code># Install coz as a global module.
 $ npm install coz -g</code></pre><p>Or you can install it without <code>-g</code> option and use <a href="#programmatic-api">Programmatic API</a>.
 For more details, see tutorial section &quot;<a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/01%20-%20Installing%20coz.md">01 - Installing coz</a>&quot;.</p>
-<p><a name="02-howto--quickstart"></a></p>
+<p><a name="02-howto-quickstart"></a></p>
 <h3>Quickstart</h3><p><strong>.who-likes-what.txt.bud</strong> (bud file)</p>
 <pre class="prettyprint source lang-javascript"><code>/**
  * .who-likes-what.txt.bud
@@ -386,7 +382,7 @@ module.exports = {
 $ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will generate a file named <code>who-likes-what.txt</code>.</p>
 <p>For more details, see tutorial section &quot;<a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/02%20-%20Rendering%20bud%20files.md">02 - Rendering bud files</a>&quot;.</p>
 <p><a name="programmatic-api" />
-<a name="02-howto--programmatic--a-p-i"></a></p>
+<a name="02-howto-programmatic--a-p-i"></a></p>
 <h3>Programmatic API</h3><p>coz provides programmatic API which enables you to execute coz commands from Node.js program.</p>
 <pre class="prettyprint source lang-javascript"><code>#!/usr/bin/env node
 
@@ -405,7 +401,7 @@ coz.render([
 });</code></pre><p>For more details, see tutorial section &quot;<a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/04%20-%20Using%20programmatic%20API.md">04 - Using programmatic API</a>&quot;.</p>
 <p><a name="03-spec"></a></p>
 <h2>Specifications</h2><p><a name="spec-bud-spec"></a>
-<a name="03-spec--bud--file--specification"></a></p>
+<a name="03-spec-bud--file--specification"></a></p>
 <h3>Bud File Specification</h3><p>A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.</p>
 <p>You can specify bud data by writing <code>.bud</code> file, which is actually a javascript file and could be written in Node.js format.</p>
 <pre class="prettyprint source lang-javascript"><code>module.exports = {
@@ -491,13 +487,13 @@ coz.render([
 </tbody>
 </table>
 <p><a name="09-links"></a></p>
-<h2>Links</h2><p><a name="09-links--website"></a></p>
+<h2>Links</h2><p><a name="09-links-website"></a></p>
 <h3>Website</h3><ul>
 <li><a href="http://okunishinishi.github.io/node-coz/homepage">coz</a></li>
 <li><a href="http://www.npmjs.org/package/coz">coz @npm</a></li>
 <li><a href="https://github.com/okunishinishi/node-coz">coz @github</a></li>
 </ul>
-<p><a name="09-links--tutorials"></a></p>
+<p><a name="09-links-tutorials"></a></p>
 <h3>Tutorials</h3><ul>
 <li><a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/01%20-%20Installing%20coz.md">01 - Installing coz</a></li>
 <li><a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/02%20-%20Rendering%20bud%20files.md">02 - Rendering bud files</a></li>
@@ -505,11 +501,12 @@ coz.render([
 <li><a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/04%20-%20Using%20programmatic%20API.md">04 - Using programmatic API</a></li>
 <li><a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/05%20-%20Customizing%20coz.md">05 - Customizing coz</a></li>
 </ul>
-<p><a name="09-links--documents"></a></p>
-<h3>Documents</h3><ul>
+<p><a name="09-links-documents"></a></p>
+<h3>Documents</h3><p><a href="http://inch-ci.org/github/okunishinishi/node-coz"><img src="http://inch-ci.org/github/okunishinishi/node-coz.svg?branch=master" alt="Inline docs"></a></p>
+<ul>
 <li><a href="http://okunishinishi.github.io/node-coz/apiguide/module-coz.html">API Guide</a></li>
 </ul>
-<p><a name="09-links--reports"></a></p>
+<p><a name="09-links-reports"></a></p>
 <h3>Reports</h3><ul>
 <li><a href="http://travis-ci.org/okunishinishi/node-coz">Build Status @travis</a></li>
 <li><a href="http://codeclimate.com/github/okunishinishi/node-coz">Analysis Result @codeclimate</a></li>
@@ -520,11 +517,11 @@ coz.render([
 <h2>License</h2><p>This software is released under the <a href="https://github.com/okunishinishi/node-coz/blob/master/LICENSE">MIT License</a>.</p>
 <p><a name="11-project"></a></p>
 <h2>About this project</h2><p><a href="https://bitdeli.com/free"><img src="https://d2weczhvl823v0.cloudfront.net/okunishinishi/node-coz/trend.png" alt="Bitdeli Badge"></a></p>
-<p><a name="11-project--author"></a></p>
+<p><a name="11-project-author"></a></p>
 <h3>Author</h3><ul>
 <li><a href="http://okunishitaka.com">Taka Okunishi</a></li>
 </ul>
-<p><a name="11-project--donation"></a></p>
+<p><a name="11-project-donation"></a></p>
 <h3>Donation</h3><p>Support this project and <a href="https://gratipay.com/okunishinishi/">others by okunishinishi</a> via <a href="https://gratipay.com/okunishinishi/">gratipay</a>.</p>
 <p><a href="https://gratipay.com/okunishinishi/"><img src="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg" alt="Support via Gratipay"/></a></p>
 <!-- Sections end -->
@@ -556,7 +553,7 @@ coz.render([
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a>
-		on 2015-07-12 using the <a
+		on 2015-07-18 using the <a
 			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>

@@ -43,5 +43,5 @@ module.exports = {
 };
 
 if (!module.parent) {
-    require('coz').render(__filename);
+    require('../lib').render(__filename);
 }
