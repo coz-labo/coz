@@ -21,5 +21,7 @@
   "my_tag_url": "http://github.com/okunishinishi/node-coz/releases/tag/",
   "my_tag_badge_url": "http://img.shields.io/github/tag/okunishinishi/node-coz.svg?style=flat",
   "my_gemnasium_url": "http://gemnasium.com/okunishinishi/node-coz",
-  "my_gemnasium_badge_url": "http://img.shields.io/gemnasium/okunishinishi/node-coz.svg?style=flat"
+  "my_gemnasium_badge_url": "http://img.shields.io/gemnasium/okunishinishi/node-coz.svg?style=flat",
+  "my_inch_badge_url": "http://inch-ci.org/github/okunishinishi/node-coz.svg?branch=master",
+  "my_inch_url": "http://inch-ci.org/github/okunishinishi/node-coz"
 }

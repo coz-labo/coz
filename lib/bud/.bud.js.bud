@@ -20,5 +20,8 @@ module.exports = {
             });
         }
     }
-
 };
+
+if (!module.parent) {
+    require('../../lib').render(__filename);
+}

@@ -14,6 +14,8 @@ Links
 
 ### Documents
 
+[![Inline docs][my_inch_badge_url]][my_inch_url]
+
 + [API Guide][my_apiguide_url]
 
 ### Reports

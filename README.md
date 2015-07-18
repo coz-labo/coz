@@ -307,6 +307,8 @@ Links
 <a name="09-links--documents"></a>
 ### Documents
 
+[![Inline docs][my_inch_badge_url]][my_inch_url]
+
 + [API Guide][my_apiguide_url]
 
 <a name="09-links--reports"></a>
@@ -369,6 +371,8 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 [my_tag_badge_url]: http://img.shields.io/github/tag/okunishinishi/node-coz.svg?style=flat
 [my_gemnasium_url]: http://gemnasium.com/okunishinishi/node-coz
 [my_gemnasium_badge_url]: http://img.shields.io/gemnasium/okunishinishi/node-coz.svg?style=flat
+[my_inch_badge_url]: http://inch-ci.org/github/okunishinishi/node-coz.svg?branch=master
+[my_inch_url]: http://inch-ci.org/github/okunishinishi/node-coz
 
 <!-- Links end-->
 
