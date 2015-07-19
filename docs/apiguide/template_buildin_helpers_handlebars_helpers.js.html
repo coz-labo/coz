@@ -356,12 +356,28 @@ module.exports = {
         return string.sentencecase(value);
     },
     /**
+     * Convert into path case string
+     * @param {string} value - String value to convert.
+     * @returns {string} - Converted string.
+     */
+    pathcase: function (value) {
+        return string.pathcase(value);
+    },
+    /**
      * Convert into spinal case string
      * @param {string} value - String value to convert.
      * @returns {string} - Converted string.
      */
     spinalcase: function (value) {
         return string.spinalcase(value);
+    },
+    /**
+     * Convert into title case string
+     * @param {string} value - String value to convert.
+     * @returns {string} - Converted string.
+     */
+    titlecase: function (value) {
+        return string.titlecase(value);
     },
     /**
      * Convert into upper case string.

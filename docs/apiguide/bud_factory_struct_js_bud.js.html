@@ -239,6 +239,7 @@
 
 var Bud = require('../../bud/bud'),
     core = require('../../core'),
+    stringcase = require('stringcase'),
     assert = core.assert;
 
 /** @lends structJsBud */
@@ -250,11 +251,12 @@ function structJsBud(config) {
         mode: '444',
         mkdirp: false,
         tmpl: 'structjs',
+        path: stringcase.snakecase(config.name) + '_struct.js',
         data: {
             keys: [].concat(config.keys),
-            desc:config.desc,
-            name:config.name,
-            module:config.module
+            desc: config.desc,
+            name: config.name,
+            module: config.module
         }
     });
 }

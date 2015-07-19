@@ -16,12 +16,14 @@ function {{pascalcase name}}Struct(values) {
 }
 
 {{pascalcase name}}Struct.prototype = {
+
     // --- Properties ---
 
 {{#each keys}}
     /** Value of {{camelcase this}} */
     {{camelcase this}}: undefined,
 {{/each}}
+
     // --- Getters ---
 
     get: function () {
@@ -41,7 +43,9 @@ function {{pascalcase name}}Struct(values) {
         return s.{{camelcase this}};
     },
 {{/each}}
+
     // --- Setters ---
+
     set: function (data) {
         var s = this;
 {{#each keys}}            s.set{{pascalcase this}}(data.{{camelcase this}});
@@ -59,6 +63,9 @@ function {{pascalcase name}}Struct(values) {
         s.{{camelcase this}} = {{camelcase this}};
     },
 {{/each}}
+
+    // --- Meta ---
+
     $keys:[{{#each keys}}'{{this}}'{{#if @last}}{{else}}, {{/if}}{{/each}}]
 };
 

@@ -318,17 +318,17 @@ var precompiled = Handlebars.template({"1":function(depth0,helpers,partials,data
 	    + alias3((helpers.pascalcase || (depth0 &amp;&amp; depth0.pascalcase) || alias1).call(depth0,(depth0 != null ? depth0.name : depth0),{"name":"pascalcase","hash":{},"data":data}))
 	    + "Struct(values) {\n    var s = this;\n    s.set(values);\n}\n\n"
 	    + alias3((helpers.pascalcase || (depth0 &amp;&amp; depth0.pascalcase) || alias1).call(depth0,(depth0 != null ? depth0.name : depth0),{"name":"pascalcase","hash":{},"data":data}))
-	    + "Struct.prototype = {\n    // --- Properties ---\n\n"
+	    + "Struct.prototype = {\n\n    // --- Properties ---\n\n"
 	    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.keys : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-	    + "    // --- Getters ---\n\n    get: function () {\n        var s = this;\n        return {\n"
+	    + "\n    // --- Getters ---\n\n    get: function () {\n        var s = this;\n        return {\n"
 	    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.keys : depth0),{"name":"each","hash":{},"fn":this.program(3, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
 	    + "\n        }\n    },\n"
 	    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.keys : depth0),{"name":"each","hash":{},"fn":this.program(8, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-	    + "    // --- Setters ---\n    set: function (data) {\n        var s = this;\n"
+	    + "\n    // --- Setters ---\n\n    set: function (data) {\n        var s = this;\n"
 	    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.keys : depth0),{"name":"each","hash":{},"fn":this.program(10, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
 	    + "        return s;\n    },\n"
 	    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.keys : depth0),{"name":"each","hash":{},"fn":this.program(12, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-	    + "    $keys:["
+	    + "\n    // --- Meta ---\n\n    $keys:["
 	    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.keys : depth0),{"name":"each","hash":{},"fn":this.program(14, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
 	    + "]\n};\n\nmodule.exports = "
 	    + alias3((helpers.pascalcase || (depth0 &amp;&amp; depth0.pascalcase) || alias1).call(depth0,(depth0 != null ? depth0.name : depth0),{"name":"pascalcase","hash":{},"data":data}))

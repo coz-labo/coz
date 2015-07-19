@@ -79,6 +79,8 @@ exports['Run buildin helpers.'] = function (test) {
     test.equal(helpers.pascalcase("foo_bar"), "FooBar");
     test.equal(helpers.sentencecase("foo_bar"), "Foo bar");
     test.equal(helpers.spinalcase("foo_bar"), "foo-bar");
+    test.equal(helpers.pathcase("foo_bar"), "foo/bar");
+    test.equal(helpers.titlecase("foo_bar"), "Foo Bar");
     test.equal(helpers.uppercase("foo_bar"), "FOO_BAR");
     test.equal(helpers.read('_not_existing_filename'), '');
     test.equal(helpers.json({foo: 'bar'}), '{"foo":"bar"}');
