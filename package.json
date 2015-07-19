@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib/index.js",
   "bin": {

@@ -30,7 +30,7 @@ function {{pascalcase name}}Struct(values) {
         var s = this;
         return {
 {{#each keys}}            {{camelcase this}}: s.get{{pascalcase this}}(){{#if @last}}{{else}},
-        {{/if}}{{/each}}
+{{/if}}{{/each}}
         }
     },
 {{#each keys}}
