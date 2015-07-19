@@ -1,0 +1,65 @@
+{{!
+    Tempalte fur *_struct.js
+}}/**
+ * {{desc}}
+ * @memberof module:{{module}}
+ * @inner
+ * @constructor {{pascalcase name}}Struct
+ */
+
+"use strict";
+
+/** @lends {{pascalcase name}}Struct */
+function {{pascalcase name}}Struct(values) {
+    var s = this;
+    s.set(values);
+}
+
+{{pascalcase name}}Struct.prototype = {
+    // --- Properties ---
+
+{{#each keys}}
+    /** Value of {{camelcase this}} */
+    {{camelcase this}}: undefined,
+{{/each}}
+    // --- Getters ---
+
+    get: function () {
+        var s = this;
+        return {
+{{#each keys}}            {{camelcase this}}: s.get{{pascalcase this}}(){{#if @last}}{{else}},
+        {{/if}}{{/each}}
+        }
+    },
+{{#each keys}}
+    /**
+     * Get {{camelcase this}} value.
+     * @returns Value of {{camelcase this}}.
+     */
+    get{{pascalcase this}}: function () {
+        var s = this;
+        return s.{{camelcase this}};
+    },
+{{/each}}
+    // --- Setters ---
+    set: function (data) {
+        var s = this;
+{{#each keys}}            s.set{{pascalcase this}}(data.{{camelcase this}});
+{{/each}}
+        return s;
+    },
+{{#each keys}}
+    /**
+     * Set {{camelcase this}} value.
+     * @param {{camelcase this}} - Value to set.
+     * @returns Self.
+     */
+    set{{pascalcase this}}: function({{camelcase this}}) {
+        var s = this;
+        s.{{camelcase this}} = {{camelcase this}};
+    },
+{{/each}}
+    $keys:[{{#each keys}}'{{this}}'{{#if @last}}{{else}}, {{/if}}{{/each}}]
+};
+
+module.exports = {{pascalcase name}}Struct;
