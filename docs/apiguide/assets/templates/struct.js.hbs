@@ -21,46 +21,52 @@ function {{pascalcase name}}Struct(values) {
 
 {{#each keys}}
     /** Value of {{camelcase this}} */
-    {{camelcase this}}: undefined,
+    _{{camelcase this}}: undefined,
 {{/each}}
 
-    // --- Getters ---
+    // --- Accessors ---
 
+    /**
+     * Get values.
+     * @returns {object} values.
+     */
     get: function () {
         var s = this;
         return {
-{{#each keys}}            {{camelcase this}}: s.get{{pascalcase this}}(){{#if @last}}{{else}},
+{{#each keys}}            {{camelcase this}}: s.{{camelcase this}}(){{#if @last}}{{else}},
 {{/if}}{{/each}}
         }
     },
-{{#each keys}}
     /**
-     * Get {{camelcase this}} value.
-     * @returns Value of {{camelcase this}}.
+     * Set values.
+     * @param data - Data to set.
+     * @returns Self.
      */
-    get{{pascalcase this}}: function () {
-        var s = this;
-        return s.{{camelcase this}};
-    },
-{{/each}}
-
-    // --- Setters ---
-
     set: function (data) {
         var s = this;
-{{#each keys}}            s.set{{pascalcase this}}(data.{{camelcase this}});
+{{#each keys}}        s.{{camelcase this}}(data.{{camelcase this}});
 {{/each}}
         return s;
     },
 {{#each keys}}
     /**
+     * Get {{camelcase this}} value.
+     * @function module:{{../module}}~{{pascalcase ../name}}Struct.prototype.{{camelcase this}}
+     * @returns Value of {{camelcase this}}.
+     */
+    /**
      * Set {{camelcase this}} value.
+     * @function module:{{../module}}~{{pascalcase ../name}}Struct.prototype.{{camelcase this}}
      * @param {{camelcase this}} - Value to set.
      * @returns Self.
      */
-    set{{pascalcase this}}: function({{camelcase this}}) {
+    {{camelcase this}}: function ({{camelcase this}}) {
         var s = this;
-        s.{{camelcase this}} = {{camelcase this}};
+        if (arguments.length === 0) {
+            return s._{{camelcase this}};
+        }
+        s._{{camelcase this}} = {{camelcase this}};
+        return s;
     },
 {{/each}}
 
