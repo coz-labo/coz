@@ -12,7 +12,7 @@
 /** @lends {{pascalcase name}}Struct */
 function {{pascalcase name}}Struct(values) {
     var s = this;
-    s.set(values);
+    s.set(values || {});
 }
 
 {{pascalcase name}}Struct.prototype = {
