@@ -10,7 +10,7 @@ BASE_DIR=$(cd "${HERE}/../.." && pwd)
 cd ${BASE_DIR}
 
 bash ./ci/bin/build.sh
-bash ./ci/bin/doc/doc_apiguide.sh
+node ./ci/bin/doc/doc_apiguide.js
 bash ./ci/bin/doc/doc_readme.sh
 
 cp assets/images/coz-favicon.png docs/favicon.png
