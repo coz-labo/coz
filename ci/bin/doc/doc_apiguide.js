@@ -17,7 +17,8 @@ apiguide([
     templates: {
         color: '#418300',
         systemName: 'coz',
-        favicon: 'docs/favicon.png'
+        favicon: 'docs/favicon.png',
+        copyright: "okunishitaka.com Copyright © 2015",
     }
 }, function (err) {
     if (err) {
