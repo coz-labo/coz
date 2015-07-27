@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/template/buildin_tmpls/updatesh_tmpl.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">lib/template/buildin_tmpls/updatesh_tmpl.js</span></h1>
+    <h2>
+        Statements: <span class="metric">54.55% <small>(6 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 35)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 3)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">54.55% <small>(6 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">lib/template/buildin_tmpls/</a> &#187; updatesh_tmpl.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Template for sentencecase updatesh.
+ * @memberof module:coz/lib/template/tmpls
+ * @function updateshTmpl
+ * @param {object} data - Data to render.
+ * @returns {string} rendered string.
+ */
+&nbsp;
+"use strict";
+&nbsp;
+var HandlebarsEngine = require('../buildin_engines').HandlebarsEngine,
+    Handlebars = HandlebarsEngine.createHandlebars();
+&nbsp;
+//noinspection UnterminatedStatementJS
+var precompiled = Handlebars.template({"1":<span class="fstat-no" title="function not covered" >function(depth0,helpers,partials,data) {</span>
+<span class="cstat-no" title="statement not covered" >	    var helper;</span>
+	
+<span class="cstat-no" title="statement not covered" >	  return this.escapeExpression(((helper = (helper = helpers.key || (data &amp;&amp; data.key)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"key","hash":{},"data":data}) : helper)))</span>
+	    + " ";
+	},"compiler":[6,"&gt;= 2.0.0-beta.1"],"main":<span class="fstat-no" title="function not covered" >function(depth0,helpers,partials,data) {</span>
+<span class="cstat-no" title="statement not covered" >	    var stack1;</span>
+	
+<span class="cstat-no" title="statement not covered" >	  return "#!/bin/bash\n\n###\n# Update dependencies for "</span>
+	    + this.escapeExpression(this.lambda(((stack1 = (depth0 != null ? depth0.pkg : depth0)) != null ? stack1.name : stack1), depth0))
+	    + ".\n###\n\nHERE=$(cd \"$(dirname $0)\" &amp;&amp; pwd)\nBASE_DIR=$(cd \"${HERE}/..\" &amp;&amp; pwd)\n\ncd ${BASE_DIR}\n\n# Re-install dependencies.\nnpm uninstall "
+	    + ((stack1 = helpers.each.call(depth0,((stack1 = (depth0 != null ? depth0.pkg : depth0)) != null ? stack1.dependencies : stack1),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+	    + " --save\nnpm install "
+	    + ((stack1 = helpers.each.call(depth0,((stack1 = (depth0 != null ? depth0.pkg : depth0)) != null ? stack1.dependencies : stack1),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+	    + " --save\n\n# Re-install dev dependencies.\nnpm uninstall "
+	    + ((stack1 = helpers.each.call(depth0,((stack1 = (depth0 != null ? depth0.pkg : depth0)) != null ? stack1.devDependencies : stack1),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+	    + " --save-dev\nnpm install "
+	    + ((stack1 = helpers.each.call(depth0,((stack1 = (depth0 != null ? depth0.pkg : depth0)) != null ? stack1.devDependencies : stack1),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+	    + " --save-dev\n";
+	},"useData":true});;
+&nbsp;
+/** @lends updateshTmpl */
+<span class="fstat-no" title="function not covered" >function updateshTmpl(data) {</span>
+<span class="cstat-no" title="statement not covered" >    return precompiled(data);</span>
+}
+&nbsp;
+updateshTmpl.$name = 'updatesh';
+updateshTmpl.$aliases = [
+    'updatesh',
+    'updateshTmpl'
+];
+&nbsp;
+module.exports = updateshTmpl;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jul 27 2015 09:59:05 GMT+0900 (JST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

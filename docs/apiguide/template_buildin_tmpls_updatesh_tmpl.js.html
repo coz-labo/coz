@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>coz Source: bud/factory/nodeunit_testcase_js_bud.js</title>
+	<title>coz Source: template/buildin_tmpls/updatesh_tmpl.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -65,76 +65,61 @@
 	<div class="col-md-12">
 	
 		<div id="main">
-    		<h1 class="page-title">Source: bud/factory/nodeunit_testcase_js_bud.js</h1>
+    		<h1 class="page-title">Source: template/buildin_tmpls/updatesh_tmpl.js</h1>
 			
 
-		<h1 class="page-title">Source: bud/factory/nodeunit_testcase_js_bud.js</h1>
+		<h1 class="page-title">Source: template/buildin_tmpls/updatesh_tmpl.js</h1>
     
 <section>
 	<article>
 		<pre
 			class="sunlight-highlight-javascript linenums">/**
- * Bud for nodeunit testcase.
- * @memberof module:coz/lib/bud/factory
- * @function nodeunitTestcaseJsBud
- * @param {object} config - Nodeunit testcase configuration.
- * @param {string|string[]} config.src - Source file name pattern.
- * @param {string} [config.dest] - Destination directory path.
- * @returns {module:coz/lib/bud~Bud} - Bud for nodeunit testcase.
+ * Template for sentencecase updatesh.
+ * @memberof module:coz/lib/template/tmpls
+ * @function updateshTmpl
+ * @param {object} data - Data to render.
+ * @returns {string} rendered string.
  */
 
 "use strict";
 
-var core = require('../../core'),
-    ext = require('../../ext'),
-    glob = ext.glob,
-    path = core.path,
-    assert = core.assert,
-    Bud = require('../../bud/bud');
+var HandlebarsEngine = require('../buildin_engines').HandlebarsEngine,
+    Handlebars = HandlebarsEngine.createHandlebars();
 
-/** @lends nodeunitTestcaseJsBud */
-function nodeunitTestcaseJsBud(config) {
-    var src = config.src,
-        dest = config.dest || process.cwd();
-    assert.ok(!!src, 'config.src is required.');
-    return [].concat(src)
-        .map(function (src) {
-            return glob.sync(path.resolve(src));
-        })
-        .reduce(function (result, cur) {
-            return result.concat(cur);
-        }, [])
-        .filter(function (src) {
-            return path.basename(src) !== 'index.js';
-        })
-        .filter(function (src) {
-            return !/^[\._\-]/.test(path.basename(src));
-        })
-        .filter(function (src) {
-            try {
-                require.resolve(src);
-                return true;
-            } catch (e) {
-                return false;
-            }
-        })
-        .map(function (src) {
-            var basename = path.basename(src, path.extname(src));
-            return {
-                force: false,
-                mode: '644',
-                mkdirp: false,
-                tmpl: 'nodeunitTestcasejsTmpl',
-                path: path.resolve(dest, basename + '_test.js'),
-                data: {
-                    name: basename,
-                    relative: path.relative(dest, src)
-                }
-            }
-        });
+//noinspection UnterminatedStatementJS
+var precompiled = Handlebars.template({"1":function(depth0,helpers,partials,data) {
+	    var helper;
+	
+	  return this.escapeExpression(((helper = (helper = helpers.key || (data &amp;&amp; data.key)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"key","hash":{},"data":data}) : helper)))
+	    + " ";
+	},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+	    var stack1;
+	
+	  return "#!/bin/bash\n\n###\n# Update dependencies for "
+	    + this.escapeExpression(this.lambda(((stack1 = (depth0 != null ? depth0.pkg : depth0)) != null ? stack1.name : stack1), depth0))
+	    + ".\n###\n\nHERE=$(cd \"$(dirname $0)\" &amp;&amp; pwd)\nBASE_DIR=$(cd \"${HERE}/..\" &amp;&amp; pwd)\n\ncd ${BASE_DIR}\n\n# Re-install dependencies.\nnpm uninstall "
+	    + ((stack1 = helpers.each.call(depth0,((stack1 = (depth0 != null ? depth0.pkg : depth0)) != null ? stack1.dependencies : stack1),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+	    + " --save\nnpm install "
+	    + ((stack1 = helpers.each.call(depth0,((stack1 = (depth0 != null ? depth0.pkg : depth0)) != null ? stack1.dependencies : stack1),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+	    + " --save\n\n# Re-install dev dependencies.\nnpm uninstall "
+	    + ((stack1 = helpers.each.call(depth0,((stack1 = (depth0 != null ? depth0.pkg : depth0)) != null ? stack1.devDependencies : stack1),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+	    + " --save-dev\nnpm install "
+	    + ((stack1 = helpers.each.call(depth0,((stack1 = (depth0 != null ? depth0.pkg : depth0)) != null ? stack1.devDependencies : stack1),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+	    + " --save-dev\n";
+	},"useData":true});;
+
+/** @lends updateshTmpl */
+function updateshTmpl(data) {
+    return precompiled(data);
 }
 
-module.exports = nodeunitTestcaseJsBud;</pre>
+updateshTmpl.$name = 'updatesh';
+updateshTmpl.$aliases = [
+    'updatesh',
+    'updateshTmpl'
+];
+
+module.exports = updateshTmpl;</pre>
 	</article>
 </section>
 

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for lib/util/flow/each_files.js</title>
+    <title>Code coverage report for lib/bud/factory/update_sh_bud.js</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../../../prettify.css">
     <link rel="stylesheet" href="../../../base.css">
@@ -13,15 +13,15 @@
 </head>
 <body>
 <div class="header high">
-    <h1>Code coverage report for <span class="entity">lib/util/flow/each_files.js</span></h1>
+    <h1>Code coverage report for <span class="entity">lib/bud/factory/update_sh_bud.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(6 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(3 / 3)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(6 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">87.5% <small>(7 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">50% <small>(2 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(1 / 1)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">87.5% <small>(7 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">lib/util/flow/</a> &#187; each_files.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">lib/bud/factory/</a> &#187; update_sh_bud.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
@@ -53,7 +53,8 @@
 26
 27
 28
-29</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+29
+30</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -66,50 +67,52 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">4</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Do some task on each files.
- * @memberof module:coz/lib/util/flow
- * @function eachFiles
- * @param {string|string[]} pattern - Filename pattern to work with.
- * @param {function} handler - Handle a single filename.
- * @param {function} callback - Callback when done.
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Bud for update.sh
+ * @memberof module:coz/lib/bud/factory
+ * @function updateShBud
+ * @param {object} config - Update shell configuration
+ * @param {object} pkg - Package.json data.
+ * @returns {module:coz/lib/bud~Bud} - Bud for index.js
  */
 &nbsp;
 "use strict";
 &nbsp;
-var ext = require('../../ext'),
-    file = require('../file'),
-    async = ext.async;
+var Bud = require('../../bud/bud');
 &nbsp;
-/** @lends eachFiles */
-function eachFiles(pattern, handler, callback) {
-    async.waterfall([
-        function (callback) {
-            file.expandGlob(pattern, callback);
-        },
-        function (filenames, callback) {
-            async.eachSeries(filenames, handler, callback);
+function updateShBud(config) {
+    config = config || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+    var pkg = config.pkg;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!pkg) {
+<span class="cstat-no" title="statement not covered" >        throw new Error('pkg is required.');</span>
+    }
+    return new Bud({
+        force: true,
+        mode: '555',
+        tmpl: 'updatesh',
+        data: {
+            pkg: pkg
         }
-    ], callback);
+    });
 }
 &nbsp;
-module.exports = eachFiles;
-&nbsp;</pre></td></tr>
+module.exports = updateShBud;</pre></td></tr>
 </table></pre>
 
 </div>
