@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "ape-covering": "^1.0.2",
-    "ape-releasing": "^1.0.6",
+    "ape-releasing": "^1.0.9",
     "ape-reporting": "^1.0.1",
     "ape-tasking": "^1.0.0",
     "ape-testing": "^1.1.2",

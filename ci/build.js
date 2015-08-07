@@ -6,7 +6,6 @@ var path = require('path'),
     coz = require('../lib');
 
 var basedir = path.resolve(__dirname, '..');
-
 process.chdir(basedir);
 
 apeTasking.runTasks('build', [
