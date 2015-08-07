@@ -9,7 +9,6 @@ BASE_DIR=$(cd "${HERE}/../.." && pwd)
 
 cd ${BASE_DIR}
 
-bash ./ci/bin/build.sh
+./ci/build.js
 bash ./ci/bin/deploy/deploy_docs.sh
 bash ./ci/bin/deploy/deploy_wiki.sh
-bash ./ci/bin/deploy/deploy_examples.sh

@@ -3,7 +3,15 @@
  * Runs with nodeunit.
  */
 
-var BudRemover = require('../../lib/bud/bud_remover.js');
+var BudRemover = require('../../lib/bud/bud_remover.js'),
+    mkdirp = require('mkdirp');
+
+
+exports.setUp = function (done) {
+    mkdirp.sync(__dirname + '/../../tmp');
+    done();
+};
+
 
 exports['Bud remover'] = function (test) {
     var fs = require('fs'),

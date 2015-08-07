@@ -1,17 +1,16 @@
 {
   "name": "coz",
-  "version": "1.3.1",
+  "version": "1.4.1",
   "description": "Flexible generator, which makes your project clean and maintainable.",
-  "main": "lib/index.js",
+  "main": "lib",
   "bin": {
     "coz": "bin/coz"
   },
   "scripts": {
+    "build": "./ci/build.js",
     "test": "./ci/test.js",
     "cover": "./ci/cover.js",
-    "report": "./ci/report.js",
-    "versionup": "versionup",
-    "taggit": "taggit"
+    "report": "./ci/report.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +36,7 @@
     "async": "^1.4.0",
     "colorprint": "^1.0.7",
     "commander": "^2.8.1",
+    "execcli": "^2.1.0",
     "glob": "^5.0.14",
     "handlebars": "^3.0.3",
     "mkdirp": "^0.5.1",
@@ -46,14 +46,12 @@
   },
   "devDependencies": {
     "ape-covering": "^1.0.2",
-    "ape-releasing": "^1.0.5",
+    "ape-releasing": "^1.0.6",
     "ape-reporting": "^1.0.1",
     "ape-tasking": "^1.0.0",
     "ape-testing": "^1.1.2",
     "apiguide": "^1.0.6",
-    "injectmock": "^1.0.4",
-    "taggit": "^1.0.3",
-    "versionup": "^1.0.7"
+    "injectmock": "^1.0.4"
   },
   "engines": {
     "node": ">=0.10.3"
