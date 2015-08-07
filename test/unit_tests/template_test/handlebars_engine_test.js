@@ -5,7 +5,8 @@
 
 "use strict";
 
-var HandlebarsEngine = require('../../../lib/template/buildin_engines/handlebars_engine.js');
+var HandlebarsEngine = require('../../../lib/template/buildin_engines/handlebars_engine.js'),
+    childProcess = require('child_process');
 
 
 exports['Construct a engine.'] = function (test) {
@@ -73,6 +74,9 @@ exports['Run buildin helpers.'] = function (test) {
     test.equal(helpers.camelcase("foo_bar"), "fooBar");
     test.equal(helpers.dirname("foo/bar.js"), "foo");
     test.equal(helpers.extname("foo/bar.js"), ".js");
+    if (childProcess.execSync) {
+        test.ok(helpers.eval("ls"));
+    }
     test.equal(helpers.numeric(">=1.2.0"), "1.2.0");
     test.equal(helpers.lowercase("Foo"), "foo");
     test.equal(helpers.snakecase("fooBar"), "foo_bar");
