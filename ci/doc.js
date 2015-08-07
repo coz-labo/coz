@@ -6,7 +6,6 @@
 
 "use strict";
 
-
 var apeTasking = require('ape-tasking'),
     path = require('path'),
     coz = require('../lib'),

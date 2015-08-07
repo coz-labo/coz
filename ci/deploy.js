@@ -7,6 +7,7 @@
 "use strict";
 
 var apeTasking = require('ape-tasking'),
+    apeDeploying = require('ape-deploying'),
     path = require('path'),
     execcli = require('execcli');
 
@@ -15,15 +16,18 @@ process.chdir(basedir);
 
 apeTasking.runTasks('deploy', [
     function deployGhPages(callback) {
-        execcli('git', ['subtree',
-            'push',
-            '--prefix=docs',
-            'origin',
-            'gh-pages'
-        ], callback);
+        apeDeploying.deployGhPages('docs', {}, callback);
     },
     function deployWiki(callback) {
-        execcli('docs/wiki/deploy_wiki.sh', callback);
+        var url = 'https://github.com/okunishinishi/node-coz.wiki.git';
+        apeDeploying.deployGhWiki('docs/wiki/*.md', url, {
+            clean: true
+        }, function (err) {
+            if (err) {
+                console.error(err);
+            }
+            callback(null); //Continue tasks.
+        });
     }
 ], true);
 
