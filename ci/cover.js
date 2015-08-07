@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+/**
+ * Run coverage.
+ */
+
+"use strict";
+
+var path = require('path'),
+    apeTasking = require('ape-tasking'),
+    apeCovering = require('ape-covering');
+
+var basedir = path.resolve(__dirname, '..');
+process.chdir(basedir);
+
+apeTasking.runTasks('cover', [
+    function (callback) {
+        apeCovering.measureCoverage(
+            require.resolve('./test.js'), [], {
+                dir: 'docs/coverage'
+            }, callback
+        );
+    }
+], true);

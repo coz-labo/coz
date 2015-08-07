@@ -1,0 +1,18 @@
+/**
+ * Bud file for test.
+ */
+
+"use strict";
+
+var coz = require('../../lib'),
+    nodeunitTestcaseJsBud = coz.factory.nodeunitTestcaseJsBud;
+
+module.exports = nodeunitTestcaseJsBud({
+    src: [
+        __dirname + '/../../lib/util/string/*.js',
+        __dirname + '/../../lib/util/flow/*.js',
+        __dirname + '/../../lib/util/filtering/*.js',
+        __dirname + '/../../lib/util/requiring/*.js'
+    ],
+    dest: __dirname
+});
