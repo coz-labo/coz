@@ -342,3 +342,7 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 [05_customizing_coz_url]: https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/05%20-%20Customizing%20coz.md
 
 <!-- Tutorial urls end -->
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/okunishinishi/coz/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
