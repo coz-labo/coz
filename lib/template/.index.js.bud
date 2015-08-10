@@ -15,3 +15,7 @@ module.exports = indexJsBud({
     subclasses: ['Engine', 'EngineSet', 'TmplSet']
 });
 
+
+if(!module.parent){
+    coz.render(__filename);
+}

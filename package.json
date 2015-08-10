@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "1.5.1",
+  "version": "2.0.0",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/okunishinishi/node-coz.git"
+    "url": "git+https://github.com/coz-repo/coz.git"
   },
   "keywords": [
     "development",
@@ -29,13 +29,14 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/okunishinishi/node-coz/issues"
+    "url": "https://github.com/coz-repo/coz/issues"
   },
-  "homepage": "http://okunishinishi.github.io/node-coz/homepage",
+  "homepage": "http://coz-repo.github.io/coz/homepage",
   "dependencies": {
     "async": "^1.4.1",
     "colorprint": "^1.1.1",
     "commander": "^2.8.1",
+    "coz-engine": "^1.0.1",
     "execcli": "^2.1.0",
     "glob": "^5.0.14",
     "handlebars": "^3.0.3",

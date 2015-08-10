@@ -17,7 +17,7 @@ Flexible generator, which makes your project clean and maintainable.
 
 <!-- Banner start -->
 
-<a href="http://okunishinishi.github.io/node-coz/homepage"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a>
+<a href="http://coz-repo.github.io/coz/homepage"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a>
 
 <!-- Banner end -->
 
@@ -52,16 +52,16 @@ will do the magic.
 Table of Contents
 -----
 - [About coz](#01-about)
-    - [What's This?](#01-about-whats--this)
-    - [What For?](#01-about-what--for)
-    - [Why This?](#01-about-why--this)
+    - [What's This?](#01-about-whats-this)
+    - [What For?](#01-about-what-for)
+    - [Why This?](#01-about-why-this)
 - [Getting started](#02-howto)
     - [Requirements](#02-howto-requirements)
     - [Installation](#02-howto-installation)
     - [Quickstart](#02-howto-quickstart)
-    - [Programmatic API](#02-howto-programmatic--a-p-i)
+    - [Programmatic API](#02-howto-programmatic-a-p-i)
 - [Specifications](#03-spec)
-    - [Bud File Specification](#03-spec-bud--file--specification)
+    - [Bud File Specification](#03-spec-bud-file-specification)
 - [Links](#09-links)
     - [Website](#09-links-website)
     - [Tutorials](#09-links-tutorials)
@@ -81,7 +81,7 @@ Table of Contents
 About coz
 ------
 
-<a name="01-about-whats--this"></a>
+<a name="01-about-whats-this"></a>
 ### What's This?
 
 The basic idea of coz is that creating files from files.
@@ -93,7 +93,7 @@ The basic idea of coz is that creating files from files.
 <img style="height:256px;" src="assets/images/coz-outline.jpg" height="256">
 
 
-<a name="01-about-what--for"></a>
+<a name="01-about-what-for"></a>
 ### What For?
 
 Automation. Generating files makes your project clean and maintainable.
@@ -108,7 +108,7 @@ For example,
 + Generate empty test case files from project files.
 
 
-<a name="01-about-why--this"></a>
+<a name="01-about-why-this"></a>
 ### Why This?
 
 + **Lightweight and fast**
@@ -169,7 +169,7 @@ For more details, see tutorial section "[02 - Rendering bud files][02_rendering_
 
 
 <a name="programmatic-api" />
-<a name="02-howto-programmatic--a-p-i"></a>
+<a name="02-howto-programmatic-a-p-i"></a>
 ### Programmatic API
 
 coz provides programmatic API which enables you to execute coz commands from Node.js program.
@@ -186,7 +186,7 @@ Specifications
 ---------
 
 <a name="spec-bud-spec"></a>
-<a name="03-spec-bud--file--specification"></a>
+<a name="03-spec-bud-file-specification"></a>
 ### Bud File Specification
 
 A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.
@@ -248,7 +248,7 @@ Links
 <a name="09-links-website"></a>
 ### Website
 
-+ [coz](http://okunishinishi.github.io/node-coz/homepage)
++ [coz](http://coz-repo.github.io/coz/homepage)
 + [coz @npm][my_npm_url]
 + [coz @github][my_repo_url]
 
@@ -273,7 +273,7 @@ Links
 
 + [Build Status @travis][my_travis_url]
 + [Analysis Result @codeclimate][my_codeclimate_url]
-+ [Issues @github](https://github.com/okunishinishi/node-coz/issues)
++ [Issues @github](https://github.com/coz-repo/coz/issues)
 + [Coverage Report][my_coverage_url]
 
 <a name="10-license"></a>
@@ -342,7 +342,3 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 [05_customizing_coz_url]: https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/05%20-%20Customizing%20coz.md
 
 <!-- Tutorial urls end -->
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/okunishinishi/coz/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-

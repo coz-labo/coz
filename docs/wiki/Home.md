@@ -1,7 +1,7 @@
 Let's Start coz
 -------
 
-<a href="http://okunishinishi.github.io/node-coz/homepage"><img style="height:px;" src="assets/images/coz-banner.png" height=""/></a>
+<a href="http://coz-repo.github.io/coz/homepage"><img style="height:px;" src="assets/images/coz-banner.png" height=""/></a>
 
 This wiki contains additional informations about coz.
 
