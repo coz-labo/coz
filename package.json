@@ -37,6 +37,7 @@
     "colorprint": "^1.1.1",
     "commander": "^2.8.1",
     "coz-engine": "^1.0.1",
+    "coz-handlebars-engine": "^1.0.0",
     "execcli": "^2.1.0",
     "glob": "^5.0.14",
     "handlebars": "^3.0.3",
