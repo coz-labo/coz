@@ -15,10 +15,10 @@
 <div class="header high">
     <h1>Code coverage report for <span class="entity">lib/ext.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(11 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">100% <small>(14 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(10 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(11 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(13 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(14 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">lib/</a> &#187; ext.js</div>
@@ -73,7 +73,19 @@
 46
 47
 48
-49</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -100,11 +112,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -113,6 +125,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,17 +154,29 @@
 &nbsp;
 module.exports = {
     /**
-     * This is an alias for {@link https://www.npmjs.org/package/async|async@^1.4.0} module.
+     * This is an alias for {@link https://www.npmjs.org/package/async|async@^1.4.1} module.
      */
     get async() { return require('async'); },
     /**
-     * This is an alias for {@link https://www.npmjs.org/package/colorprint|colorprint@^1.0.7} module.
+     * This is an alias for {@link https://www.npmjs.org/package/colorprint|colorprint@^1.1.1} module.
      */
     get colorprint() { return require('colorprint'); },
     /**
      * This is an alias for {@link https://www.npmjs.org/package/commander|commander@^2.8.1} module.
      */
     get commander() { return require('commander'); },
+    /**
+     * This is an alias for {@link https://www.npmjs.org/package/coz-bud|coz-bud@^1.0.0} module.
+     */
+    get cozBud() { return require('coz-bud'); },
+    /**
+     * This is an alias for {@link https://www.npmjs.org/package/coz-engine|coz-engine@^1.0.1} module.
+     */
+    get cozEngine() { return require('coz-engine'); },
+    /**
+     * This is an alias for {@link https://www.npmjs.org/package/coz-handlebars-engine|coz-handlebars-engine@^1.0.0} module.
+     */
+    get cozHandlebarsEngine() { return require('coz-handlebars-engine'); },
     /**
      * This is an alias for {@link https://www.npmjs.org/package/execcli|execcli@^2.1.0} module.
      */
@@ -158,7 +194,7 @@ module.exports = {
      */
     get mkdirp() { return require('mkdirp'); },
     /**
-     * This is an alias for {@link https://www.npmjs.org/package/stringcase|stringcase@^1.0.7} module.
+     * This is an alias for {@link https://www.npmjs.org/package/stringcase|stringcase@^1.0.8} module.
      */
     get stringcase() { return require('stringcase'); },
     /**
@@ -166,7 +202,7 @@ module.exports = {
      */
     get unorm() { return require('unorm'); },
     /**
-     * This is an alias for {@link https://www.npmjs.org/package/writeout|writeout@^1.0.3} module.
+     * This is an alias for {@link https://www.npmjs.org/package/writeout|writeout@^1.0.7} module.
      */
     get writeout() { return require('writeout'); }
 };</pre></td></tr>
@@ -174,7 +210,7 @@ module.exports = {
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Aug 07 2015 17:43:21 GMT+0900 (JST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Aug 11 2015 09:02:47 GMT+0900 (JST)</div>
 </div>
 <script src="../prettify.js"></script>
 <script>

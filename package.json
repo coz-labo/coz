@@ -36,6 +36,7 @@
     "async": "^1.4.1",
     "colorprint": "^1.1.1",
     "commander": "^2.8.1",
+    "coz-bud": "^1.0.0",
     "coz-engine": "^1.0.1",
     "coz-handlebars-engine": "^1.0.0",
     "execcli": "^2.1.0",

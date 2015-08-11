@@ -15,7 +15,7 @@ var coz = require('../../lib'),
     ;
 
 var pkg = require('../../package.json'),
-    bud = require('../../lib/bud/.bud.json');
+    bud = require('coz-bud/lib/spec');
 
 function _urlItem(key, url) {
     return format('[%s]: %s', key, encodeURI(url));

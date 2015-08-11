@@ -35,7 +35,7 @@ function _section(filename, callback) {
                     BANNER_SIZE: BANNER_SIZE,
                     pkg: pkg,
                     get bud() {
-                        var bud = require('../../lib/bud/.bud.json');
+                        var bud = require('coz-bud/lib/spec');
                         return {
                             about: bud.about,
                             get properties() {
