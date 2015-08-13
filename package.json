@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
@@ -56,6 +56,8 @@
     "ape-testing": "^1.1.6",
     "ape-updating": "^1.0.1",
     "apiguide": "^1.0.6",
+    "coz-examples": "^1.0.3",
+    "filecopy": "^1.0.3",
     "injectmock": "^1.0.4"
   },
   "engines": {
