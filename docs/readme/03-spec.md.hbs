@@ -4,7 +4,7 @@ Specifications
 <a name="spec-bud-spec"></a>
 ### Bud File Specification
 
-{{bud.about}}
+{{vars.bud.about}}
 
 You can specify bud data by writing `.bud` file, which is actually a javascript file and could be written in Node.js format.
 
@@ -44,6 +44,6 @@ List of properties configurable in bud files.
 
 | Name | Type | Default | Description |
 | ----- | ----- | ----- | ----- |
-{{#each bud.properties}}{{#if configurable}}| `{{name}}` | {{{type}}} | {{default}} | {{description}} |
+{{#each vars.bud.properties}}{{#if configurable}}| `{{name}}` | {{{type}}} | {{default}} | {{description}} |
 {{/if}}{{/each}}
 

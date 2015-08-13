@@ -1,27 +1,43 @@
 coz
-=====
+==========
+
+<!-- Badge Start -->
+<a name="badges"></a>
+
+[![Build Status][bd_travis_shield_url]][bd_travis_url]
+[![Code Climate][bd_codeclimate_shield_url]][bd_codeclimate_url]
+[![Code Coverage][bd_codeclimate_coverage_shield_url]][bd_codeclimate_url]
+[![Dependency Status][bd_gemnasium_shield_url]][bd_gemnasium_url]
+[![npm Version][bd_npm_shield_url]][bd_npm_url]
+
+[bd_repo_url]: https://github.com/coz-repo/coz
+[bd_travis_url]: http://travis-ci.org/coz-repo/coz
+[bd_travis_shield_url]: http://img.shields.io/travis/coz-repo/coz.svg?style=flat
+[bd_license_url]: https://github.com/coz-repo/coz/blob/master/LICENSE
+[bd_codeclimate_url]: http://codeclimate.com/github/coz-repo/coz
+[bd_codeclimate_shield_url]: http://img.shields.io/codeclimate/github/coz-repo/coz.svg?style=flat
+[bd_codeclimate_coverage_shield_url]: http://img.shields.io/codeclimate/coverage/github/coz-repo/coz.svg?style=flat
+[bd_gemnasium_url]: https://gemnasium.com/coz-repo/coz
+[bd_gemnasium_shield_url]: https://gemnasium.com/coz-repo/coz.svg
+[bd_npm_url]: http://www.npmjs.org/package/coz
+[bd_npm_shield_url]: http://img.shields.io/npm/v/coz.svg?style=flat
+
+<!-- Badge End -->
+
+
+<!-- Description Start -->
+<a name="description"></a>
 
 Flexible generator, which makes your project clean and maintainable.
 
-<!-- Badge start -->
-
-[![Build Status][my_travis_badge_url]][my_travis_url]
-[![Code Climate][my_codeclimate_badge_url]][my_codeclimate_url]
-[![Code Coverage][my_codeclimate_coverage_badge_url]][my_codeclimate_url]
-[![dependencies][my_gemnasium_badge_url]][my_gemnasium_url]
-[![npm version][my_npm_budge_url]][my_npm_url]
-[![Gratipay][my_gratipay_budge_url]][my_gratipay_url]
-
-<!-- Badge end -->
+<!-- Description End -->
 
 
-<!-- Banner start -->
+<!-- Overview Start -->
+<a name="overview"></a>
 
 <a href="http://coz-repo.github.io/coz/homepage"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a>
 
-<!-- Banner end -->
-
-<!-- Concept start -->
 
 ```javascript
 // Define rendering rule.
@@ -43,45 +59,14 @@ $ coz render ".my-first-bud.bud"
 will do the magic.
 
 
-<!-- Concept end -->
+<!-- Overview End -->
 
+<!-- Sections Start -->
+<a name="sections"></a>
 
-
-<!-- Table start -->
-
-Table of Contents
------
-- [About coz](#01-about)
-    - [What's This?](#01-about-whats-this)
-    - [What For?](#01-about-what-for)
-    - [Why This?](#01-about-why-this)
-- [Getting started](#02-howto)
-    - [Requirements](#02-howto-requirements)
-    - [Installation](#02-howto-installation)
-    - [Quickstart](#02-howto-quickstart)
-    - [Programmatic API](#02-howto-programmatic-a-p-i)
-- [Specifications](#03-spec)
-    - [Bud File Specification](#03-spec-bud-file-specification)
-- [Links](#09-links)
-    - [Website](#09-links-website)
-    - [Tutorials](#09-links-tutorials)
-    - [Documents](#09-links-documents)
-    - [Reports](#09-links-reports)
-- [License](#10-license)
-- [About this project](#11-project)
-    - [Author](#11-project-author)
-    - [Donation](#11-project-donation)
-
-<!-- Table end -->
-
-
-<!-- Sections start -->
-
-<a name="01-about"></a>
 About coz
 ------
 
-<a name="01-about-whats-this"></a>
 ### What's This?
 
 The basic idea of coz is that creating files from files.
@@ -93,7 +78,6 @@ The basic idea of coz is that creating files from files.
 <img style="height:256px;" src="assets/images/coz-outline.jpg" height="256">
 
 
-<a name="01-about-what-for"></a>
 ### What For?
 
 Automation. Generating files makes your project clean and maintainable.
@@ -108,7 +92,6 @@ For example,
 + Generate empty test case files from project files.
 
 
-<a name="01-about-why-this"></a>
 ### Why This?
 
 + **Lightweight and fast**
@@ -122,20 +105,17 @@ For example,
 
 
 
-<a name="02-howto"></a>
 Getting started
 ------
 
-<a name="02-howto-requirements"></a>
 ### Requirements
 
 + [node.js&gt;=0.10.3][nodejs_url]
 
 
-<a name="02-howto-installation"></a>
 ### Installation
 
-coz is available as an [NPM][npm_url] package.
+coz is available as an [npm][npm_url] package.
 
 ```bash
 # Install coz as a global module.
@@ -146,7 +126,6 @@ Or you can install it without `-g` option and use [Programmatic API](#programmat
 For more details, see tutorial section "[01 - Installing coz][01_installing_coz_url]".
 
 
-<a name="02-howto-quickstart"></a>
 ### Quickstart
 
 **.who-likes-what.txt.bud** (bud file)
@@ -198,7 +177,6 @@ For more details, see tutorial section "[02 - Rendering bud files][02_rendering_
 
 
 <a name="programmatic-api" />
-<a name="02-howto-programmatic-a-p-i"></a>
 ### Programmatic API
 
 coz provides programmatic API which enables you to execute coz commands from Node.js program.
@@ -224,12 +202,10 @@ coz.render([
 For more details, see tutorial section "[04 - Using programmatic API][04_using_programmatic_a_p_i_url]".
 
 
-<a name="03-spec"></a>
 Specifications
 ---------
 
 <a name="spec-bud-spec"></a>
-<a name="03-spec-bud-file-specification"></a>
 ### Bud File Specification
 
 A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.
@@ -272,46 +248,36 @@ List of properties configurable in bud files.
 
 | Name | Type | Default | Description |
 | ----- | ----- | ----- | ----- |
-| `engine` | string&#124;object | &#x27;handlebars&#x27; | Template engine name or engine itself |
-| `cwd` | string | process.cwd() | Working directory path |
-| `data` | object |  | Data which template render with |
-| `mkdirp` | boolean | false | Make parent directories if needed |
-| `setup` | object |  | Optional settings for template engine |
-| `force` | boolean | false | Should overwrite file when already exists, or not |
-| `mode` | string&#124;number | &#x27;644&#x27; | Permission of generated files. (eg., &#x27;444&#x27; for readonly files) |
-| `path` | string |  | Destination file path. If not provided, guess from bud file path |
-| `tmpl` | string&#124;function | &#x27;json&#x27; | Template file path or registered template name or template function |
+| `` | string|object | &#x27;handlebars&#x27; | Template engine name or engine itself |
+| `` | string | process.cwd() | Working directory path |
+| `` | object |  | Data which template render with |
+| `` | boolean | false | Make parent directories if needed |
+| `` | object |  | Optional settings for template engine |
+| `` | boolean | false | Should overwrite file when already exists, or not |
+| `` | string|number | &#x27;644&#x27; | Permission of generated files. (eg., &#x27;444&#x27; for readonly files) |
+| `` | string |  | Destination file path. If not provided, guess from bud file path |
+| `` | string|function | &#x27;json&#x27; | Template file path or registered template name or template function |
 
 
 
-<a name="09-links"></a>
 Links
 ------
 
-<a name="09-links-website"></a>
 ### Website
 
 + [coz](http://coz-repo.github.io/coz/homepage)
 + [coz @npm][my_npm_url]
 + [coz @github][my_repo_url]
 
-<a name="09-links-tutorials"></a>
 ### Tutorials
 
-+ [01 - Installing coz][01_installing_coz_url]
-+ [02 - Rendering bud files][02_rendering_bud_files_url]
-+ [03 - Mastering coz bud][03_mastering_coz_bud_url]
-+ [04 - Using programmatic API][04_using_programmatic_a_p_i_url]
-+ [05 - Customizing coz][05_customizing_coz_url]
 
-<a name="09-links-documents"></a>
 ### Documents
 
 [![Inline docs][my_inch_badge_url]][my_inch_url]
 
 + [API Guide][my_apiguide_url]
 
-<a name="09-links-reports"></a>
 ### Reports
 
 + [Build Status @travis][my_travis_url]
@@ -319,23 +285,19 @@ Links
 + [Issues @github](https://github.com/coz-repo/coz/issues)
 + [Coverage Report][my_coverage_url]
 
-<a name="10-license"></a>
 License
 -------
 This software is released under the [MIT License][my_license_url].
 
-<a name="11-project"></a>
 About this project
 --------
 
 [![Bitdeli Badge][my_bitdeli_badge_url]][bitdeli_url]
 
-<a name="11-project-author"></a>
 ### Author
 
 + [Taka Okunishi](http://okunishitaka.com)
 
-<a name="11-project-donation"></a>
 ### Donation
 
 Support this project and [others by okunishinishi][my_gratipay_url] via [gratipay][my_gratipay_url].
@@ -343,45 +305,25 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 [<img src="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg" alt="Support via Gratipay"/>][my_gratipay_url]
 
 
-<!-- Sections end -->
+<!-- Sections Start -->
 
 
-<!-- Links start -->
+<!-- LICENSE Start -->
+<a name="license"></a>
 
-[nodejs_url]: http://nodejs.org/
-[npm_url]: https://www.npmjs.com/
-[nvm_url]: https://github.com/creationix/nvm
-[bitdeli_url]: https://bitdeli.com/free
-[my_bitdeli_badge_url]: https://d2weczhvl823v0.cloudfront.net/okunishinishi/node-coz/trend.png
-[my_repo_url]: https://github.com/okunishinishi/node-coz
-[my_travis_url]: http://travis-ci.org/okunishinishi/node-coz
-[my_travis_badge_url]: http://img.shields.io/travis/okunishinishi/node-coz.svg?style=flat
-[my_license_url]: https://github.com/okunishinishi/node-coz/blob/master/LICENSE
-[my_codeclimate_url]: http://codeclimate.com/github/okunishinishi/node-coz
-[my_codeclimate_badge_url]: http://img.shields.io/codeclimate/github/okunishinishi/node-coz.svg?style=flat
-[my_codeclimate_coverage_badge_url]: http://img.shields.io/codeclimate/coverage/github/okunishinishi/node-coz.svg?style=flat
-[my_apiguide_url]: http://okunishinishi.github.io/node-coz/apiguide/module-coz.html
-[my_coverage_url]: http://okunishinishi.github.io/node-coz/coverage/lcov-report
-[my_coverage_report_url]: http://okunishinishi.github.io/node-coz/coverage/lcov-report/
-[my_gratipay_url]: https://gratipay.com/okunishinishi/
-[my_gratipay_budge_url]: http://img.shields.io/gratipay/okunishinishi.svg?style=flat
-[my_npm_url]: http://www.npmjs.org/package/coz
-[my_npm_budge_url]: http://img.shields.io/npm/v/coz.svg?style=flat
-[my_tag_url]: http://github.com/okunishinishi/node-coz/releases/tag/
-[my_tag_badge_url]: http://img.shields.io/github/tag/okunishinishi/node-coz.svg?style=flat
-[my_gemnasium_url]: http://gemnasium.com/okunishinishi/node-coz
-[my_gemnasium_badge_url]: http://img.shields.io/gemnasium/okunishinishi/node-coz.svg?style=flat
-[my_inch_badge_url]: http://inch-ci.org/github/okunishinishi/node-coz.svg?branch=master
-[my_inch_url]: http://inch-ci.org/github/okunishinishi/node-coz
+License
+-------
+This software is released under the [MIT License](https://github.com/coz-repo/coz/blob/master/LICENSE).
 
-<!-- Links end-->
+<!-- LICENSE End -->
 
-<!-- Tutorial urls start -->
 
-[01_installing_coz_url]: https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/01%20-%20Installing%20coz.md
-[02_rendering_bud_files_url]: https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/02%20-%20Rendering%20bud%20files.md
-[03_mastering_coz_bud_url]: https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/03%20-%20Mastering%20coz%20bud.md
-[04_using_programmatic_a_p_i_url]: https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/04%20-%20Using%20programmatic%20API.md
-[05_customizing_coz_url]: https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/05%20-%20Customizing%20coz.md
+<!-- Links Start -->
+<a name="links"></a>
 
-<!-- Tutorial urls end -->
+Links
+------
+
++ [coz-examples](https://github.com/coz-repo/coz-examples#04-from-programmatic-api)
+
+<!-- Links End -->

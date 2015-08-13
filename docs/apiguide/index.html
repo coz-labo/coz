@@ -84,19 +84,21 @@
 
 
     <section class="readme-section">
-        <article><h1>coz</h1><p>Flexible generator, which makes your project clean and maintainable.</p>
-<!-- Badge start -->
-<p><a href="http://travis-ci.org/okunishinishi/node-coz"><img src="http://img.shields.io/travis/okunishinishi/node-coz.svg?style=flat" alt="Build Status"></a>
-<a href="http://codeclimate.com/github/okunishinishi/node-coz"><img src="http://img.shields.io/codeclimate/github/okunishinishi/node-coz.svg?style=flat" alt="Code Climate"></a>
-<a href="http://codeclimate.com/github/okunishinishi/node-coz"><img src="http://img.shields.io/codeclimate/coverage/github/okunishinishi/node-coz.svg?style=flat" alt="Code Coverage"></a>
-<a href="http://gemnasium.com/okunishinishi/node-coz"><img src="http://img.shields.io/gemnasium/okunishinishi/node-coz.svg?style=flat" alt="dependencies"></a>
-<a href="http://www.npmjs.org/package/coz"><img src="http://img.shields.io/npm/v/coz.svg?style=flat" alt="npm version"></a>
-<a href="https://gratipay.com/okunishinishi/"><img src="http://img.shields.io/gratipay/okunishinishi.svg?style=flat" alt="Gratipay"></a></p>
-<!-- Badge end -->
-<!-- Banner start -->
+        <article><h1>coz</h1><!-- Badge Start -->
+<p><a name="badges"></a></p>
+<p><a href="http://travis-ci.org/coz-repo/coz"><img src="http://img.shields.io/travis/coz-repo/coz.svg?style=flat" alt="Build Status"></a>
+<a href="http://codeclimate.com/github/coz-repo/coz"><img src="http://img.shields.io/codeclimate/github/coz-repo/coz.svg?style=flat" alt="Code Climate"></a>
+<a href="http://codeclimate.com/github/coz-repo/coz"><img src="http://img.shields.io/codeclimate/coverage/github/coz-repo/coz.svg?style=flat" alt="Code Coverage"></a>
+<a href="https://gemnasium.com/coz-repo/coz"><img src="https://gemnasium.com/coz-repo/coz.svg" alt="Dependency Status"></a>
+<a href="http://www.npmjs.org/package/coz"><img src="http://img.shields.io/npm/v/coz.svg?style=flat" alt="npm Version"></a></p>
+<!-- Badge End -->
+<!-- Description Start -->
+<p><a name="description"></a></p>
+<p>Flexible generator, which makes your project clean and maintainable.</p>
+<!-- Description End -->
+<!-- Overview Start -->
+<p><a name="overview"></a></p>
 <p><a href="http://coz-repo.github.io/coz/homepage"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a></p>
-<!-- Banner end -->
-<!-- Concept start -->
 <pre class="prettyprint source lang-javascript"><code>// Define rendering rule.
 module.exports = {
     path: 'have-a-nice-day.txt', // File path to write
@@ -106,52 +108,16 @@ module.exports = {
     data: require('./my-datasource.json') // Data to render
 }</code></pre><p>Save this as <strong><em>.my-first-bud.bud</em></strong> , then running </p>
 <pre class="prettyprint source lang-bash"><code>$ coz render &quot;.my-first-bud.bud&quot;</code></pre><p>will do the magic.</p>
-<!-- Concept end -->
-<!-- Table start -->
-<h2>Table of Contents</h2><ul>
-<li><a href="#01-about">About coz</a><ul>
-<li><a href="#01-about-whats-this">What's This?</a></li>
-<li><a href="#01-about-what-for">What For?</a></li>
-<li><a href="#01-about-why-this">Why This?</a></li>
-</ul>
-</li>
-<li><a href="#02-howto">Getting started</a><ul>
-<li><a href="#02-howto-requirements">Requirements</a></li>
-<li><a href="#02-howto-installation">Installation</a></li>
-<li><a href="#02-howto-quickstart">Quickstart</a></li>
-<li><a href="#02-howto-programmatic-a-p-i">Programmatic API</a></li>
-</ul>
-</li>
-<li><a href="#03-spec">Specifications</a><ul>
-<li><a href="#03-spec-bud-file-specification">Bud File Specification</a></li>
-</ul>
-</li>
-<li><a href="#09-links">Links</a><ul>
-<li><a href="#09-links-website">Website</a></li>
-<li><a href="#09-links-tutorials">Tutorials</a></li>
-<li><a href="#09-links-documents">Documents</a></li>
-<li><a href="#09-links-reports">Reports</a></li>
-</ul>
-</li>
-<li><a href="#10-license">License</a></li>
-<li><a href="#11-project">About this project</a><ul>
-<li><a href="#11-project-author">Author</a></li>
-<li><a href="#11-project-donation">Donation</a></li>
-</ul>
-</li>
-</ul>
-<!-- Table end -->
-<!-- Sections start -->
-<p><a name="01-about"></a></p>
-<h2>About coz</h2><p><a name="01-about-whats-this"></a></p>
-<h3>What's This?</h3><p>The basic idea of coz is that creating files from files.</p>
+<!-- Overview End -->
+<!-- Sections Start -->
+<p><a name="sections"></a></p>
+<h2>About coz</h2><h3>What's This?</h3><p>The basic idea of coz is that creating files from files.</p>
 <ul>
 <li>Writing a meta file called <a href="#spec-bud-spec">.bud file</a>.</li>
 <li>Running <code>coz render</code> command.</li>
 <li>Files will be generated!</li>
 </ul>
 <p><img style="height:256px;" src="assets/images/coz-outline.jpg" height="256"></p>
-<p><a name="01-about-what-for"></a></p>
 <h3>What For?</h3><p>Automation. Generating files makes your project clean and maintainable.</p>
 <p>You can define a single datasource and distribute it in various forms.</p>
 <p>For example,</p>
@@ -161,7 +127,6 @@ module.exports = {
 <li>Generate Web API document and Swift client entity from json schema objects.</li>
 <li>Generate empty test case files from project files.</li>
 </ul>
-<p><a name="01-about-why-this"></a></p>
 <h3>Why This?</h3><ul>
 <li><strong>Lightweight and fast</strong><ul>
 <li>coz does nothing bud file templating, it's very fast.</li>
@@ -178,30 +143,65 @@ module.exports = {
 </ul>
 </li>
 </ul>
-<p><a name="02-howto"></a></p>
-<h2>Getting started</h2><p><a name="02-howto-requirements"></a></p>
-<h3>Requirements</h3><ul>
-<li><a href="http://nodejs.org/">node.js&gt;=0.10.3</a></li>
+<h2>Getting started</h2><h3>Requirements</h3><ul>
+<li>[node.js&gt;=0.10.3][nodejs_url]</li>
 </ul>
-<p><a name="02-howto-installation"></a></p>
-<h3>Installation</h3><p>coz is available as an <a href="https://www.npmjs.com/">NPM</a> package.</p>
+<h3>Installation</h3><p>coz is available as an [npm][npm_url] package.</p>
 <pre class="prettyprint source lang-bash"><code># Install coz as a global module.
 $ npm install coz -g</code></pre><p>Or you can install it without <code>-g</code> option and use <a href="#programmatic-api">Programmatic API</a>.
-For more details, see tutorial section &quot;<a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/01%20-%20Installing%20coz.md">01 - Installing coz</a>&quot;.</p>
-<p><a name="02-howto-quickstart"></a></p>
+For more details, see tutorial section &quot;[01 - Installing coz][01_installing_coz_url]&quot;.</p>
 <h3>Quickstart</h3><p><strong>.who-likes-what.txt.bud</strong> (bud file)</p>
-<pre class="prettyprint source lang-javascript"><code></code></pre><p>As you see, <code>.bud</code> file is actuary a JavaScript file and could be exported a Node.js module.</p>
+<pre class="prettyprint source lang-javascript"><code>/**
+ * .who-likes-what.txt.bud
+ * This is a bud file for &quot;examples/01-minimum-demo&quot;
+ */
+
+// Exports as a Node.js module.
+module.exports = {
+
+    // Template string. By default, parsed by Handlebars engine.
+    tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
+
+    // Overwrite when already existing.
+    force: true,
+
+    // File path to write out.
+    path: 'who-likes-what.txt',
+
+    // File permission.
+    mode: '444',
+
+    // Data to render.
+    data: {
+        members: {
+            &quot;Mai&quot;: &quot;apple&quot;,
+            &quot;Tom&quot;: &quot;Orange&quot;,
+            &quot;Rita&quot;: &quot;Banana&quot;
+        }
+    }
+};</code></pre><p>As you see, <code>.bud</code> file is actuary a JavaScript file and could be exported a Node.js module.</p>
 <p>Save this file as <code>.who-likes-what.txt.bud</code> and then, run:</p>
 <pre class="prettyprint source lang-bash"><code># Render the bud file
 $ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will generate a file named <code>who-likes-what.txt</code>.</p>
-<p>For more details, see tutorial section &quot;<a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/02%20-%20Rendering%20bud%20files.md">02 - Rendering bud files</a>&quot;.</p>
-<p><a name="programmatic-api" />
-<a name="02-howto-programmatic-a-p-i"></a></p>
+<p>For more details, see tutorial section &quot;[02 - Rendering bud files][02_rendering_bud_files_url]&quot;.</p>
+<p><a name="programmatic-api" /></p>
 <h3>Programmatic API</h3><p>coz provides programmatic API which enables you to execute coz commands from Node.js program.</p>
-<pre class="prettyprint source lang-javascript"><code></code></pre><p>For more details, see tutorial section &quot;<a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/04%20-%20Using%20programmatic%20API.md">04 - Using programmatic API</a>&quot;.</p>
-<p><a name="03-spec"></a></p>
-<h2>Specifications</h2><p><a name="spec-bud-spec"></a>
-<a name="03-spec-bud-file-specification"></a></p>
+<pre class="prettyprint source lang-javascript"><code>#!/usr/bin/env node
+
+/**
+ * run_rendering.js
+ * This is an executable file for &quot;examples/04-from-programmatic-api/run_rendering.js&quot;
+ */
+
+var coz = require('coz');
+
+// Render .bud files.
+coz.render([
+    '**/.*.bud'
+], function (err) {
+    console.log(err ? err : 'Done!');
+});</code></pre><p>For more details, see tutorial section &quot;[04 - Using programmatic API][04_using_programmatic_a_p_i_url]&quot;.</p>
+<h2>Specifications</h2><p><a name="spec-bud-spec"></a></p>
 <h3>Bud File Specification</h3><p>A bud contains file meta data like witch template to use, where to render it, what permission to give, and so on.</p>
 <p>You can specify bud data by writing <code>.bud</code> file, which is actually a javascript file and could be written in Node.js format.</p>
 <pre class="prettyprint source lang-javascript"><code>module.exports = {
@@ -218,7 +218,7 @@ $ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will genera
         var error = null;
         callback(err, data);
     });
-}</code></pre><p>For more details, see tutorial section &quot;<a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/03%20-%20Mastering%20coz%20bud.md">03 - Mastering coz bud</a>&quot;.</p>
+}</code></pre><p>For more details, see tutorial section &quot;[03 - Mastering coz bud][03_mastering_coz_bud_url]&quot;.</p>
 <h5>Supported Properties</h5><p>List of properties configurable in bud files.</p>
 <table>
 <thead>
@@ -231,104 +231,97 @@ $ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will genera
 </thead>
 <tbody>
 <tr>
-<td><code>engine</code></td>
-<td>string&#124;object</td>
+<td>``</td>
+<td>string</td>
+<td>object</td>
 <td>&#x27;handlebars&#x27;</td>
 <td>Template engine name or engine itself</td>
 </tr>
 <tr>
-<td><code>cwd</code></td>
+<td>``</td>
 <td>string</td>
 <td>process.cwd()</td>
 <td>Working directory path</td>
 </tr>
 <tr>
-<td><code>data</code></td>
+<td>``</td>
 <td>object</td>
 <td></td>
 <td>Data which template render with</td>
 </tr>
 <tr>
-<td><code>mkdirp</code></td>
+<td>``</td>
 <td>boolean</td>
 <td>false</td>
 <td>Make parent directories if needed</td>
 </tr>
 <tr>
-<td><code>setup</code></td>
+<td>``</td>
 <td>object</td>
 <td></td>
 <td>Optional settings for template engine</td>
 </tr>
 <tr>
-<td><code>force</code></td>
+<td>``</td>
 <td>boolean</td>
 <td>false</td>
 <td>Should overwrite file when already exists, or not</td>
 </tr>
 <tr>
-<td><code>mode</code></td>
-<td>string&#124;number</td>
+<td>``</td>
+<td>string</td>
+<td>number</td>
 <td>&#x27;644&#x27;</td>
 <td>Permission of generated files. (eg., &#x27;444&#x27; for readonly files)</td>
 </tr>
 <tr>
-<td><code>path</code></td>
+<td>``</td>
 <td>string</td>
 <td></td>
 <td>Destination file path. If not provided, guess from bud file path</td>
 </tr>
 <tr>
-<td><code>tmpl</code></td>
-<td>string&#124;function</td>
+<td>``</td>
+<td>string</td>
+<td>function</td>
 <td>&#x27;json&#x27;</td>
 <td>Template file path or registered template name or template function</td>
 </tr>
 </tbody>
 </table>
-<p><a name="09-links"></a></p>
-<h2>Links</h2><p><a name="09-links-website"></a></p>
-<h3>Website</h3><ul>
+<h2>Links</h2><h3>Website</h3><ul>
 <li><a href="http://coz-repo.github.io/coz/homepage">coz</a></li>
-<li><a href="http://www.npmjs.org/package/coz">coz @npm</a></li>
-<li><a href="https://github.com/okunishinishi/node-coz">coz @github</a></li>
+<li>[coz @npm][my_npm_url]</li>
+<li>[coz @github][my_repo_url]</li>
 </ul>
-<p><a name="09-links-tutorials"></a></p>
-<h3>Tutorials</h3><ul>
-<li><a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/01%20-%20Installing%20coz.md">01 - Installing coz</a></li>
-<li><a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/02%20-%20Rendering%20bud%20files.md">02 - Rendering bud files</a></li>
-<li><a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/03%20-%20Mastering%20coz%20bud.md">03 - Mastering coz bud</a></li>
-<li><a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/04%20-%20Using%20programmatic%20API.md">04 - Using programmatic API</a></li>
-<li><a href="https://github.com/okunishinishi/node-coz/blob/master/docs/tutorial/05%20-%20Customizing%20coz.md">05 - Customizing coz</a></li>
-</ul>
-<p><a name="09-links-documents"></a></p>
-<h3>Documents</h3><p><a href="http://inch-ci.org/github/okunishinishi/node-coz"><img src="http://inch-ci.org/github/okunishinishi/node-coz.svg?branch=master" alt="Inline docs"></a></p>
+<h3>Tutorials</h3><h3>Documents</h3><p>[![Inline docs][my_inch_badge_url]][my_inch_url]</p>
 <ul>
-<li><a href="http://okunishinishi.github.io/node-coz/apiguide/module-coz.html">API Guide</a></li>
+<li>[API Guide][my_apiguide_url]</li>
 </ul>
-<p><a name="09-links-reports"></a></p>
 <h3>Reports</h3><ul>
-<li><a href="http://travis-ci.org/okunishinishi/node-coz">Build Status @travis</a></li>
-<li><a href="http://codeclimate.com/github/okunishinishi/node-coz">Analysis Result @codeclimate</a></li>
+<li>[Build Status @travis][my_travis_url]</li>
+<li>[Analysis Result @codeclimate][my_codeclimate_url]</li>
 <li><a href="https://github.com/coz-repo/coz/issues">Issues @github</a></li>
-<li><a href="http://okunishinishi.github.io/node-coz/coverage/lcov-report">Coverage Report</a></li>
+<li>[Coverage Report][my_coverage_url]</li>
 </ul>
-<p><a name="10-license"></a></p>
-<h2>License</h2><p>This software is released under the <a href="https://github.com/okunishinishi/node-coz/blob/master/LICENSE">MIT License</a>.</p>
-<p><a name="11-project"></a></p>
-<h2>About this project</h2><p><a href="https://bitdeli.com/free"><img src="https://d2weczhvl823v0.cloudfront.net/okunishinishi/node-coz/trend.png" alt="Bitdeli Badge"></a></p>
-<p><a name="11-project-author"></a></p>
+<h2>License</h2><p>This software is released under the [MIT License][my_license_url].</p>
+<h2>About this project</h2><p>[![Bitdeli Badge][my_bitdeli_badge_url]][bitdeli_url]</p>
 <h3>Author</h3><ul>
 <li><a href="http://okunishitaka.com">Taka Okunishi</a></li>
 </ul>
-<p><a name="11-project-donation"></a></p>
-<h3>Donation</h3><p>Support this project and <a href="https://gratipay.com/okunishinishi/">others by okunishinishi</a> via <a href="https://gratipay.com/okunishinishi/">gratipay</a>.</p>
-<p><a href="https://gratipay.com/okunishinishi/"><img src="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg" alt="Support via Gratipay"/></a></p>
-<!-- Sections end -->
-<!-- Links start -->
-<!-- Links end-->
-<!-- Tutorial urls start -->
-<!-- Tutorial urls end --></article>
+<h3>Donation</h3><p>Support this project and [others by okunishinishi][my_gratipay_url] via [gratipay][my_gratipay_url].</p>
+<p>[<img src="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg" alt="Support via Gratipay"/>][my_gratipay_url]</p>
+<!-- Sections Start -->
+<!-- LICENSE Start -->
+<p><a name="license"></a></p>
+<h2>License</h2><p>This software is released under the <a href="https://github.com/coz-repo/coz/blob/master/LICENSE">MIT License</a>.</p>
+<!-- LICENSE End -->
+<!-- Links Start -->
+<p><a name="links"></a></p>
+<h2>Links</h2><ul>
+<li><a href="https://github.com/coz-repo/coz-examples#04-from-programmatic-api">coz-examples</a></li>
+</ul>
+<!-- Links End --></article>
     </section>
 
 

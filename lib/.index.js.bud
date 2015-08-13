@@ -21,7 +21,7 @@ module.exports = {
             }
         },
         get links() {
-            return require('../docs/readme/.links.json');
+            return require('../docs/links.json');
         },
         get aliases() {
             return {
