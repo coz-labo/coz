@@ -7,10 +7,10 @@ install:
 before_script:
 - npm link .
 script:
-- "./ci/build.js"
-- "./ci/test.js"
-- "./ci/cover.js"
-- "./ci/report.js"
+- ./ci/build.js
+- ./ci/test.js
+- ./ci/cover.js
+- ./ci/report.js
 env:
   global:
-    secure: DrjVdg/fYLLR48LQP3oyR5y72BHUVxtjVqjF0RwT7qHNDSbv123/TiQMq0qdTtWKACiRjmMyVqII6CGqwjbSvZgH/ZrEna6LAZtx6EutVILaq8NOa6261WDN8uKX/X6j8ADoE8XZ4EvtMMt6DrEPy3fC5nYLdv5XIotImN3L5IdnSz6IOE5qoVrbiD/zdf5Gr8lAKbCSNRTiNx0OkpT6dpqp3qPxiLPtleokq7e15gLSKsQCCdR5dlNBjc2RpMI9De/8rcrhMQuVmfIOo3zBDJmUu7FUVdgUQXnYAaCaU/1/wWpAvsNEUy7hlguzTXCXZJAIR6pUiqwyAI0K1nwq+kfuU0k4+FRj6Aq57Zyfnf2qFp35ann/DpqH2KzFfGO7ZgbJl1ZGW9iyh2z7f/J8gR5elR+0GgXwNH19aD+NZ1fOdZAL4S6R8IsFfusEFhIWp3Ow86O9az93AdCoLoSvhwfrert0kKAuJY+9W5wJBszCvzLWq304NgOeaJrjKqg6Apmv0YaU6+B4lClYXX3UDXIzZsYC5ymyzNF2AWGFYtLMH11Xs7iTtv5NPe0hdOsVodQ47dpSHp/PXEkHDGOscYq/WybVNgNDvcLqcdbLS9Q9pLcGMzmQt0QGtA/iIg73MdSLvIV5BqKWsDCptmPWCvu6gARC+jfe9nH4dfQkrss=
+  - secure: K/OcJGL4/Gm0XpQI4Fu8N3kg8PPHtwT59EviWrEjqE8PWDBTUE29JwpJF2FVho4xgImGg60A2k11CpYuvYSFgfTxVtNoIjZDJeojpLdU/1sP+dDkdQZ8SSKpRixjNHq6UIoULNtxNDUK2TPA7++YBoGiF4o0iMWIFa+0XiJnjFgn47rHBGnJbfb3C95NdBfuzXXafmD+PVi+MgGJwvSCLwGxeGxTP3vV3YmsOCWXPVIzUZmhnb/y8kZygukxB31o+6/qgkgGoBzsT628hxIX55+k4bZj+saThXTqbkrT0/oknW3NMvNLE/agaufsb80G3OvFOWEqDq3y9jrJvYo7GWTBCi8oNtKKAnS34ZHjoeltOG6xzYuwcIz0NMR5UfewCNWIWXwnLP51HDDw/6OO56NxCM6X1o/WA2qaB0W7/99JsTpZLpDyeOM23fLlLPvFD4lU46gXwoSYmtInA5UREQ+I06e27zgQ3Ao9RjEYtiO5q+mCm7Y41SAF5G8fc7Om8ECmVFbWXRWicRzvetxuy7luIJYJpHqCSPc3T2BFJqQ/4CDpRXSCN33o7yPyUp+oSgPjETHUrGM5BQ64OIYvxz+WtIDjvBCRWoWp8NCrGTFUenUqld8Zzgpr67PDBixrsCmGDlqFwFemSjso6CCsQqKXQcjOibw0N537FhRmr5E=
