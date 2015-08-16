@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
@@ -33,6 +33,7 @@
   },
   "homepage": "http://coz-repo.github.io/coz/homepage",
   "dependencies": {
+    "arrayfilter": "^1.0.1",
     "async": "^1.4.1",
     "colorprint": "^1.1.1",
     "commander": "^2.8.1",
