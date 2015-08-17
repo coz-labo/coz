@@ -34,6 +34,7 @@
   "homepage": "http://coz-repo.github.io/coz/homepage",
   "dependencies": {
     "arrayfilter": "^1.0.1",
+    "arraysort": "^1.0.0",
     "async": "^1.4.1",
     "colorprint": "^1.1.1",
     "commander": "^2.8.1",
