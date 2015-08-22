@@ -10,10 +10,6 @@ var coz = require('../lib');
 exports['Eval index.'] = function (test) {
     test.ok(coz.bud);
     test.ok(coz.bud.Bud);
-    test.ok(coz.bud.factory);
-    Object.keys(coz.bud.factory).forEach(function (key) {
-        test.ok(coz.bud.factory[key]);
-    });
 
     test.ok(coz.template);
     Object.keys(coz.template).forEach(function (key) {

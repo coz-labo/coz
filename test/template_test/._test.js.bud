@@ -4,13 +4,16 @@
 
 "use strict";
 
-var coz = require('../../lib'),
-    nodeunitTestcaseJsBud = coz.factory.nodeunitTestcaseJsBud;
+var cozTmpl = require('coz-tmpl');
 
-module.exports = nodeunitTestcaseJsBud({
+module.exports = cozTmpl.nodeunitTestJsBud({
     src: [
         __dirname + '/../../lib/template/*.js',
         __dirname + '/../../lib/template/buildin_tmpls/*.js'
     ],
     dest: __dirname
 });
+
+if (!module.parent) {
+    require('../../lib').render(__filename);
+}

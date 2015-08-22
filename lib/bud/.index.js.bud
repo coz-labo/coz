@@ -1,9 +1,8 @@
 "use strict";
 
-var coz = require('../../lib'),
-    indexJsBud = coz.factory.indexJsBud;
+var cozTmpl = require('coz-tmpl');
 
-module.exports = indexJsBud({
+module.exports = cozTmpl.indexJsBud({
     dirname: __dirname,
     desc: [
         'This module provides interfaces working with bud.'
@@ -20,4 +19,8 @@ module.exports = indexJsBud({
         'BudWriter'
     ]
 });
+
+if (!module.parent) {
+    require('../../lib').render(__filename);
+}
 

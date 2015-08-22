@@ -1,9 +1,8 @@
 "use strict";
 
-var coz = require('../../lib'),
-    indexJsBud = coz.factory.indexJsBud;
+var cozTmpl = require('coz-tmpl');
 
-module.exports = indexJsBud({
+module.exports = cozTmpl.indexJsBud({
     dirname: __dirname,
     desc: [
         'Utility modules.'
@@ -11,12 +10,12 @@ module.exports = indexJsBud({
     parentmodule: 'coz/lib',
     module: 'coz/lib/util',
     submodules: [
-        'compiling',
         'copying',
-        'file',
-        'filtering',
-        'minifying',
-        'sorting',
-        'string'
+        'file'
     ]
 });
+
+
+if (!module.parent) {
+    require('../../lib').render(__filename);
+}

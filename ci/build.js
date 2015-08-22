@@ -13,7 +13,7 @@ apeTasking.runTasks('build', [
             '.*.bud',
             'docs/**/.*.bud',
             'lib/**/.*.bud',
-            'test/.*.bud'
+            'test/**/.*.bud'
         ], callback);
     }
 ], true);

@@ -1,9 +1,8 @@
 "use strict";
 
-var coz = require('../../lib'),
-    indexJsBud = coz.factory.indexJsBud;
+var cozTmpl = require('coz-tmpl');
 
-module.exports = indexJsBud({
+module.exports = cozTmpl.indexJsBud({
     dirname: __dirname,
     desc: [
         'Commands invoked via bin script.'
@@ -12,3 +11,6 @@ module.exports = indexJsBud({
     module: 'coz/lib/commands'
 });
 
+if (!module.parent) {
+    require('../../lib').render(__filename);
+}
