@@ -81,7 +81,7 @@ var core = require('../core'),
     async = ext.async,
     fs = core.fs,
     Bud = require('./bud'),
-    file = require('../util/file'),
+    filedel = require('filedel'),
     _nextTick = require('./_next_tick'),
     _concatBuds = require('./_concat_buds');
 
@@ -123,7 +123,7 @@ BudRemover.prototype = {
                     callback(null, bud);
                     return;
                 }
-                file.unlinkFile(filename, {
+                filedel(filename, {
                     force: bud.force
                 }, function (err) {
                     delete bud.at;
