@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
@@ -44,6 +44,7 @@
     "coz-logger": "^1.0.2",
     "execcli": "^2.1.1",
     "expandglob": "^1.0.0",
+    "extend": "^3.0.0",
     "filedel": "^1.0.0",
     "glob": "^5.0.14",
     "handlebars": "^3.0.3",

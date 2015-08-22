@@ -27,7 +27,7 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-coz.html">coz</a></li><li><a href="module-coz_lib.html">coz/lib</a></li><li><a href="module-coz_lib_bud.html">coz/lib/bud</a></li><li><a href="module-coz_lib_commands.html">coz/lib/commands</a></li><li><a href="module-coz_lib_core.html">coz/lib/core</a></li><li><a href="module-coz_lib_ext.html">coz/lib/ext</a></li><li><a href="module-coz_lib_template.html">coz/lib/template</a></li><li><a href="module-coz_lib_template_buildin_engines.html">coz/lib/template/buildin_engines</a></li><li><a href="module-coz_lib_util.html">coz/lib/util</a></li><li><a href="module-coz_lib_util_copying.html">coz/lib/util/copying</a></li><li><a href="module-coz_lib_util_file.html">coz/lib/util/file</a></li><li><a href="module-coz_lib_util_flow.html">coz/lib/util/flow</a></li><li><a href="module-coz_lib_util_requiring.html">coz/lib/util/requiring</a></li>
+					<li><a href="module-coz.html">coz</a></li><li><a href="module-coz_lib.html">coz/lib</a></li><li><a href="module-coz_lib_bud.html">coz/lib/bud</a></li><li><a href="module-coz_lib_commands.html">coz/lib/commands</a></li><li><a href="module-coz_lib_core.html">coz/lib/core</a></li><li><a href="module-coz_lib_ext.html">coz/lib/ext</a></li><li><a href="module-coz_lib_template.html">coz/lib/template</a></li><li><a href="module-coz_lib_template_buildin_engines.html">coz/lib/template/buildin_engines</a></li><li><a href="module-coz_lib_util.html">coz/lib/util</a></li><li><a href="module-coz_lib_util_file.html">coz/lib/util/file</a></li><li><a href="module-coz_lib_util_requiring.html">coz/lib/util/requiring</a></li>
 				</ul>
 			</li>
 			
@@ -79,10 +79,9 @@ var ext = require('./ext'),
     core = require('./core'),
     path = core.path,
     async = ext.async,
-    file = require('./util/file'),
-    flow = require('./util/flow'),
     requiring = require('./util/requiring'),
     bud = require('./bud'),
+    eachBud = require('./bud/each_bud'),
     EngineSet = require('./template/engine_set'),
     TmplSet = require('./template/tmpl_set'),
     cozLogger = require('coz-logger'),
@@ -157,7 +156,7 @@ Coz.prototype = {
             writer = new BudWriter();
 
         logger.infoStarted(name, startAt);
-        Coz._eachBud(patterns, function (filename, callback) {
+        eachBud(patterns, function (filename, callback) {
             async.waterfall([
                 function (callback) {
                     callback(null, filename);
@@ -209,7 +208,7 @@ Coz.prototype = {
             remover = new BudRemover();
 
         logger.infoStarted(name, startAt);
-        Coz._eachBud(patterns, function (filename, callback) {
+        eachBud(patterns, function (filename, callback) {
             async.waterfall([
                 function (callback) {
                     callback(null, filename);
@@ -242,22 +241,6 @@ Coz.prototype = {
     }
 };
 
-
-Coz._eachBud = function (pattern, handler, callback) {
-    async.concat([].concat(pattern), function (pattern, callback) {
-        switch (typeof(pattern)) {
-            case 'object':
-                var bud = pattern; //Actually a bud.
-                var parent = module.parent;
-                bud.cwd = bud.cwd || (parent &amp;&amp; path.dirname(parent.filename)) || __dirname;
-                handler(bud, callback);
-                break;
-            default:
-                flow.eachFiles([].concat(pattern), handler, callback);
-                break;
-        }
-    }, callback);
-};
 
 module.exports = Coz;
 

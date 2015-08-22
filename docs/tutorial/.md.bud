@@ -180,5 +180,5 @@ module.exports = function (callback) {
 };
 
 if (!module.parent) {
-    require('coz').render(__filename);
+    coz.render(__filename);
 }

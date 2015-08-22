@@ -27,7 +27,7 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-coz.html">coz</a></li><li><a href="module-coz_lib.html">coz/lib</a></li><li><a href="module-coz_lib_bud.html">coz/lib/bud</a></li><li><a href="module-coz_lib_commands.html">coz/lib/commands</a></li><li><a href="module-coz_lib_core.html">coz/lib/core</a></li><li><a href="module-coz_lib_ext.html">coz/lib/ext</a></li><li><a href="module-coz_lib_template.html">coz/lib/template</a></li><li><a href="module-coz_lib_template_buildin_engines.html">coz/lib/template/buildin_engines</a></li><li><a href="module-coz_lib_util.html">coz/lib/util</a></li><li><a href="module-coz_lib_util_copying.html">coz/lib/util/copying</a></li><li><a href="module-coz_lib_util_file.html">coz/lib/util/file</a></li><li><a href="module-coz_lib_util_flow.html">coz/lib/util/flow</a></li><li><a href="module-coz_lib_util_requiring.html">coz/lib/util/requiring</a></li>
+					<li><a href="module-coz.html">coz</a></li><li><a href="module-coz_lib.html">coz/lib</a></li><li><a href="module-coz_lib_bud.html">coz/lib/bud</a></li><li><a href="module-coz_lib_commands.html">coz/lib/commands</a></li><li><a href="module-coz_lib_core.html">coz/lib/core</a></li><li><a href="module-coz_lib_ext.html">coz/lib/ext</a></li><li><a href="module-coz_lib_template.html">coz/lib/template</a></li><li><a href="module-coz_lib_template_buildin_engines.html">coz/lib/template/buildin_engines</a></li><li><a href="module-coz_lib_util.html">coz/lib/util</a></li><li><a href="module-coz_lib_util_file.html">coz/lib/util/file</a></li><li><a href="module-coz_lib_util_requiring.html">coz/lib/util/requiring</a></li>
 				</ul>
 			</li>
 			
@@ -68,7 +68,7 @@
 		<pre
 			class="sunlight-highlight-javascript linenums">/**
  * @overview Flexible generator, which makes your project clean and maintainable.
- * @version 3.0.3
+ * @version 3.0.4
  * @module coz
  * @author {@link http://okunishitaka.com|Taka Okunishi}
  * @license {@link MIT|}
@@ -86,6 +86,7 @@
  * @requires {@link https://www.npmjs.org/package/coz-logger|coz-logger@^1.0.2}
  * @requires {@link https://www.npmjs.org/package/execcli|execcli@^2.1.1}
  * @requires {@link https://www.npmjs.org/package/expandglob|expandglob@^1.0.0}
+ * @requires {@link https://www.npmjs.org/package/extend|extend@^3.0.0}
  * @requires {@link https://www.npmjs.org/package/filedel|filedel@^1.0.0}
  * @requires {@link https://www.npmjs.org/package/glob|glob@^5.0.14}
  * @requires {@link https://www.npmjs.org/package/handlebars|handlebars@^3.0.3}
@@ -100,7 +101,7 @@
 var Coz = require('./coz');
 
 var coz = module.exports = new Coz();
-coz.version = '3.0.3';
+coz.version = '3.0.4';
 
 //---------------------
 // Classes
