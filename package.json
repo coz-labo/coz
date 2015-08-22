@@ -33,6 +33,7 @@
   },
   "homepage": "http://coz-repo.github.io/coz/homepage",
   "dependencies": {
+    "argx": "^1.1.6",
     "arrayfilter": "^1.0.6",
     "arraysort": "^1.0.2",
     "async": "^1.4.2",
