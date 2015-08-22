@@ -77,17 +77,20 @@
 
 "use strict";
 
-var ext = require('../../ext'),
-    file = require('../file'),
-    async = ext.async;
+var expandglob = require('expandglob'),
+    async = require('async');
 
 /** @lends eachFiles */
 function eachFiles(pattern, handler, callback) {
     async.waterfall([
         function (callback) {
-            file.expandGlob(pattern, callback);
+            expandglob(pattern, callback);
         },
         function (filenames, callback) {
+            var notFound = (pattern.length > 0) &amp;&amp; (filenames.length == 0);
+            if (notFound) {
+                console.warn('File not found with pattern:', pattern);
+            }
             async.eachSeries(filenames, handler, callback);
         }
     ], callback);
