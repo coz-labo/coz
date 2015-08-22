@@ -36,18 +36,3 @@ coz.Coz = Coz;
 coz.{{camelcase @key}} = require('./{{snakecase @key}}');
 
 {{/each}}
-
-//---------------------
-// Aliases
-//---------------------
-{{#each aliases}}
-/**
- * This is an alias for {{aliasOf}}
- * @name {@link module:{{module}}|{{camelcase @key}}{{{../END_BRACE}}}
- * @memberof module:coz
- * @see module:{{module}}
- */
-coz.{{camelcase @key}} = {{aliasOf}};
-
-{{/each}}
-

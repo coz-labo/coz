@@ -15,29 +15,12 @@ module.exports = {
             return {
                 bud: 'Module to handle bud files',
                 template: 'Module to handle templates',
-                util: 'Module for utility functions',
                 ext: 'External modules installed via npm',
                 core: 'Nodejs build modules'
             }
         },
         get links() {
             return require('../docs/links.json');
-        },
-        get aliases() {
-            return {
-                string: {
-                    aliasOf: 'coz.util.string',
-                    module: 'coz/lib/util/string'
-                },
-                file: {
-                    aliasOf: 'coz.util.file',
-                    module: 'coz/lib/util/file'
-                },
-                factory: {
-                    aliasOf: 'coz.bud.factory',
-                    module: 'coz/lib/bud/factory'
-                }
-            }
         }
     }
 };

@@ -27,14 +27,14 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-coz.html">coz</a></li><li><a href="module-coz_lib.html">coz/lib</a></li><li><a href="module-coz_lib_bud.html">coz/lib/bud</a></li><li><a href="module-coz_lib_commands.html">coz/lib/commands</a></li><li><a href="module-coz_lib_core.html">coz/lib/core</a></li><li><a href="module-coz_lib_ext.html">coz/lib/ext</a></li><li><a href="module-coz_lib_template.html">coz/lib/template</a></li><li><a href="module-coz_lib_template_buildin_engines.html">coz/lib/template/buildin_engines</a></li><li><a href="module-coz_lib_util.html">coz/lib/util</a></li><li><a href="module-coz_lib_util_file.html">coz/lib/util/file</a></li><li><a href="module-coz_lib_util_requiring.html">coz/lib/util/requiring</a></li>
+					<li><a href="module-coz.html">coz</a></li><li><a href="module-coz_lib.html">coz/lib</a></li><li><a href="module-coz_lib_bud.html">coz/lib/bud</a></li><li><a href="module-coz_lib_commands.html">coz/lib/commands</a></li><li><a href="module-coz_lib_core.html">coz/lib/core</a></li><li><a href="module-coz_lib_ext.html">coz/lib/ext</a></li><li><a href="module-coz_lib_template.html">coz/lib/template</a></li><li><a href="module-coz_lib_template_buildin_engines.html">coz/lib/template/buildin_engines</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-coz_lib_bud-BudCompiler.html">coz/lib/bud~BudCompiler</a></li><li><a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a></li><li><a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a></li><li><a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
+					<li><a href="module-coz_lib_bud-BudCompiler.html">coz/lib/bud~BudCompiler</a></li><li><a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a></li><li><a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
 				</ul>
 			</li>
 			
@@ -68,7 +68,7 @@
 		<pre
 			class="sunlight-highlight-javascript linenums">/**
  * @overview Flexible generator, which makes your project clean and maintainable.
- * @version 3.0.6
+ * @version 3.0.7
  * @module coz
  * @author {@link http://okunishitaka.com|Taka Okunishi}
  * @license {@link MIT|}
@@ -82,6 +82,7 @@
  * @requires {@link https://www.npmjs.org/package/commander|commander@^2.8.1}
  * @requires {@link https://www.npmjs.org/package/coz-bud|coz-bud@^1.0.1}
  * @requires {@link https://www.npmjs.org/package/coz-bud-loader|coz-bud-loader@^1.0.0}
+ * @requires {@link https://www.npmjs.org/package/coz-bud-remover|coz-bud-remover@^1.0.0}
  * @requires {@link https://www.npmjs.org/package/coz-bud-writer|coz-bud-writer@^1.0.0}
  * @requires {@link https://www.npmjs.org/package/coz-engine|coz-engine@^1.0.2}
  * @requires {@link https://www.npmjs.org/package/coz-handlebars-engine|coz-handlebars-engine@^1.0.1}
@@ -100,7 +101,7 @@
 var Coz = require('./coz');
 
 var coz = module.exports = new Coz();
-coz.version = '3.0.6';
+coz.version = '3.0.7';
 
 //---------------------
 // Classes
@@ -127,14 +128,6 @@ coz.bud = require('./bud');
 coz.template = require('./template');
 
 /**
- * Module for utility functions.
- * @name {@link module:coz/lib/util|util}
- * @memberof module:coz
- * @see module:coz/lib/util
- */
-coz.util = require('./util');
-
-/**
  * External modules installed via npm.
  * @name {@link module:coz/lib/ext|ext}
  * @memberof module:coz
@@ -149,35 +142,6 @@ coz.ext = require('./ext');
  * @see module:coz/lib/core
  */
 coz.core = require('./core');
-
-
-//---------------------
-// Aliases
-//---------------------
-/**
- * This is an alias for coz.util.string
- * @name {@link module:coz/lib/util/string|string}
- * @memberof module:coz
- * @see module:coz/lib/util/string
- */
-coz.string = coz.util.string;
-
-/**
- * This is an alias for coz.util.file
- * @name {@link module:coz/lib/util/file|file}
- * @memberof module:coz
- * @see module:coz/lib/util/file
- */
-coz.file = coz.util.file;
-
-/**
- * This is an alias for coz.bud.factory
- * @name {@link module:coz/lib/bud/factory|factory}
- * @memberof module:coz
- * @see module:coz/lib/bud/factory
- */
-coz.factory = coz.bud.factory;
-
 
 </pre>
 	</article>
