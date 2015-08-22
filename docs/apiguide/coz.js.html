@@ -34,7 +34,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-coz_lib_bud-BudCompiler.html">coz/lib/bud~BudCompiler</a></li><li><a href="module-coz_lib_bud-BudLoader.html">coz/lib/bud~BudLoader</a></li><li><a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a></li><li><a href="module-coz_lib_bud-BudWriter.html">coz/lib/bud~BudWriter</a></li><li><a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a></li><li><a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
+					<li><a href="module-coz_lib_bud-BudCompiler.html">coz/lib/bud~BudCompiler</a></li><li><a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a></li><li><a href="module-coz_lib_bud-BudWriter.html">coz/lib/bud~BudWriter</a></li><li><a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a></li><li><a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
 				</ul>
 			</li>
 			
@@ -75,21 +75,17 @@
  */
 
 "use strict";
-var ext = require('./ext'),
-    core = require('./core'),
-    path = core.path,
-    async = ext.async,
-    requiring = require('./util/requiring'),
-    bud = require('./bud'),
+var path = require('path'),
+    async = require('async'),
     eachBud = require('./bud/each_bud'),
     EngineSet = require('./template/engine_set'),
     TmplSet = require('./template/tmpl_set'),
     cozLogger = require('coz-logger'),
-    BudLoader = bud.BudLoader,
-    BudCompiler = bud.BudCompiler,
-    BudRemover = bud.BudRemover,
-    BudWriter = bud.BudWriter,
-    requireSafely = requiring.requireSafely;
+    cozBudLoader = require('coz-bud-loader'),
+    BudCompiler = require('./bud/bud_compiler'),
+    BudRemover = require('./bud/bud_remover'),
+    BudWriter = require('./bud/bud_writer'),
+    requireSafely = require('./util/requiring/require_safely');
 
 function _parseConfig(config) {
     return requireSafely(config) || config || {};
@@ -148,7 +144,7 @@ Coz.prototype = {
             verbose = !!options.verbose;
 
         var logger = cozLogger(!!verbose),
-            loader = new BudLoader(),
+            loader = cozBudLoader({}),
             compiler = new BudCompiler({
                 engineSet: s.engineSet,
                 tmplSet: s.tmplSet
@@ -204,7 +200,7 @@ Coz.prototype = {
             verbose = !!options.verbose;
 
         var logger = cozLogger(!!verbose),
-            loader = new BudLoader(),
+            loader = cozBudLoader({}),
             remover = new BudRemover();
 
         logger.infoStarted(name, startAt);

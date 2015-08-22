@@ -34,7 +34,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-coz_lib_bud-BudCompiler.html">coz/lib/bud~BudCompiler</a></li><li><a href="module-coz_lib_bud-BudLoader.html">coz/lib/bud~BudLoader</a></li><li><a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a></li><li><a href="module-coz_lib_bud-BudWriter.html">coz/lib/bud~BudWriter</a></li><li><a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a></li><li><a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
+					<li><a href="module-coz_lib_bud-BudCompiler.html">coz/lib/bud~BudCompiler</a></li><li><a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a></li><li><a href="module-coz_lib_bud-BudWriter.html">coz/lib/bud~BudWriter</a></li><li><a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a></li><li><a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
 				</ul>
 			</li>
 			
@@ -68,19 +68,20 @@
 		<pre
 			class="sunlight-highlight-javascript linenums">/**
  * @overview Flexible generator, which makes your project clean and maintainable.
- * @version 3.0.4
+ * @version 3.0.5
  * @module coz
  * @author {@link http://okunishitaka.com|Taka Okunishi}
  * @license {@link MIT|}
  * @borrows module:coz~Coz#render as render
  * @borrows module:coz~Coz#clean as clean
  * @see http://coz-repo.github.io/coz/homepage
- * @requires {@link https://www.npmjs.org/package/arrayfilter|arrayfilter@^1.0.6}
+ * @requires {@link https://www.npmjs.org/package/argx|argx@^1.1.6}
+ * @requires {@link https://www.npmjs.org/package/arrayfilter|arrayfilter@^1.0.8}
  * @requires {@link https://www.npmjs.org/package/arraysort|arraysort@^1.0.2}
  * @requires {@link https://www.npmjs.org/package/async|async@^1.4.2}
- * @requires {@link https://www.npmjs.org/package/colorprint|colorprint@^1.1.2}
  * @requires {@link https://www.npmjs.org/package/commander|commander@^2.8.1}
- * @requires {@link https://www.npmjs.org/package/coz-bud|coz-bud@^1.0.0}
+ * @requires {@link https://www.npmjs.org/package/coz-bud|coz-bud@^1.0.1}
+ * @requires {@link https://www.npmjs.org/package/coz-bud-loader|coz-bud-loader@^1.0.0}
  * @requires {@link https://www.npmjs.org/package/coz-engine|coz-engine@^1.0.2}
  * @requires {@link https://www.npmjs.org/package/coz-handlebars-engine|coz-handlebars-engine@^1.0.1}
  * @requires {@link https://www.npmjs.org/package/coz-logger|coz-logger@^1.0.2}
@@ -88,12 +89,9 @@
  * @requires {@link https://www.npmjs.org/package/expandglob|expandglob@^1.0.0}
  * @requires {@link https://www.npmjs.org/package/extend|extend@^3.0.0}
  * @requires {@link https://www.npmjs.org/package/filedel|filedel@^1.0.0}
- * @requires {@link https://www.npmjs.org/package/glob|glob@^5.0.14}
- * @requires {@link https://www.npmjs.org/package/handlebars|handlebars@^3.0.3}
  * @requires {@link https://www.npmjs.org/package/mkdirp|mkdirp@^0.5.1}
  * @requires {@link https://www.npmjs.org/package/stringcase|stringcase@^1.2.4}
- * @requires {@link https://www.npmjs.org/package/unorm|unorm@^1.3.3}
- * @requires {@link https://www.npmjs.org/package/writeout|writeout@^1.2.0}
+ * @requires {@link https://www.npmjs.org/package/writeout|writeout@^1.2.1}
  */
 
 "use strict";
@@ -101,7 +99,7 @@
 var Coz = require('./coz');
 
 var coz = module.exports = new Coz();
-coz.version = '3.0.4';
+coz.version = '3.0.5';
 
 //---------------------
 // Classes

@@ -34,7 +34,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-coz_lib_bud-BudCompiler.html">coz/lib/bud~BudCompiler</a></li><li><a href="module-coz_lib_bud-BudLoader.html">coz/lib/bud~BudLoader</a></li><li><a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a></li><li><a href="module-coz_lib_bud-BudWriter.html">coz/lib/bud~BudWriter</a></li><li><a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a></li><li><a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
+					<li><a href="module-coz_lib_bud-BudCompiler.html">coz/lib/bud~BudCompiler</a></li><li><a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a></li><li><a href="module-coz_lib_bud-BudWriter.html">coz/lib/bud~BudWriter</a></li><li><a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a></li><li><a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
 				</ul>
 			</li>
 			
@@ -75,7 +75,11 @@
 
 module.exports = {
     /**
-     * This is an alias for {@link https://www.npmjs.org/package/arrayfilter|arrayfilter@^1.0.6} module.
+     * This is an alias for {@link https://www.npmjs.org/package/argx|argx@^1.1.6} module.
+     */
+    get argx() { return require('argx'); },
+    /**
+     * This is an alias for {@link https://www.npmjs.org/package/arrayfilter|arrayfilter@^1.0.8} module.
      */
     get arrayfilter() { return require('arrayfilter'); },
     /**
@@ -87,17 +91,17 @@ module.exports = {
      */
     get async() { return require('async'); },
     /**
-     * This is an alias for {@link https://www.npmjs.org/package/colorprint|colorprint@^1.1.2} module.
-     */
-    get colorprint() { return require('colorprint'); },
-    /**
      * This is an alias for {@link https://www.npmjs.org/package/commander|commander@^2.8.1} module.
      */
     get commander() { return require('commander'); },
     /**
-     * This is an alias for {@link https://www.npmjs.org/package/coz-bud|coz-bud@^1.0.0} module.
+     * This is an alias for {@link https://www.npmjs.org/package/coz-bud|coz-bud@^1.0.1} module.
      */
     get cozBud() { return require('coz-bud'); },
+    /**
+     * This is an alias for {@link https://www.npmjs.org/package/coz-bud-loader|coz-bud-loader@^1.0.0} module.
+     */
+    get cozBudLoader() { return require('coz-bud-loader'); },
     /**
      * This is an alias for {@link https://www.npmjs.org/package/coz-engine|coz-engine@^1.0.2} module.
      */
@@ -127,14 +131,6 @@ module.exports = {
      */
     get filedel() { return require('filedel'); },
     /**
-     * This is an alias for {@link https://www.npmjs.org/package/glob|glob@^5.0.14} module.
-     */
-    get glob() { return require('glob'); },
-    /**
-     * This is an alias for {@link https://www.npmjs.org/package/handlebars|handlebars@^3.0.3} module.
-     */
-    get handlebars() { return require('handlebars'); },
-    /**
      * This is an alias for {@link https://www.npmjs.org/package/mkdirp|mkdirp@^0.5.1} module.
      */
     get mkdirp() { return require('mkdirp'); },
@@ -143,11 +139,7 @@ module.exports = {
      */
     get stringcase() { return require('stringcase'); },
     /**
-     * This is an alias for {@link https://www.npmjs.org/package/unorm|unorm@^1.3.3} module.
-     */
-    get unorm() { return require('unorm'); },
-    /**
-     * This is an alias for {@link https://www.npmjs.org/package/writeout|writeout@^1.2.0} module.
+     * This is an alias for {@link https://www.npmjs.org/package/writeout|writeout@^1.2.1} module.
      */
     get writeout() { return require('writeout'); }
 };</pre>

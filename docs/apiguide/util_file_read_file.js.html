@@ -34,7 +34,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-coz_lib_bud-BudCompiler.html">coz/lib/bud~BudCompiler</a></li><li><a href="module-coz_lib_bud-BudLoader.html">coz/lib/bud~BudLoader</a></li><li><a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a></li><li><a href="module-coz_lib_bud-BudWriter.html">coz/lib/bud~BudWriter</a></li><li><a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a></li><li><a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
+					<li><a href="module-coz_lib_bud-BudCompiler.html">coz/lib/bud~BudCompiler</a></li><li><a href="module-coz_lib_bud-BudRemover.html">coz/lib/bud~BudRemover</a></li><li><a href="module-coz_lib_bud-BudWriter.html">coz/lib/bud~BudWriter</a></li><li><a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a></li><li><a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
 				</ul>
 			</li>
 			
@@ -78,17 +78,13 @@
 "use strict";
 
 
-var core = require('../../core'),
-    ext = require('../../ext'),
-    fs = core.fs;
+var argx = require('argx'),
+    fs = require('fs');
 
 /** @lends readFile */
 function readFile(filename, options, callback) {
-    options = options || {};
-    if (typeof(options) === 'function') {
-        callback = callback || options;
-        options = {};
-    }
+    var args = argx(arguments);
+    callback = args.pop('function') || argx.noop;
     fs.exists(filename, function (exists) {
         if (exists) {
             fs.readFile(filename, callback);

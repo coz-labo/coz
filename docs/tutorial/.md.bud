@@ -5,14 +5,14 @@
 "use strict";
 
 var coz = require('../../lib'),
-    path = coz.core.path,
-    string = coz.ext.stringcase,
-    fs = coz.core.fs,
-    EOL = coz.core.os.EOL,
-    format = coz.core.util.format,
-    async = coz.ext.async,
-    glob = coz.ext.glob
-    ;
+    expandglob = require('expandglob'),
+    fs = require('fs'),
+    path = require('path'),
+    os = require('os'),
+    stringcase = require('stringcase'),
+    EOL = os.EOL,
+    format = require('util').format,
+    async = require('async');
 
 var pkg = require('../../package.json'),
     bud = require('coz-bud/lib/spec');
@@ -61,7 +61,7 @@ function _concat(a, b) {
 function _tutorialKey(filename) {
     return [
         'tutorial',
-        string.snakecase(path.basename(filename, path.extname(filename)))
+        stringcase.snakecase(path.basename(filename, path.extname(filename)))
     ].join('_').replace(/__+/g, '_');
 }
 
@@ -113,10 +113,10 @@ module.exports = function (callback) {
     var pattern = path.join(__dirname, '/.*.md.hbs');
     async.waterfall([
         function (callback) {
-            glob(pattern, callback);
+            expandglob(pattern, callback);
         },
         function (filenames, callback) {
-            var tutorials = glob.sync('*.md', {cwd: __dirname});
+            var tutorials = expandglob.sync('*.md', {cwd: __dirname});
             var bud = filenames
                 .map(function (filename, i) {
                     var name = path.basename(filename, '.md.hbs').replace(/^\./, ''),
