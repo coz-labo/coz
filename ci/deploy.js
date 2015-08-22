@@ -8,8 +8,7 @@
 
 var apeTasking = require('ape-tasking'),
     apeDeploying = require('ape-deploying'),
-    path = require('path'),
-    execcli = require('execcli');
+    path = require('path');
 
 var basedir = path.resolve(__dirname, '..');
 process.chdir(basedir);

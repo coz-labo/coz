@@ -13,8 +13,7 @@ var apeTasking = require('ape-tasking'),
     filecopy = require('filecopy'),
     apiguide = require('apiguide'),
     mkdirp = require('mkdirp'),
-    cozExamples = require('coz-examples'),
-    execcli = require('execcli');
+    cozExamples = require('coz-examples');
 
 var basedir = path.resolve(__dirname, '..');
 process.chdir(basedir);

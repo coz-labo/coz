@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "3.0.9",
+  "version": "3.0.10",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
@@ -46,13 +46,10 @@
     "coz-engine": "^1.0.2",
     "coz-handlebars-engine": "^1.0.1",
     "coz-logger": "^1.0.2",
-    "execcli": "^2.1.1",
     "expandglob": "^1.0.0",
     "extend": "^3.0.0",
-    "filedel": "^1.0.0",
     "mkdirp": "^0.5.1",
-    "stringcase": "^1.2.4",
-    "writeout": "^1.2.1"
+    "stringcase": "^1.2.4"
   },
   "devDependencies": {
     "ape-covering": "^1.0.8",

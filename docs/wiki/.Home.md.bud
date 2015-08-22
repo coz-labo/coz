@@ -6,14 +6,14 @@
 
 var pkg = require('../../package.json'),
     path = require('path'),
-    glob = require('glob');
+    expandglob = require('expandglob');
 
 module.exports = {
     force: true,
     mode: '444',
     data: {
         pkg: pkg,
-        tutorials: glob.sync('Tutorial*.md', {
+        tutorials: expandglob.sync('Tutorial*.md', {
             cwd: __dirname
         }).map(function (filename) {
             return {
