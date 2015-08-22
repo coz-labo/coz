@@ -7,8 +7,8 @@
 var coz = require('../../lib'),
     fs = require('fs'),
     path = require('path'),
-    format = coz.core.util.format,
-    async = coz.ext.async,
+    format = require('util').format,
+    async = require('async'),
     expandglob = require('expandglob');
 
 var tutorialDir = path.resolve(__dirname, '../tutorial');

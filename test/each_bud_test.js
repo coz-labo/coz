@@ -3,7 +3,7 @@
  * Runs with nodeunit.
  */
 
-var eachBud = require('../../lib/bud/each_bud.js');
+var eachBud = require('../lib/each_bud.js');
 
 exports.setUp = function(done) {
     done();

@@ -13,10 +13,7 @@ module.exports = {
         pkg: require('../package.json'),
         get submodules() {
             return {
-                bud: 'Module to handle bud files',
-                template: 'Module to handle templates',
-                ext: 'External modules installed via npm',
-                core: 'Nodejs build modules'
+                template: 'Module to handle templates'
             }
         },
         get links() {

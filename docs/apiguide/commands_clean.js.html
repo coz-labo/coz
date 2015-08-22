@@ -27,14 +27,14 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-coz.html">coz</a></li><li><a href="module-coz_lib.html">coz/lib</a></li><li><a href="module-coz_lib_bud.html">coz/lib/bud</a></li><li><a href="module-coz_lib_commands.html">coz/lib/commands</a></li><li><a href="module-coz_lib_core.html">coz/lib/core</a></li><li><a href="module-coz_lib_ext.html">coz/lib/ext</a></li><li><a href="module-coz_lib_template.html">coz/lib/template</a></li><li><a href="module-coz_lib_template_buildin_engines.html">coz/lib/template/buildin_engines</a></li>
+					<li><a href="module-coz.html">coz</a></li><li><a href="module-coz_lib.html">coz/lib</a></li><li><a href="module-coz_lib_commands.html">coz/lib/commands</a></li><li><a href="module-coz_lib_template.html">coz/lib/template</a></li><li><a href="module-coz_lib_template_buildin_engines.html">coz/lib/template/buildin_engines</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-coz_lib_bud-BudCompiler.html">coz/lib/bud~BudCompiler</a></li><li><a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a></li><li><a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
+					<li><a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a></li><li><a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
 				</ul>
 			</li>
 			
@@ -79,8 +79,7 @@
 "use strict";
 
 var create = require('../create'),
-    core = require('../core'),
-    fs = core.fs;
+    fs = require('fs');
 
 /** @lends clean */
 function clean(filename, options, callback) {
