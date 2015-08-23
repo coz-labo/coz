@@ -106,7 +106,7 @@ function _eachFiles(pattern, handler, callback) {
         function (filenames, callback) {
             var notFound = (pattern.length > 0) &amp;&amp; (filenames.length == 0);
             if (notFound) {
-                console.warn('File not found with pattern:', pattern);
+                console.warn('File not found with pattern:', [].concat(pattern));
             }
             async.eachSeries(filenames, handler, callback);
         }

@@ -121,6 +121,11 @@ var coz = new Coz({
     // Define custom engines.
     engines: {
         'myCustomEngine01': {
+            // Aliases for this engine.
+            // These names also can be used in "engine" property of bud.
+            $aliases: [
+                'myCustom01'
+            ],
             /**
              * Compile template string and create template function.
              * @implements {module:coz/lib/template~Engine.prototype.compile}
