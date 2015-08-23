@@ -27,14 +27,14 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-coz.html">coz</a></li><li><a href="module-coz_lib.html">coz/lib</a></li><li><a href="module-coz_lib_commands.html">coz/lib/commands</a></li><li><a href="module-coz_lib_template.html">coz/lib/template</a></li><li><a href="module-coz_lib_template_buildin_engines.html">coz/lib/template/buildin_engines</a></li>
+					<li><a href="module-coz.html">coz</a></li><li><a href="module-coz_lib.html">coz/lib</a></li><li><a href="module-coz_lib_buildin_engines.html">coz/lib/buildin_engines</a></li><li><a href="module-coz_lib_buildin_tmpls.html">coz/lib/buildin_tmpls</a></li><li><a href="module-coz_lib_commands.html">coz/lib/commands</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-coz_lib_template-EngineSet.html">coz/lib/template~EngineSet</a></li><li><a href="module-coz_lib_template-TmplSet.html">coz/lib/template~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
+					<li><a href="module-coz_lib-EngineSet.html">coz/lib~EngineSet</a></li><li><a href="module-coz_lib-TmplSet.html">coz/lib~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
 				</ul>
 			</li>
 			
@@ -78,8 +78,8 @@
 var path = require('path'),
     async = require('async'),
     eachBud = require('./each_bud'),
-    EngineSet = require('./template/engine_set'),
-    TmplSet = require('./template/tmpl_set'),
+    EngineSet = require('./engine_set'),
+    TmplSet = require('./tmpl_set'),
     cozLogger = require('coz-logger'),
     cozBudLoader = require('coz-bud-loader'),
     cozBudWriter = require('coz-bud-writer'),

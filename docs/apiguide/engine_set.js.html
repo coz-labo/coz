@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>coz Source: index.js</title>
+	<title>coz Source: engine_set.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -58,51 +58,102 @@
 	<div class="col-md-12">
 	
 		<div id="main">
-    		<h1 class="page-title">Source: index.js</h1>
+    		<h1 class="page-title">Source: engine_set.js</h1>
 			
 
-		<h1 class="page-title">Source: index.js</h1>
+		<h1 class="page-title">Source: engine_set.js</h1>
     
 <section>
 	<article>
 		<pre
 			class="sunlight-highlight-javascript linenums">/**
- * @overview Flexible generator, which makes your project clean and maintainable.
- * @version 3.0.10
- * @module coz
- * @author {@link http://okunishitaka.com|Taka Okunishi}
- * @license {@link MIT|}
- * @borrows module:coz~Coz#render as render
- * @borrows module:coz~Coz#clean as clean
- * @see http://coz-repo.github.io/coz/homepage
- * @requires {@link https://www.npmjs.org/package/argx|argx@^1.1.6}
- * @requires {@link https://www.npmjs.org/package/arrayfilter|arrayfilter@^1.0.8}
- * @requires {@link https://www.npmjs.org/package/arraysort|arraysort@^1.0.2}
- * @requires {@link https://www.npmjs.org/package/async|async@^1.4.2}
- * @requires {@link https://www.npmjs.org/package/commander|commander@^2.8.1}
- * @requires {@link https://www.npmjs.org/package/coz-bud|coz-bud@^1.0.1}
- * @requires {@link https://www.npmjs.org/package/coz-bud-compiler|coz-bud-compiler@^1.0.1}
- * @requires {@link https://www.npmjs.org/package/coz-bud-loader|coz-bud-loader@^1.0.0}
- * @requires {@link https://www.npmjs.org/package/coz-bud-remover|coz-bud-remover@^1.0.1}
- * @requires {@link https://www.npmjs.org/package/coz-bud-writer|coz-bud-writer@^1.0.0}
- * @requires {@link https://www.npmjs.org/package/coz-engine|coz-engine@^1.0.3}
- * @requires {@link https://www.npmjs.org/package/coz-handlebars-engine|coz-handlebars-engine@^1.0.1}
- * @requires {@link https://www.npmjs.org/package/coz-logger|coz-logger@^1.0.2}
- * @requires {@link https://www.npmjs.org/package/expandglob|expandglob@^1.0.0}
- * @requires {@link https://www.npmjs.org/package/extend|extend@^3.0.0}
- * @requires {@link https://www.npmjs.org/package/mkdirp|mkdirp@^0.5.1}
- * @requires {@link https://www.npmjs.org/package/stringcase|stringcase@^1.2.4}
+ * Set of engines
+ * @memberof module:coz/lib
+ * @inner
+ * @constructor EngineSet
+ * @param {object} [engines] - Engines to register.
  */
 
 "use strict";
 
-var Coz = require('./coz');
+var buildinEngines = require('./buildin/buildin_engines'),
+    cozEngine = require('coz-engine'),
+    extend = require('extend');
 
-var coz = new Coz();
-coz.version = '3.0.10';
-coz.Coz = Coz;
+/** @lends module:coz/lib/template~EngineSet */
+function EngineSet(engines) {
+    var s = this;
+    s._engines = {};
+    s.registerEngines(buildinEngines);
+    s.registerEngines(engines || {});
+}
 
-module.exports = coz;</pre>
+EngineSet.prototype = {
+    /**
+     * Register an engine.
+     * @memberof coz/lib/template
+     * @function registerEngine
+     * @param {string} name - Name of engine.
+     * @param {object} engine - Engine object.
+     * @param {!function} engine.compile - Compile function.
+     * @returns {EngineSet} - self.
+     */
+    registerEngine: function (name, engine) {
+        var s = this;
+        if (s.resolveEngine(name)) {
+            throw new Error('Engine with name already registered: ' + name);
+        }
+        engine = EngineSet._newEngine(engine, name);
+        s._engines[name] = engine;
+        return s;
+    },
+    /**
+     * Register multiple engines.
+     * @param {object} engines - Engines to register.
+     * @returns {EngineSet} - self.
+     */
+    registerEngines: function (engines) {
+        var s = this;
+        var names = Object.keys(engines);
+        for (var i = 0, len = names.length; i &lt; len; i++) {
+            var name = names[i];
+            s.registerEngine(name, engines[name]);
+        }
+        return s;
+    },
+    /**
+     * Resolve an engine.
+     * @param {string} name - Name to resolve.
+     * @returns {function} - Resolved engine constructor.
+     */
+    resolveEngine: function (name) {
+        if (!name) {
+            return null;
+        }
+        var s = this;
+        return s._engines[name] || null;
+    },
+    /**
+     * @type {object}
+     */
+    _engines: undefined
+};
+
+EngineSet._newEngine = function (properties) {
+    if (properties.$isEngine) {
+        return properties;
+    }
+    switch (typeof(properties)) {
+        case 'string':
+        case 'boolean':
+        case 'number':
+            throw new Error('Invalid engined:' + String(properties));
+    }
+    properties = extend({}, properties);
+    return cozEngine(properties);
+};
+
+module.exports = EngineSet;</pre>
 	</article>
 </section>
 

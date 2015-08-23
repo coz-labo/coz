@@ -11,11 +11,6 @@ module.exports = {
     data: {
         END_BRACE: '}',
         pkg: require('../package.json'),
-        get submodules() {
-            return {
-                template: 'Module to handle templates'
-            }
-        },
         get links() {
             return require('../docs/links.json');
         }

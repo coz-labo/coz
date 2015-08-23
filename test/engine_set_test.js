@@ -1,24 +1,23 @@
 /**
- * Test case for coz/lib/template/EngineSet.
+ * Test case for EngineSet.
  * Runs with nodeunit.
  */
 
-var EngineSet = require('../../lib/template/engine_set.js');
+var EngineSet = require('../lib/engine_set.js');
 
 exports['Define an engine.'] = function (test) {
-    var engine = EngineSet._newEngineNamed({
+    var engine = EngineSet._newEngine({
         compile: function () {
         }
     }, 'foo');
-    test.equal(engine.$name, 'foo');
     test.done();
 };
 
 exports['Register and resolve engines.'] = function (test) {
     var engineSet = new EngineSet();
     engineSet.registerEngine('foo', {
-        $isEngine: true,
-        $aliases: ['baz']
+        compile: function () {
+        }
     });
     test.throws(function () {
         engineSet.registerEngine('foo', {
@@ -27,7 +26,6 @@ exports['Register and resolve engines.'] = function (test) {
     }, 'Try to register duplicate name.');
 
     test.ok(engineSet.resolveEngine('foo'));
-    test.ok(engineSet.resolveEngine('baz'));
     test.done();
 };
 

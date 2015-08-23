@@ -15,24 +15,8 @@
 
 var Coz = require('./coz');
 
-var coz = module.exports = new Coz();
+var coz = new Coz();
 coz.version = '{{pkg.version}}';
-
-//---------------------
-// Classes
-//---------------------
 coz.Coz = Coz;
 
-//---------------------
-// Sub modules
-//---------------------
-{{#each submodules}}
-/**
- * {{this}}.
- * @name {@link module:coz/lib/{{camelcase @key}}|{{camelcase @key}}{{{../END_BRACE}}}
- * @memberof module:coz
- * @see module:coz/lib/{{snakecase @key}}
- */
-coz.{{camelcase @key}} = require('./{{snakecase @key}}');
-
-{{/each}}
+module.exports = coz;

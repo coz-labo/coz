@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>coz Source: index.js</title>
+	<title>coz Source: tmpl_set.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -58,51 +58,81 @@
 	<div class="col-md-12">
 	
 		<div id="main">
-    		<h1 class="page-title">Source: index.js</h1>
+    		<h1 class="page-title">Source: tmpl_set.js</h1>
 			
 
-		<h1 class="page-title">Source: index.js</h1>
+		<h1 class="page-title">Source: tmpl_set.js</h1>
     
 <section>
 	<article>
 		<pre
 			class="sunlight-highlight-javascript linenums">/**
- * @overview Flexible generator, which makes your project clean and maintainable.
- * @version 3.0.10
- * @module coz
- * @author {@link http://okunishitaka.com|Taka Okunishi}
- * @license {@link MIT|}
- * @borrows module:coz~Coz#render as render
- * @borrows module:coz~Coz#clean as clean
- * @see http://coz-repo.github.io/coz/homepage
- * @requires {@link https://www.npmjs.org/package/argx|argx@^1.1.6}
- * @requires {@link https://www.npmjs.org/package/arrayfilter|arrayfilter@^1.0.8}
- * @requires {@link https://www.npmjs.org/package/arraysort|arraysort@^1.0.2}
- * @requires {@link https://www.npmjs.org/package/async|async@^1.4.2}
- * @requires {@link https://www.npmjs.org/package/commander|commander@^2.8.1}
- * @requires {@link https://www.npmjs.org/package/coz-bud|coz-bud@^1.0.1}
- * @requires {@link https://www.npmjs.org/package/coz-bud-compiler|coz-bud-compiler@^1.0.1}
- * @requires {@link https://www.npmjs.org/package/coz-bud-loader|coz-bud-loader@^1.0.0}
- * @requires {@link https://www.npmjs.org/package/coz-bud-remover|coz-bud-remover@^1.0.1}
- * @requires {@link https://www.npmjs.org/package/coz-bud-writer|coz-bud-writer@^1.0.0}
- * @requires {@link https://www.npmjs.org/package/coz-engine|coz-engine@^1.0.3}
- * @requires {@link https://www.npmjs.org/package/coz-handlebars-engine|coz-handlebars-engine@^1.0.1}
- * @requires {@link https://www.npmjs.org/package/coz-logger|coz-logger@^1.0.2}
- * @requires {@link https://www.npmjs.org/package/expandglob|expandglob@^1.0.0}
- * @requires {@link https://www.npmjs.org/package/extend|extend@^3.0.0}
- * @requires {@link https://www.npmjs.org/package/mkdirp|mkdirp@^0.5.1}
- * @requires {@link https://www.npmjs.org/package/stringcase|stringcase@^1.2.4}
+ * Set of tmpls.
+ * @memberof module:coz/lib
+ * @inner
+ * @constructor TmplSet
  */
 
 "use strict";
 
-var Coz = require('./coz');
+var buildinTmpls = require('./buildin/buildin_tmpls');
 
-var coz = new Coz();
-coz.version = '3.0.10';
-coz.Coz = Coz;
 
-module.exports = coz;</pre>
+/** @lends module:coz/lib/template~TmplSet */
+function TmplSet(tmpls) {
+    var s = this;
+    s._tmpls = {};
+    s.registerTmpls(buildinTmpls);
+    s.registerTmpls(tmpls || {});
+}
+
+TmplSet.prototype = {
+    /**
+     * Register a tmpl.
+     * @param {string} name - Name to register.
+     * @param {function} tmpl - Template function to register.
+     */
+    registerTmpl: function (name, tmpl) {
+        var s = this;
+        if (s.resolveTmpl(name)) {
+            throw new Error('Tmpl with name already registered: ' + name);
+        }
+        s._tmpls[name] = tmpl;
+    },
+    /**
+     * Register multiple tmpls.
+     * @param {object} tmpls - Tmpls to register.
+     * @returns {TmplSet} - self.
+     */
+    registerTmpls: function (tmpls) {
+        var s = this;
+        var names = Object.keys(tmpls);
+        for (var i = 0, len = names.length; i &lt; len; i++) {
+            var name = names[i];
+            s.registerTmpl(name, tmpls[name]);
+        }
+        return s;
+    },
+    /**
+     * Resolve an tmpl.
+     * @param {string} name - Name of tmpl.
+     * @returns {function} - Resolved tmpl constructor.
+     */
+    resolveTmpl: function (name) {
+        if (!name) {
+            return null;
+        }
+        var isFunction = typeof(name) === 'function';
+        if (isFunction) {
+            return name;
+        }
+        var s = this;
+        return s._tmpls[name] || null;
+    }
+
+};
+
+module.exports = TmplSet;</pre>
 	</article>
 </section>
 
