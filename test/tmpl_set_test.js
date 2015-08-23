@@ -3,7 +3,7 @@
  * Runs with nodeunit.
  */
 
-var TmplSet = require('../lib/tmpl_set.js');
+var TmplSet = require('../lib/sets/tmpl_set.js');
 
 exports['Register and resolve tmpls.'] = function (test) {
     var tmplSet = new TmplSet();

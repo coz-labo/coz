@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>coz Tutorials</title>
+	<title>coz Source: sets/tmpl_set.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -55,110 +55,87 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
-    		<h1 class="page-title">Tutorials</h1>
+    		<h1 class="page-title">Source: sets/tmpl_set.js</h1>
 			
 
-	<h1 class="page-title">Tutorials</h1>
+		<h1 class="page-title">Source: sets/tmpl_set.js</h1>
+    
 <section>
+	<article>
+		<pre
+			class="sunlight-highlight-javascript linenums">/**
+ * Set of tmpls.
+ * @memberof module:coz/lib/sets
+ * @inner
+ * @constructor TmplSet
+ */
 
-<header>
-    
-        <h2>
-        
-        </h2>
-        
-    
-</header>
+"use strict";
 
-
-<article>
-    <div class="container-overview">
-    
-        
-
-        
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
+var buildinTmpls = require('../buildin/buildin_tmpls');
 
 
+/** @lends TmplSet */
+function TmplSet(tmpls) {
+    var s = this;
+    s._tmpls = {};
+    s.registerTmpls(buildinTmpls);
+    s.registerTmpls(tmpls || {});
+}
 
-	
+TmplSet.prototype = {
+    /**
+     * Register a tmpl.
+     * @param {string} name - Name to register.
+     * @param {function} tmpl - Template function to register.
+     */
+    registerTmpl: function (name, tmpl) {
+        var s = this;
+        if (s.resolveTmpl(name)) {
+            throw new Error('Tmpl with name already registered: ' + name);
+        }
+        s._tmpls[name] = tmpl;
+    },
+    /**
+     * Register multiple tmpls.
+     * @param {object} tmpls - Tmpls to register.
+     * @returns {TmplSet} - self.
+     */
+    registerTmpls: function (tmpls) {
+        var s = this;
+        var names = Object.keys(tmpls);
+        for (var i = 0, len = names.length; i &lt; len; i++) {
+            var name = names[i];
+            s.registerTmpl(name, tmpls[name]);
+        }
+        return s;
+    },
+    /**
+     * Resolve an tmpl.
+     * @param {string} name - Name of tmpl.
+     * @returns {function} - Resolved tmpl constructor.
+     */
+    resolveTmpl: function (name) {
+        if (!name) {
+            return null;
+        }
+        var isFunction = typeof(name) === 'function';
+        if (isFunction) {
+            return name;
+        }
+        var s = this;
+        return s._tmpls[name] || null;
+    }
 
-	
+};
 
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="module-coz_lib_sets_-EngineSet.html">EngineSet</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-coz_lib_sets-TmplSet.html">TmplSet</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-coz-Coz.html">Coz</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-coz-Coz.html">Coz</a></dt>
-            <dd></dd>
-        </dl>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
+module.exports = TmplSet;</pre>
+	</article>
 </section>
+
 
 
 
@@ -168,10 +145,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3"></div>
-		</div>
 	
 
 </div>

@@ -3,7 +3,7 @@
  * Runs with nodeunit.
  */
 
-var EngineSet = require('../lib/engine_set.js');
+var EngineSet = require('../lib/sets/engine_set.js');
 
 exports['Define an engine.'] = function (test) {
     var engine = EngineSet._newEngine({

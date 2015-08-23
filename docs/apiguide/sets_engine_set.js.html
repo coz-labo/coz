@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>coz Tutorials</title>
+	<title>coz Source: sets/engine_set.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -55,110 +55,106 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
-    		<h1 class="page-title">Tutorials</h1>
+    		<h1 class="page-title">Source: sets/engine_set.js</h1>
 			
 
-	<h1 class="page-title">Tutorials</h1>
+		<h1 class="page-title">Source: sets/engine_set.js</h1>
+    
 <section>
+	<article>
+		<pre
+			class="sunlight-highlight-javascript linenums">/**
+ * Set of engines
+ * @memberof module:coz/lib/sets/
+ * @inner
+ * @constructor EngineSet
+ * @param {object} [engines] - Engines to register.
+ */
 
-<header>
-    
-        <h2>
-        
-        </h2>
-        
-    
-</header>
+"use strict";
 
+var buildinEngines = require('../buildin/buildin_engines'),
+    cozEngine = require('coz-engine'),
+    extend = require('extend');
 
-<article>
-    <div class="container-overview">
-    
-        
+/** @lends EngineSet */
+function EngineSet(engines) {
+    var s = this;
+    s._engines = {};
+    s.registerEngines(buildinEngines);
+    s.registerEngines(engines || {});
+}
 
-        
-<dl class="details">
-	
+EngineSet.prototype = {
+    /**
+     * Register an engine.
+     * @param {string} name - Name of engine.
+     * @param {object} engine - Engine object.
+     * @param {!function} engine.compile - Compile function.
+     * @returns {EngineSet} - self.
+     */
+    registerEngine: function (name, engine) {
+        var s = this;
+        if (s.resolveEngine(name)) {
+            throw new Error('Engine with name already registered: ' + name);
+        }
+        engine = EngineSet._newEngine(engine, name);
+        s._engines[name] = engine;
+        return s;
+    },
+    /**
+     * Register multiple engines.
+     * @param {object} engines - Engines to register.
+     * @returns {EngineSet} - self.
+     */
+    registerEngines: function (engines) {
+        var s = this;
+        var names = Object.keys(engines);
+        for (var i = 0, len = names.length; i &lt; len; i++) {
+            var name = names[i];
+            s.registerEngine(name, engines[name]);
+        }
+        return s;
+    },
+    /**
+     * Resolve an engine.
+     * @param {string} name - Name to resolve.
+     * @returns {function} - Resolved engine constructor.
+     */
+    resolveEngine: function (name) {
+        if (!name) {
+            return null;
+        }
+        var s = this;
+        return s._engines[name] || null;
+    },
+    /**
+     * @type {object}
+     */
+    _engines: undefined
+};
 
-	
+EngineSet._newEngine = function (properties) {
+    if (properties.$isEngine) {
+        return properties;
+    }
+    switch (typeof(properties)) {
+        case 'string':
+        case 'boolean':
+        case 'number':
+            throw new Error('Invalid engined:' + String(properties));
+    }
+    properties = extend({}, properties);
+    return cozEngine(properties);
+};
 
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="module-coz_lib_sets_-EngineSet.html">EngineSet</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-coz_lib_sets-TmplSet.html">TmplSet</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-coz-Coz.html">Coz</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-coz-Coz.html">Coz</a></dt>
-            <dd></dd>
-        </dl>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
+module.exports = EngineSet;</pre>
+	</article>
 </section>
+
 
 
 
@@ -168,10 +164,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3"></div>
-		</div>
 	
 
 </div>
