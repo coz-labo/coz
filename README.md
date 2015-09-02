@@ -21,6 +21,7 @@ coz
 [bd_gemnasium_shield_url]: https://gemnasium.com/coz-repo/coz.svg
 [bd_npm_url]: http://www.npmjs.org/package/coz
 [bd_npm_shield_url]: http://img.shields.io/npm/v/coz.svg?style=flat
+[bd_bower_badge_url]: https://img.shields.io/bower/v/coz.svg?style=flat
 
 <!-- Badge End -->
 
@@ -61,9 +62,13 @@ will do the magic.
 
 <!-- Overview End -->
 
+
 <!-- Sections Start -->
 <a name="sections"></a>
 
+<!-- Section from "docs/readme/01-about.md.hbs" Start -->
+
+<a name="section-docs-readme-01-about-md"></a>
 About coz
 ------
 
@@ -105,6 +110,11 @@ For example,
 
 
 
+<!-- Section from "docs/readme/01-about.md.hbs" End -->
+
+<!-- Section from "docs/readme/02-howto.md.hbs" Start -->
+
+<a name="section-docs-readme-02-howto-md"></a>
 Getting started
 ------
 
@@ -202,6 +212,11 @@ coz.render([
 For more details, see tutorial section "[04 - Using programmatic API][04_using_programmatic_a_p_i_url]".
 
 
+<!-- Section from "docs/readme/02-howto.md.hbs" End -->
+
+<!-- Section from "docs/readme/03-spec.md.hbs" Start -->
+
+<a name="section-docs-readme-03-spec-md"></a>
 Specifications
 ---------
 
@@ -260,6 +275,11 @@ List of properties configurable in bud files.
 
 
 
+<!-- Section from "docs/readme/03-spec.md.hbs" End -->
+
+<!-- Section from "docs/readme/09-links.md.hbs" Start -->
+
+<a name="section-docs-readme-09-links-md"></a>
 Links
 ------
 
@@ -285,10 +305,20 @@ Links
 + [Issues @github](https://github.com/coz-repo/coz/issues)
 + [Coverage Report][my_coverage_url]
 
+<!-- Section from "docs/readme/09-links.md.hbs" End -->
+
+<!-- Section from "docs/readme/10-license.md.hbs" Start -->
+
+<a name="section-docs-readme-10-license-md"></a>
 License
 -------
 This software is released under the [MIT License][my_license_url].
 
+<!-- Section from "docs/readme/10-license.md.hbs" End -->
+
+<!-- Section from "docs/readme/11-project.md.hbs" Start -->
+
+<a name="section-docs-readme-11-project-md"></a>
 About this project
 --------
 
@@ -303,6 +333,8 @@ About this project
 Support this project and [others by okunishinishi][my_gratipay_url] via [gratipay][my_gratipay_url].
 
 [<img src="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg" alt="Support via Gratipay"/>][my_gratipay_url]
+
+<!-- Section from "docs/readme/11-project.md.hbs" End -->
 
 
 <!-- Sections Start -->
