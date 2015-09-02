@@ -36,7 +36,7 @@ Flexible generator, which makes your project clean and maintainable.
 <!-- Overview Start -->
 <a name="overview"></a>
 
-<a href="http://coz-repo.github.io/coz/homepage"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a>
+<a href="http://coz-repo.github.io/coz/homepage"><img style="height:128px;" src="docs/images/coz-banner.png" height="128"/></a>
 
 
 ```javascript
@@ -75,7 +75,7 @@ The basic idea of coz is that creating files from files.
 + Running `coz render` command.
 + Files will be generated!
 
-<img style="height:256px;" src="assets/images/coz-outline.jpg" height="256">
+<img style="height:256px;" src="docs/images/coz-outline.jpg" height="256">
 
 
 ### What For?

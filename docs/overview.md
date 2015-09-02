@@ -1,5 +1,5 @@
 
-<a href="http://coz-repo.github.io/coz/homepage"><img style="height:128px;" src="assets/images/coz-banner.png" height="128"/></a>
+<a href="http://coz-repo.github.io/coz/homepage"><img style="height:128px;" src="docs/images/coz-banner.png" height="128"/></a>
 
 
 ```javascript
