@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>coz tutorial02 - Rendering bud files</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.dynamic.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">coz</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-coz.html">coz</a></li><li><a href="module-coz_lib_buildin_engines.html">coz/lib/buildin_engines</a></li><li><a href="module-coz_lib_buildin_tmpls.html">coz/lib/buildin_tmpls</a></li><li><a href="module-coz_lib_commands.html">coz/lib/commands</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-coz_lib_sets_-EngineSet.html">coz/lib/sets/~EngineSet</a></li><li><a href="module-coz_lib_sets-TmplSet.html">coz/lib/sets~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-01 - Installing coz.html">01 - Installing coz</a></li><li><a href="tutorial-02 - Rendering bud files.html">02 - Rendering bud files</a></li><li><a href="tutorial-03 - Mastering coz bud.html">03 - Mastering coz bud</a></li><li><a href="tutorial-04 - Using programmatic API.html">04 - Using programmatic API</a></li><li><a href="tutorial-05 - Customizing coz.html">05 - Customizing coz</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+    		<h1 class="page-title">tutorial02 - Rendering bud files</h1>
+			<section class="tutorial-section">
+
+<header>
+    
+
+    <h2>02 - Rendering bud files</h2>
+</header>
+
+<article>
+    <h3>Overview</h3><p>With coz, you can generate any file with <em>2</em> step.</p>
+<ol>
+<li>Create a <code>.bud</code> file.</li>
+<li>Run <code>coz render</code> command.</li>
+</ol>
+<p>A bud contains file meta data like:</p>
+<ul>
+<li>Which template to use?</li>
+<li>Where to render it?</li>
+<li>What permission to give?</li>
+</ul>
+<p>, and so on.</p>
+<p>More detail about bud is described in the next tutorial: <a href="tutorial-03%20-%20Mastering%20coz%20bud.html">03 - Mastering coz bud</a></p>
+<hr>
+<h3>Basic Usage.</h3><p>The most simple usage is generate a single file from a single <code>.bud</code> file.</p>
+<p>Here is an example:</p>
+<p><strong>.who-likes-what.txt.bud</strong> (bud file)</p>
+<pre class="prettyprint source lang-javascript"><code>{@lang javascript}/**
+ * .who-likes-what.txt.bud
+ * This is a bud file for &quot;examples/01-minimum-demo&quot;
+ */
+
+// Exports as a Node.js module.
+module.exports = {
+
+    // Template string. By default, parsed by Handlebars engine.
+    tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
+
+    // Overwrite when already existing.
+    force: true,
+
+    // File path to write out.
+    path: 'who-likes-what.txt',
+
+    // File permission.
+    mode: '444',
+
+    // Data to render.
+    data: {
+        members: {
+            &quot;Mai&quot;: &quot;apple&quot;,
+            &quot;Tom&quot;: &quot;Orange&quot;,
+            &quot;Rita&quot;: &quot;Banana&quot;
+        }
+    }
+};</code></pre><p>As you see, <code>.bud</code> file is actuary a JavaScript file and could be exported an a Node.js module.</p>
+<p>Save this file as <code>.who-likes-what.txt.bud</code> and then, run:</p>
+<pre class="prettyprint source lang-bash"><code>{@lang bash}# Render the bud file
+$ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will generate a file named <code>who-likes-what.txt</code>.</p>
+<p><strong>who-likes-what.txt</strong> (generated file)</p>
+<pre class="prettyprint source"><code>Hi, my name is Mai. I like apple.
+Hi, my name is Tom. I like Orange.
+Hi, my name is Rita. I like Banana.</code></pre><hr>
+<h3>Separate Template and Data.</h3><p>For more compile rending, you may want to save template and and to separated files from the <code>.bud</code> file.</p>
+<p><code>tmpl</code> attribute could be a file path.</p>
+<p><code>data</code> attribute may be js/json module, acquired via <code>require</code>.</p>
+<p><strong>.what-colors.html.bud</strong> (bud file)</p>
+<pre class="prettyprint source lang-javascript"><code>{@lang javascript}/**
+ * .what-colors.html.bud
+ * This is a bud file for &quot;examples/02-separated-template&quot;
+ */
+
+// Exports as a Node.js module.
+module.exports = {
+
+    // Template file path. Relative to this bud file.
+    tmpl: '.what-colors.html.hbs',
+
+    // Overwrite when already existing.
+    force: true,
+
+    // File path to write out.
+    path: 'what-colors.html',
+
+    // File permission.
+    mode: '444',
+
+    // Data to render.
+    data: require('./.what-colors.html.json')
+};</code></pre><p><strong>.what-colors.html.hbs</strong> (template file)</p>
+<pre class="prettyprint source lang-xml"><code>{@lang xml}&lt;table>
+    &lt;caption>Colors&lt;/caption>
+    &lt;tbody>
+    {{#each colors}}
+        &lt;tr>&lt;th>{{@key}}&lt;/th>{{this}}&lt;/tr>
+    {{/each}}
+    &lt;/tbody>
+&lt;/table></code></pre><p>And run:</p>
+<pre class="prettyprint source lang-bash"><code>{@lang bash}# Render the bud file
+$ coz render &quot;.what-colors.html.bud&quot;</code></pre><p>will generate:</p>
+<p><strong>what-colors.html</strong> (generated file)</p>
+<pre class="prettyprint source lang-xml"><code>{@lang xml}&lt;table>
+    &lt;caption>Colors&lt;/caption>
+    &lt;tbody>
+        &lt;tr>&lt;th>banana&lt;/th>yellow&lt;/tr>
+        &lt;tr>&lt;th>apple&lt;/th>red&lt;/tr>
+        &lt;tr>&lt;th>grape&lt;/th>purple&lt;/tr>
+    &lt;/tbody>
+&lt;/table></code></pre><hr>
+<h3>See Also</h3><!-- See also start -->
+<ul>
+<li><a href="tutorial-03%20-%20Mastering%20coz%20bud.html">03 - Mastering coz bud</a></li>
+</ul>
+<!-- See also end -->
+<h3>Tutorials</h3><!-- Tutorials start -->
+<ul>
+<li><a href="tutorial-01%20-%20Installing%20coz.html">01 - Installing coz</a></li>
+<li><a href="tutorial-02%20-%20Rendering%20bud%20files.html">02 - Rendering bud files</a></li>
+<li><a href="tutorial-03%20-%20Mastering%20coz%20bud.html">03 - Mastering coz bud</a></li>
+<li><a href="tutorial-04%20-%20Using%20programmatic%20API.html">04 - Using programmatic API</a></li>
+<li><a href="tutorial-05%20-%20Customizing%20coz.html">05 - Customizing coz</a></li>
+</ul>
+<!-- Tutorials end -->
+<h3>Links</h3><ul>
+<li><a href="http://www.npmjs.org/package/coz">coz @ npm</a></li>
+</ul>
+<!-- URLs start -->
+<!-- URLs end -->
+</article>
+
+</section>
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+<footer>
+
+	<script>var h=document.head;h.innerHTML=h.innerHTML+'<link rel="shortcut icon" href="doc/favicon.png"/>';</script>
+	<br />
+
+
+	<span class="copyright">
+	okunishitaka.com Copyright © 2015
+	</span>
+	<br />
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a>
+	on 2015-09-19 using the <a
+	href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<!--<script src="scripts/sunlight.js"></script>-->
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/toc.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+		scrollTo    : "100px"
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			lang = "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+</body>
+</html>

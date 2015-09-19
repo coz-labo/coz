@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Generate docs.
+ * Generate doc.
  */
 
 "use strict";
@@ -24,7 +24,7 @@ apeTasking.runTasks('doc', [
         async.eachSeries(['.*.*', '*.*'], function (pattern, callback) {
             async.eachSeries(Object.keys(cozExamples), function (dirname, callback) {
                 var src = path.join(examplesDir, dirname, pattern),
-                    destDir = path.join('docs/examples', dirname);
+                    destDir = path.join('example', dirname);
 
                 mkdirp.sync(destDir);
                 filecopy(src, destDir, {
@@ -38,18 +38,18 @@ apeTasking.runTasks('doc', [
             'lib/**/*.js',
             'README.md'
         ], {
-            destination: "docs/apiguide",
+            destination: "doc/apiguide",
             verbose: true,
-            tutorials: "docs/tutorial/.jsdoc_precompiled",
+            tutorials: "doc/tutorial/.jsdoc_precompiled",
             templates: {
                 color: '#418300',
                 systemName: 'coz',
-                favicon: 'docs/favicon.png',
+                favicon: 'doc/favicon.png',
                 copyright: "okunishitaka.com Copyright © 2015"
             }
         }, callback);
     },
     function (callback) {
-        coz.render('docs/readme/.*.bud', callback);
+        coz.render('doc/readme/.*.bud', callback);
     }
 ], true);

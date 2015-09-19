@@ -29,7 +29,7 @@ exports['Create coz.'] = function (test) {
 
 exports['Do render.'] = function (test) {
     var coz = new Coz();
-    var src = __dirname + '/../docs/mockups/mock-bud.bud';
+    var src = __dirname + '/../doc/mockups/mock-bud.bud';
     coz.render([
         src
     ], {verbose: true}, function (err) {
@@ -40,7 +40,7 @@ exports['Do render.'] = function (test) {
 
 exports['Do render without options.'] = function (test) {
     var coz = new Coz();
-    var src = __dirname + '/../docs/mockups/mock-bud.bud';
+    var src = __dirname + '/../doc/mockups/mock-bud.bud';
     coz.render([
         src
     ], function (err) {
@@ -95,7 +95,7 @@ exports['With custom setup.'] = function (test) {
 };
 
 exports['Do render with configuration.'] = function (test) {
-    var configuration = require.resolve('../docs/mockups/mock-coz-configuration');
+    var configuration = require.resolve('../doc/mockups/mock-coz-configuration');
     var coz = new Coz(configuration);
     var filename = __dirname + '/../tmp/some_file2.txt';
     if (fs.existsSync(filename)) {

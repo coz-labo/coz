@@ -37,7 +37,7 @@ Flexible generator, which makes your project clean and maintainable.
 <!-- Overview Start -->
 <a name="overview"></a>
 
-<a href="http://coz-repo.github.io/coz/homepage"><img style="height:128px;" src="docs/images/coz-banner.png" height="128"/></a>
+<a href="http://coz-repo.github.io/coz/homepage"><img style="height:128px;" src="doc/images/coz-banner.png" height="128"/></a>
 
 
 ```javascript
@@ -66,9 +66,9 @@ will do the magic.
 <!-- Sections Start -->
 <a name="sections"></a>
 
-<!-- Section from "docs/readme/01-about.md.hbs" Start -->
+<!-- Section from "doc/readme/01-about.md.hbs" Start -->
 
-<a name="section-docs-readme-01-about-md"></a>
+<a name="section-doc-readme-01-about-md"></a>
 About coz
 ------
 
@@ -80,7 +80,7 @@ The basic idea of coz is that creating files from files.
 + Running `coz render` command.
 + Files will be generated!
 
-<img style="height:256px;" src="docs/images/coz-outline.jpg" height="256">
+<img style="height:256px;" src="doc/images/coz-outline.jpg" height="256">
 
 
 ### What For?
@@ -110,17 +110,17 @@ For example,
 
 
 
-<!-- Section from "docs/readme/01-about.md.hbs" End -->
+<!-- Section from "doc/readme/01-about.md.hbs" End -->
 
-<!-- Section from "docs/readme/02-howto.md.hbs" Start -->
+<!-- Section from "doc/readme/02-howto.md.hbs" Start -->
 
-<a name="section-docs-readme-02-howto-md"></a>
+<a name="section-doc-readme-02-howto-md"></a>
 Getting started
 ------
 
 ### Requirements
 
-+ [node.js&gt;=0.10.3][nodejs_url]
++ [node.js&gt;&#x3D;0.10.3][nodejs_url]
 
 
 ### Installation
@@ -140,35 +140,6 @@ For more details, see tutorial section "[01 - Installing coz][01_installing_coz_
 
 **.who-likes-what.txt.bud** (bud file)
 ```javascript
-/**
- * .who-likes-what.txt.bud
- * This is a bud file for "examples/01-minimum-demo"
- */
-
-// Exports as a Node.js module.
-module.exports = {
-
-    // Template string. By default, parsed by Handlebars engine.
-    tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
-
-    // Overwrite when already existing.
-    force: true,
-
-    // File path to write out.
-    path: 'who-likes-what.txt',
-
-    // File permission.
-    mode: '444',
-
-    // Data to render.
-    data: {
-        members: {
-            "Mai": "apple",
-            "Tom": "Orange",
-            "Rita": "Banana"
-        }
-    }
-};
 
 ```
 
@@ -192,31 +163,17 @@ For more details, see tutorial section "[02 - Rendering bud files][02_rendering_
 coz provides programmatic API which enables you to execute coz commands from Node.js program.
 
 ```javascript
-#!/usr/bin/env node
 
-/**
- * run_rendering.js
- * This is an executable file for "examples/04-from-programmatic-api/run_rendering.js"
- */
-
-var coz = require('coz');
-
-// Render .bud files.
-coz.render([
-    '**/.*.bud'
-], function (err) {
-    console.log(err ? err : 'Done!');
-});
 ```
 
 For more details, see tutorial section "[04 - Using programmatic API][04_using_programmatic_a_p_i_url]".
 
 
-<!-- Section from "docs/readme/02-howto.md.hbs" End -->
+<!-- Section from "doc/readme/02-howto.md.hbs" End -->
 
-<!-- Section from "docs/readme/03-spec.md.hbs" Start -->
+<!-- Section from "doc/readme/03-spec.md.hbs" Start -->
 
-<a name="section-docs-readme-03-spec-md"></a>
+<a name="section-doc-readme-03-spec-md"></a>
 Specifications
 ---------
 
@@ -275,11 +232,11 @@ List of properties configurable in bud files.
 
 
 
-<!-- Section from "docs/readme/03-spec.md.hbs" End -->
+<!-- Section from "doc/readme/03-spec.md.hbs" End -->
 
-<!-- Section from "docs/readme/09-links.md.hbs" Start -->
+<!-- Section from "doc/readme/09-links.md.hbs" Start -->
 
-<a name="section-docs-readme-09-links-md"></a>
+<a name="section-doc-readme-09-links-md"></a>
 Links
 ------
 
@@ -294,7 +251,7 @@ Links
 
 ### Documents
 
-[![Inline docs][my_inch_badge_url]][my_inch_url]
+[![Inline doc][my_inch_badge_url]][my_inch_url]
 
 + [API Guide][my_apiguide_url]
 
@@ -305,20 +262,20 @@ Links
 + [Issues @github](https://github.com/coz-repo/coz/issues)
 + [Coverage Report][my_coverage_url]
 
-<!-- Section from "docs/readme/09-links.md.hbs" End -->
+<!-- Section from "doc/readme/09-links.md.hbs" End -->
 
-<!-- Section from "docs/readme/10-license.md.hbs" Start -->
+<!-- Section from "doc/readme/10-license.md.hbs" Start -->
 
-<a name="section-docs-readme-10-license-md"></a>
+<a name="section-doc-readme-10-license-md"></a>
 License
 -------
 This software is released under the [MIT License][my_license_url].
 
-<!-- Section from "docs/readme/10-license.md.hbs" End -->
+<!-- Section from "doc/readme/10-license.md.hbs" End -->
 
-<!-- Section from "docs/readme/11-project.md.hbs" Start -->
+<!-- Section from "doc/readme/11-project.md.hbs" Start -->
 
-<a name="section-docs-readme-11-project-md"></a>
+<a name="section-doc-readme-11-project-md"></a>
 About this project
 --------
 
@@ -334,7 +291,7 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 
 [<img src="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg" alt="Support via Gratipay"/>][my_gratipay_url]
 
-<!-- Section from "docs/readme/11-project.md.hbs" End -->
+<!-- Section from "doc/readme/11-project.md.hbs" End -->
 
 
 <!-- Sections Start -->

@@ -15,11 +15,11 @@ process.chdir(basedir);
 
 apeTasking.runTasks('deploy', [
     function deployGhPages(callback) {
-        apeDeploying.deployGhPages('docs', {}, callback);
+        apeDeploying.deployGhPages('doc', {}, callback);
     },
     function deployWiki(callback) {
         var url = 'https://github.com/okunishinishi/node-coz.wiki.git';
-        apeDeploying.deployGhWiki('docs/wiki/*.md', url, {
+        apeDeploying.deployGhWiki('doc/wiki/*.md', url, {
             clean: true
         }, function (err) {
             if (err) {

@@ -13,10 +13,13 @@
 
 "use strict";
 
-var Coz = require('./coz');
+var Coz = require('./coz'),
+    create = require('./create'),
+    pkg = require('../package.json');
 
-var coz = new Coz();
-coz.version = '{{pkg.version}}';
+var coz = create({});
+coz.version = pkg.version;
+coz.create = create;
 coz.Coz = Coz;
 
 module.exports = coz;

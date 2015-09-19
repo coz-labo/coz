@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>coz tutorial03 - Mastering coz bud</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.dynamic.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">coz</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-coz.html">coz</a></li><li><a href="module-coz_lib_buildin_engines.html">coz/lib/buildin_engines</a></li><li><a href="module-coz_lib_buildin_tmpls.html">coz/lib/buildin_tmpls</a></li><li><a href="module-coz_lib_commands.html">coz/lib/commands</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-coz_lib_sets_-EngineSet.html">coz/lib/sets/~EngineSet</a></li><li><a href="module-coz_lib_sets-TmplSet.html">coz/lib/sets~TmplSet</a></li><li><a href="module-coz-Coz.html">coz~Coz</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-01 - Installing coz.html">01 - Installing coz</a></li><li><a href="tutorial-02 - Rendering bud files.html">02 - Rendering bud files</a></li><li><a href="tutorial-03 - Mastering coz bud.html">03 - Mastering coz bud</a></li><li><a href="tutorial-04 - Using programmatic API.html">04 - Using programmatic API</a></li><li><a href="tutorial-05 - Customizing coz.html">05 - Customizing coz</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+    		<h1 class="page-title">tutorial03 - Mastering coz bud</h1>
+			<section class="tutorial-section">
+
+<header>
+    
+
+    <h2>03 - Mastering coz bud</h2>
+</header>
+
+<article>
+    <h3>Configurable Properties.</h3><p>List of properties configurable in bud files.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>engine</code></td>
+<td>string&#124;object</td>
+<td>&#x27;handlebars&#x27;</td>
+<td>Template engine name or engine itself</td>
+</tr>
+<tr>
+<td><code>cwd</code></td>
+<td>string</td>
+<td>process.cwd()</td>
+<td>Working directory path</td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td>object</td>
+<td></td>
+<td>Data which template render with</td>
+</tr>
+<tr>
+<td><code>mkdirp</code></td>
+<td>boolean</td>
+<td>false</td>
+<td>Make parent directories if needed</td>
+</tr>
+<tr>
+<td><code>setup</code></td>
+<td>object</td>
+<td></td>
+<td>Optional settings for template engine</td>
+</tr>
+<tr>
+<td><code>force</code></td>
+<td>boolean</td>
+<td>false</td>
+<td>Should overwrite file when already exists, or not</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td>string&#124;number</td>
+<td>&#x27;644&#x27;</td>
+<td>Permission of generated files. (eg., &#x27;444&#x27; for readonly files)</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>string</td>
+<td></td>
+<td>Destination file path. If not provided, guess from bud file path</td>
+</tr>
+<tr>
+<td><code>tmpl</code></td>
+<td>string&#124;function</td>
+<td>&#x27;json&#x27;</td>
+<td>Template file path or registered template name or template function</td>
+</tr>
+</tbody>
+</table>
+<h3>Understanding Auto Filling Properties.</h3><p>Some properties are optional and coz guess missing properties with some rules.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Guessing Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tmpl</code></td>
+<td>If <code>tmpl</code> is not provided, coz guess it from bud file path. <br/> For example, <strong><em>&quot;.my-world.txt.bud&quot;</em></strong> without <code>tmpl</code> property  search template with pattern <strong><em>&quot;.my-world.txt.*&quot;</em></strong>. <br/> If no template found, uses JSON template as fallback.</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>If <code>path</code> is not provided, coz guess it from bud file path. <br/> Remove <code>/^\./</code> and <code>/\.bud$/</code> from basename and use it as writeout path. <br/> For example, <strong><em>&quot;.my-world.txt.bud&quot;</em></strong> without <code>path</code> property will generate <strong><em>&quot;my-world.txt&quot;</em></strong>.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3>See Also</h3><!-- See also start -->
+<ul>
+<li><a href="tutorial-04%20-%20Using%20programmatic%20API.html">04 - Using programmatic API</a></li>
+</ul>
+<!-- See also end -->
+<h3>Links</h3><ul>
+<li><a href="http://www.npmjs.org/package/coz">coz @ npm</a></li>
+</ul>
+<h3>Tutorials</h3><!-- Tutorials start -->
+<ul>
+<li><a href="tutorial-01%20-%20Installing%20coz.html">01 - Installing coz</a></li>
+<li><a href="tutorial-02%20-%20Rendering%20bud%20files.html">02 - Rendering bud files</a></li>
+<li><a href="tutorial-03%20-%20Mastering%20coz%20bud.html">03 - Mastering coz bud</a></li>
+<li><a href="tutorial-04%20-%20Using%20programmatic%20API.html">04 - Using programmatic API</a></li>
+<li><a href="tutorial-05%20-%20Customizing%20coz.html">05 - Customizing coz</a></li>
+</ul>
+<!-- Tutorials end -->
+<!-- URLs start -->
+<!-- URLs end -->
+</article>
+
+</section>
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+<footer>
+
+	<script>var h=document.head;h.innerHTML=h.innerHTML+'<link rel="shortcut icon" href="doc/favicon.png"/>';</script>
+	<br />
+
+
+	<span class="copyright">
+	okunishitaka.com Copyright © 2015
+	</span>
+	<br />
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a>
+	on 2015-09-19 using the <a
+	href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<!--<script src="scripts/sunlight.js"></script>-->
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/toc.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "h1,h2,h3,h4",
+		showAndHide : false,
+		scrollTo    : "100px"
+	} );
+
+	$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+	//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			lang = "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+</body>
+</html>

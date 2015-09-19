@@ -30,8 +30,8 @@ exports['Show render help.'] = function (test) {
 
 
 exports['Render by custom configuration.'] = function (test) {
-    var bud = __dirname + '/../../docs/mockups/mock-bud.bud',
-        configuration = __dirname + '/../../docs/mockups/mock-coz-configuration.js';
+    var bud = __dirname + '/../../doc/mockups/mock-bud.bud',
+        configuration = __dirname + '/../../doc/mockups/mock-coz-configuration.js';
     var spawned = childProcess.spawn(bin, ['render', '-c', configuration, bud]);
     spawned.stdout.pipe(process.stdout);
     spawned.stderr.pipe(process.stderr);

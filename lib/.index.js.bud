@@ -12,7 +12,7 @@ module.exports = {
         END_BRACE: '}',
         pkg: require('../package.json'),
         get links() {
-            return require('../docs/links.json');
+            return require('../doc/links.json');
         }
     }
 };

@@ -15,7 +15,7 @@ process.chdir(basedir);
 
 apeTasking.runTasks([
     function (callback) {
-        var lcov = path.resolve(basedir, 'docs/coverage/lcov.info');
+        var lcov = path.resolve(basedir, 'coverage/lcov.info');
         apeReporting.sendToCodeclimate(lcov, callback);
     }
 ], true);

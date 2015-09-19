@@ -17,7 +17,7 @@ apeTasking.runTasks('cover', [
     function (callback) {
         apeCovering.measureCoverage(
             require.resolve('./test.js'), [], {
-                dir: 'docs/coverage'
+                dir: 'coverage'
             }, callback
         );
     }
