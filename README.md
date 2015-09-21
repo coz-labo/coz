@@ -220,49 +220,28 @@ List of properties configurable in bud files.
 
 | Name | Type | Default | Description |
 | ----- | ----- | ----- | ----- |
-| `` | string|object | &#x27;handlebars&#x27; | Template engine name or engine itself |
-| `` | string | process.cwd() | Working directory path |
-| `` | object |  | Data which template render with |
-| `` | boolean | false | Make parent directories if needed |
-| `` | object |  | Optional settings for template engine |
-| `` | boolean | false | Should overwrite file when already exists, or not |
-| `` | string|number | &#x27;644&#x27; | Permission of generated files. (eg., &#x27;444&#x27; for readonly files) |
-| `` | string |  | Destination file path. If not provided, guess from bud file path |
-| `` | string|function | &#x27;json&#x27; | Template file path or registered template name or template function |
+| `engine` | string|object | &#x27;handlebars&#x27; | Template engine name or engine itself |
+| `cwd` | string | process.cwd() | Working directory path |
+| `data` | object |  | Data which template render with |
+| `mkdirp` | boolean | false | Make parent directories if needed |
+| `setup` | object |  | Optional settings for template engine |
+| `force` | boolean | false | Should overwrite file when already exists, or not |
+| `mode` | string|number | &#x27;644&#x27; | Permission of generated files. (eg., &#x27;444&#x27; for readonly files) |
+| `path` | string |  | Destination file path. If not provided, guess from bud file path |
+| `tmpl` | string|function | &#x27;json&#x27; | Template file path or registered template name or template function |
 
 
 
 <!-- Section from "doc/readme/03-spec.md.hbs" End -->
 
-<!-- Section from "doc/readme/09-links.md.hbs" Start -->
+<!-- Section from "doc/readme/09-Tutorials.md.hbs" Start -->
 
-<a name="section-doc-readme-09-links-md"></a>
-Links
+<a name="section-doc-readme-09-tutorials-md"></a>
+Tutorials
 ------
 
-### Website
 
-+ [coz](http://coz-repo.github.io/coz/homepage)
-+ [coz @npm][my_npm_url]
-+ [coz @github][my_repo_url]
-
-### Tutorials
-
-
-### Documents
-
-[![Inline doc][my_inch_badge_url]][my_inch_url]
-
-+ [API Guide][my_apiguide_url]
-
-### Reports
-
-+ [Build Status @travis][my_travis_url]
-+ [Analysis Result @codeclimate][my_codeclimate_url]
-+ [Issues @github](https://github.com/coz-repo/coz/issues)
-+ [Coverage Report][my_coverage_url]
-
-<!-- Section from "doc/readme/09-links.md.hbs" End -->
+<!-- Section from "doc/readme/09-Tutorials.md.hbs" End -->
 
 <!-- Section from "doc/readme/10-license.md.hbs" Start -->
 
@@ -278,8 +257,6 @@ This software is released under the [MIT License][my_license_url].
 <a name="section-doc-readme-11-project-md"></a>
 About this project
 --------
-
-[![Bitdeli Badge][my_bitdeli_badge_url]][bitdeli_url]
 
 ### Author
 

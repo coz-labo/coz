@@ -44,6 +44,6 @@ List of properties configurable in bud files.
 
 | Name | Type | Default | Description |
 | ----- | ----- | ----- | ----- |
-{{#each vars.bud.properties}}{{#if configurable}}| `{{name}}` | {{{type}}} | {{default}} | {{description}} |
+{{#each vars.bud.properties}}{{#if configurable}}| `{{@key}}` | {{{type}}} | {{default}} | {{description}} |
 {{/if}}{{/each}}
 
