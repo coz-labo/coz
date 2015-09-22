@@ -156,14 +156,56 @@ module.exports = {
 $ npm install coz -g</code></pre><p>Or you can install it without <code>-g</code> option and use <a href="#programmatic-api">Programmatic API</a>.
 For more details, see tutorial section &quot;[01 - Installing coz][01_installing_coz_url]&quot;.</p>
 <h3>Quickstart</h3><p><strong>.who-likes-what.txt.bud</strong> (bud file)</p>
-<pre class="prettyprint source lang-javascript"><code></code></pre><p>As you see, <code>.bud</code> file is actuary a JavaScript file and could be exported a Node.js module.</p>
+<pre class="prettyprint source lang-javascript"><code>/**
+ * .who-likes-what.txt.bud
+ * This is a bud file for &quot;examples/01-minimum-demo&quot;
+ */
+
+// Exports as a Node.js module.
+module.exports = {
+
+    // Template string. By default, parsed by Handlebars engine.
+    tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
+
+    // Overwrite when already existing.
+    force: true,
+
+    // File path to write out.
+    path: 'who-likes-what.txt',
+
+    // File permission.
+    mode: '444',
+
+    // Data to render.
+    data: {
+        members: {
+            &quot;Mai&quot;: &quot;apple&quot;,
+            &quot;Tom&quot;: &quot;Orange&quot;,
+            &quot;Rita&quot;: &quot;Banana&quot;
+        }
+    }
+};</code></pre><p>As you see, <code>.bud</code> file is actuary a JavaScript file and could be exported a Node.js module.</p>
 <p>Save this file as <code>.who-likes-what.txt.bud</code> and then, run:</p>
 <pre class="prettyprint source lang-bash"><code># Render the bud file
 $ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will generate a file named <code>who-likes-what.txt</code>.</p>
 <p>For more details, see tutorial section &quot;[02 - Rendering bud files][02_rendering_bud_files_url]&quot;.</p>
 <p><a name="programmatic-api" /></p>
 <h3>Programmatic API</h3><p>coz provides programmatic API which enables you to execute coz commands from Node.js program.</p>
-<pre class="prettyprint source lang-javascript"><code></code></pre><p>For more details, see tutorial section &quot;[04 - Using programmatic API][04_using_programmatic_a_p_i_url]&quot;.</p>
+<pre class="prettyprint source lang-javascript"><code>#!/usr/bin/env node
+
+/**
+ * run_rendering.js
+ * This is an executable file for &quot;examples/04-from-programmatic-api/run_rendering.js&quot;
+ */
+
+var coz = require('coz');
+
+// Render .bud files.
+coz.render([
+    '**/.*.bud'
+], function (err) {
+    console.log(err ? err : 'Done!');
+});</code></pre><p>For more details, see tutorial section &quot;[04 - Using programmatic API][04_using_programmatic_a_p_i_url]&quot;.</p>
 <!-- Section from "doc/readme/02-howto.md.hbs" End -->
 <!-- Section from "doc/readme/03-spec.md.hbs" Start -->
 <p><a name="section-doc-readme-03-spec-md"></a></p>
@@ -256,20 +298,16 @@ $ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will genera
 </tbody>
 </table>
 <!-- Section from "doc/readme/03-spec.md.hbs" End -->
-<!-- Section from "doc/readme/09-Tutorials.md.hbs" Start -->
+<!-- Section from "doc/readme/09-tutorials.md.hbs" Start -->
 <p><a name="section-doc-readme-09-tutorials-md"></a></p>
-<h2>Tutorials</h2><!-- Section from "doc/readme/09-Tutorials.md.hbs" End -->
-<!-- Section from "doc/readme/10-license.md.hbs" Start -->
-<p><a name="section-doc-readme-10-license-md"></a></p>
-<h2>License</h2><p>This software is released under the [MIT License][my_license_url].</p>
-<!-- Section from "doc/readme/10-license.md.hbs" End -->
+<h2>Tutorials</h2><!-- Section from "doc/readme/09-tutorials.md.hbs" End -->
 <!-- Section from "doc/readme/11-project.md.hbs" Start -->
 <p><a name="section-doc-readme-11-project-md"></a></p>
 <h2>About this project</h2><h3>Author</h3><ul>
 <li><a href="http://okunishitaka.com">Taka Okunishi</a></li>
 </ul>
-<h3>Donation</h3><p>Support this project and [others by okunishinishi][my_gratipay_url] via [gratipay][my_gratipay_url].</p>
-<p>[<img src="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg" alt="Support via Gratipay"/>][my_gratipay_url]</p>
+<h3>Donation</h3><p>Support this project and <a href="https://gratipay.com/okunishinishi/">others by okunishinishi</a> via <a href="https://gratipay.com/okunishinishi/">gratipay</a>.</p>
+<p><a href="https://gratipay.com/okunishinishi/"><img src="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg" alt="Support via Gratipay"/></a></p>
 <!-- Section from "doc/readme/11-project.md.hbs" End -->
 <!-- Sections Start -->
 <!-- LICENSE Start -->

@@ -140,6 +140,35 @@ For more details, see tutorial section "[01 - Installing coz][01_installing_coz_
 
 **.who-likes-what.txt.bud** (bud file)
 ```javascript
+/**
+ * .who-likes-what.txt.bud
+ * This is a bud file for "examples/01-minimum-demo"
+ */
+
+// Exports as a Node.js module.
+module.exports = {
+
+    // Template string. By default, parsed by Handlebars engine.
+    tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
+
+    // Overwrite when already existing.
+    force: true,
+
+    // File path to write out.
+    path: 'who-likes-what.txt',
+
+    // File permission.
+    mode: '444',
+
+    // Data to render.
+    data: {
+        members: {
+            "Mai": "apple",
+            "Tom": "Orange",
+            "Rita": "Banana"
+        }
+    }
+};
 
 ```
 
@@ -163,7 +192,21 @@ For more details, see tutorial section "[02 - Rendering bud files][02_rendering_
 coz provides programmatic API which enables you to execute coz commands from Node.js program.
 
 ```javascript
+#!/usr/bin/env node
 
+/**
+ * run_rendering.js
+ * This is an executable file for "examples/04-from-programmatic-api/run_rendering.js"
+ */
+
+var coz = require('coz');
+
+// Render .bud files.
+coz.render([
+    '**/.*.bud'
+], function (err) {
+    console.log(err ? err : 'Done!');
+});
 ```
 
 For more details, see tutorial section "[04 - Using programmatic API][04_using_programmatic_a_p_i_url]".
@@ -234,23 +277,14 @@ List of properties configurable in bud files.
 
 <!-- Section from "doc/readme/03-spec.md.hbs" End -->
 
-<!-- Section from "doc/readme/09-Tutorials.md.hbs" Start -->
+<!-- Section from "doc/readme/09-tutorials.md.hbs" Start -->
 
 <a name="section-doc-readme-09-tutorials-md"></a>
 Tutorials
 ------
 
 
-<!-- Section from "doc/readme/09-Tutorials.md.hbs" End -->
-
-<!-- Section from "doc/readme/10-license.md.hbs" Start -->
-
-<a name="section-doc-readme-10-license-md"></a>
-License
--------
-This software is released under the [MIT License][my_license_url].
-
-<!-- Section from "doc/readme/10-license.md.hbs" End -->
+<!-- Section from "doc/readme/09-tutorials.md.hbs" End -->
 
 <!-- Section from "doc/readme/11-project.md.hbs" Start -->
 
@@ -267,6 +301,8 @@ About this project
 Support this project and [others by okunishinishi][my_gratipay_url] via [gratipay][my_gratipay_url].
 
 [<img src="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg" alt="Support via Gratipay"/>][my_gratipay_url]
+
+[my_gratipay_url]: https://gratipay.com/okunishinishi/
 
 <!-- Section from "doc/readme/11-project.md.hbs" End -->
 
