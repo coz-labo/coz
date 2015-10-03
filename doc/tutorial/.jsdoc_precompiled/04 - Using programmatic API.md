@@ -20,7 +20,7 @@ This is an example to execute rendering via programmatic API.
 
 /**
  * run_rendering.js
- * This is an executable file for "examples/04-from-programmatic-api/run_rendering.js"
+ * This is an executable file for "example/04-from-programmatic-api/run_rendering.js"
  */
 
 var coz = require('coz');
@@ -34,7 +34,7 @@ coz.render([
 ```
 
 
-### Execute bud file it self.
+### Execute bud File Itself.
 
 You can mark .bud as an executable file and trigger rendering itself.
 
@@ -44,7 +44,7 @@ You can mark .bud as an executable file and trigger rendering itself.
 
 /**
  * .exec-me.txt.bud
- * This is a bud file for "examples/04-exec-bud-itself"
+ * This is a bud file for "example/04-exec-bud-itself"
  */
 
 module.exports = {

@@ -2,7 +2,7 @@
 
 /**
  * render-with-custom-tmpl.js
- * This is an executable file for "example/06-customize-coz"
+ * This is an executable file for "examples/06-customize-coz"
  */
 
 

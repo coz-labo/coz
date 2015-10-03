@@ -147,11 +147,11 @@ module.exports = {
 <h3>Installation</h3><p>coz is available as an <a href="https://www.npmjs.com/">npm</a> package.</p>
 <pre class="prettyprint source lang-bash"><code># Install coz as a global module.
 $ npm install coz -g</code></pre><p>Or you can install it without <code>-g</code> option and use <a href="#programmatic-api">Programmatic API</a>.
-For more details, see tutorial section &quot;[01 - Installing coz][01_installing_coz_url]&quot;.</p>
+For more details, see tutorial section &quot;<a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/01%20-%20Installing%20coz.md">01 - Installing coz</a>&quot;.</p>
 <h3>Quickstart</h3><p><strong>.who-likes-what.txt.bud</strong> (bud file)</p>
 <pre class="prettyprint source lang-javascript"><code>/**
  * .who-likes-what.txt.bud
- * This is a bud file for &quot;examples/01-minimum-demo&quot;
+ * This is a bud file for &quot;example/01-minimum-demo&quot;
  */
 
 // Exports as a Node.js module.
@@ -181,14 +181,14 @@ module.exports = {
 <p>Save this file as <code>.who-likes-what.txt.bud</code> and then, run:</p>
 <pre class="prettyprint source lang-bash"><code># Render the bud file
 $ coz render &quot;.who-likes-what.txt.bud&quot;</code></pre><p>This will generate a file named <code>who-likes-what.txt</code>.</p>
-<p>For more details, see tutorial section &quot;[02 - Rendering bud files][02_rendering_bud_files_url]&quot;.</p>
+<p>For more details, see tutorial section &quot;<a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/02%20-%20Rendering%20bud%20files.md">02 - Rendering bud files</a>&quot;.</p>
 <p><a name="programmatic-api" /></p>
 <h3>Programmatic API</h3><p>coz provides programmatic API which enables you to execute coz commands from Node.js program.</p>
 <pre class="prettyprint source lang-javascript"><code>#!/usr/bin/env node
 
 /**
  * run_rendering.js
- * This is an executable file for &quot;examples/04-from-programmatic-api/run_rendering.js&quot;
+ * This is an executable file for &quot;example/04-from-programmatic-api/run_rendering.js&quot;
  */
 
 var coz = require('coz');
@@ -198,7 +198,7 @@ coz.render([
     '**/.*.bud'
 ], function (err) {
     console.log(err ? err : 'Done!');
-});</code></pre><p>For more details, see tutorial section &quot;[04 - Using programmatic API][04_using_programmatic_a_p_i_url]&quot;.</p>
+});</code></pre><p>For more details, see tutorial section &quot;<a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/04%20-%20Using%20programmatic%20API.md">04 - Using programmatic API</a>&quot;.</p>
 <!-- Section from "doc/readme/02-howto.md.hbs" End -->
 <!-- Section from "doc/readme/03-spec.md.hbs" Start -->
 <p><a name="section-doc-readme-03-spec-md"></a></p>
@@ -219,7 +219,7 @@ coz.render([
         var error = null;
         callback(err, data);
     });
-}</code></pre><p>For more details, see tutorial section &quot;[03 - Mastering coz bud][03_mastering_coz_bud_url]&quot;.</p>
+}</code></pre><p>For more details, see tutorial section &quot;<a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/03%20-%20Mastering%20coz%20bud.md">03 - Mastering coz bud</a>&quot;.</p>
 <h5>Supported Properties</h5><p>List of properties configurable in bud files.</p>
 <table>
 <thead>
@@ -294,11 +294,11 @@ coz.render([
 <!-- Section from "doc/readme/04-tutorials.md.hbs" Start -->
 <p><a name="section-doc-readme-04-tutorials-md"></a></p>
 <h2>Tutorials</h2><ul>
-<li><a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/01%20-%20Installing%20coz.md">01_installing_coz_url</a></li>
-<li><a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/02%20-%20Rendering%20bud%20files.md">02_rendering_bud_files_url</a></li>
-<li><a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/03%20-%20Mastering%20coz%20bud.md">03_mastering_coz_bud_url</a></li>
-<li><a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/04%20-%20Using%20programmatic%20API.md">04_using_programmatic_a_p_i_url</a></li>
-<li><a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/05%20-%20Customizing%20coz.md">05_customizing_coz_url</a></li>
+<li><a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/01%20-%20Installing%20coz.md">01 Installing Coz</a></li>
+<li><a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/02%20-%20Rendering%20bud%20files.md">02 Rendering Bud Files</a></li>
+<li><a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/03%20-%20Mastering%20coz%20bud.md">03 Mastering Coz Bud</a></li>
+<li><a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/04%20-%20Using%20programmatic%20API.md">04 Using Programmatic a P I</a></li>
+<li><a href="https://github.com/coz-repo/coz/blob/master/doc/tutorial/05%20-%20Customizing%20coz.md">05 Customizing Coz</a></li>
 </ul>
 <!-- Section from "doc/readme/04-tutorials.md.hbs" End -->
 <!-- Section from "doc/readme/05-project.md.hbs" Start -->

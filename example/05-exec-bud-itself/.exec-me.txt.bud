@@ -2,7 +2,7 @@
 
 /**
  * .exec-me.txt.bud
- * This is a bud file for "example/04-exec-bud-itself"
+ * This is a bud file for "examples/04-exec-bud-itself"
  */
 
 module.exports = {

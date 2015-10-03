@@ -69,12 +69,12 @@
 
 <article>
     <p><a name="custom-setup-template"></a></p>
-<h3>Custom setup with template engine.</h3><p>You can pass parameters to template engine via <code>setup</code> property in bud file.
+<h3>Custom Setup with Template Engine.</h3><p>You can pass parameters to template engine via <code>setup</code> property in bud file.
 For example, handlebars engine accepts helper functions which can be called in template context.</p>
 <p><strong>.render-with-custom-setup.txt.bud</strong> (bud file)</p>
 <pre class="prettyprint source lang-javascript"><code>{@lang javascript}/**
  * render-with-custom-setup.txt.bud
- * This is a bud file for &quot;examples/06-customize-coz&quot;
+ * This is a bud file for &quot;example/06-customize-coz&quot;
  */
 
 // Bud with custom setup
@@ -108,7 +108,7 @@ if (!module.parent) {
 
 /**
  * render-with-custom-tmpl.js
- * This is an executable file for &quot;examples/06-customize-coz&quot;
+ * This is an executable file for &quot;example/06-customize-coz&quot;
  */
 
 
@@ -140,7 +140,7 @@ coz.render({
     console.log('Compile done with custom tmpl.');
 });</code></pre><p>Running this will generate:</p>
 <p><strong>render-by-my-custom-tmpl-01.json</strong> (generated file)</p>
-<pre class="prettyprint source"><code>{&quot;generator&quot;:&quot;/Users/okuni/projects/coz/docs/examples/06-customize-coz/render-with-custom-tmpl.js&quot;,&quot;coz is&quot;:&quot;wonderful&quot;,&quot;$$bud&quot;:{&quot;cwd&quot;:&quot;/Users/okuni/projects/coz/docs/examples/06-customize-coz&quot;,&quot;path&quot;:&quot;/Users/okuni/projects/coz/docs/examples/06-customize-coz/render-by-my-custom-tmpl-01.json&quot;}}</code></pre><p><a name="register-custom-template-engine"></a></p>
+<pre class="prettyprint source"><code>{&quot;generator&quot;:&quot;/Users/okuni/projects/coz/docs/example/06-customize-coz/render-with-custom-tmpl.js&quot;,&quot;coz is&quot;:&quot;wonderful&quot;,&quot;$$bud&quot;:{&quot;cwd&quot;:&quot;/Users/okuni/projects/coz/docs/example/06-customize-coz&quot;,&quot;path&quot;:&quot;/Users/okuni/projects/coz/docs/example/06-customize-coz/render-by-my-custom-tmpl-01.json&quot;}}</code></pre><p><a name="register-custom-template-engine"></a></p>
 <h3>Register Custom Template Engine.</h3><p>By default, coz use <a href="http://handlebarsjs.com/">Handlebars</a> as template engine.</p>
 <p>You can register your own engine and use it from .bud files.</p>
 <p><strong>render-with-custom-engine.js</strong> (executable file)</p>
@@ -148,7 +148,7 @@ coz.render({
 
 /**
  * render-with-custom-engine.js
- * This is an executable file for &quot;examples/06-customize-coz&quot;
+ * This is an executable file for &quot;example/06-customize-coz&quot;
  */
 
 
@@ -218,7 +218,7 @@ coz.render({
 <p><strong>use-custom-config-from-cli.config.js</strong> (configuration file)</p>
 <pre class="prettyprint source"><code>/**
  * use-custom-config-from-cli.config.js
- * This is a CLI configuration file for &quot;examples/06-customize-coz&quot;
+ * This is a CLI configuration file for &quot;example/06-customize-coz&quot;
  */
 
 // Custom configuration for CLI
@@ -234,7 +234,7 @@ module.exports = {
 
 ###
 # use-custom-config-from-cli.sh
-# This is a CLI shell file for &quot;examples/06-customize-coz&quot;
+# This is a CLI shell file for &quot;example/06-customize-coz&quot;
 ##
 
 HERE=$(dirname $0)

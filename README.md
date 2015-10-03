@@ -142,7 +142,7 @@ For more details, see tutorial section "[01 - Installing coz][01_installing_coz_
 ```javascript
 /**
  * .who-likes-what.txt.bud
- * This is a bud file for "examples/01-minimum-demo"
+ * This is a bud file for "example/01-minimum-demo"
  */
 
 // Exports as a Node.js module.
@@ -196,7 +196,7 @@ coz provides programmatic API which enables you to execute coz commands from Nod
 
 /**
  * run_rendering.js
- * This is an executable file for "examples/04-from-programmatic-api/run_rendering.js"
+ * This is an executable file for "example/04-from-programmatic-api/run_rendering.js"
  */
 
 var coz = require('coz');
@@ -286,11 +286,18 @@ List of properties configurable in bud files.
 Tutorials
 ------
 
-+ [01_installing_coz_url](https://github.com/coz-repo/coz/blob/master/doc/tutorial/01%20-%20Installing%20coz.md)
-+ [02_rendering_bud_files_url](https://github.com/coz-repo/coz/blob/master/doc/tutorial/02%20-%20Rendering%20bud%20files.md)
-+ [03_mastering_coz_bud_url](https://github.com/coz-repo/coz/blob/master/doc/tutorial/03%20-%20Mastering%20coz%20bud.md)
-+ [04_using_programmatic_a_p_i_url](https://github.com/coz-repo/coz/blob/master/doc/tutorial/04%20-%20Using%20programmatic%20API.md)
-+ [05_customizing_coz_url](https://github.com/coz-repo/coz/blob/master/doc/tutorial/05%20-%20Customizing%20coz.md)
++ [01 Installing Coz][01_installing_coz_url]
++ [02 Rendering Bud Files][02_rendering_bud_files_url]
++ [03 Mastering Coz Bud][03_mastering_coz_bud_url]
++ [04 Using Programmatic a P I][04_using_programmatic_a_p_i_url]
++ [05 Customizing Coz][05_customizing_coz_url]
+
+
+[01_installing_coz_url]: https://github.com/coz-repo/coz/blob/master/doc/tutorial/01%20-%20Installing%20coz.md
+[02_rendering_bud_files_url]: https://github.com/coz-repo/coz/blob/master/doc/tutorial/02%20-%20Rendering%20bud%20files.md
+[03_mastering_coz_bud_url]: https://github.com/coz-repo/coz/blob/master/doc/tutorial/03%20-%20Mastering%20coz%20bud.md
+[04_using_programmatic_a_p_i_url]: https://github.com/coz-repo/coz/blob/master/doc/tutorial/04%20-%20Using%20programmatic%20API.md
+[05_customizing_coz_url]: https://github.com/coz-repo/coz/blob/master/doc/tutorial/05%20-%20Customizing%20coz.md
 
 <!-- Section from "doc/readme/04-tutorials.md.hbs" End -->
 

@@ -1,6 +1,6 @@
 /**
  * .what-colors.html.bud
- * This is a bud file for "example/02-separated-template"
+ * This is a bud file for "examples/02-separated-template"
  */
 
 // Exports as a Node.js module.

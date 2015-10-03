@@ -29,7 +29,7 @@ Here is an example:
 ```javascript
 /**
  * .who-likes-what.txt.bud
- * This is a bud file for "examples/01-minimum-demo"
+ * This is a bud file for "example/01-minimum-demo"
  */
 
 // Exports as a Node.js module.
@@ -95,7 +95,7 @@ For more compile rending, you may want to save template and and to separated fil
 ```javascript
 /**
  * .what-colors.html.bud
- * This is a bud file for "examples/02-separated-template"
+ * This is a bud file for "example/02-separated-template"
  */
 
 // Exports as a Node.js module.

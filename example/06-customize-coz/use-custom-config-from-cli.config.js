@@ -1,6 +1,6 @@
 /**
  * use-custom-config-from-cli.config.js
- * This is a CLI configuration file for "example/06-customize-coz"
+ * This is a CLI configuration file for "examples/06-customize-coz"
  */
 
 // Custom configuration for CLI

@@ -1,5 +1,9 @@
 Tutorials
 ------
 
-{{#each vars.tutorials}}+ [{{name}}]({{{url}}})
+{{#each vars.tutorials}}+ [{{title}}][{{{name}}}]
+{{/each}}
+
+
+{{#each vars.tutorials}}[{{name}}]: {{{url}}}
 {{/each}}

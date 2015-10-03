@@ -1,6 +1,6 @@
 /**
  * .who-likes-what.txt.bud
- * This is a bud file for "example/01-minimum-demo"
+ * This is a bud file for "examples/01-minimum-demo"
  */
 
 // Exports as a Node.js module.

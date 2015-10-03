@@ -30,6 +30,7 @@ module.exports = apeTmpl.readmeMdBud({
             return expandglob.sync(__dirname + '/doc/tutorial/*.md').map(function (filename) {
                 var name = path.basename(filename, path.extname(filename));
                 return {
+                    title:stringcase.titlecase(name),
                     name: stringcase.snakecase(name + '_url').replace(/__+/g, '_'),
                     url: TUTORIAL_BASE + encodeURI("doc/tutorial/" + name + '.md')
                 }
