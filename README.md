@@ -37,6 +37,7 @@ Flexible generator, which makes your project clean and maintainable.
 <!-- Overview Start -->
 <a name="overview"></a>
 
+
 <a href="http://coz-repo.github.io/coz/homepage"><img style="height:128px;" src="doc/images/coz-banner.png" height="128"/></a>
 
 
@@ -76,9 +77,9 @@ About coz
 
 The basic idea of coz is that creating files from files.
 
-+ Writing a meta file called [.bud file](#spec-bud-spec).
-+ Running `coz render` command.
-+ Files will be generated!
+1. Writing a meta file called [.bud file](#spec-bud-spec).
+2. Running `coz render` command.
+3. Files will be generated!
 
 <img style="height:256px;" src="doc/images/coz-outline.jpg" height="256">
 
@@ -92,21 +93,20 @@ You can define a single datasource and distribute it in various forms.
 For example,
 
 + Generate Javascript and Python entity from database definition.
-+ Generate `package.json` and `bower.json` sharing same meta data.
 + Generate Web API document and Swift client entity from json schema objects.
-+ Generate empty test case files from project files.
++ Generate skelton test case files from project files.
 
 
 ### Why This?
 
 + **Lightweight and fast**
-    + coz does nothing bud file templating, it's very fast.
++ coz does nothing bud file templating, it's very fast.
 + **Unopinionated and flexible**
-    + coz could be used to any kind of strings files.
-    + Bunch of options to manipulate files.
-    + Could be used by CLI or programmatically.
++ coz could be used to any kind of strings files.
++ Bunch of options to manipulate files.
++ Could be used by CLI or programmatically.
 + **Simple and extensible**
-    + coz provides ways to customize, like registering your own template engine.
++ coz provides ways to customize, like registering your own template engine.
 
 
 
@@ -120,7 +120,7 @@ Getting started
 
 ### Requirements
 
-+ [node.js&gt;&#x3D;0.10.3][nodejs_url]
++ [node.js][nodejs_url]
 
 
 ### Installation
@@ -212,6 +212,9 @@ coz.render([
 For more details, see tutorial section "[04 - Using programmatic API][04_using_programmatic_a_p_i_url]".
 
 
+[nodejs_url]: https://nodejs.org/en/
+[npm_url]: https://www.npmjs.com/
+
 <!-- Section from "doc/readme/02-howto.md.hbs" End -->
 
 <!-- Section from "doc/readme/03-spec.md.hbs" Start -->
@@ -283,6 +286,11 @@ List of properties configurable in bud files.
 Tutorials
 ------
 
++ [01_installing_coz_url](https://github.com/coz-repo/coz/blob/master/doc/tutorial/01%20-%20Installing%20coz.md)
++ [02_rendering_bud_files_url](https://github.com/coz-repo/coz/blob/master/doc/tutorial/02%20-%20Rendering%20bud%20files.md)
++ [03_mastering_coz_bud_url](https://github.com/coz-repo/coz/blob/master/doc/tutorial/03%20-%20Mastering%20coz%20bud.md)
++ [04_using_programmatic_a_p_i_url](https://github.com/coz-repo/coz/blob/master/doc/tutorial/04%20-%20Using%20programmatic%20API.md)
++ [05_customizing_coz_url](https://github.com/coz-repo/coz/blob/master/doc/tutorial/05%20-%20Customizing%20coz.md)
 
 <!-- Section from "doc/readme/09-tutorials.md.hbs" End -->
 

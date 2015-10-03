@@ -8,6 +8,7 @@
 
 var apeTasking = require('ape-tasking'),
     apeDeploying = require('ape-deploying'),
+    rimraf = require('rimraf'),
     path = require('path');
 
 var basedir = path.resolve(__dirname, '..');
@@ -27,6 +28,10 @@ apeTasking.runTasks('deploy', [
             }
             callback(null); //Continue tasks.
         });
+    },
+    function cleanup(callback) {
+        var tmpDir = path.resolve(basedir, 'tmp');
+        rimraf(tmpDir, callback);
     }
 ], true);
 

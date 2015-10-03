@@ -12,3 +12,4 @@ test/.work/*
 
 .DS_Store
 tmp
+*.log
