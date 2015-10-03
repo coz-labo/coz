@@ -2,7 +2,7 @@
 
 ###
 # use-custom-config-from-cli.sh
-# This is a CLI shell file for "examples/06-customize-coz"
+# This is a CLI shell file for "example/06-customize-coz"
 ##
 
 HERE=$(dirname $0)

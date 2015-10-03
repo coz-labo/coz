@@ -2,7 +2,7 @@
 
 /**
  * run_rendering.js
- * This is an executable file for "examples/04-from-programmatic-api/run_rendering.js"
+ * This is an executable file for "example/04-from-programmatic-api/run_rendering.js"
  */
 
 var coz = require('coz');

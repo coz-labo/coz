@@ -1,6 +1,6 @@
 /**
  * render-by-custom-cli.txt.bud
- * This is a bud file for "examples/06-customize-coz"
+ * This is a bud file for "example/06-customize-coz"
  */
 
 // Bud for coz CLI with custom configuration

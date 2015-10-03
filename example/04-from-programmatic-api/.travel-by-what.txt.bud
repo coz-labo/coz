@@ -1,6 +1,6 @@
 /**
  * .travel-by-what.txt
- * This is a bud file for "examples/04-from-programmatic-api"
+ * This is a bud file for "example/04-from-programmatic-api"
  */
 
 // Exports as a Node.js module.
