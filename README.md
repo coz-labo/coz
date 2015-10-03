@@ -280,9 +280,9 @@ List of properties configurable in bud files.
 
 <!-- Section from "doc/readme/03-spec.md.hbs" End -->
 
-<!-- Section from "doc/readme/09-tutorials.md.hbs" Start -->
+<!-- Section from "doc/readme/04-tutorials.md.hbs" Start -->
 
-<a name="section-doc-readme-09-tutorials-md"></a>
+<a name="section-doc-readme-04-tutorials-md"></a>
 Tutorials
 ------
 
@@ -292,11 +292,11 @@ Tutorials
 + [04_using_programmatic_a_p_i_url](https://github.com/coz-repo/coz/blob/master/doc/tutorial/04%20-%20Using%20programmatic%20API.md)
 + [05_customizing_coz_url](https://github.com/coz-repo/coz/blob/master/doc/tutorial/05%20-%20Customizing%20coz.md)
 
-<!-- Section from "doc/readme/09-tutorials.md.hbs" End -->
+<!-- Section from "doc/readme/04-tutorials.md.hbs" End -->
 
-<!-- Section from "doc/readme/11-project.md.hbs" Start -->
+<!-- Section from "doc/readme/05-project.md.hbs" Start -->
 
-<a name="section-doc-readme-11-project-md"></a>
+<a name="section-doc-readme-05-project-md"></a>
 About this project
 --------
 
@@ -312,7 +312,7 @@ Support this project and [others by okunishinishi][my_gratipay_url] via [gratipa
 
 [my_gratipay_url]: https://gratipay.com/okunishinishi/
 
-<!-- Section from "doc/readme/11-project.md.hbs" End -->
+<!-- Section from "doc/readme/05-project.md.hbs" End -->
 
 
 <!-- Sections Start -->

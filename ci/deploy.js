@@ -19,7 +19,7 @@ apeTasking.runTasks('deploy', [
         apeDeploying.deployGhPages('doc', {}, callback);
     },
     function deployWiki(callback) {
-        var url = 'https://github.com/okunishinishi/node-coz.wiki.git';
+        var url = 'https://github.com/coz-repo/coz.wiki.git';
         apeDeploying.deployGhWiki('doc/wiki/*.md', url, {
             clean: true
         }, function (err) {
