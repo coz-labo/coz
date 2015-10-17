@@ -9,7 +9,7 @@ For example, handlebars engine accepts helper functions which can be called in t
 ```javascript
 {@lang javascript}/**
  * render-with-custom-setup.txt.bud
- * This is a bud file for "example/06-customize-coz"
+ * This is a bud file for "examples/06-customize-coz"
  */
 
 // Bud with custom setup
@@ -56,7 +56,7 @@ You can register custom template to coz context and call it from .bud file by na
 
 /**
  * render-with-custom-tmpl.js
- * This is an executable file for "example/06-customize-coz"
+ * This is an executable file for "examples/06-customize-coz"
  */
 
 
@@ -93,7 +93,7 @@ Running this will generate:
 
 **render-by-my-custom-tmpl-01.json** (generated file)
 ```
-{"generator":"/Users/okuni/projects/coz/docs/example/06-customize-coz/render-with-custom-tmpl.js","coz is":"wonderful","$$bud":{"cwd":"/Users/okuni/projects/coz/docs/example/06-customize-coz","path":"/Users/okuni/projects/coz/docs/example/06-customize-coz/render-by-my-custom-tmpl-01.json"}}
+{"generator":"/Users/okuni/projects/coz/docs/examples/06-customize-coz/render-with-custom-tmpl.js","coz is":"wonderful","$$bud":{"cwd":"/Users/okuni/projects/coz/docs/examples/06-customize-coz","path":"/Users/okuni/projects/coz/docs/examples/06-customize-coz/render-by-my-custom-tmpl-01.json"}}
 ```
 
 <a name="register-custom-template-engine"></a>
@@ -110,7 +110,7 @@ You can register your own engine and use it from .bud files.
 
 /**
  * render-with-custom-engine.js
- * This is an executable file for "example/06-customize-coz"
+ * This is an executable file for "examples/06-customize-coz"
  */
 
 
@@ -192,7 +192,7 @@ To customize CLI Interface, create a configuration file and pass it's pathname t
 ```
 /**
  * use-custom-config-from-cli.config.js
- * This is a CLI configuration file for "example/06-customize-coz"
+ * This is a CLI configuration file for "examples/06-customize-coz"
  */
 
 // Custom configuration for CLI
@@ -212,7 +212,7 @@ module.exports = {
 
 ###
 # use-custom-config-from-cli.sh
-# This is a CLI shell file for "example/06-customize-coz"
+# This is a CLI shell file for "examples/06-customize-coz"
 ##
 
 HERE=$(dirname $0)

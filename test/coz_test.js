@@ -75,6 +75,7 @@ exports['With custom setup.'] = function (test) {
     coz.render({
         path: filename,
         force: true,
+        mkdirp: true,
         tmpl: '{{myCustomHelper baz}}',
         setup: {
             helpers: {
