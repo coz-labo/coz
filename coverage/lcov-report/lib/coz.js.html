@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/coz.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">lib/</a> coz.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>50/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">68.97% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>20/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>13/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>50/50</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Coz context.
+ * @memberof module:coz
+ * @inner
+ * @constructor Coz
+ * @param {object} [config] - Coz configuration.
+ */
+&nbsp;
+"use strict";
+const path = require('path'),
+    argx = require('argx'),
+    async = require('async'),
+    eachBud = require('./each_bud'),
+    EngineSet = require('./sets/engine_set'),
+    TmplSet = require('./sets/tmpl_set'),
+    cozLogger = require('coz-logger'),
+    cozBudLoader = require('coz-bud-loader'),
+    cozBudWriter = require('coz-bud-writer'),
+    cozBudRemover = require('coz-bud-remover'),
+    cozBudCompiler = require('coz-bud-compiler'),
+    _requireSafely = require('./_require_safely');
+&nbsp;
+function _parseConfig(config) {
+    return _requireSafely(config) || config || {};
+}
+&nbsp;
+/** @lends module:coz~Coz */
+function Coz() {
+    let s = this;
+    s.init.apply(s, arguments);
+}
+&nbsp;
+Coz.prototype = {
+    // --------------------
+    // Public properties.
+    // --------------------
+&nbsp;
+    /**
+     * Initialize a coz context.
+     * @constructs module:coz~Coz
+     * @param {object} [config] - Coz configuration.
+     * @param {object|string} [config.engines] - Rendering engine or it's module file path.
+     * @param {object} [config.tmpls] - Predefined templates.
+     */
+    init: function (config) {
+        let s = this;
+        config = _parseConfig(config) || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+&nbsp;
+        s.engineSet = new EngineSet(_parseConfig(config.engines) || <span class="branch-1 cbranch-no" title="branch not covered" >_parseConfig(config.engine))</span>;
+        s.tmplSet = new TmplSet(_parseConfig(config.tmpls));
+        return s;
+    },
+    /**
+     * @type {EngineSet}
+     */
+    engineSet: undefined,
+    /**
+     * Render files from bud.
+     * @param {string|string[]|object|object[]} patterns - Bud file name patterns, or bud instance.
+     * @param {object} [options] - Optional settings.
+     * @param {boolean} [options.verbose=false] - Log verbose.
+     * @param {string} [options.prefix='coz'] - Prefix for coz.
+     * @param {renderCallback} callback - Callback when done.
+     */
+    render: function (patterns, options, callback) {
+        let s = this;
+        let args = argx(arguments);
+        callback = args.pop('function') || <span class="branch-1 cbranch-no" title="branch not covered" >s._handleError.bind(s);</span>
+        patterns = args.shift('object|string|array') || <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
+        options = args.pop('function') || {};
+&nbsp;
+        let name = 'Rendering',
+            startAt = new Date(),
+            verbose = !!options.verbose,
+            prefix = options.prefix || 'coz';
+&nbsp;
+        let logger = cozLogger({
+                verbose: !!verbose,
+                prefix: prefix
+            }),
+            loader = cozBudLoader({}),
+            compiler = cozBudCompiler({
+                resolveEngine: s.engineSet.resolveEngine.bind(s.engineSet),
+                resolveTmpl: s.tmplSet.resolveTmpl.bind(s.tmplSet)
+            }),
+            writer = cozBudWriter({});
+&nbsp;
+        logger.infoStarted(name, startAt);
+        eachBud(patterns, function (filename, callback) {
+            async.waterfall([
+                function (callback) {
+                    callback(null, filename);
+                },
+                function load(bud, callback) {
+                    loader.load(bud, callback);
+                },
+                function compile(bud, callback) {
+                    compiler.compile(bud, callback);
+                },
+                function write(bud, callback) {
+                    writer.write(bud, callback);
+                },
+                function log(bud, callback) {
+                    logger.logRendering(bud, callback);
+                }
+            ], callback);
+        }, function (err, bud) {
+            logger.infoFinished(name, startAt, new Date());
+            callback = callback || <span class="branch-1 cbranch-no" title="branch not covered" >s._handleError.bind(s);</span>
+            callback.call(bud, err);
+        });
+    },
+    /**
+     * Clean files from bud.
+     * @param {string|string[]} patterns - Bud file names.
+     * @param {object} [options] - Optional settings.
+     * @param {boolean} [options.verbose=false] - Log verbose.
+     * @param {string} [options.prefix='coz'] - Log prefix.
+     * @param {cleanCallback} callback - Callback when done.
+     */
+    clean: function (patterns, options, callback) {
+        let s = this;
+        let args = argx(arguments);
+        callback = args.pop('function') || <span class="branch-1 cbranch-no" title="branch not covered" >s._handleError.bind(s);</span>
+        patterns = args.shift('object|string|array') || <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
+        options = args.pop('function') || {};
+&nbsp;
+        let name = 'Clearing',
+            startAt = new Date(),
+            verbose = !!options.verbose,
+            prefix = options.prefix || 'coz';
+&nbsp;
+        let logger = cozLogger({
+                verbose: !!verbose,
+                prefix: prefix
+            }),
+            loader = cozBudLoader({}),
+            remover = cozBudRemover({});
+&nbsp;
+        logger.infoStarted(name, startAt);
+        eachBud(patterns, (filename, callback) =&gt; {
+            async.waterfall([
+                (callback) =&gt; {
+                    callback(null, filename);
+                },
+                (bud, callback) =&gt; {
+                    loader.load(bud, callback);
+                },
+                (bud, callback) =&gt; {
+                    remover.remove(bud, callback);
+                },
+                (bud, callback) =&gt; {
+                    logger.logClearing(bud, callback);
+                }
+            ], callback);
+        }, (err) =&gt; {
+            logger.infoFinished(name, startAt, new Date());
+            callback = callback || <span class="branch-1 cbranch-no" title="branch not covered" >s._handleError.bind(s);</span>
+            callback(err);
+        });
+    },
+    /**
+     * Handle an error.
+     * @param {?Error} err - Error to handle.
+     * @private
+     */
+    _handleError: function (err) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (err) {
+            console.error(err);
+        }
+    }
+};
+&nbsp;
+&nbsp;
+module.exports = Coz;
+&nbsp;
+&nbsp;
+/**
+ * Callback for coz render.
+ * @memberof module:coz
+ * @inner
+ * @callback renderCallback
+ * @param {?Error} error - Render error.
+ */
+&nbsp;
+/**
+ * Callback for coz render.
+ * @memberof module:coz
+ * @inner
+ * @callback cleanCallback
+ * @param {?Error} error - Clean error.
+ */</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 08 2016 14:07:40 GMT+0900 (JST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

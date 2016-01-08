@@ -19,7 +19,7 @@ apeTasking.runTasks('deploy', [
         apeDeploying.deployGhPages('doc', {}, callback);
     },
     function deployWiki(callback) {
-        var url = 'git@github.com:coz-repo/coz-handlebars-engine.wiki.git';
+        var url = 'git@github.com:coz-repo/coz.wiki.git';
         apeDeploying.deployGhWiki('doc/wiki', url, {
             clean: true
         }, function (err) {
