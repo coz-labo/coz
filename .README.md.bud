@@ -4,17 +4,17 @@
 
 "use strict";
 
-var apeTmpl = require('ape-tmpl'),
+const apeTmpl = require('ape-tmpl'),
     expandglob = require('expandglob'),
     stringcase = require('stringcase'),
     path = require('path'),
     pkg = require('./package.json');
 
-var TUTORIAL_BASE = 'https://github.com/coz-repo/coz/blob/master/';
+const TUTORIAL_BASE = 'https://github.com/coz-repo/coz/blob/master/';
 module.exports = apeTmpl.readmeMdBud({
     pkg: pkg,
     repo: pkg.repository,
-    sections: 'doc/readme/*.md.hbs',
+    sections: 'doc/guides/*.md.hbs',
     badges: {
         travis: true,
         codeclimate: true,

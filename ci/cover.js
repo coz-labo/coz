@@ -6,7 +6,7 @@
 
 "use strict";
 
-var path = require('path'),
+const path = require('path'),
     apeTasking = require('ape-tasking'),
     apeCovering = require('ape-covering');
 

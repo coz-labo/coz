@@ -6,12 +6,12 @@
 
 "use strict";
 
-var apeTasking = require('ape-tasking'),
+const apeTasking = require('ape-tasking'),
     apeDeploying = require('ape-deploying'),
     rimraf = require('rimraf'),
     path = require('path');
 
-var basedir = path.resolve(__dirname, '..');
+let basedir = path.resolve(__dirname, '..');
 process.chdir(basedir);
 
 apeTasking.runTasks('deploy', [

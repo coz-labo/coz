@@ -5,7 +5,7 @@
 
 "use strict";
 
-var bin = require.resolve('../../bin/coz'),
+const bin = require.resolve('../../bin/coz'),
     childProcess = require('child_process');
 
 

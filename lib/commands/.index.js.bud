@@ -1,6 +1,6 @@
 "use strict";
 
-var cozTmpl = require('coz-tmpl');
+const cozTmpl = require('coz-tmpl');
 
 module.exports = cozTmpl.indexJsBud({
     dirname: __dirname,
