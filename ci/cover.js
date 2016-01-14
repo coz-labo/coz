@@ -11,11 +11,11 @@ const path = require('path'),
     apeTasking = require('ape-tasking'),
     apeCovering = require('ape-covering');
 
-var basedir = path.resolve(__dirname, '..');
+let basedir = path.resolve(__dirname, '..');
 process.chdir(basedir);
 
 apeTasking.runTasks('cover', [
-    function (callback) {
+    (callback) => {
         apeCovering.measureCoverage(
             'nodeunit', expandglob.sync('test/*_test.js'), {
                 dir: 'coverage'

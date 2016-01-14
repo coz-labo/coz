@@ -6,15 +6,15 @@
 
 "use strict";
 
-var path = require('path'),
+const path = require('path'),
     apeTasking = require('ape-tasking'),
     apeReporting = require('ape-reporting');
 
-var basedir = path.resolve(__dirname, '..');
+let basedir = path.resolve(__dirname, '..');
 process.chdir(basedir);
 
 apeTasking.runTasks([
-    function (callback) {
+    (callback) => {
         var lcov = path.resolve(basedir, 'coverage/lcov.info');
         apeReporting.sendToCodeclimate(lcov, callback);
     }

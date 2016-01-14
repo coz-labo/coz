@@ -6,16 +6,16 @@
 
 "use strict";
 
-var path = require('path'),
+const path = require('path'),
     apeTasking = require('ape-tasking'),
     apeReleasing = require('ape-releasing');
 
-var basedir = path.resolve(__dirname, '..');
+const basedir = path.resolve(__dirname, '..');
 process.chdir(basedir);
 
 
 apeTasking.runTasks('release', [
-    function (callback) {
+    (callback) => {
         apeReleasing.releasePackage({
             beforeRelease: [
                 './ci/build.js',

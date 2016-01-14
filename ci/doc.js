@@ -15,15 +15,15 @@ const apeTasking = require('ape-tasking'),
     mkdirp = require('mkdirp'),
     cozExamples = require('coz-examples');
 
-var basedir = path.resolve(__dirname, '..');
+let basedir = path.resolve(__dirname, '..');
 process.chdir(basedir);
 
 apeTasking.runTasks('doc', [
     function generateExamples(callback) {
-        var examplesDir = path.join(require.resolve('coz-examples/package.json'), '..');
-        async.eachSeries(['.*.*', '*.*'], function (pattern, callback) {
-            async.eachSeries(Object.keys(cozExamples), function (dirname, callback) {
-                var src = path.join(examplesDir, dirname, pattern),
+        let examplesDir = path.join(require.resolve('coz-examples/package.json'), '..');
+        async.eachSeries(['.*.*', '*.*'], (pattern, callback) => {
+            async.eachSeries(Object.keys(cozExamples), (dirname, callback) => {
+                let src = path.join(examplesDir, dirname, pattern),
                     destDir = path.join('example', dirname);
 
                 mkdirp.sync(destDir);

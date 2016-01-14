@@ -9,7 +9,7 @@ let basedir = path.resolve(__dirname, '..');
 process.chdir(basedir);
 
 apeTasking.runTasks('build', [
-    function (callback) {
+    (callback) => {
         coz.render([
             '.*.bud',
             'doc/**/.*.bud',
