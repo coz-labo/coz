@@ -10,7 +10,7 @@ build/Release
 node_modules
 .idea
 test/.work/*
-docs/coverage
-docs/readme
+coverage
+doc/apiguide
 ci
 .DS_Store
