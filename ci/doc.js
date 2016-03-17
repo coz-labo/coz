@@ -50,6 +50,6 @@ apeTasking.runTasks('doc', [
         }, callback);
     },
     function (callback) {
-        coz.render('doc/readme/.*.bud', callback);
+        coz.render('doc/guides/.*.bud', callback);
     }
 ], true);
