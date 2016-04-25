@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "4.0.5",
+  "version": "5.0.0",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
@@ -36,7 +36,7 @@
     "async": "^1.5.2",
     "commander": "^2.9.0",
     "coz-bud": "^2.0.0",
-    "coz-bud-compiler": "^2.0.0",
+    "coz-bud-compiler": "^2.0.2",
     "coz-bud-loader": "^1.1.0",
     "coz-bud-remover": "^1.0.1",
     "coz-bud-writer": "^1.0.0",
@@ -55,7 +55,7 @@
     "ape-reporting": "^2.0.3",
     "ape-tasking": "^2.0.2",
     "ape-testing": "^2.0.1",
-    "ape-tmpl": "^2.0.12",
+    "ape-tmpl": "^4.0.4",
     "ape-updating": "^2.0.4",
     "apiguide": "^1.0.10",
     "coz-examples": "^1.0.3",

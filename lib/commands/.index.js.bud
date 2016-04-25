@@ -1,16 +1,16 @@
-"use strict";
+'use strict'
 
-const cozTmpl = require('coz-tmpl');
+const cozTmpl = require('coz-tmpl')
 
 module.exports = cozTmpl.indexJsBud({
-    dirname: __dirname,
-    desc: [
-        'Commands invoked via bin script.'
-    ],
-    parentmodule: 'coz/lib',
-    module: 'coz/lib/commands'
-});
+  dirname: __dirname,
+  desc: [
+    'Commands invoked via bin script.'
+  ],
+  parentmodule: 'coz/lib',
+  module: 'coz/lib/commands'
+})
 
 if (!module.parent) {
-    require('../../lib').render(__filename);
+  require('../../lib').render(__filename)
 }

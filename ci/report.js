@@ -4,18 +4,17 @@
  * Run report
  */
 
-"use strict";
+'use strict'
 
-const path = require('path'),
-    apeTasking = require('ape-tasking'),
-    apeReporting = require('ape-reporting');
+const path = require('path')
+const apeTasking = require('ape-tasking')
+const apeReporting = require('ape-reporting')
 
-let basedir = path.resolve(__dirname, '..');
-process.chdir(basedir);
+process.chdir(`${__dirname}/..`)
 
 apeTasking.runTasks([
-    (callback) => {
-        var lcov = path.resolve(basedir, 'coverage/lcov.info');
-        apeReporting.sendToCodeclimate(lcov, callback);
-    }
-], true);
+  (callback) => {
+    let lcov = path.resolve('coverage/lcov.info')
+    apeReporting.sendToCodeclimate(lcov, callback)
+  }
+], true)

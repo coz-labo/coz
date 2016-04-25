@@ -11,15 +11,15 @@
 {{/each}}
  */
 
-"use strict";
+'use strict'
 
-const Coz = require('./coz'),
-    create = require('./create'),
-    pkg = require('../package.json');
+const Coz = require('./coz')
+const create = require('./create')
+const pkg = require('../package.json')
 
-let coz = create({});
-coz.version = pkg.version;
-coz.create = create;
-coz.Coz = Coz;
+let coz = create({})
+coz.version = pkg.version
+coz.create = create
+coz.Coz = Coz
 
-module.exports = coz;
+module.exports = coz

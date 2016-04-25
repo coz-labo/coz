@@ -5,15 +5,14 @@
 
 // Exports as a Node.js module.
 module.exports = {
-
-    tmpl: '{{#each ways}}Goes {{@key}} by {{this}}.\n{{/each}}',
-    force: true,
-    mode: '444',
-    data: {
-        ways: {
-            'Tokyo': 'Train',
-            'France': 'Airplane'
-        }
+  tmpl: '{{#each ways}}Goes {{@key}} by {{this}}.\n{{/each}}',
+  force: true,
+  mode: '444',
+  data: {
+    ways: {
+      'Tokyo': 'Train',
+      'France': 'Airplane'
     }
-};
+  }
+}
 

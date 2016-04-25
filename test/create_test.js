@@ -2,19 +2,20 @@
  * Test case for create.
  * Runs with nodeunit.
  */
+'use strict'
 
-var create = require('../lib/create.js');
+let create = require('../lib/create.js')
 
-exports.setUp = function(done) {
-    done();
-};
+exports.setUp = function (done) {
+  done()
+}
 
-exports.tearDown = function(done) {
-    done();
-};
+exports.tearDown = function (done) {
+  done()
+}
 
-exports['Create'] = function(test){
-    test.ok(create({}));
-    test.done();
-};
+exports[ 'Create' ] = function (test) {
+  test.ok(create({}))
+  test.done()
+}
 

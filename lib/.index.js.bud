@@ -2,20 +2,20 @@
  * Bud file for index.js
  */
 
-"use strict";
+'use strict'
 
 module.exports = {
-    force: true,
-    mode: '444',
-    data: {
-        END_BRACE: '}',
-        pkg: require('../package.json'),
-        get links() {
-            return require('../doc/links.json');
-        }
+  force: true,
+  mode: '444',
+  data: {
+    END_BRACE: '}',
+    pkg: require('../package.json'),
+    get links () {
+      return require('../doc/links.json')
     }
+  }
 };
 
 if (!module.parent) {
-    require('../lib').render(__filename);
+  require('../lib').render(__filename)
 }
