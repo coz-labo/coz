@@ -156,7 +156,7 @@ Coz.prototype = {
     let writer = cozBudWriter({})
     return co(function * () {
       logger.infoStarted(name, startAt)
-      yield new Promise((resolve, reject) => {
+      return yield new Promise((resolve, reject) => {
         eachBud(patterns, (filename, callback) => {
           async.waterfall([
             function (callback) {
@@ -215,7 +215,7 @@ Coz.prototype = {
 
     return co(function * () {
       logger.infoStarted(name, startAt)
-      yield new Promise((resolve, reject) => {
+      return yield new Promise((resolve, reject) => {
         eachBud(patterns, (filename, callback) => {
           async.waterfall([
             (callback) => {

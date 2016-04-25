@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
