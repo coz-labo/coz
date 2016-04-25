@@ -78,27 +78,26 @@
 
 // Bud with custom setup
 module.exports = {
-  force: true,
-  mode: '444',
-  // Template with using custom helper function.
-  tmpl: 'Hey, {{emphasize msg}}',
-  engine: 'handlebars',
-  // Setup options for handlebars engine.
-  setup: {
-    // Register custom handlebars helpers.
-    helpers: {
-      'emphasize' (txt) {
-        return txt.toUpperCase() + '!!!!';
-      }
+    force: true,
+    mode: '444',
+    // Template with using custom helper function.
+    tmpl: 'Hey, {{emphasize msg}}',
+    engine: 'handlebars',
+    // Setup options for handlebars engine.
+    setup: {
+        // Register custom handlebars helpers.
+        helpers: {
+            'emphasize': function (txt) {
+                return txt.toUpperCase() + '!!!!';
+            }
+        }
+    },
+    data: {
+        'msg': 'watch out'
     }
-  },
-  data: {
-    'msg': 'watch out'
-  }
-}
-
+};
 if (!module.parent) {
-  require('coz').render(__filename);
+    require('coz').render(__filename);
 }</code></pre><p>Running this will generate:</p>
 <p><strong>render-with-custom-setup.txt</strong> (generated file)</p>
 <pre class="prettyprint source"><code>Hey, WATCH OUT!!!!</code></pre><p><a name="register-custom-template"></a></p>
@@ -119,7 +118,7 @@ var coz = new Coz({
     // Define custom templates.
     tmpls: {
         // Custom template to generate single line json string.
-        singleLineJson (data) {
+        singleLineJson: function (data) {
             return JSON.stringify(data, null, 0);
         }
     }
@@ -151,66 +150,67 @@ coz.render({
  * This is an executable file for &quot;examples/06-customize-coz&quot;
  */
 
-const Coz = require('coz').Coz
+
+var Coz = require('coz').Coz;
 
 // Create a custom coz context.
-let coz = new Coz({
-  // Define custom engines.
-  engines: {
-    'myCustomEngine01': {
-      // Aliases for this engine.
-      // These names also can be used in &quot;engine&quot; property of bud.
-      $aliases: [
-        'myCustom01'
-      ],
-      /**
-       * Compile template string and create template function.
-       * @implements {module:coz/lib/template~Engine.prototype.compile}
-       * @param {string} source - Source string to compile.
-       * @param {function} callback - Callback when done.
-       */
-      'compile' (source, callback) {
+var coz = new Coz({
+    // Define custom engines.
+    engines: {
+        'myCustomEngine01': {
+            // Aliases for this engine.
+            // These names also can be used in &quot;engine&quot; property of bud.
+            $aliases: [
+                'myCustom01'
+            ],
+            /**
+             * Compile template string and create template function.
+             * @implements {module:coz/lib/template~Engine.prototype.compile}
+             * @param {string} source - Source string to compile.
+             * @param {function} callback - Callback when done.
+             */
+            'compile': function (source, callback) {
 
-        // Define a template function with source.
-        // Template function takes a single agument `data` object and returns rendered string.
+                // Define a template function with source.
+                // Template function takes a single agument `data` object and returns rendered string.
 
-        /**
-         * Compiled template function
-         * @param {object} data - Data to render with.
-         * @returns {string} - Rendered string.
-         */
-        function compiledTemplate (data) {
-          var rendered = String(source);
-          Object.keys(data).forEach(function (key) {
-            rendered = rendered.replace('__' + key + '___', data[ key ]);
-          });
-          return rendered;
+                /**
+                 * Compiled template function
+                 * @param {object} data - Data to render with.
+                 * @returns {string} - Rendered string.
+                 */
+                function compiledTemplate(data) {
+                    var rendered = String(source);
+                    Object.keys(data).forEach(function (key) {
+                        rendered = rendered.replace('__' + key + '___', data[key]);
+                    });
+                    return rendered;
+                }
+
+                // Pass the template function to callback.
+                var err = null;
+                callback(err, compiledTemplate);
+            }
         }
-
-        // Pass the template function to callback.
-        var err = null;
-        callback(err, compiledTemplate);
-      }
     }
-  }
-})
+});
 
 // Use custom coz context to render.
 coz.render({
-  force: true,
-  mode: '444',
-  // Use engine defined above.
-  engine: 'myCustomEngine01',
-  path: __dirname + '/render-by-my-custom-engine-01.txt',
-  // Template source string to compile with the custom engine.
-  tmpl: 'This is good day to __goodToDo___.',
-  // Data to passed to compiled template function.
-  data: {
-    goodToDo: 'die'
-  }
-}, (err) => {
-  console.log('Compile done with custom engine')
-})</code></pre><p>Running this will generate:</p>
+    force: true,
+    mode: '444',
+    // Use engine defined above.
+    engine: 'myCustomEngine01',
+    path: __dirname + '/render-by-my-custom-engine-01.txt',
+    // Template source string to compile with the custom engine.
+    tmpl: 'This is good day to __goodToDo___.',
+    // Data to passed to compiled template function.
+    data: {
+        goodToDo: 'die'
+    }
+}, function (err) {
+    console.log('Compile done with custom engine');
+});</code></pre><p>Running this will generate:</p>
 <p><strong>render-by-my-custom-engine-01.txt</strong> (generated file)</p>
 <pre class="prettyprint source"><code>This is good day to die.</code></pre><p><a name="use-custom-config-from-cli"></a></p>
 <h3>Use Custom Configurations From CLI Interface.</h3><p>To customize CLI Interface, create a configuration file and pass it's pathname to <code>--configuration</code> (or <code>-c</code>) options.</p>
@@ -222,13 +222,13 @@ coz.render({
 
 // Custom configuration for CLI
 module.exports = {
-  tmpls: {
-    // Custom template function.
-    myCustomTmpl01 (data) {
-      return JSON.stringify(data, null, 2);
+    tmpls: {
+        // Custom template function.
+        myCustomTmpl01: function (data) {
+            return JSON.stringify(data, null, 2);
+        }
     }
-  }
-}</code></pre><p><strong>use-custom-config-from-cli.sh</strong> (CLI shell)</p>
+};</code></pre><p><strong>use-custom-config-from-cli.sh</strong> (CLI shell)</p>
 <pre class="prettyprint source"><code>#!/bin/bash
 
 ###

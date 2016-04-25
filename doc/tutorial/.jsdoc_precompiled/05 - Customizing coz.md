@@ -14,29 +14,27 @@ For example, handlebars engine accepts helper functions which can be called in t
 
 // Bud with custom setup
 module.exports = {
-  force: true,
-  mode: '444',
-  // Template with using custom helper function.
-  tmpl: 'Hey, {{emphasize msg}}',
-  engine: 'handlebars',
-  // Setup options for handlebars engine.
-  setup: {
-    // Register custom handlebars helpers.
-    helpers: {
-      'emphasize' (txt) {
-        return txt.toUpperCase() + '!!!!';
-      }
+    force: true,
+    mode: '444',
+    // Template with using custom helper function.
+    tmpl: 'Hey, {{emphasize msg}}',
+    engine: 'handlebars',
+    // Setup options for handlebars engine.
+    setup: {
+        // Register custom handlebars helpers.
+        helpers: {
+            'emphasize': function (txt) {
+                return txt.toUpperCase() + '!!!!';
+            }
+        }
+    },
+    data: {
+        'msg': 'watch out'
     }
-  },
-  data: {
-    'msg': 'watch out'
-  }
-}
-
+};
 if (!module.parent) {
-  require('coz').render(__filename);
+    require('coz').render(__filename);
 }
-
 ```
 
 Running this will generate:
@@ -69,7 +67,7 @@ var coz = new Coz({
     // Define custom templates.
     tmpls: {
         // Custom template to generate single line json string.
-        singleLineJson (data) {
+        singleLineJson: function (data) {
             return JSON.stringify(data, null, 0);
         }
     }
@@ -115,67 +113,67 @@ You can register your own engine and use it from .bud files.
  * This is an executable file for "examples/06-customize-coz"
  */
 
-const Coz = require('coz').Coz
+
+var Coz = require('coz').Coz;
 
 // Create a custom coz context.
-let coz = new Coz({
-  // Define custom engines.
-  engines: {
-    'myCustomEngine01': {
-      // Aliases for this engine.
-      // These names also can be used in "engine" property of bud.
-      $aliases: [
-        'myCustom01'
-      ],
-      /**
-       * Compile template string and create template function.
-       * @implements {module:coz/lib/template~Engine.prototype.compile}
-       * @param {string} source - Source string to compile.
-       * @param {function} callback - Callback when done.
-       */
-      'compile' (source, callback) {
+var coz = new Coz({
+    // Define custom engines.
+    engines: {
+        'myCustomEngine01': {
+            // Aliases for this engine.
+            // These names also can be used in "engine" property of bud.
+            $aliases: [
+                'myCustom01'
+            ],
+            /**
+             * Compile template string and create template function.
+             * @implements {module:coz/lib/template~Engine.prototype.compile}
+             * @param {string} source - Source string to compile.
+             * @param {function} callback - Callback when done.
+             */
+            'compile': function (source, callback) {
 
-        // Define a template function with source.
-        // Template function takes a single agument `data` object and returns rendered string.
+                // Define a template function with source.
+                // Template function takes a single agument `data` object and returns rendered string.
 
-        /**
-         * Compiled template function
-         * @param {object} data - Data to render with.
-         * @returns {string} - Rendered string.
-         */
-        function compiledTemplate (data) {
-          var rendered = String(source);
-          Object.keys(data).forEach(function (key) {
-            rendered = rendered.replace('__' + key + '___', data[ key ]);
-          });
-          return rendered;
+                /**
+                 * Compiled template function
+                 * @param {object} data - Data to render with.
+                 * @returns {string} - Rendered string.
+                 */
+                function compiledTemplate(data) {
+                    var rendered = String(source);
+                    Object.keys(data).forEach(function (key) {
+                        rendered = rendered.replace('__' + key + '___', data[key]);
+                    });
+                    return rendered;
+                }
+
+                // Pass the template function to callback.
+                var err = null;
+                callback(err, compiledTemplate);
+            }
         }
-
-        // Pass the template function to callback.
-        var err = null;
-        callback(err, compiledTemplate);
-      }
     }
-  }
-})
+});
 
 // Use custom coz context to render.
 coz.render({
-  force: true,
-  mode: '444',
-  // Use engine defined above.
-  engine: 'myCustomEngine01',
-  path: __dirname + '/render-by-my-custom-engine-01.txt',
-  // Template source string to compile with the custom engine.
-  tmpl: 'This is good day to __goodToDo___.',
-  // Data to passed to compiled template function.
-  data: {
-    goodToDo: 'die'
-  }
-}, (err) => {
-  console.log('Compile done with custom engine')
-})
-
+    force: true,
+    mode: '444',
+    // Use engine defined above.
+    engine: 'myCustomEngine01',
+    path: __dirname + '/render-by-my-custom-engine-01.txt',
+    // Template source string to compile with the custom engine.
+    tmpl: 'This is good day to __goodToDo___.',
+    // Data to passed to compiled template function.
+    data: {
+        goodToDo: 'die'
+    }
+}, function (err) {
+    console.log('Compile done with custom engine');
+});
 ```
 
 Running this will generate:
@@ -199,14 +197,13 @@ To customize CLI Interface, create a configuration file and pass it's pathname t
 
 // Custom configuration for CLI
 module.exports = {
-  tmpls: {
-    // Custom template function.
-    myCustomTmpl01 (data) {
-      return JSON.stringify(data, null, 2);
+    tmpls: {
+        // Custom template function.
+        myCustomTmpl01: function (data) {
+            return JSON.stringify(data, null, 2);
+        }
     }
-  }
-}
-
+};
 ```
 
 **use-custom-config-from-cli.sh** (CLI shell)

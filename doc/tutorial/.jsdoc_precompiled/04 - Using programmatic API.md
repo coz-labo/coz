@@ -41,7 +41,6 @@ You can mark .bud as an executable file and trigger rendering itself.
 
 ```javascript
 {@lang javascript}#!/usr/bin/env node
-'use strict'
 
 /**
  * .exec-me.txt.bud
@@ -49,23 +48,22 @@ You can mark .bud as an executable file and trigger rendering itself.
  */
 
 module.exports = {
-  force: true,
-  mode: '444',
-  tmpl: 'This file is rendered from: "{{from}}"',
-  data: {
-    from: require('path').basename(__filename)
-  }
+    force: true,
+    mode: '444',
+    tmpl: 'This file is rendered from: "{{from}}"',
+    data: {
+        from: require('path').basename(__filename)
+    }
 };
 
 // If there is no parent, it means that this module is executed directory.
 // e.g., `node .exec-me.txt.bud`
-let main = module.parent == null;
+var main = module.parent == null;
 if (main) {
-  // Render this bud file.
-  // `__filename` is Node.js reserved word and contains path of this file.
-  require('coz').render(__filename);
+    // Render this bud file.
+    // `__filename` is Node.js reserved word and contains path of this file.
+    require('coz').render(__filename);
 }
-
 ```
 
 ___
