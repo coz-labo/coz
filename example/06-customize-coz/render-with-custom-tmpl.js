@@ -13,7 +13,7 @@ var coz = new Coz({
     // Define custom templates.
     tmpls: {
         // Custom template to generate single line json string.
-        singleLineJson (data) {
+        singleLineJson: function (data) {
             return JSON.stringify(data, null, 0);
         }
     }

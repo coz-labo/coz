@@ -5,11 +5,14 @@
 'use strict'
 
 const _requireSafely = require('../lib/_require_safely.js')
+const assert = require('assert')
 
-exports[ 'Require safely' ] = function (test) {
-  test.ok(_requireSafely(__filename))
-  test.equal(_requireSafely('__not_existing__'), null)
-  test.equal(_requireSafely({}), null)
-  test.equal(null, null)
-  test.done()
-}
+it('Require safely', (done) => {
+  assert.ok(_requireSafely(__filename))
+  assert.equal(_requireSafely('__not_existing__'), null)
+  assert.equal(_requireSafely({}), null)
+  assert.equal(null, null)
+  done()
+})
+
+/* global describe, it */

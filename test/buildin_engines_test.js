@@ -1,21 +1,24 @@
 /**
  * Test case for buildinEngines.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
 'use strict'
 
 const buildinEngines = require('../lib/buildin/buildin_engines.js')
+const assert = require('assert')
 
-exports.setUp = function (done) {
-  done()
-}
+describe('buildin-engines', () => {
+  before((done) => {
+    done()
+  })
 
-exports.tearDown = function (done) {
-  done()
-}
+  after((done) => {
+    done()
+  })
 
-exports[ 'Buildin engines' ] = function (test) {
+  it('Buildin engines', (done) => {
+    done()
+  })
+})
 
-  test.done()
-}
-
+/* global describe, before, after, it */

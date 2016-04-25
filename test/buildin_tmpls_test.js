@@ -1,21 +1,24 @@
 /**
  * Test case for buildinTmpls.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
 'use strict'
 
-let buildinTmpls = require('../lib/buildin/buildin_tmpls.js')
+const buildinTmpls = require('../lib/buildin/buildin_tmpls.js')
+const assert = require('assert')
 
-exports.setUp = function (done) {
-  done()
-}
+describe('buildin-tmpls', () => {
+  before((done) => {
+    done()
+  })
 
-exports.tearDown = function (done) {
-  done()
-}
+  after((done) => {
+    done()
+  })
 
-exports[ 'Buildin tmpls' ] = function (test) {
+  it('Buildin tmpls', (done) => {
+    done()
+  })
+})
 
-  test.done()
-}
-
+/* global describe, before, after, it */

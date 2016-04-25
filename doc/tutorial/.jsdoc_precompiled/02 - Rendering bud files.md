@@ -35,27 +35,27 @@ Here is an example:
 // Exports as a Node.js module.
 module.exports = {
 
-    // Template string. By default, parsed by Handlebars engine.
-    tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
+  // Template string. By default, parsed by Handlebars engine.
+  tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
 
-    // Overwrite when already existing.
-    force: true,
+  // Overwrite when already existing.
+  force: true,
 
-    // File path to write out.
-    path: 'who-likes-what.txt',
+  // File path to write out.
+  path: 'who-likes-what.txt',
 
-    // File permission.
-    mode: '444',
+  // File permission.
+  mode: '444',
 
-    // Data to render.
-    data: {
-        members: {
-            "Mai": "apple",
-            "Tom": "Orange",
-            "Rita": "Banana"
-        }
+  // Data to render.
+  data: {
+    members: {
+      "Mai": "apple",
+      "Tom": "Orange",
+      "Rita": "Banana"
     }
-};
+  }
+}
 
 ```
 
@@ -101,22 +101,21 @@ For more compile rending, you may want to save template and and to separated fil
 // Exports as a Node.js module.
 module.exports = {
 
-    // Template file path. Relative to this bud file.
-    tmpl: '.what-colors.html.hbs',
+  // Template file path. Relative to this bud file.
+  tmpl: '.what-colors.html.hbs',
 
-    // Overwrite when already existing.
-    force: true,
+  // Overwrite when already existing.
+  force: true,
 
-    // File path to write out.
-    path: 'what-colors.html',
+  // File path to write out.
+  path: 'what-colors.html',
 
-    // File permission.
-    mode: '444',
+  // File permission.
+  mode: '444',
 
-    // Data to render.
-    data: require('./.what-colors.html.json')
-};
-
+  // Data to render.
+  data: require('./.what-colors.html.json')
+}
 
 ```
 

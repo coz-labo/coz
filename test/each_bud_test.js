@@ -5,21 +5,23 @@
 'use strict'
 
 const eachBud = require('../lib/each_bud.js')
+const assert = require('assert')
 
-exports.setUp = function (done) {
+before((done) => {
   done()
-}
+})
 
-exports.tearDown = function (done) {
+after((done) => {
   done()
-}
+})
 
-exports[ 'Each bud' ] = function (test) {
-  eachBud(__dirname + '/*.js', function (filename, callback) {
+it('Each bud', (done) => {
+  eachBud(`${__dirname}/*.js`, (filename, callback) => {
     callback(null)
   }, function (err) {
-    test.ifError(err)
-    test.done()
+    assert.ifError(err)
+    done()
   })
-}
+})
 
+/* global describe, before, after, it */

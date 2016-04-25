@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
@@ -34,6 +34,7 @@
     "arrayfilter": "^1.1.2",
     "arraysort": "^2.0.0",
     "async": "^1.5.2",
+    "co": "^4.6.0",
     "commander": "^2.9.0",
     "coz-bud": "^2.0.0",
     "coz-bud-compiler": "^2.0.2",
@@ -44,7 +45,6 @@
     "coz-handlebars-engine": "^2.1.1",
     "coz-logger": "^3.1.1",
     "expandglob": "^2.0.0",
-    "extend": "^3.0.0",
     "mkdirp": "^0.5.1",
     "stringcase": "^2.0.1"
   },

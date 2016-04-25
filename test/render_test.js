@@ -1,20 +1,24 @@
 /**
  * Test case for render.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
 'use strict'
+
 const render = require('../lib/commands/render.js')
+const assert = require('assert')
 
-exports.setUp = function (done) {
-  done()
-}
+describe('render', () => {
+  before((done) => {
+    done()
+  })
 
-exports.tearDown = function (done) {
-  done()
-}
+  after((done) => {
+    done()
+  })
 
-exports[ 'Render' ] = function (test) {
+  it('Render', (done) => {
+    done()
+  })
+})
 
-  test.done()
-}
-
+/* global describe, before, after, it */

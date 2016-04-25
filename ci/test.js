@@ -13,6 +13,6 @@ process.chdir(`${__dirname}/..`)
 
 apeTasking.runTasks('test', [
   (callback) => {
-    apeTesting.runNodeunit('test/**/*_test.js', callback)
+    apeTesting.runMocha('test/*_test.js', callback)
   }
 ], true)

@@ -1,42 +1,41 @@
 #!/usr/bin/env node
 
-"use strict";
+'use strict'
 
-var program = require('commander'),
-    pkg = require('../package'),
-    commands = require('../lib/commands')
-    ;
-
-program
-    .version(pkg['version']);
+const program = require('commander')
+const pkg = require('../package')
+const commands = require('../lib/commands')
 
 program
-    .command('render [bud...]')
-    .description('Render files from bud.')
-    .option('-v, --verbose', 'Show verbose logs.')
-    .option('-c, --configuration [configuration]', 'Configuration module path.')
-    .action(function (src, opitons) {
-        commands.render(src, opitons);
-    })
-    .on('--help', function () {
-        console.log(commands.render.help);
-    });
+  .version(pkg[ 'version' ])
 
 program
-    .command('clean [bud]')
-    .description('Clean files rendered from bud.')
-    .option('-v, --verbose', 'Show verbose logs.')
-    .option('-c, --configuration [configuration]', 'Configuration module path.')
-    .action(function (src, opitons) {
-        commands.clean(src, opitons);
-    })
-    .on('--help', function () {
-        console.log(commands.clean.help);
-    });
+  .command('render [bud...]')
+  .description('Render files from bud.')
+  .option('-v, --verbose', 'Show verbose logs.')
+  .option('-c, --configuration [configuration]', 'Configuration module path.')
+  .action(function (src, opitons) {
+    commands.render(src, opitons)
+  })
+  .on('--help', function () {
+    console.log(commands.render.help)
+  })
 
 program
-    .parse(process.argv);
+  .command('clean [bud]')
+  .description('Clean files rendered from bud.')
+  .option('-v, --verbose', 'Show verbose logs.')
+  .option('-c, --configuration [configuration]', 'Configuration module path.')
+  .action((src, opitons) => {
+    commands.clean(src, opitons)
+  })
+  .on('--help', () => {
+    console.log(commands.clean.help)
+  })
+
+program
+  .parse(process.argv)
 
 if (program.args.length === 0) {
-    program.help()
+  program.help()
 }

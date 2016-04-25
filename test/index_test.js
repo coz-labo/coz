@@ -6,13 +6,16 @@
 'use strict'
 
 const coz = require('../lib')
+const assert = require('assert')
 
-exports[ 'Eval index.' ] = function (test) {
-  test.ok(coz)
+it('Eval index.', (done) => {
+  assert.ok(coz)
 
   Object.keys(coz).forEach(function (key) {
-    test.ok(coz[ key ])
+    assert.ok(coz[ key ])
   })
 
-  test.done()
-}
+  done()
+})
+
+/* global describe, it */

@@ -74,174 +74,177 @@
  * @param {object} [config] - Coz configuration.
  */
 
-"use strict";
-const path = require('path'),
-    argx = require('argx'),
-    async = require('async'),
-    eachBud = require('./each_bud'),
-    EngineSet = require('./sets/engine_set'),
-    TmplSet = require('./sets/tmpl_set'),
-    cozLogger = require('coz-logger'),
-    cozBudLoader = require('coz-bud-loader'),
-    cozBudWriter = require('coz-bud-writer'),
-    cozBudRemover = require('coz-bud-remover'),
-    cozBudCompiler = require('coz-bud-compiler'),
-    _requireSafely = require('./_require_safely');
+'use strict'
+const argx = require('argx')
+const async = require('async')
+const eachBud = require('./each_bud')
+const EngineSet = require('./sets/engine_set')
+const TmplSet = require('./sets/tmpl_set')
+const cozLogger = require('coz-logger')
+const cozBudLoader = require('coz-bud-loader')
+const cozBudWriter = require('coz-bud-writer')
+const cozBudRemover = require('coz-bud-remover')
+const cozBudCompiler = require('coz-bud-compiler')
+const _requireSafely = require('./_require_safely')
+const co = require('co')
 
-function _parseConfig(config) {
-    return _requireSafely(config) || config || {};
+function _parseConfig (config) {
+  return _requireSafely(config) || config || {}
 }
 
 /** @lends module:coz~Coz */
-function Coz() {
-    let s = this;
-    s.init.apply(s, arguments);
+function Coz () {
+  const s = this
+  s.init.apply(s, arguments)
 }
 
 Coz.prototype = {
-    // --------------------
-    // Public properties.
-    // --------------------
+  // --------------------
+  // Public properties.
+  // --------------------
 
-    /**
-     * Initialize a coz context.
-     * @constructs module:coz~Coz
-     * @param {object} [config] - Coz configuration.
-     * @param {object|string} [config.engines] - Rendering engine or it's module file path.
-     * @param {object} [config.tmpls] - Predefined templates.
-     */
-    init(config) {
-        let s = this;
-        config = _parseConfig(config) || {};
+  /**
+   * Initialize a coz context.
+   * @constructs module:coz~Coz
+   * @param {object} [config] - Coz configuration.
+   * @param {object|string} [config.engines] - Rendering engine or it's module file path.
+   * @param {object} [config.tmpls] - Predefined templates.
+   */
+  init (config) {
+    const s = this
+    config = _parseConfig(config) || {}
 
-        s.engineSet = new EngineSet(_parseConfig(config.engines) || _parseConfig(config.engine));
-        s.tmplSet = new TmplSet(_parseConfig(config.tmpls));
-        return s;
-    },
-    /**
-     * @type {EngineSet}
-     */
-    engineSet: undefined,
-    /**
-     * Render files from bud.
-     * @param {string|string[]|object|object[]} patterns - Bud file name patterns, or bud instance.
-     * @param {object} [options] - Optional settings.
-     * @param {boolean} [options.verbose=false] - Log verbose.
-     * @param {string} [options.prefix='coz'] - Prefix for coz.
-     * @param {renderCallback} callback - Callback when done.
-     */
-    render(patterns, options, callback) {
-        let s = this;
-        let args = argx(arguments);
-        callback = args.pop('function') || s._handleError.bind(s);
-        patterns = args.shift('object|string|array') || [];
-        options = args.pop('function') || {};
+    s.engineSet = new EngineSet(_parseConfig(config.engines) || _parseConfig(config.engine))
+    s.tmplSet = new TmplSet(_parseConfig(config.tmpls))
+    return s
+  },
+  /**
+   * @type {EngineSet}
+   */
+  engineSet: undefined,
+  /**
+   * Render files from bud.
+   * @param {string|string[]|object|object[]} patterns - Bud file name patterns, or bud instance.
+   * @param {object} [options] - Optional settings.
+   * @param {boolean} [options.verbose=false] - Log verbose.
+   * @param {string} [options.prefix='coz'] - Prefix for coz.
+   */
+  render (patterns, options) {
+    const s = this
+    let args = argx(arguments)
 
-        let name = 'Rendering',
-            startAt = new Date(),
-            verbose = !!options.verbose,
-            prefix = options.prefix || 'coz';
+    /** @deprecated */
+    let callback = args.pop('function')
 
-        let logger = cozLogger({
-                verbose: !!verbose,
-                prefix: prefix
-            }),
-            loader = cozBudLoader({}),
-            compiler = cozBudCompiler({
-                resolveEngine: s.engineSet.resolveEngine.bind(s.engineSet),
-                resolveTmpl: s.tmplSet.resolveTmpl.bind(s.tmplSet)
-            }),
-            writer = cozBudWriter({});
+    patterns = args.shift('object|string|array') || []
+    options = args.pop('function') || {}
 
-        logger.infoStarted(name, startAt);
-        eachBud(patterns, function (filename, callback) {
-            async.waterfall([
-                function (callback) {
-                    callback(null, filename);
-                },
-                function load(bud, callback) {
-                    loader.load(bud, callback);
-                },
-                function compile(bud, callback) {
-                    compiler.compile(bud, callback);
-                },
-                function write(bud, callback) {
-                    writer.write(bud, callback);
-                },
-                function log(bud, callback) {
-                    logger.logRendering(bud, callback);
-                }
-            ], callback);
-        }, function (err, bud) {
-            logger.infoFinished(name, startAt, new Date());
-            callback = callback || s._handleError.bind(s);
-            callback.call(bud, err);
-        });
-    },
-    /**
-     * Clean files from bud.
-     * @param {string|string[]} patterns - Bud file names.
-     * @param {object} [options] - Optional settings.
-     * @param {boolean} [options.verbose=false] - Log verbose.
-     * @param {string} [options.prefix='coz'] - Log prefix.
-     * @param {cleanCallback} callback - Callback when done.
-     */
-    clean(patterns, options, callback) {
-        let s = this;
-        let args = argx(arguments);
-        callback = args.pop('function') || s._handleError.bind(s);
-        patterns = args.shift('object|string|array') || [];
-        options = args.pop('function') || {};
+    let name = 'Rendering'
+    let startAt = new Date()
+    let verbose = !!options.verbose
+    let prefix = options.prefix || 'coz'
 
-        let name = 'Clearing',
-            startAt = new Date(),
-            verbose = !!options.verbose,
-            prefix = options.prefix || 'coz';
-
-        let logger = cozLogger({
-                verbose: !!verbose,
-                prefix: prefix
-            }),
-            loader = cozBudLoader({}),
-            remover = cozBudRemover({});
-
-        logger.infoStarted(name, startAt);
+    let logger = cozLogger({
+      verbose: !!verbose,
+      prefix: prefix
+    })
+    let loader = cozBudLoader({})
+    let compiler = cozBudCompiler({
+      resolveEngine: s.engineSet.resolveEngine.bind(s.engineSet),
+      resolveTmpl: s.tmplSet.resolveTmpl.bind(s.tmplSet)
+    })
+    let writer = cozBudWriter({})
+    return co(function * () {
+      logger.infoStarted(name, startAt)
+      yield new Promise((resolve, reject) => {
         eachBud(patterns, (filename, callback) => {
-            async.waterfall([
-                (callback) => {
-                    callback(null, filename);
-                },
-                (bud, callback) => {
-                    loader.load(bud, callback);
-                },
-                (bud, callback) => {
-                    remover.remove(bud, callback);
-                },
-                (bud, callback) => {
-                    logger.logClearing(bud, callback);
-                }
-            ], callback);
+          async.waterfall([
+            function (callback) {
+              callback(null, filename)
+            },
+            function load (bud, callback) {
+              loader.load(bud, callback)
+            },
+            function compile (bud, callback) {
+              compiler.compile(bud, callback)
+            },
+            function write (bud, callback) {
+              writer.write(bud, callback)
+            },
+            function log (bud, callback) {
+              logger.logRendering(bud, callback)
+            }
+          ], callback)
+        }, (err, bud) => {
+          logger.infoFinished(name, startAt, new Date())
+          err ? reject(err) : resolve(bud)
+          if (callback) {
+            console.warn('callback is now deprecated. Use promise interface instead.')
+            callback(err)
+          }
+        })
+      })
+    })
+  },
+  /**
+   * Clean files from bud.
+   * @param {string|string[]} patterns - Bud file names.
+   * @param {object} [options] - Optional settings.
+   * @param {boolean} [options.verbose=false] - Log verbose.
+   * @param {string} [options.prefix='coz'] - Log prefix.
+   */
+  clean (patterns, options) {
+    const s = this
+    let args = argx(arguments)
+    /** @deprecated */
+    let callback = args.pop('function')
+    patterns = args.shift('object|string|array') || []
+    options = args.pop('function') || {}
+
+    let name = 'Clearing'
+    let startAt = new Date()
+    let verbose = !!options.verbose
+    let prefix = options.prefix || 'coz'
+
+    let logger = cozLogger({
+      verbose: !!verbose,
+      prefix: prefix
+    })
+    let loader = cozBudLoader({})
+    let remover = cozBudRemover({})
+
+    return co(function * () {
+      logger.infoStarted(name, startAt)
+      yield new Promise((resolve, reject) => {
+        eachBud(patterns, (filename, callback) => {
+          async.waterfall([
+            (callback) => {
+              callback(null, filename)
+            },
+            (bud, callback) => {
+              loader.load(bud, callback)
+            },
+            (bud, callback) => {
+              remover.remove(bud, callback)
+            },
+            (bud, callback) => {
+              logger.logClearing(bud, callback)
+            }
+          ], callback)
         }, (err) => {
-            logger.infoFinished(name, startAt, new Date());
-            callback = callback || s._handleError.bind(s);
-            callback(err);
-        });
-    },
-    /**
-     * Handle an error.
-     * @param {?Error} err - Error to handle.
-     * @private
-     */
-    _handleError(err) {
-        if (err) {
-            console.error(err);
-        }
-    }
-};
+          logger.infoFinished(name, startAt, new Date())
+          if (callback) {
+            console.warn('callback is now deprecated. Use promise interface instead.')
+            callback(err)
+          }
+          err ? reject(err) : resolve()
+        })
+      })
+    })
+  }
+}
 
-
-module.exports = Coz;
-
+module.exports = Coz
 
 /**
  * Callback for coz render.
@@ -257,7 +260,8 @@ module.exports = Coz;
  * @inner
  * @callback cleanCallback
  * @param {?Error} error - Clean error.
- */</pre>
+ */
+</pre>
 	</article>
 </section>
 
@@ -289,7 +293,7 @@ module.exports = Coz;
 
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
-	on 2016-03-17 using the <a
+	on 2016-04-26 using the <a
 	href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 </span>
 </footer>

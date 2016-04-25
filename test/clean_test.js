@@ -1,21 +1,24 @@
 /**
  * Test case for clean.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
 'use strict'
 
-let clean = require('../lib/commands/clean.js')
+const clean = require('../lib/commands/clean.js')
+const assert = require('assert')
 
-exports.setUp = function (done) {
-  done()
-}
+describe('clean', () => {
+  before((done) => {
+    done()
+  })
 
-exports.tearDown = function (done) {
-  done()
-}
+  after((done) => {
+    done()
+  })
 
-exports[ 'Clean' ] = function (test) {
+  it('Clean', (done) => {
+    done()
+  })
+})
 
-  test.done()
-}
-
+/* global describe, before, after, it */
