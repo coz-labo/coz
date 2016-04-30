@@ -37,14 +37,14 @@ apeTasking.runTasks('doc', [
       'lib/**/*.js',
       'README.md'
     ], {
-      destination: "doc/apiguide",
+      destination: 'doc/apiguide',
       verbose: true,
-      tutorials: "doc/tutorial/.jsdoc_precompiled",
+      tutorials: 'doc/tutorial/.jsdoc_precompiled',
       templates: {
         color: '#418300',
         systemName: 'coz',
         favicon: 'doc/favicon.png',
-        copyright: "okunishitaka.com Copyright © 2015"
+        copyright: 'okunishitaka.com Copyright © 2015'
       }
     }, callback)
   },

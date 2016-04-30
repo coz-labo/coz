@@ -12,11 +12,9 @@ const apeCovering = require('ape-covering')
 process.chdir(`${__dirname}/..`)
 
 apeTasking.runTasks('cover', [
-  (callback) => {
-    apeCovering.measureCoverage('_mocha', [
-      'test/*_test.js'
-    ], {
-      dir: 'coverage'
-    }, callback)
-  }
+  () => apeCovering.measureCoverage('_mocha', [
+    'test/*_test.js'
+  ], {
+    dir: 'coverage'
+  })
 ], true)

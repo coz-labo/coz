@@ -2,17 +2,17 @@
  * Bud file for LICENSE
  */
 
-"use strict";
+'use strict'
 
-const apeTmpl = require('ape-tmpl'),
-    pkg = require('./package.json');
+const apeTmpl = require('ape-tmpl')
+const pkg = require('./package.json')
 
 module.exports = apeTmpl.licenseBud({
-    type: pkg.license,
-    holder: pkg.repository.split(/\//).shift(),
-    year: 2015
-});
+  type: pkg.license,
+  holder: pkg.repository.split(/\//).shift(),
+  year: 2015
+})
 
 if (!module.parent) {
-    require('coz').render(__filename);
+  require('coz').render(__filename)
 }

@@ -12,14 +12,12 @@ const apeReleasing = require('ape-releasing')
 process.chdir(`${__dirname}/..`)
 
 apeTasking.runTasks('release', [
-  (callback) => {
-    apeReleasing.releasePackage({
-      beforeRelease: [
-        './ci/build.js',
-        './ci/test.js',
-        './ci/doc.js',
-        './ci/deploy.js'
-      ]
-    }, callback)
-  }
+  () => apeReleasing.releasePackage({
+    beforeRelease: [
+      './ci/build.js',
+      './ci/test.js',
+      './ci/doc.js',
+      './ci/deploy.js'
+    ]
+  })
 ], true)

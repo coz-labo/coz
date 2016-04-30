@@ -2,29 +2,28 @@
  * Bud file for wiki home.
  */
 
-"use strict";
+'use strict'
 
-var pkg = require('../../package.json'),
-    path = require('path'),
-    expandglob = require('expandglob');
+const pkg = require('../../package.json');
+const path = require('path');
+const expandglob = require('expandglob');
 
 module.exports = {
-    force: true,
-    mode: '444',
-    data: {
-        pkg: pkg,
-        tutorials: expandglob.sync('Tutorial*.md', {
-            cwd: __dirname
-        }).map(function (filename) {
-            return {
-                title: path.basename(filename, '.md').split(/-/).shift().trim(),
-                url: './' + filename
-            }
-        })
-    }
+  force: true,
+  mode: '444',
+  data: {
+    pkg: pkg,
+    tutorials: expandglob.sync('Tutorial*.md', {
+      cwd: __dirname
+    }).map(function (filename) {
+      return {
+        title: path.basename(filename, '.md').split(/-/).shift().trim(),
+        url: './' + filename
+      }
+    })
+  }
 };
 
-
 if (!module.parent) {
-    require('../../lib').render(__filename);
+  require('../../lib').render(__filename);
 }

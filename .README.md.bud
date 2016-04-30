@@ -2,43 +2,43 @@
  * Bud file for README.md
  */
 
-"use strict";
+"use strict"
 
-const apeTmpl = require('ape-tmpl'),
-    expandglob = require('expandglob'),
-    stringcase = require('stringcase'),
-    path = require('path'),
-    pkg = require('./package.json');
+const apeTmpl = require('ape-tmpl')
+const expandglob = require('expandglob')
+const stringcase = require('stringcase')
+const path = require('path')
+const pkg = require('./package.json')
 
-const TUTORIAL_BASE = 'https://github.com/coz-repo/coz/blob/master/';
+const TUTORIAL_BASE = 'https://github.com/coz-repo/coz/blob/master/'
 module.exports = apeTmpl.readmeMdBud({
-    pkg: pkg,
-    repo: pkg.repository,
-    sections: 'doc/guides/*.md.hbs',
-    badges: {
-        travis: true,
-        codeclimate: true,
-        codeclimateCoverage: true,
-        gemnasium: true,
-        npm: true
-    },
-    links: require('./doc/links.json'),
-    overview: 'doc/overview.md',
-    vars: {
-        bud: require('coz-bud/lib/spec'),
-        get tutorials() {
-            return expandglob.sync(__dirname + '/doc/tutorial/*.md').map(function (filename) {
-                var name = path.basename(filename, path.extname(filename));
-                return {
-                    title:stringcase.titlecase(name),
-                    name: stringcase.snakecase(name + '_url').replace(/__+/g, '_'),
-                    url: TUTORIAL_BASE + encodeURI("doc/tutorial/" + name + '.md')
-                }
-            });
+  pkg: pkg,
+  repo: pkg.repository,
+  sections: 'doc/guides/*.md.hbs',
+  badges: {
+    travis: true,
+    codeclimate: true,
+    codeclimateCoverage: true,
+    gemnasium: true,
+    npm: true
+  },
+  links: require('./doc/links.json'),
+  overview: 'doc/overview.md',
+  vars: {
+    bud: require('coz-bud/lib/spec'),
+    get tutorials () {
+      return expandglob.sync(__dirname + '/doc/tutorial/*.md').map(function (filename) {
+        var name = path.basename(filename, path.extname(filename))
+        return {
+          title: stringcase.titlecase(name),
+          name: stringcase.snakecase(name + '_url').replace(/__+/g, '_'),
+          url: TUTORIAL_BASE + encodeURI("doc/tutorial/" + name + '.md')
         }
+      })
     }
-});
+  }
+})
 
 if (!module.parent) {
-    require('./lib').render(__filename);
+  require('./lib').render(__filename)
 }
