@@ -22,13 +22,13 @@ apeTasking.runTasks('doc', [
     let examplesDir = path.join(require.resolve('coz-examples/package.json'), '..')
     async.eachSeries([ '.*.*', '*.*' ], (pattern, callback) => {
       async.eachSeries(Object.keys(cozExamples), (dirname, callback) => {
-        let src = path.join(examplesDir, dirname, pattern),
-          destDir = path.join('example', dirname)
+        let src = path.join(examplesDir, dirname, pattern)
+        let destDir = path.join('example', dirname);
 
         mkdirp.sync(destDir)
         filecopy(src, destDir, {
           mkdirp: true
-        }, callback)
+        }).then(() => callback(null))
       }, callback)
     }, callback)
   },
