@@ -77,40 +77,38 @@
  * run_rendering.js
  * This is an executable file for &quot;examples/04-from-programmatic-api/run_rendering.js&quot;
  */
-'use strict'
 
-const coz = require('coz')
+var coz = require('coz');
 
 // Render .bud files.
 coz.render([
-  '**/.*.bud'
+    '**/.*.bud'
 ], function (err) {
-  console.log(err ? err : 'Done!');
-})</code></pre><h3>Execute bud File Itself.</h3><p>You can mark .bud as an executable file and trigger rendering itself.</p>
+    console.log(err ? err : 'Done!');
+});</code></pre><h3>Execute bud File Itself.</h3><p>You can mark .bud as an executable file and trigger rendering itself.</p>
 <pre class="prettyprint source lang-javascript"><code>{@lang javascript}#!/usr/bin/env node
 
 /**
  * .exec-me.txt.bud
  * This is a bud file for &quot;examples/04-exec-bud-itself&quot;
  */
-'use strict'
 
 module.exports = {
-  force: true,
-  mode: '444',
-  tmpl: 'This file is rendered from: &quot;{{from}}&quot;',
-  data: {
-    from: require('path').basename(__filename)
-  }
+    force: true,
+    mode: '444',
+    tmpl: 'This file is rendered from: &quot;{{from}}&quot;',
+    data: {
+        from: require('path').basename(__filename)
+    }
 };
 
 // If there is no parent, it means that this module is executed directory.
 // e.g., `node .exec-me.txt.bud`
-let main = module.parent == null;
+var main = module.parent == null;
 if (main) {
-  // Render this bud file.
-  // `__filename` is Node.js reserved word and contains path of this file.
-  require('coz').render(__filename);
+    // Render this bud file.
+    // `__filename` is Node.js reserved word and contains path of this file.
+    require('coz').render(__filename);
 }</code></pre><hr>
 <h3>See Also</h3><!-- See also start -->
 <ul>
