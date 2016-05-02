@@ -23,8 +23,7 @@ apeTasking.runTasks('doc', [
     async.eachSeries([ '.*.*', '*.*' ], (pattern, callback) => {
       async.eachSeries(Object.keys(cozExamples), (dirname, callback) => {
         let src = path.join(examplesDir, dirname, pattern)
-        let destDir = path.join('example', dirname);
-
+        let destDir = path.join('example', dirname)
         mkdirp.sync(destDir)
         filecopy(src, destDir, {
           mkdirp: true

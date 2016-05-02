@@ -13,6 +13,7 @@ const rimraf = require('rimraf')
 process.chdir(`${__dirname}/..`)
 
 let WIKI_URL = 'git@github.com:coz-repo/coz.wiki.git'
+
 apeTasking.runTasks('deploy', [
   () => apeDeploying.deployGhPages('doc', {}),
   () => apeDeploying.deployGhWiki('doc/wiki', WIKI_URL, {

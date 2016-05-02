@@ -41,10 +41,10 @@
     "coz-bud-loader": "^2.0.3",
     "coz-bud-remover": "^2.0.0",
     "coz-bud-writer": "^1.0.0",
-    "coz-engine": "^1.0.4",
-    "coz-handlebars-engine": "^2.1.1",
+    "coz-engine": "^2.0.0",
+    "coz-handlebars-engine": "^3.0.0",
     "coz-logger": "^4.0.0",
-    "expandglob": "^3.0.1"
+    "expandglob": "^3.0.2"
   },
   "devDependencies": {
     "ape-covering": "^3.0.1",
