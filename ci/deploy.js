@@ -9,28 +9,22 @@
 const apeTasking = require('ape-tasking')
 const apeDeploying = require('ape-deploying')
 const rimraf = require('rimraf')
-const path = require('path')
 
 process.chdir(`${__dirname}/..`)
 
+let WIKI_URL = 'git@github.com:coz-repo/coz.wiki.git'
 apeTasking.runTasks('deploy', [
-  (callback) => {
-    apeDeploying.deployGhPages('doc', {}, callback)
-  },
-  (callback) => {
-    let url = 'git@github.com:coz-repo/coz.wiki.git'
-    apeDeploying.deployGhWiki('doc/wiki', url, {
-      clean: true
-    }, (err)=> {
-      if (err) {
-        console.error(err)
-      }
-      callback(null) // Continue tasks.
-    })
-  },
+  () => apeDeploying.deployGhPages('doc', {}),
+  () => apeDeploying.deployGhWiki('doc/wiki', WIKI_URL, {
+    clean: true
+  }).catch((err) => {
+    if (err) {
+      console.error(err)
+    }
+    return null // Continue tasks.
+  }),
   (callback) => {
     let tmpDir = `${__dirname}/../tmp`
     rimraf(tmpDir, callback)
   }
 ], true)
-
