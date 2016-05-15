@@ -188,6 +188,9 @@ Coz.prototype = {
           }
         })
       })
+    }).catch((err) => {
+      console.error(err)
+      return Promise.reject(err)
     })
   },
   /**
@@ -248,6 +251,9 @@ Coz.prototype = {
           err ? reject(err) : resolve()
         })
       })
+    }).catch((err) => {
+      console.error(err)
+      return Promise.reject(err)
     })
   }
 }
@@ -290,7 +296,7 @@ module.exports = Coz
 
 <footer>
 
-	<script>var h=document.head;h.innerHTML=h.innerHTML+'<link rel="shortcut icon" href="doc/favicon.png"/>';</script>
+	<script>const h=document.headh.innerHTML=h.innerHTML+'<link rel="shortcut icon" href="doc/favicon.png"/>';</script>
 	<br />
 
 
