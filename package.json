@@ -1,16 +1,13 @@
 {
   "name": "coz",
-  "version": "5.1.10",
+  "version": "6.0.0",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
     "coz": "bin/coz"
   },
   "scripts": {
-    "build": "./ci/build.js",
-    "test": "./ci/test.js",
-    "cover": "./ci/cover.js",
-    "report": "./ci/report.js"
+    "test": "./ci/test.js"
   },
   "repository": "coz-repo/coz",
   "keywords": [
@@ -40,7 +37,7 @@
     "coz-bud-compiler": "^2.0.3",
     "coz-bud-loader": "^2.0.3",
     "coz-bud-remover": "^2.0.1",
-    "coz-bud-writer": "^1.0.0",
+    "coz-bud-writer": "^2.0.0",
     "coz-engine": "^2.0.0",
     "coz-handlebars-engine": "^3.0.0",
     "coz-logger": "^4.0.0",
@@ -52,12 +49,11 @@
     "ape-releasing": "^3.1.1",
     "ape-reporting": "^3.0.1",
     "ape-tasking": "^3.1.2",
-    "ape-testing": "^3.0.1",
+    "ape-testing": "^4.0.0",
     "ape-tmpl": "^5.0.1",
     "ape-updating": "^3.0.2",
     "apiguide": "^3.0.0",
     "coz-examples": "^1.0.3",
-    "coz-tmpl": "^1.2.1",
     "filecopy": "^2.0.0",
     "injectmock": "^2.0.0",
     "mkdirp": "^0.5.1",
@@ -65,6 +61,7 @@
     "stringcase": "^2.0.1"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=6",
+    "npm": ">=3"
   }
 }

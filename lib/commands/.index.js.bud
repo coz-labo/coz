@@ -1,8 +1,8 @@
 'use strict'
 
-const cozTmpl = require('coz-tmpl')
+const apeTmpl = require('ape-tmpl')
 
-module.exports = cozTmpl.indexJsBud({
+module.exports = apeTmpl.indexJsBud({
   dirname: __dirname,
   desc: [
     'Commands invoked via bin script.'
