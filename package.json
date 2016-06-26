@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "6.0.3",
+  "version": "6.0.4",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
@@ -43,21 +43,21 @@
     "expandglob": "^3.0.2"
   },
   "devDependencies": {
-    "ape-covering": "^3.0.1",
-    "ape-deploying": "^4.0.2",
+    "ape-covering": "^3.0.3",
+    "ape-deploying": "^5.0.2",
     "ape-releasing": "^3.1.1",
     "ape-reporting": "^3.0.1",
-    "ape-tasking": "^3.1.2",
+    "ape-tasking": "^4.0.1",
     "ape-testing": "^4.0.0",
-    "ape-tmpl": "^5.0.1",
-    "ape-updating": "^3.0.2",
+    "ape-tmpl": "^5.0.5",
+    "ape-updating": "^4.0.1",
     "apiguide": "^3.0.0",
     "coz-examples": "^1.0.3",
     "filecopy": "^2.0.0",
     "injectmock": "^2.0.0",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.5.2",
-    "stringcase": "^2.0.1"
+    "stringcase": "^3.0.0"
   },
   "engines": {
     "node": ">=6",
