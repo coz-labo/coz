@@ -5,7 +5,7 @@
 'use strict'
 
 const coz = require('../../lib')
-const expandglob = require('expandglob')
+const aglob = require('aglob')
 const fs = require('fs')
 const path = require('path')
 const os = require('os')
@@ -111,8 +111,8 @@ function _injectCodeMarkup (lines) {
 module.exports = function (callback) {
   let links = require('./.links')
   let pattern = path.join(__dirname, '/.*.md.hbs')
-  let filenames = expandglob.sync(pattern)
-  let tutorials = expandglob.sync('*.md', { cwd: __dirname })
+  let filenames = aglob.sync(pattern)
+  let tutorials = aglob.sync('*.md', { cwd: __dirname })
   let bud = filenames
     .map(function (filename, i) {
       let name = path.basename(filename, '.md.hbs').replace(/^\./, '')

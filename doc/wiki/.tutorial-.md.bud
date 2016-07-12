@@ -6,12 +6,12 @@
 
 const fs = require('fs');
 const path = require('path');
-const expandglob = require('expandglob');
+const aglob = require('aglob');
 
 const tutorialDir = path.resolve(__dirname, '../tutorial')
 
 module.exports = function (callback) {
-  let src = expandglob.sync(tutorialDir + '/*.md')
+  let src = aglob.sync(tutorialDir + '/*.md')
   let bud = src.map((src) => {
     let name = path.basename(src, '.md').replace(/\./g, ':-')
     return {

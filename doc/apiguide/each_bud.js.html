@@ -77,7 +77,7 @@
 
 'use strict'
 
-const expandglob = require('expandglob')
+const aglob = require('aglob')
 const path = require('path')
 const async = require('async')
 
@@ -115,7 +115,7 @@ function _cwd () {
 function _eachFiles (pattern, handler, callback) {
   async.waterfall([
     function (callback) {
-      expandglob(pattern)
+      aglob(pattern)
         .then(
           (filenames) => callback(null, filenames),
           (err) => callback(err)

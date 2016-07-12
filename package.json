@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "6.0.4",
+  "version": "6.0.5",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
@@ -27,6 +27,7 @@
   },
   "homepage": "http://coz-repo.github.io/coz/homepage",
   "dependencies": {
+    "aglob": "^1.0.1",
     "argx": "^2.0.2",
     "arrayfilter": "^1.1.2",
     "arraysort": "^2.0.0",
@@ -38,26 +39,25 @@
     "coz-bud-remover": "^2.0.1",
     "coz-bud-writer": "^2.0.2",
     "coz-engine": "^2.0.0",
-    "coz-handlebars-engine": "^3.0.0",
-    "coz-logger": "^4.0.0",
-    "expandglob": "^3.0.2"
+    "coz-handlebars-engine": "^3.0.2",
+    "coz-logger": "^4.0.0"
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
     "ape-deploying": "^5.0.2",
-    "ape-releasing": "^3.1.1",
+    "ape-releasing": "^4.0.1",
     "ape-reporting": "^3.0.1",
-    "ape-tasking": "^4.0.1",
-    "ape-testing": "^4.0.0",
-    "ape-tmpl": "^5.0.5",
-    "ape-updating": "^4.0.1",
-    "apiguide": "^3.0.0",
+    "ape-tasking": "^4.0.3",
+    "ape-testing": "^4.0.1",
+    "ape-tmpl": "^5.0.12",
+    "ape-updating": "^4.0.4",
+    "apiguide": "^3.0.2",
     "coz-examples": "^1.0.3",
     "filecopy": "^2.0.0",
     "injectmock": "^2.0.0",
     "mkdirp": "^0.5.1",
-    "rimraf": "^2.5.2",
-    "stringcase": "^3.0.0"
+    "rimraf": "^2.5.3",
+    "stringcase": "^3.0.1"
   },
   "engines": {
     "node": ">=6",

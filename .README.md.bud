@@ -5,7 +5,7 @@
 "use strict"
 
 const apeTmpl = require('ape-tmpl')
-const expandglob = require('expandglob')
+const aglob = require('aglob')
 const stringcase = require('stringcase')
 const path = require('path')
 const pkg = require('./package.json')
@@ -27,8 +27,8 @@ module.exports = apeTmpl.readmeMdBud({
   vars: {
     bud: require('coz-bud/lib/spec'),
     get tutorials () {
-      return expandglob.sync(__dirname + '/doc/tutorial/*.md').map(function (filename) {
-        var name = path.basename(filename, path.extname(filename))
+      return aglob.sync(__dirname + '/doc/tutorial/*.md').map((filename) => {
+        let name = path.basename(filename, path.extname(filename))
         return {
           title: stringcase.titlecase(name),
           name: stringcase.snakecase(name + '_url').replace(/__+/g, '_'),

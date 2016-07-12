@@ -353,6 +353,8 @@ This software is released under the [MIT License](https://github.com/coz-repo/co
 Links
 ------
 
-+ [coz-examples](https://github.com/coz-repo/coz-examples#04-from-programmatic-api)
++ [coz-examples][coz_examples_url]
+
+[coz_examples_url]: https://github.com/coz-repo/coz-examples#04-from-programmatic-api
 
 <!-- Links End -->
