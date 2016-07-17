@@ -12,5 +12,6 @@ node_modules
 test/.work/*
 coverage
 doc/apiguide
+doc/welcome
 ci
 .DS_Store

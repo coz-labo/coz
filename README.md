@@ -77,6 +77,7 @@ will do the magic.
 <!-- Section from "doc/guides/01-about.md.hbs" Start -->
 
 <a name="section-doc-guides-01-about-md"></a>
+
 About coz
 ------
 
@@ -123,6 +124,7 @@ For example,
 <!-- Section from "doc/guides/02-howto.md.hbs" Start -->
 
 <a name="section-doc-guides-02-howto-md"></a>
+
 Getting started
 ------
 
@@ -229,6 +231,7 @@ For more details, see tutorial section "[04 - Using programmatic API][04_using_p
 <!-- Section from "doc/guides/03-spec.md.hbs" Start -->
 
 <a name="section-doc-guides-03-spec-md"></a>
+
 Specifications
 ---------
 
@@ -293,6 +296,7 @@ List of properties configurable in bud files.
 <!-- Section from "doc/guides/04-tutorials.md.hbs" Start -->
 
 <a name="section-doc-guides-04-tutorials-md"></a>
+
 Tutorials
 ------
 
@@ -315,6 +319,7 @@ Tutorials
 <!-- Section from "doc/guides/05-project.md.hbs" Start -->
 
 <a name="section-doc-guides-05-project-md"></a>
+
 About this project
 --------
 
