@@ -13,5 +13,7 @@ test/.work/*
 coverage
 doc/apiguide
 doc/welcome
+doc/images
+doc/tutorial
 ci
 .DS_Store
