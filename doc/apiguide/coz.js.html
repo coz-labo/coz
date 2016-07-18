@@ -133,7 +133,6 @@ Coz.prototype = {
    * @param {string|string[]|object|object[]} patterns - Bud file name patterns, or bud instance.
    * @param {object} [options] - Optional settings.
    * @param {boolean} [options.verbose=false] - Log verbose.
-   * @param {string} [options.prefix='coz'] - Prefix for coz.
    */
   render (patterns, options = {}) {
     const s = this
@@ -145,10 +144,8 @@ Coz.prototype = {
     let name = 'Rendering'
     let startAt = new Date()
     let verbose = !!options.verbose
-    let prefix = options.prefix || 'coz'
 
     let logger = cozLogger({
-      prefix,
       verbose: !!verbose
     })
     let loader = cozBudLoader({})
@@ -182,7 +179,6 @@ Coz.prototype = {
    * @param {string|string[]} patterns - Bud file names.
    * @param {object} [options] - Optional settings.
    * @param {boolean} [options.verbose=false] - Log verbose.
-   * @param {string} [options.prefix='coz'] - Log prefix.
    */
   clean (patterns, options = {}) {
     const s = this
@@ -194,10 +190,8 @@ Coz.prototype = {
     let name = 'Clearing'
     let startAt = new Date()
     let verbose = !!options.verbose
-    let prefix = options.prefix || 'coz'
 
     let logger = cozLogger({
-      prefix,
       verbose: !!verbose
     })
     let loader = cozBudLoader({})
