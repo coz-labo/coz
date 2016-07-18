@@ -15,5 +15,6 @@ doc/apiguide
 doc/welcome
 doc/images
 doc/tutorial
+doc/wiki
 ci
 .DS_Store
