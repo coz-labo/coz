@@ -10,7 +10,7 @@ const stringcase = require('stringcase')
 const path = require('path')
 const pkg = require('./package.json')
 
-const TUTORIAL_BASE = 'https://github.com/coz-repo/coz/blob/master/'
+const TUTORIAL_BASE = 'https://github.com/coz-labo/coz/blob/master/'
 module.exports = apeTmpl.readmeMdBud({
   pkg: pkg,
   repo: pkg.repository,

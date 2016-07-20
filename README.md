@@ -45,7 +45,7 @@ Flexible generator, which makes your project clean and maintainable.
 <a name="overview"></a>
 
 
-<a href="http://coz-repo.github.io/coz/homepage"><img style="height:128px;" src="doc/images/coz-banner.png" height="128"/></a>
+<a href="http://coz-labo.github.io/coz/homepage"><img style="height:128px;" src="doc/images/coz-banner.png" height="128"/></a>
 
 
 ```javascript
@@ -307,11 +307,11 @@ Tutorials
 + [05 Customizing Coz][05_customizing_coz_url]
 
 
-[01_installing_coz_url]: https://github.com/coz-repo/coz/blob/master/doc/tutorial/01%20-%20Installing%20coz.md
-[02_rendering_bud_files_url]: https://github.com/coz-repo/coz/blob/master/doc/tutorial/02%20-%20Rendering%20bud%20files.md
-[03_mastering_coz_bud_url]: https://github.com/coz-repo/coz/blob/master/doc/tutorial/03%20-%20Mastering%20coz%20bud.md
-[04_using_programmatic_a_p_i_url]: https://github.com/coz-repo/coz/blob/master/doc/tutorial/04%20-%20Using%20programmatic%20API.md
-[05_customizing_coz_url]: https://github.com/coz-repo/coz/blob/master/doc/tutorial/05%20-%20Customizing%20coz.md
+[01_installing_coz_url]: https://github.com/coz-labo/coz/blob/master/doc/tutorial/01%20-%20Installing%20coz.md
+[02_rendering_bud_files_url]: https://github.com/coz-labo/coz/blob/master/doc/tutorial/02%20-%20Rendering%20bud%20files.md
+[03_mastering_coz_bud_url]: https://github.com/coz-labo/coz/blob/master/doc/tutorial/03%20-%20Mastering%20coz%20bud.md
+[04_using_programmatic_a_p_i_url]: https://github.com/coz-labo/coz/blob/master/doc/tutorial/04%20-%20Using%20programmatic%20API.md
+[05_customizing_coz_url]: https://github.com/coz-labo/coz/blob/master/doc/tutorial/05%20-%20Customizing%20coz.md
 
 
 <!-- Section from "doc/guides/04-tutorials.md.hbs" End -->
@@ -360,6 +360,6 @@ Links
 
 + [coz-examples][coz_examples_url]
 
-[coz_examples_url]: https://github.com/coz-repo/coz-examples#04-from-programmatic-api
+[coz_examples_url]: https://github.com/coz-labo/coz-examples#04-from-programmatic-api
 
 <!-- Links End -->
