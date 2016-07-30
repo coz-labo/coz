@@ -24,7 +24,7 @@ With `-g` option, npm installs the module globally and you can run coz simply by
 (It may need to be run via `sudo`)
 
 Show the coz version to check install is successfully.
-The latest version `6.0.14` will be shown unless you specified older.
+The latest version `6.0.15` will be shown unless you specified older.
 
 ```bash
 # Show coz version.
@@ -73,7 +73,6 @@ ___
 [npm_url]: https://www.npmjs.com/
 [nvm_url]: https://github.com/creationix/nvm
 [my_npm_url]: http://www.npmjs.org/package/coz
-[my_apiguide_url]: http://okunishinishi.github.io/coz/apiguide/
 [tutorial_01_installing_coz_url]: 01%20-%20Installing%20coz.md
 [tutorial_02_rendering_bud_files_url]: 02%20-%20Rendering%20bud%20files.md
 [tutorial_03_mastering_coz_bud_url]: 03%20-%20Mastering%20coz%20bud.md

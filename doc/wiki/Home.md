@@ -1,7 +1,7 @@
 Let's Start coz
 -------
 
-<a href="http://coz-labo.github.io/coz/homepage"><img style="height:px;" src="assets/images/coz-banner.png" height=""/></a>
+<a href="https://github.com/coz-labo/coz"><img style="height:px;" src="assets/images/coz-banner.png" height=""/></a>
 
 This wiki contains additional informations about coz.
 

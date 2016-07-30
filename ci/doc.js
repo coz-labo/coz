@@ -11,7 +11,6 @@ const path = require('path')
 const co = require('co')
 const coz = require('../lib')
 const filecopy = require('filecopy')
-const apiguide = require('apiguide')
 const mkdirp = require('mkdirp')
 const cozExamples = require('coz-examples')
 
@@ -29,20 +28,6 @@ apeTasking.runTasks('doc', [
           mkdirp: true
         })
       }
-    }
-  }),
-  () => apiguide([
-    'lib/**/*.js',
-    'README.md'
-  ], {
-    destination: 'doc/apiguide',
-    verbose: true,
-    tutorials: 'doc/tutorial/.jsdoc_precompiled',
-    templates: {
-      color: '#418300',
-      systemName: 'coz',
-      favicon: 'doc/favicon.png',
-      copyright: 'okunishitaka.com Copyright © 2015'
     }
   }),
   () => coz.render('doc/guides/.*.bud')

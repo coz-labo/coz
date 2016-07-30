@@ -141,30 +141,6 @@ module.exports = function (callback) {
               return _seeAlso([ filename ])
             }
           })
-        }),
-        _tutorialBud({
-          path: '.jsdoc_precompiled/' + name + '.md',
-          tmpl: _injectCodeMarkup(lines).join(EOL),
-          data: _budData({
-            get urls () {
-              let linkUrls = Object.keys(links).map((name) => {
-                  return { name: name, url: links[ name ] }
-                }),
-                tutorialUrls = tutorials.map((filename) => {
-                  let name = _tutorialKey(filename) + '_url';
-                  let basename = path.basename(filename, '.md')
-                  return { name: name, url: 'tutorial-' + basename + '.html' }
-                })
-              return _urls([ linkUrls, tutorialUrls ])
-            },
-            get tutorials () {
-              return _tutorials(tutorials)
-            },
-            get seeAlso () {
-              let filename = filenames[ i + 1 ]
-              return _seeAlso([ filename ])
-            }
-          })
         })
       ]
     })

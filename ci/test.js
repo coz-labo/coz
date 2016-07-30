@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
 /**
- * Run test
+ * Run tests.
  */
 
 'use strict'
 
-const apeTasking = require('ape-tasking')
-const apeTesting = require('ape-testing')
-
 process.chdir(`${__dirname}/..`)
 
+const apeTasking = require('ape-tasking')
+const amocha = require('amocha')
+
 apeTasking.runTasks('test', [
-  () => apeTesting.runMocha('test/*_test.js', {})
+  () => amocha('test/*_test.js')
 ], true)
