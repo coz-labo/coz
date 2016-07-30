@@ -5,24 +5,24 @@
 
 // Bud with custom setup
 module.exports = {
-    force: true,
-    mode: '444',
-    // Template with using custom helper function.
-    tmpl: 'Hey, {{emphasize msg}}',
-    engine: 'handlebars',
-    // Setup options for handlebars engine.
-    setup: {
-        // Register custom handlebars helpers.
-        helpers: {
-            'emphasize': function (txt) {
-                return txt.toUpperCase() + '!!!!';
-            }
-        }
-    },
-    data: {
-        'msg': 'watch out'
+  force: true,
+  mode: '444',
+  // Template with using custom helper function.
+  tmpl: 'Hey, {{emphasize msg}}',
+  engine: 'handlebars',
+  // Setup options for handlebars engine.
+  setup: {
+    // Register custom handlebars helpers.
+    helpers: {
+      'emphasize' (txt) {
+        return txt.toUpperCase() + '!!!!'
+      }
     }
-};
+  },
+  data: {
+    'msg': 'watch out'
+  }
+}
 if (!module.parent) {
-    require('coz').render(__filename);
+  require('coz').render(__filename)
 }

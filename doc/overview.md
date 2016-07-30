@@ -5,11 +5,11 @@
 ```javascript
 // Define rendering rule.
 module.exports = {
-    path: 'have-a-nice-day.txt', // File path to write
-    tmpl: '.have-a-nice-day.txt.hbs', // Template file
-    force: true, // Overwrite each time
-    mode: '444',  // As readyonly file
-    data: require('./my-datasource.json') // Data to render
+  path: 'have-a-nice-day.txt', // File path to write
+  tmpl: '.have-a-nice-day.txt.hbs', // Template file
+  force: true, // Overwrite each time
+  mode: '444',  // As readyonly file
+  data: require('./my-datasource.json') // Data to render
 }
 ```
 

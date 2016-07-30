@@ -22,15 +22,17 @@ This is an example to execute rendering via programmatic API.
  * run_rendering.js
  * This is an executable file for "examples/04-from-programmatic-api/run_rendering.js"
  */
+'use strict'
 
-var coz = require('coz');
+const coz = require('coz')
 
 // Render .bud files.
 coz.render([
-    '**/.*.bud'
-], function (err) {
-    console.log(err ? err : 'Done!');
-});
+  '**/.*.bud'
+]).then(() => {
+  console.log('Done!')
+})
+
 ```
 
 
@@ -48,21 +50,21 @@ You can mark .bud as an executable file and trigger rendering itself.
  */
 
 module.exports = {
-    force: true,
-    mode: '444',
-    tmpl: 'This file is rendered from: "{{from}}"',
-    data: {
-        from: require('path').basename(__filename)
-    }
-};
+  force: true,
+  mode: '444',
+  tmpl: 'This file is rendered from: "{{from}}"',
+  data: {
+    from: require('path').basename(__filename)
+  }
+}
 
 // If there is no parent, it means that this module is executed directory.
 // e.g., `node .exec-me.txt.bud`
 var main = module.parent == null;
 if (main) {
-    // Render this bud file.
-    // `__filename` is Node.js reserved word and contains path of this file.
-    require('coz').render(__filename);
+  // Render this bud file.
+  // `__filename` is Node.js reserved word and contains path of this file.
+  require('coz').render(__filename);
 }
 ```
 

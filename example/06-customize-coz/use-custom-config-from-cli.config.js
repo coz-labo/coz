@@ -5,10 +5,10 @@
 
 // Custom configuration for CLI
 module.exports = {
-    tmpls: {
-        // Custom template function.
-        myCustomTmpl01: function (data) {
-            return JSON.stringify(data, null, 2);
-        }
+  tmpls: {
+    // Custom template function.
+    myCustomTmpl01 (data) {
+      return JSON.stringify(data, null, 2)
     }
-};
+  }
+}

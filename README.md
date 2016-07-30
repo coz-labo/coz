@@ -51,11 +51,11 @@ Flexible generator, which makes your project clean and maintainable.
 ```javascript
 // Define rendering rule.
 module.exports = {
-    path: 'have-a-nice-day.txt', // File path to write
-    tmpl: '.have-a-nice-day.txt.hbs', // Template file
-    force: true, // Overwrite each time
-    mode: '444',  // As readyonly file
-    data: require('./my-datasource.json') // Data to render
+  path: 'have-a-nice-day.txt', // File path to write
+  tmpl: '.have-a-nice-day.txt.hbs', // Template file
+  force: true, // Overwrite each time
+  mode: '444',  // As readyonly file
+  data: require('./my-datasource.json') // Data to render
 }
 ```
 
@@ -108,12 +108,12 @@ For example,
 ### Why This?
 
 + **Lightweight and fast**
-+ coz does nothing bud file templating, it's very fast.
+  + coz does nothing bud file templating, it's very fast.
 + **Unopinionated and flexible**
 + coz could be used to any kind of strings files.
-+ Bunch of options to manipulate files.
+  + Bunch of options to manipulate files.
 + Could be used by CLI or programmatically.
-+ **Simple and extensible**
+  + **Simple and extensible**
 + coz provides ways to customize, like registering your own template engine.
 
 
@@ -158,26 +158,26 @@ For more details, see tutorial section "[01 - Installing coz][01_installing_coz_
 // Exports as a Node.js module.
 module.exports = {
 
-    // Template string. By default, parsed by Handlebars engine.
-    tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
+  // Template string. By default, parsed by Handlebars engine.
+  tmpl: '{{#each members}}Hi, my name is {{@key}}. I like {{this}}.\n{{/each}}',
 
-    // Overwrite when already existing.
-    force: true,
+  // Overwrite when already existing.
+  force: true,
 
-    // File path to write out.
-    path: 'who-likes-what.txt',
+  // File path to write out.
+  path: 'who-likes-what.txt',
 
-    // File permission.
-    mode: '444',
+  // File permission.
+  mode: '444',
 
-    // Data to render.
-    data: {
-        members: {
-            "Mai": "apple",
-            "Tom": "Orange",
-            "Rita": "Banana"
-        }
+  // Data to render.
+  data: {
+    members: {
+      "Mai": "apple",
+      "Tom": "Orange",
+      "Rita": "Banana"
     }
+  }
 };
 
 ```
@@ -208,15 +208,17 @@ coz provides programmatic API which enables you to execute coz commands from Nod
  * run_rendering.js
  * This is an executable file for "examples/04-from-programmatic-api/run_rendering.js"
  */
+'use strict'
 
-var coz = require('coz');
+const coz = require('coz')
 
 // Render .bud files.
 coz.render([
-    '**/.*.bud'
-], function (err) {
-    console.log(err ? err : 'Done!');
-});
+  '**/.*.bud'
+]).then(() => {
+  console.log('Done!')
+})
+
 ```
 
 For more details, see tutorial section "[04 - Using programmatic API][04_using_programmatic_a_p_i_url]".
@@ -244,9 +246,9 @@ You can specify bud data by writing `.bud` file, which is actually a javascript 
 
 ```javascript
 module.exports = {
-    path: 'my_file.txt',
-    tmpl: '.my_file.txt.hbs',
-    data: require('./.my_data')
+  path: 'my_file.txt',
+  tmpl: '.my_file.txt.hbs',
+  data: require('./.my_data')
 }
 ```
 
@@ -254,8 +256,8 @@ And bud could be an array like:
 
 ```javascript
 module.exports = [
-    {path: 'my_file.txt', /*...*/},
-    {path: 'my_other_file.txt', /*...*/},
+  { path: 'my_file.txt', /* ... */ },
+  { path: 'my_other_file.txt', /* ... */ },
 ]
 ```
 
@@ -263,10 +265,10 @@ Or an async function.
 
 ```javascript
 module.exports = function(callback){
-    myAsync(function(data){
-        var error = null;
-        callback(err, data);
-    });
+  myAsync((data) => {
+   let error = null
+   callback(err, data)
+  })
 }
 ```
 

@@ -10,9 +10,9 @@ You can specify bud data by writing `.bud` file, which is actually a javascript 
 
 ```javascript
 module.exports = {
-    path: 'my_file.txt',
-    tmpl: '.my_file.txt.hbs',
-    data: require('./.my_data')
+  path: 'my_file.txt',
+  tmpl: '.my_file.txt.hbs',
+  data: require('./.my_data')
 }
 ```
 
@@ -20,8 +20,8 @@ And bud could be an array like:
 
 ```javascript
 module.exports = [
-    {path: 'my_file.txt', /*...*/},
-    {path: 'my_other_file.txt', /*...*/},
+  { path: 'my_file.txt', /* ... */ },
+  { path: 'my_other_file.txt', /* ... */ },
 ]
 ```
 
@@ -29,10 +29,10 @@ Or an async function.
 
 ```javascript
 module.exports = function(callback){
-    myAsync(function(data){
-        var error = null;
-        callback(err, data);
-    });
+  myAsync((data) => {
+   let error = null
+   callback(err, data)
+  })
 }
 ```
 
