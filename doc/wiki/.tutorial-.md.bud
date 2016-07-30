@@ -4,9 +4,9 @@
 
 'use strict'
 
-const fs = require('fs');
-const path = require('path');
-const aglob = require('aglob');
+const fs = require('fs')
+const path = require('path')
+const aglob = require('aglob')
 
 const tutorialDir = path.resolve(__dirname, '../tutorial')
 

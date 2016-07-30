@@ -4,9 +4,9 @@
 
 'use strict'
 
-const pkg = require('../../package.json');
-const path = require('path');
-const aglob = require('aglob');
+const pkg = require('../../package.json')
+const path = require('path')
+const aglob = require('aglob')
 
 module.exports = {
   force: true,
@@ -25,5 +25,5 @@ module.exports = {
 };
 
 if (!module.parent) {
-  require('../../lib').render(__filename);
+  require('../../lib').render(__filename)
 }

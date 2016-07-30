@@ -16,9 +16,9 @@ module.exports = {
 
 // If there is no parent, it means that this module is executed directory.
 // e.g., `node .exec-me.txt.bud`
-var main = module.parent == null;
+let main = module.parent == null
 if (main) {
   // Render this bud file.
   // `__filename` is Node.js reserved word and contains path of this file.
-  require('coz').render(__filename);
+  require('coz').render(__filename)
 }

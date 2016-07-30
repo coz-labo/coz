@@ -35,20 +35,20 @@ let coz = new Coz({
          * @returns {string} - Rendered string.
          */
         function compiledTemplate (data) {
-          var rendered = String(source);
+          let rendered = String(source)
           Object.keys(data).forEach(function (key) {
-            rendered = rendered.replace('__' + key + '___', data[ key ]);
-          });
+            rendered = rendered.replace('__' + key + '___', data[ key ])
+          })
           return rendered;
         }
 
         // Pass the template function to callback.
         var err = null;
-        callback(err, compiledTemplate);
+        callback(err, compiledTemplate)
       }
     }
   }
-});
+})
 
 // Use custom coz context to render.
 coz.render({

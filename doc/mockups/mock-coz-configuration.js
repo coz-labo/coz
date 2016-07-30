@@ -5,8 +5,8 @@ module.exports = {
                 setTimeout(function () {
                     callback(null, function () {
                         return 'renderByMyCustom'
-                    });
-                }, 10);
+                    })
+                }, 10)
             }
         }
     },
