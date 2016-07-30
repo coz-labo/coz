@@ -5,10 +5,10 @@
 
 // Bud for coz CLI with custom configuration
 module.exports = {
-  force: true,
-  mode: '444',
-  tmpl: 'myCustomTmpl01',
-  data: {
-    'generator': __filename
-  }
-}
+    force: true,
+    mode: '444',
+    tmpl: 'myCustomTmpl01',
+    data: {
+        'generator': __filename
+    }
+};

@@ -17,10 +17,11 @@ module.exports = apeTmpl.readmeMdBud({
   sections: 'doc/guides/*.md.hbs',
   badges: {
     travis: true,
-    codeclimate: true,
-    codeclimateCoverage: true,
-    gemnasium: true,
-    npm: true
+    codeclimate: false,
+    codeclimateCoverage: false,
+    gemnasium: false,
+    npm: true,
+    standard: true
   },
   links: require('./doc/links.json'),
   overview: 'doc/overview.md',
