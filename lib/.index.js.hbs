@@ -15,10 +15,8 @@
 
 const Coz = require('./coz')
 const create = require('./create')
-const pkg = require('../package.json')
 
 let coz = create({})
-coz.version = pkg.version
 coz.create = create
 coz.Coz = Coz
 

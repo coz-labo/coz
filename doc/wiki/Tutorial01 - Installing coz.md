@@ -6,7 +6,7 @@ coz runs on [Node.js][nodejs_url] and is available as an [NPM][npm_url] package.
 
 If you don't have Node.js, download one from [Node.js official page][nodejs_download_url], or use [nvm][nvm_url] to manage multiple version.
 
-coz works on node version 6 or later.
+coz works on node version 4 or later.
 
 ___
 
@@ -24,7 +24,7 @@ With `-g` option, npm installs the module globally and you can run coz simply by
 (It may need to be run via `sudo`)
 
 Show the coz version to check install is successfully.
-The latest version `6.0.17` will be shown unless you specified older.
+The latest version `6.0.18` will be shown unless you specified older.
 
 ```bash
 # Show coz version.
