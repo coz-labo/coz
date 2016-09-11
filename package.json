@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "6.0.18",
+  "version": "6.0.19",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "shim/node",
   "bin": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "node ./ci/test.js",
-    "prepublish":"node ./ci/shim.js && node ./ci/build.js"
+    "prepublish": "node ./ci/shim.js && node ./ci/build.js"
   },
   "repository": "coz-labo/coz",
   "keywords": [
