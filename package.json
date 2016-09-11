@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "6.0.20",
+  "version": "6.0.21",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "shim/node",
   "bin": {
