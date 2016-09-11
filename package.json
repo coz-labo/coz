@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "6.0.19",
+  "version": "6.0.20",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "shim/node",
   "bin": {
@@ -32,6 +32,7 @@
     "argx": "^3.0.1",
     "arrayfilter": "^1.1.2",
     "arraysort": "^2.0.0",
+    "babel-runtime": "^6.11.6",
     "co": "^4.6.0",
     "commander": "^2.9.0",
     "coz-bud": "^4.0.0",
@@ -40,7 +41,7 @@
     "coz-bud-remover": "^2.0.5",
     "coz-bud-writer": "^2.0.6",
     "coz-engine": "^2.0.5",
-    "coz-handlebars-engine": "^3.0.7",
+    "coz-handlebars-engine": "^3.0.8",
     "coz-logger": "^4.0.6"
   },
   "devDependencies": {
