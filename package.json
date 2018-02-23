@@ -1,8 +1,8 @@
 {
   "name": "coz",
-  "version": "6.0.21",
+  "version": "7.0.0",
   "description": "Flexible generator, which makes your project clean and maintainable.",
-  "main": "shim/node",
+  "main": "lib",
   "bin": {
     "coz": "bin/coz"
   },
@@ -28,12 +28,11 @@
   },
   "homepage": "https://github.com/coz-labo/coz",
   "dependencies": {
-    "aglob": "^1.0.2",
+    "aglob": "^3.0.0",
     "argx": "^3.0.1",
     "arrayfilter": "^1.1.2",
     "arraysort": "^2.0.0",
     "babel-runtime": "^6.11.6",
-    "co": "^4.6.0",
     "commander": "^2.9.0",
     "coz-bud": "^4.0.0",
     "coz-bud-compiler": "^2.0.8",
@@ -45,24 +44,25 @@
     "coz-logger": "^4.0.6"
   },
   "devDependencies": {
-    "ababel": "^1.1.3",
-    "ababel-es2015": "^1.0.6",
-    "amocha": "^1.0.12",
+    "@babel/runtime": "^7.0.0-beta.40",
+    "ababel": "^4.0.7",
+    "amocha": "^5.0.0",
     "ape-deploying": "^5.0.5",
     "ape-releasing": "^4.0.4",
     "ape-reporting": "^3.0.2",
     "ape-tasking": "^4.0.8",
-    "ape-tmpl": "^5.0.15",
+    "ape-tmpl": "^6.0.10",
     "ape-updating": "^4.0.5",
+    "co": "^4.6.0",
     "coz-examples": "^1.0.3",
-    "filecopy": "^2.0.2",
+    "filecopy": "^4.0.1",
     "injectmock": "^2.0.0",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.5.4",
-    "stringcase": "^3.0.1"
+    "stringcase": "^4.1.1"
   },
   "engines": {
-    "node": ">=4",
-    "npm": ">=2"
+    "node": ">=8",
+    "npm": ">=5"
   }
 }
