@@ -241,7 +241,7 @@ ___
 + [01 - Installing coz][tutorial_01_installing_coz_url]
 + [02 - Rendering bud files][tutorial_02_rendering_bud_files_url]
 + [03 - Mastering coz bud][tutorial_03_mastering_coz_bud_url]
-+ [04 - Using programmatic API][tutorial_04_using_programmatic_a_p_i_url]
++ [04 - Using programmatic API][tutorial_04_using_programmatic_ap_i_url]
 + [05 - Customizing coz][tutorial_05_customizing_coz_url]
 
 <!-- Tutorials end -->
@@ -263,7 +263,7 @@ ___
 [tutorial_01_installing_coz_url]: 01%20-%20Installing%20coz.md
 [tutorial_02_rendering_bud_files_url]: 02%20-%20Rendering%20bud%20files.md
 [tutorial_03_mastering_coz_bud_url]: 03%20-%20Mastering%20coz%20bud.md
-[tutorial_04_using_programmatic_a_p_i_url]: 04%20-%20Using%20programmatic%20API.md
+[tutorial_04_using_programmatic_ap_i_url]: 04%20-%20Using%20programmatic%20API.md
 [tutorial_05_customizing_coz_url]: 05%20-%20Customizing%20coz.md
 
 <!-- URLs end -->

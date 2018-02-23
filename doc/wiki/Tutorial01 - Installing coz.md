@@ -6,7 +6,7 @@ coz runs on [Node.js][nodejs_url] and is available as an [NPM][npm_url] package.
 
 If you don't have Node.js, download one from [Node.js official page][nodejs_download_url], or use [nvm][nvm_url] to manage multiple version.
 
-coz works on node version 4 or later.
+coz works on node version 8 or later.
 
 ___
 
@@ -24,7 +24,7 @@ With `-g` option, npm installs the module globally and you can run coz simply by
 (It may need to be run via `sudo`)
 
 Show the coz version to check install is successfully.
-The latest version `6.0.21` will be shown unless you specified older.
+The latest version `7.0.0` will be shown unless you specified older.
 
 ```bash
 # Show coz version.
@@ -60,7 +60,7 @@ ___
 + [01 - Installing coz][tutorial_01_installing_coz_url]
 + [02 - Rendering bud files][tutorial_02_rendering_bud_files_url]
 + [03 - Mastering coz bud][tutorial_03_mastering_coz_bud_url]
-+ [04 - Using programmatic API][tutorial_04_using_programmatic_a_p_i_url]
++ [04 - Using programmatic API][tutorial_04_using_programmatic_ap_i_url]
 + [05 - Customizing coz][tutorial_05_customizing_coz_url]
 
 <!-- Tutorials end -->
@@ -76,7 +76,7 @@ ___
 [tutorial_01_installing_coz_url]: 01%20-%20Installing%20coz.md
 [tutorial_02_rendering_bud_files_url]: 02%20-%20Rendering%20bud%20files.md
 [tutorial_03_mastering_coz_bud_url]: 03%20-%20Mastering%20coz%20bud.md
-[tutorial_04_using_programmatic_a_p_i_url]: 04%20-%20Using%20programmatic%20API.md
+[tutorial_04_using_programmatic_ap_i_url]: 04%20-%20Using%20programmatic%20API.md
 [tutorial_05_customizing_coz_url]: 05%20-%20Customizing%20coz.md
 
 <!-- URLs end -->

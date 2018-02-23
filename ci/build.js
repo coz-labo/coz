@@ -3,7 +3,7 @@
 'use strict'
 
 const apeTasking = require('ape-tasking')
-const coz = require('../shim/node')
+const coz = require('../lib')
 
 process.chdir(`${__dirname}/..`)
 
