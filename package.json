@@ -33,7 +33,7 @@
     "arrayfilter": "^1.1.2",
     "arraysort": "^2.0.0",
     "babel-runtime": "^6.11.6",
-    "commander": "^2.15.1",
+    "commander": "^2.19.0",
     "coz-bud": "^4.0.0",
     "coz-bud-compiler": "^2.0.8",
     "coz-bud-loader": "^2.0.9",
@@ -44,22 +44,22 @@
     "coz-logger": "^4.0.6"
   },
   "devDependencies": {
-    "@babel/runtime": "*",
-    "ababel": "^4.0.9",
+    "@babel/runtime": "^7.2.0",
+    "ababel": "^5.0.8",
     "amocha": "^5.0.0",
     "ape-deploying": "^5.0.5",
-    "ape-releasing": "^4.0.4",
+    "ape-releasing": "^5.0.0",
     "ape-reporting": "^3.0.2",
     "ape-tasking": "^4.0.8",
-    "ape-tmpl": "^6.0.10",
+    "ape-tmpl": "^6.0.12",
     "ape-updating": "^5.0.1",
     "co": "^4.6.0",
     "coz-examples": "^1.0.3",
     "filecopy": "^4.0.1",
     "injectmock": "^2.0.0",
     "mkdirp": "^0.5.1",
-    "rimraf": "^2.5.4",
-    "stringcase": "^4.2.0"
+    "rimraf": "^2.6.3",
+    "stringcase": "^4.3.0"
   },
   "engines": {
     "node": ">=8",
