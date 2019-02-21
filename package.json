@@ -36,7 +36,7 @@
     "commander": "^2.19.0",
     "coz-bud": "^4.0.0",
     "coz-bud-compiler": "^2.0.8",
-    "coz-bud-loader": "^3.0.0",
+    "coz-bud-loader": "^3.0.1",
     "coz-bud-remover": "^3.0.1",
     "coz-bud-writer": "^2.0.6",
     "coz-engine": "^2.0.5",
