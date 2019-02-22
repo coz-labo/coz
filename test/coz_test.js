@@ -29,40 +29,40 @@ describe('coz', function () {
     done()
   })
 
-  it('Do render.', () => co(function * () {
+  it('Do render.', async () => {
     let coz = new Coz()
     let src = `${__dirname}/../doc/mockups/mock-bud.bud`
-    yield coz.render([
+    await coz.render([
       src
     ], { verbose: true, prefix: 'hogehoge' })
-  }))
+  })
 
-  it('Do render without options.', () => co(function * () {
+  it('Do render without options.', async () => {
     let coz = new Coz()
     let src = `${__dirname}/../doc/mockups/mock-bud.bud`
-    yield coz.render([
+    await coz.render([
       src
     ])
-  }))
+  })
 
-  it('Do clean.', () => co(function * () {
+  it('Do clean.', async () => {
     let coz = new Coz()
     let filename = `${__dirname}/../tmp/some_file.txt.bud`
     require('fs').writeFileSync(filename, 'module.exports = {path:__filename}')
-    yield coz.clean(filename)
-  }))
+    await coz.clean(filename)
+  })
 
-  it('With custom setup.', () => co(function * () {
+  it('With custom setup.', async () => {
     let coz = new Coz()
     let filename = `${__dirname}/../tmp/some_coz_file0008.txt`
-    yield coz.render({
+    await coz.render({
       path: filename,
       force: true,
       mkdirp: true,
       tmpl: '{{myCustomHelper baz}}',
       setup: {
         helpers: {
-          myCustomHelper (txt) {
+          myCustomHelper(txt) {
             return 'my-custom-' + txt
           }
         }
@@ -73,9 +73,9 @@ describe('coz', function () {
     })
     let content = fs.readFileSync(filename).toString()
     assert.equal('my-custom-quz', content.trim())
-  }))
+  })
 
-  it('Do render with configuration.', () => co(function * () {
+  it('Do render with configuration.', async () => {
     let configuration = require.resolve('../doc/mockups/mock-coz-configuration')
     let coz = new Coz(configuration)
     let filename = `${__dirname}/../tmp/some_file2.txt`
@@ -83,7 +83,7 @@ describe('coz', function () {
       fs.unlinkSync(filename)
     }
     assert.ok(coz)
-    yield coz.render({
+    await coz.render({
       path: filename,
       force: true,
       engine: 'myCustomEngine',
@@ -93,7 +93,7 @@ describe('coz', function () {
       assert.ifError(err)
       assert.equal(String(content).trim(), 'renderByMyCustom')
     })
-  }))
+  })
 })
 
 /* global describe, before, after, it */
