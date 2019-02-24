@@ -10,21 +10,21 @@ const fs = require('fs')
 const path = require('path')
 const os = require('os')
 const stringcase = require('stringcase')
-const EOL = os.EOL;
-const format = require('util').format;
-const async = require('async')
+const EOL = os.EOL
+const format = require('util').format
 
 const pkg = require('../../package.json')
 const bud = require('coz-bud/lib/spec')
 
-function _urlItem (key, url) {
+function _urlItem(key, url) {
   return format('[%s]: %s', key, encodeURI(url))
 }
-function _linkItem (text, name) {
+
+function _linkItem(text, name) {
   return format('+ [%s][%s]', text, name)
 }
 
-function _wrapped (data, comment) {
+function _wrapped(data, comment) {
   return [
     format('<!-- %s start -->', comment),
     EOL + data + EOL,
@@ -32,47 +32,48 @@ function _wrapped (data, comment) {
   ].join(EOL)
 }
 
-function _tutorialBud (data) {
-  data.force = true;
-  data.mode = '444';
-  data.mkdirp = true;
-  return data;
+function _tutorialBud(data) {
+  data.force = true
+  data.mode = '444'
+  data.mkdirp = true
+  return data
 }
 
-function _budData (data) {
-  data.pkg = pkg;
+function _budData(data) {
+  data.pkg = pkg
   data.bud = {
     about: bud.about,
-    get properties () {
+    get properties() {
       return Object.keys(bud.properties).map(function (key) {
-        let data = bud.properties[ key ]
-        data.name = key;
+        let data = bud.properties[key]
+        data.name = key
         data.type = String(data.type).replace(/\|/g, '&#124;')
-        return data;
+        return data
       })
     }
   }
-  return data;
+  return data
 }
-function _concat (a, b) {
+
+function _concat(a, b) {
   return a.concat(b)
 }
 
-function _tutorialKey (filename) {
+function _tutorialKey(filename) {
   return [
     'tutorial',
     stringcase.snakecase(path.basename(filename, path.extname(filename)))
   ].join('_').replace(/__+/g, '_')
 }
 
-function _urls (items) {
+function _urls(items) {
   let urls = items.reduce(_concat, []).map((obj) => {
     return _urlItem(obj.name, obj.url)
   }).join(EOL)
   return _wrapped(urls, 'URLs')
 }
 
-function _tutorials (filenames) {
+function _tutorials(filenames) {
   let tutorials = filenames.map(function (filename) {
     let url = _tutorialKey(filename) + '_url',
       name = path.basename(filename, path.extname(filename))
@@ -81,10 +82,10 @@ function _tutorials (filenames) {
   return _wrapped(tutorials, 'Tutorials')
 }
 
-function _seeAlso (filenames) {
+function _seeAlso(filenames) {
   let seeAlso = filenames
     .filter(function (filename) {
-      return !!filename;
+      return !!filename
     })
     .map(function (filename) {
       let url = _tutorialKey(filename.replace(/\.md\.hbs$/, '')) + '_url',
@@ -94,17 +95,17 @@ function _seeAlso (filenames) {
   return _wrapped(seeAlso, 'See also')
 }
 
-function _injectCodeMarkup (lines) {
+function _injectCodeMarkup(lines) {
   return lines.map(function (line, i, lines) {
-    let prev = lines[ i - 1 ]
+    let prev = lines[i - 1]
     if (/^```/.test(prev)) {
       // Add ink-doctrap lang markup.
       let lang = prev.replace(/```/, '').trim()
       if (lang) {
-        return format('{@lang %s}', lang) + line;
+        return format('{@lang %s}', lang) + line
       }
     }
-    return line;
+    return line
   })
 }
 
@@ -123,22 +124,22 @@ module.exports = function (callback) {
           path: name + '.md',
           tmpl: filename,
           data: _budData({
-            get urls () {
+            get urls() {
               let linkUrls = Object.keys(links).map(function (name) {
-                  return { name: name, url: links[ name ] }
+                  return { name: name, url: links[name] }
                 }),
                 tutorialUrls = tutorials.map(function (filename) {
-                  let name = _tutorialKey(filename) + '_url';
+                  let name = _tutorialKey(filename) + '_url'
                   return { name: name, url: path.basename(filename) }
                 })
-              return _urls([ linkUrls, tutorialUrls ])
+              return _urls([linkUrls, tutorialUrls])
             },
-            get tutorials () {
+            get tutorials() {
               return _tutorials(tutorials)
             },
-            get seeAlso () {
-              let filename = filenames[ i + 1 ]
-              return _seeAlso([ filename ])
+            get seeAlso() {
+              let filename = filenames[i + 1]
+              return _seeAlso([filename])
             }
           })
         })
