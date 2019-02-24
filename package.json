@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "7.0.15",
+  "version": "7.0.16",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
@@ -40,7 +40,7 @@
     "coz-bud-writer": "^3.0.1",
     "coz-engine": "^3.0.0",
     "coz-handlebars-engine": "^4.0.1",
-    "coz-logger": "^5.0.1",
+    "coz-logger": "^5.0.3",
     "fmtjson": "^4.0.2"
   },
   "devDependencies": {
@@ -48,10 +48,10 @@
     "ababel": "^5.0.10",
     "amocha": "^5.0.1",
     "ape-deploying": "^5.0.5",
-    "ape-releasing": "^5.0.4",
-    "ape-tasking": "^4.0.11",
+    "ape-releasing": "^5.0.6",
+    "ape-tasking": "^4.0.12",
     "ape-tmpl": "^6.0.13",
-    "ape-updating": "^5.0.2",
+    "ape-updating": "^5.0.3",
     "co": "^4.6.0",
     "coz-examples": "^1.0.3",
     "filecopy": "^4.0.2",
