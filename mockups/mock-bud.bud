@@ -1,0 +1,13 @@
+'use strict'
+
+const path = require('path')
+module.exports = {
+  force: true,
+  mode: '644',
+  path: path.resolve(__dirname, '../../tmp/work-rendered.json'),
+  tmpl: 'json',
+  mkdirp: true,
+  data: {
+    foo: 'bar'
+  }
+}
