@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "7.0.18",
+  "version": "7.0.19",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
@@ -36,17 +36,17 @@
     "coz-bud": "^5.0.1",
     "coz-bud-compiler": "^3.0.4",
     "coz-bud-loader": "^3.0.3",
-    "coz-bud-remover": "^3.0.2",
+    "coz-bud-remover": "^3.0.3",
     "coz-bud-writer": "^3.0.1",
     "coz-engine": "^3.0.0",
     "coz-handlebars-engine": "^4.0.1",
     "coz-logger": "^5.0.4",
-    "fmtjson": "^4.0.2"
+    "fmtjson": "^4.0.3"
   },
   "devDependencies": {
     "@babel/runtime": "*",
-    "ababel": "^5.0.10",
-    "amocha": "^5.0.1",
+    "ababel": "^5.0.11",
+    "amocha": "^5.0.2",
     "ape-deploying": "^5.0.5",
     "ape-releasing": "^5.0.7",
     "ape-tasking": "^4.0.12",
