@@ -7,15 +7,15 @@ const pkg = require('../package')
 const commands = require('../lib/commands')
 
 program
-  .version(pkg[ 'version' ])
+  .version(pkg['version'])
 
 program
   .command('render [bud...]')
   .description('Render files from bud.')
   .option('-v, --verbose', 'Show verbose logs.')
   .option('-c, --configuration [configuration]', 'Configuration module path.')
-  .action(function (src, opitons) {
-    commands.render(src, opitons)
+  .action(function (src, options) {
+    commands.render(src, options)
   })
   .on('--help', function () {
     console.log(commands.render.help)
@@ -26,8 +26,8 @@ program
   .description('Clean files rendered from bud.')
   .option('-v, --verbose', 'Show verbose logs.')
   .option('-c, --configuration [configuration]', 'Configuration module path.')
-  .action((src, opitons) => {
-    commands.clean(src, opitons)
+  .action((src, options) => {
+    commands.clean(src, options)
   })
   .on('--help', () => {
     console.log(commands.clean.help)

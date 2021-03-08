@@ -1,6 +1,6 @@
 {
   "name": "coz",
-  "version": "7.2.1",
+  "version": "7.3.0",
   "description": "Flexible generator, which makes your project clean and maintainable.",
   "main": "lib",
   "bin": {
@@ -32,7 +32,7 @@
     "argx": "^4.0.4",
     "arrayfilter": "^1.1.2",
     "arraysort": "^2.0.0",
-    "commander": "^6.1.0",
+    "commander": "^7.1.0",
     "coz-bud": "^5.0.1",
     "coz-bud-compiler": "^3.0.4",
     "coz-bud-loader": "^3.0.3",
